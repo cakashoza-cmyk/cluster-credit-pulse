@@ -25215,5 +25215,327 @@
     },
     "model": "gemini:gemini-3.5-flash-lite",
     "at": "2026-10-09T06:36:05.180Z"
+  },
+  "poll:poll-v1:039ceb99b6a2": {
+    "poll": {
+      "no_poll": false,
+      "hypothesis": "Labor protests over 12-hour shifts are causing operational disruptions, wage cost pressures, or regulatory scrutiny in Surat weaving and processing units.",
+      "event_phrase": "protest over 12-hour shifts by textile workers",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Weaving / Processing Unit Owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported protest over 12-hour shifts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "Have factory inspectors or labor officials visited your unit regarding shift timings in the last 2-4 weeks?",
+              "options": [
+                "Yes, strict checks",
+                "Visited, no major action",
+                "No visits"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes, strict checks"
+              ],
+              "contradicts": [
+                "No visits"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How have daily wage rates or labor costs changed at your unit recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Stable",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Stable",
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Weaving Loom Supervisor / Labor Contractor",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported protest over 12-hour shifts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "Are workers currently willing to work 12-hour shifts, or is there resistance?",
+              "options": [
+                "Willing as before",
+                "Demanding 8-hour shifts",
+                "Refusing overtime work"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Demanding 8-hour shifts",
+                "Refusing overtime work"
+              ],
+              "contradicts": [
+                "Willing as before"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q3",
+              "type": "scale5",
+              "text": "How has worker absenteeism or labor shortage been at your units recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Normal",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Normal",
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat Textile Branch Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported protest over 12-hour shifts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have borrowing textile units reported lower capacity utilization due to labor issues?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you observed any stress or delay in working capital servicing from weaving clients?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વીવિંગ / પ્રોસેસિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું ૧૨ કલાકની શિફ્ટ સામેના વિરોધનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં શિફ્ટના સમય અંગે ફેક્ટરી ઇન્સ્પેક્ટરો કે શ્રમ અધિકારીઓ તમારા યુનિટની મુલાકાતે આવ્યા છે?",
+                "options": [
+                  "હા, કડક તપાસ",
+                  "મુલાકાત લીધી, કોઈ મોટી કાર્યવાહી નહીં",
+                  "કોઈ મુલાકાત નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "તમારા યુનિટમાં દૈનિક મજૂરી દર અથવા લેબર કોસ્ટમાં તાજેતરમાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સ્થિર",
+                  "વધુ",
+                  "ઘણા વધુ"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "લૂમ્સ સુપરવાઇઝર / લેબર કોન્ટ્રાક્ટર",
+            "questions": {
+              "labour.q1": {
+                "text": "શું ૧૨ કલાકની શિફ્ટ સામેના વિરોધનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "શું કામદારો હાલમાં ૧૨ કલાક કામ કરવા તૈયાર છે કે વિરોધ છે?",
+                "options": [
+                  "પહેલાંની જેમ તૈયાર",
+                  "૮ કલાકની શિફ્ટની માંગ",
+                  "ઓવરટાઇમ કામ કરવાનો ઇનકાર"
+                ]
+              },
+              "labour.q3": {
+                "text": "તમારા યુનિટ્સમાં કામદારોની ગેરહાજરી અથવા મજૂરોની અછત તાજેતરમાં કેવી રહી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સામાન્ય",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ટેક્સટાઇલ બ્રાન્ચ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું ૧૨ કલાકની શિફ્ટ સામેના વિરોધનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું લોન લેનાર ટેક્સટાઇલ યુનિટ્સે મજૂર સમસ્યાઓના કારણે ઉત્પાદન ક્ષમતા ઘટ્યાનું જણાવ્યું છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું વીવિંગ ગ્રાહકો તરફથી વર્કિંગ કેપિટલ ચૂકવણીમાં કોઈ તાણ કે વિલંબ જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "model": "gemini:gemini-3.5-flash-lite",
+    "at": "2026-10-09T06:48:02.393Z"
   }
 }
