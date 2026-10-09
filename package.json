@@ -1,0 +1,24 @@
+{
+  "name": "cluster-credit-pulse",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "pipeline": "node pipeline/run.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "screenshots": "node scripts/screenshots.mjs",
+    "pipeline:env": "node --env-file=.env pipeline/run.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11",
+    "playwright-core": "^1.48.0"
+  }
+}

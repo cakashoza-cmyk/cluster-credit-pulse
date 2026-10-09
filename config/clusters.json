@@ -1,0 +1,124 @@
+{
+  "_doc": "Config-driven clusters. Add a new object to 'clusters' to cover a new cluster. 'queries' feed Google News RSS (lang: en|gu|hi). 'aliases' are used to attribute items from generic publisher feeds. Industry 'keywords' are matched on headline+snippet (English: whole word, case-insensitive; Indic: substring).",
+  "settings": {
+    "max_age_days": 30,
+    "google_news_window": "when:30d",
+    "brief_window_days": 7
+  },
+  "clusters": [
+    {
+      "id": "morbi",
+      "name": "Morbi",
+      "state": "Gujarat",
+      "district": "Morbi",
+      "tagline": "India's ceramic tile & sanitaryware hub",
+      "aliases": ["Morbi", "Morvi", "મોરબી", "मोरबी", "Wankaner", "વાંકાનેર"],
+      "industries": [
+        {
+          "id": "ceramic-tiles",
+          "name": "Ceramic tiles",
+          "icon": "tiles",
+          "colors": ["#b45309", "#f59e0b"],
+          "keywords": ["ceramic", "ceramics", "tile", "tiles", "vitrified", "porcelain", "સિરામિક", "ટાઇલ્સ", "ટાઈલ્સ", "સીરામીક", "सिरेमिक", "टाइल्स"],
+          "subsegments": "Vitrified/GVT, wall & floor tile makers; propane/LPG-fired vs PNG-fired kilns; exporters (Gulf, US, Europe) vs domestic dealers",
+          "credit_checks": ["Fuel type and gas contract (PNG vs propane/LPG, administered vs spot price)", "Export share by market and LC/DA terms", "Dealer debtor ageing (>90 days drops out of DP)", "Kiln/line capex in last 24 months and term-loan EMI cover"]
+        },
+        {
+          "id": "sanitaryware",
+          "name": "Sanitaryware",
+          "icon": "sanitary",
+          "colors": ["#0e7490", "#22d3ee"],
+          "keywords": ["sanitaryware", "sanitary ware", "sanitary", "સેનેટરી", "સેનિટરી", "सैनिटरी"],
+          "subsegments": "Sanitaryware moulding/firing units, brand OEM suppliers, dealers",
+          "credit_checks": ["Share of sales to branded OEMs vs open market", "Gas cost per piece and pass-through ability", "Inventory build-up in stock statements"]
+        },
+        {
+          "id": "packaging-paper",
+          "name": "Kraft / packaging paper",
+          "icon": "paper",
+          "colors": ["#4d7c0f", "#a3e635"],
+          "keywords": ["paper mill", "paper mills", "kraft", "kraft paper", "packaging", "corrugated", "waste paper", "પેપર", "કાગળ", "પેપરમીલ", "पेपर", "कागज"],
+          "subsegments": "Kraft paper mills (waste-paper based), corrugated box makers serving ceramic packaging",
+          "credit_checks": ["Dependence on ceramic-industry box demand", "Imported/domestic waste-paper prices and coal/fuel cost", "Pollution-control (GPCB) compliance status"]
+        }
+      ],
+      "queries": [
+        {"q": "Morbi ceramic", "lang": "en"},
+        {"q": "Morbi tiles industry", "lang": "en"},
+        {"q": "Morbi sanitaryware", "lang": "en"},
+        {"q": "Morbi paper mill", "lang": "en"},
+        {"q": "Morbi gas price", "lang": "en"},
+        {"q": "Morbi industry", "lang": "en"},
+        {"q": "મોરબી ઉદ્યોગ", "lang": "gu"},
+        {"q": "મોરબી ટાઇલ્સ", "lang": "gu"},
+        {"q": "મોરબી સિરામિક", "lang": "gu"},
+        {"q": "મોરબી પેપર મીલ", "lang": "gu"},
+        {"q": "मोरबी सिरेमिक", "lang": "hi"}
+      ]
+    },
+    {
+      "id": "surat",
+      "name": "Surat",
+      "state": "Gujarat",
+      "district": "Surat",
+      "tagline": "MMF textiles, weaving, embroidery & diamonds",
+      "aliases": ["Surat", "સુરત", "सूरत", "Sachin GIDC", "Pandesara", "Varachha", "વરાછા", "Kim", "Olpad"],
+      "industries": [
+        {
+          "id": "mmf-textiles",
+          "name": "MMF textiles & trading",
+          "icon": "textile",
+          "colors": ["#7c3aed", "#c084fc"],
+          "keywords": ["textile", "textiles", "fabric", "fabrics", "polyester", "MMF", "man-made fibre", "saree", "sarees", "garment", "dyeing", "processing house", "textile market", "traders", "કાપડ", "ટેક્સટાઇલ", "ટેક્સટાઈલ", "સાડી", "કપડા", "कपड़ा", "टेक्सटाइल", "कपड़े"],
+          "subsegments": "Grey-fabric traders, processing/dyeing houses, textile market traders (Ring Road), saree/dress-material sellers",
+          "credit_checks": ["Trader debtor ageing and exposure to defaulting buyers (uthamnu)", "Processing-house fuel (coal/gas) cost", "Seasonal stock build-up before festivals/weddings"]
+        },
+        {
+          "id": "weaving",
+          "name": "Weaving & yarn",
+          "icon": "loom",
+          "colors": ["#be185d", "#f472b6"],
+          "keywords": ["weaver", "weavers", "weaving", "powerloom", "power loom", "looms", "water-jet", "airjet", "air-jet", "yarn", "POY", "FDY", "વિવર્સ", "વીવર્સ", "વિવિંગ", "લૂમ્સ", "યાર્ન", "વણાટ", "बुनकर", "यार्न", "पावरलूम"],
+          "subsegments": "Water-jet/air-jet weavers, powerloom units, yarn spinners/texturisers (POY/FDY buyers)",
+          "credit_checks": ["Yarn purchase pattern (spot vs contracted; old-rate inventory)", "Loom utilisation and labour availability", "Machinery term loans (TUFS-era) EMI cover"]
+        },
+        {
+          "id": "embroidery",
+          "name": "Embroidery",
+          "icon": "embroidery",
+          "colors": ["#c2410c", "#fb923c"],
+          "keywords": ["embroidery", "embroidered", "એમ્બ્રોઇડરી", "એમ્બ્રોડરી", "कढ़ाई", "एम्ब्रॉयडरी"],
+          "subsegments": "Computerised embroidery job-workers (small, highly leveraged on machine loans)",
+          "credit_checks": ["Job-work order book and principal concentration", "Machine-loan EMI cover at current utilisation"]
+        },
+        {
+          "id": "diamonds",
+          "name": "Diamonds",
+          "icon": "diamond",
+          "colors": ["#1d4ed8", "#60a5fa"],
+          "keywords": ["diamond", "diamonds", "lab-grown", "lab grown", "LGD", "polished", "rough diamonds", "gems", "jewellery", "GJEPC", "હીરા", "ડાયમંડ", "રત્નકલાકાર", "રત્નકલાકારો", "हीरा", "हीरे", "डायमंड"],
+          "subsegments": "Natural diamond cutting & polishing units, lab-grown (LGD) growers/polishers, traders/exporters",
+          "credit_checks": ["Natural vs LGD mix and price trend exposure", "Export receivables/PCFC ageing (US, HK, UAE)", "Rough inventory valuation vs current polished prices", "Worker headcount / unit closures"]
+        }
+      ],
+      "queries": [
+        {"q": "Surat textile", "lang": "en"},
+        {"q": "Surat weavers", "lang": "en"},
+        {"q": "Surat powerloom", "lang": "en"},
+        {"q": "Surat embroidery", "lang": "en"},
+        {"q": "Surat diamond industry", "lang": "en"},
+        {"q": "Surat lab-grown diamond", "lang": "en"},
+        {"q": "સુરત કાપડ", "lang": "gu"},
+        {"q": "સુરત વિવર્સ", "lang": "gu"},
+        {"q": "સુરત હીરા", "lang": "gu"},
+        {"q": "सूरत कपड़ा", "lang": "hi"},
+        {"q": "सूरत हीरा", "lang": "hi"}
+      ]
+    }
+  ],
+  "publisher_feeds": [
+    {"name": "The Indian Express (Ahmedabad)", "url": "https://indianexpress.com/section/cities/ahmedabad/feed/", "lang": "en"},
+    {"name": "The Economic Times (Industry)", "url": "https://economictimes.indiatimes.com/industry/rssfeeds/13352306.cms", "lang": "en"},
+    {"name": "BusinessLine (Economy)", "url": "https://www.thehindubusinessline.com/economy/feeder/default.rss", "lang": "en"}
+  ]
+}

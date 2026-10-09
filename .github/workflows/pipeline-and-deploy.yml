@@ -1,0 +1,65 @@
+# Cluster Credit Pulse — scheduled news pipeline + free GitHub Pages deploy.
+# Activates automatically once this repo is pushed to GitHub and Pages source is set to "GitHub Actions".
+# Secrets (optional; app runs in no-key mode without them): OPENROUTER_API_KEY, GEMINI_API_KEY
+name: pipeline-and-deploy
+
+on:
+  schedule:
+    - cron: '15 */5 * * *'   # every 5 hours (UTC)
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths-ignore: ['public/data/**', 'data-cache/**', 'screenshots/**', '**.md']
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pipeline-and-deploy
+  cancel-in-progress: false
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Run news pipeline
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODELS: 'gemini-3.8-flash,gemini-3.5-flash,gemini-3.5-flash-lite'
+          MAX_LLM_ITEMS: '30'
+          LLM_DELAY_MS: '4000'
+        run: npm run pipeline
+      - name: Commit refreshed data
+        run: |
+          git config user.name "ccp-bot"
+          git config user.email "ccp-bot@users.noreply.github.com"
+          git add public/data data-cache
+          git diff --cached --quiet || git commit -m "data: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+          git pull --rebase -q || true
+          git push
+      - run: npm run build
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: pipeline
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
