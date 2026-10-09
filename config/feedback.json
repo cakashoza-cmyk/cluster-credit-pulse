@@ -1,0 +1,19 @@
+{
+  "_doc": "Field Pulse backend config. adapter: ntfy | apps_script | none. Public key encrypts each response in the browser; private key lives only in .env / repo secret FEEDBACK_PRIVATE_KEY.",
+  "adapter": "ntfy",
+  "ntfy": {
+    "base": "https://ntfy.sh",
+    "topic": "ccp-fp-8e9055e127370580c8"
+  },
+  "apps_script": {
+    "url": ""
+  },
+  "public_key_jwk": {
+    "kty": "EC",
+    "crv": "P-256",
+    "x": "TCKwd6cWdd3DcmWfthHEsxzxxOlTxbP8V5GPi-mG6qg",
+    "y": "QOH9-EegLSn4V4cX9ssgNqiFVYxjjOBNGvUasNZ7bZQ"
+  },
+  "min_responses": 5,
+  "prompt_version": "poll-v1"
+}

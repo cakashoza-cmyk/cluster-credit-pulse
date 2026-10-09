@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState, useCallback } from 'react';
 import { IndustryArt } from './icons.jsx';
+import { Poll, PollSheet, PulseBlock, FieldTag, RoleSetting, flushQueue, isDone, backendReady } from './pulse.jsx';
 
 const LS_KEY = 'ccp.selection.v1';
 const fmtDate = (iso) => new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
@@ -23,10 +24,12 @@ const go = (p) => { window.location.hash = p; };
 function useData() {
   const [state, setState] = useState({ loading: true });
   useEffect(() => {
-    Promise.all(['feed', 'briefs', 'clusters', 'hidden_ids'].map((f) => fetch(`./data/${f}.json`, { cache: 'no-cache' }).then((r) => r.json())))
-      .then(([feed, briefs, clusters, hidden]) => {
+    const opt = (f, d) => fetch(`./data/${f}.json`, { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : d)).catch(() => d);
+    Promise.all([...['feed', 'briefs', 'clusters', 'hidden_ids'].map((f) => fetch(`./data/${f}.json`, { cache: 'no-cache' }).then((r) => r.json())), opt('polls', { polls: {} }), opt('pulse', { cards: {} }), opt('feedback', { adapter: 'none' })])
+      .then(([feed, briefs, clusters, hidden, polls, pulse, fb]) => {
         const hid = new Set(hidden.hidden_ids || []);
-        setState({ loading: false, feed: { ...feed, items: feed.items.filter((i) => !hid.has(i.id)) }, briefs, clusters: clusters.clusters });
+        flushQueue(fb);
+        setState({ loading: false, feed: { ...feed, items: feed.items.filter((i) => !hid.has(i.id)) }, briefs, clusters: clusters.clusters, polls: polls.polls || {}, pulse, fb });
       })
       .catch((e) => setState({ loading: false, error: e.message }));
   }, []);
@@ -45,16 +48,17 @@ export default function App() {
   if (data.error) return <div className="center muted">Could not load data: {data.error}</div>;
 
   const { feed, briefs, clusters } = data;
+  const fp = { polls: data.polls, pulse: data.pulse, cfg: data.fb };
   const allInd = clusters.flatMap((c) => c.industries.map((i) => `${c.id}:${i.id}`));
   const selection = sel || { industries: allInd, skipped: false };
   const firstVisit = !sel;
 
   let page;
   if (firstVisit || route === '/setup') page = <Picker clusters={clusters} selection={selection} onSave={(s) => { saveSel(s); go('/'); }} firstVisit={firstVisit} />;
-  else if (route.startsWith('/item/')) page = <Detail item={feed.items.find((i) => i.id === route.slice(6))} clusters={clusters} />;
-  else if (route.startsWith('/brief/')) page = <Brief brief={briefs[route.slice(7)]} cluster={clusters.find((c) => c.id === route.slice(7))} items={feed.items} />;
+  else if (route.startsWith('/item/')) page = <Detail item={feed.items.find((i) => i.id === route.slice(6))} clusters={clusters} fp={fp} />;
+  else if (route.startsWith('/brief/')) page = <Brief brief={briefs[route.slice(7)]} cluster={clusters.find((c) => c.id === route.slice(7))} items={feed.items} pulse={data.pulse} />;
   else if (route === '/briefs') page = <BriefList briefs={briefs} clusters={clusters} />;
-  else page = <Feed feed={feed} clusters={clusters} selection={selection} />;
+  else page = <Feed feed={feed} clusters={clusters} selection={selection} fp={fp} />;
 
   return (
     <div className="app">
@@ -97,6 +101,7 @@ function Picker({ clusters, selection, onSave, firstVisit }) {
           </div>
         </section>
       ))}
+      {!firstVisit && <RoleSetting />}
       <div className="picker-actions">
         {firstVisit && <button className="ghost" onClick={() => onSave({ industries: all, skipped: true })}>Skip — show everything</button>}
         <button className="primary" disabled={!picked.size} onClick={() => onSave({ industries: [...picked], skipped: false })}>Show my feed</button>
@@ -105,7 +110,8 @@ function Picker({ clusters, selection, onSave, firstVisit }) {
   );
 }
 
-function Feed({ feed, clusters, selection }) {
+function Feed({ feed, clusters, selection, fp }) {
+  const [sheet, setSheet] = useState(null);
   const [cluster, setCluster] = useState('all');
   const [signal, setSignal] = useState('all');
   const sel = new Set(selection.industries);
@@ -126,9 +132,10 @@ function Feed({ feed, clusters, selection }) {
             return <div className="modebar ai">AI credit notes (Gemini) on {ai}/{feed.items.length} cards{ai < feed.items.length ? ' · rest rule-based' : ''} · updated {t} · verify before acting</div>; })()}
       <div className="feed">
         {items.length === 0 && <div className="center muted">No items for this filter.</div>}
-        {items.map((it) => <Card key={it.id} item={it} clusters={clusters} />)}
+        {items.map((it) => <Card key={it.id} item={it} clusters={clusters} fp={fp} onPoll={() => setSheet(it)} />)}
         {items.length > 0 && <div className="feed-end muted">You're up to date · {items.length} cards</div>}
       </div>
+      {sheet && <PollSheet item={sheet} poll={fp.polls[sheet.id]} cfg={fp.cfg} onClose={() => setSheet(null)} />}
     </div>
   );
 }
@@ -145,7 +152,9 @@ function shareUrl(item) {
   return `https://wa.me/?text=${encodeURIComponent(text)}`;
 }
 
-function Card({ item, clusters }) {
+function Card({ item, clusters, fp, onPoll }) {
+  const poll = fp.polls[item.id];
+  const pn = fp.pulse?.cards?.[item.id]?.n || 0;
   const { c, inds, main } = industryMeta(clusters, item);
   const sig = SIGNAL[item.credit_signal];
   return (
@@ -154,6 +163,7 @@ function Card({ item, clusters }) {
         <IndustryArt icon={main.icon} />
         <div className="art-tags"><span className="tag">{c.name}</span>{inds.map((i) => <span key={i.id} className="tag">{i.name}</span>)}</div>
         <span className={`badge ${sig.cls}`}>{sig.label}</span>
+        <FieldTag item={item} pulse={fp.pulse} />
       </div>
       <div className="card-body">
         <div className="etype">{item.event_type}</div>
@@ -168,6 +178,9 @@ function Card({ item, clusters }) {
           {item.also_reported_by?.length > 0 && <span className="also"> · +{item.also_reported_by.length} sources</span>}
           {item.lang !== 'en' && <span className="lang">{item.lang === 'gu' ? 'ગુજરાતી' : 'हिन्दी'}</span>}
         </div>
+        {poll && !poll.no_poll && (isDone(item.id)
+          ? <div className="fp-cta done">✓ You answered · field pulse {pn}/{fp.pulse?.min_responses || 5}</div>
+          : <button className="fp-cta" onClick={onPoll}><span className="dot" />Are you seeing this? Tell us in 10 sec</button>)}
         <div className="actions">
           <button className="primary" onClick={() => go(`/item/${item.id}`)}>Credit note</button>
           <a className="btn wa" href={shareUrl(item)} target="_blank" rel="noopener">WhatsApp</a>
@@ -178,7 +191,8 @@ function Card({ item, clusters }) {
   );
 }
 
-function Detail({ item, clusters }) {
+function Detail({ item, clusters, fp }) {
+  const [, bump] = useState(0);
   useEffect(() => { window.scrollTo(0, 0); }, []);
   if (!item) return <div className="center muted">Card not found (it may have aged out or been hidden). <button className="ghost" onClick={() => go('/')}>Back to feed</button></div>;
   const { c, inds, main } = industryMeta(clusters, item);
@@ -192,6 +206,7 @@ function Detail({ item, clusters }) {
         <IndustryArt icon={main.icon} size={56} />
         <div className="art-tags"><span className="tag">{c.name}</span>{inds.map((i) => <span key={i.id} className="tag">{i.name}</span>)}</div>
         <span className={`badge ${sig.cls}`}>{sig.label}</span>
+        <FieldTag item={item} pulse={fp.pulse} />
       </div>
       <div className="etype">{item.event_type}</div>
       <h1>{item.headline}</h1>
@@ -207,6 +222,14 @@ function Detail({ item, clusters }) {
         <a className="btn primary" href={item.link} target="_blank" rel="noopener noreferrer">Original report ↗</a>
         <a className="btn wa" href={shareUrl(item)} target="_blank" rel="noopener">Share on WhatsApp</a>
       </div>
+
+      {fp.polls[item.id] && !fp.polls[item.id].no_poll && (
+        <section className="sec fp-sec" id="poll">
+          <h3>Are you seeing this on the ground?</h3>
+          <Poll item={item} poll={fp.polls[item.id]} cfg={fp.cfg} onDone={() => bump((x) => x + 1)} />
+        </section>
+      )}
+      <PulseBlock item={item} poll={fp.polls[item.id]} pulse={fp.pulse} cfg={fp.cfg} />
 
       <Section title="What happened">{n.what_happened}</Section>
       <Section title="Confirmed vs alleged vs uncertain">{n.confirmed_vs_alleged}</Section>
@@ -253,7 +276,7 @@ function BriefList({ briefs, clusters }) {
   );
 }
 
-function Brief({ brief, cluster, items }) {
+function Brief({ brief, cluster, items, pulse }) {
   if (!brief || !cluster) return <div className="center muted">No brief.</div>;
   const byId = Object.fromEntries(items.map((i) => [i.id, i]));
   const linkify = (s) => {
@@ -275,6 +298,17 @@ function Brief({ brief, cluster, items }) {
       <List title="Stress signals" xs={brief.stress_signals} cls="stress" />
       <List title="Improvement signals" xs={brief.improvement_signals} cls="improve" />
       <List title="What to watch" xs={brief.what_to_watch} />
+      {brief.field_pulse && (() => { const f = brief.field_pulse; const c = f.counts || {}; return (
+        <section className="sec pulseblock">
+          <h3>Field pulse {f.status === 'insufficient' ? '· insufficient data' : ''}</h3>
+          <p className="small muted">{c.responses || 0} valid responses · {c.cards_with_responses || 0} cards with responses · {c.cards_meeting_threshold || 0} cards at ≥{c.min_responses || 5} · {c.cards_with_polls || 0} polled cards this week</p>
+          {f.status !== 'insufficient' && <>
+            <List title="Field confirms" xs={f.confirms} cls="improve" />
+            <List title="Field contradicts" xs={f.contradicts} cls="stress" />
+          </>}
+          <List title={f.status === 'insufficient' ? 'Status' : 'Still unknown'} xs={f.unknown} />
+          <p className="pulse-label">Crowd field signal — anonymous, self-reported, unverified; not borrower-level evidence.</p>
+        </section>); })()}
       <p className="muted small">Generated {fmtDate(brief.generated_at)}.</p>
     </div>
   );

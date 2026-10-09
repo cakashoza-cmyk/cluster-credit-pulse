@@ -1,12 +1,19 @@
 # Cluster Credit Pulse — scheduled news pipeline + free GitHub Pages deploy.
 # Activates automatically once this repo is pushed to GitHub and Pages source is set to "GitHub Actions".
 # Secrets (optional; app runs in no-key mode without them): OPENROUTER_API_KEY, GEMINI_API_KEY
+# Field Pulse: FEEDBACK_PRIVATE_KEY (decrypts crowd responses), FEEDBACK_EXPORT_TOKEN (only for the Apps Script adapter)
 name: pipeline-and-deploy
 
 on:
   schedule:
-    - cron: '15 */5 * * *'   # every 5 hours (UTC)
-  workflow_dispatch: {}
+    - cron: '15 */5 * * *'   # every 5 hours (UTC): news + polls + field pulse
+    - cron: '45 */2 * * *'   # every 2 hours: Field Pulse harvest only (ntfy relay keeps messages ~12h)
+  workflow_dispatch:
+    inputs:
+      feedback_only:
+        description: 'Only harvest + aggregate Field Pulse (no news fetch)'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths-ignore: ['public/data/**', 'data-cache/**', 'screenshots/**', '**.md']
@@ -24,6 +31,10 @@ jobs:
   pipeline:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    env:
+      FEEDBACK_ONLY: ${{ (github.event.schedule == '45 */2 * * *' || inputs.feedback_only) && '1' || '0' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,27 +46,35 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FEEDBACK_PRIVATE_KEY: ${{ secrets.FEEDBACK_PRIVATE_KEY }}
+          FEEDBACK_EXPORT_TOKEN: ${{ secrets.FEEDBACK_EXPORT_TOKEN }}
+          MAX_POLL_ITEMS: '20'
           GEMINI_MODELS: 'gemini-3.8-flash,gemini-3.5-flash,gemini-3.5-flash-lite'
           MAX_LLM_ITEMS: '30'
           LLM_DELAY_MS: '4000'
         run: npm run pipeline
       - name: Commit refreshed data
+        id: commit
         run: |
           git config user.name "ccp-bot"
           git config user.email "ccp-bot@users.noreply.github.com"
           git add public/data data-cache
-          git diff --cached --quiet || git commit -m "data: refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+          if git diff --cached --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; else
+            git commit -m "data: ${{ env.FEEDBACK_ONLY == '1' && 'field pulse' || 'refresh' }} $(date -u +%Y-%m-%dT%H:%MZ)"; echo "changed=true" >> "$GITHUB_OUTPUT"; fi
           git pull --rebase -q || true
           git push
       - run: npm run build
+        if: env.FEEDBACK_ONLY != '1' || steps.commit.outputs.changed == 'true'
         env:
           VITE_BASE: /${{ github.event.repository.name }}/
       - uses: actions/upload-pages-artifact@v3
+        if: env.FEEDBACK_ONLY != '1' || steps.commit.outputs.changed == 'true'
         with:
           path: dist
 
   deploy:
     needs: pipeline
+    if: needs.pipeline.outputs.changed == 'true' || (github.event.schedule != '45 */2 * * *' && !inputs.feedback_only)
     runs-on: ubuntu-latest
     environment:
       name: github-pages

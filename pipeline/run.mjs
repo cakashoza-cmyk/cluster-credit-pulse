@@ -9,7 +9,9 @@ import { fetchFeed, googleNewsUrl } from './lib/rss.mjs';
 import { dedupe, normTokens, similarity } from './lib/dedup.mjs';
 import { anyKw, heuristicCard, classify, EVENT_TYPES } from './lib/heuristic.mjs';
 import { llmMode, completeJson, usage, rateLimits } from './lib/llm.mjs';
-import { CARD_SYSTEM, cardPrompt, BRIEF_SYSTEM, briefPrompt } from './lib/prompts.mjs';
+import { CARD_SYSTEM, cardPrompt, BRIEF_SYSTEM, briefPrompt, PULSE_SYSTEM, pulsePrompt } from './lib/prompts.mjs';
+import { POLL_SYSTEM, pollPrompt, sanitizePoll, finalizePoll, POLL_PROMPT_VERSION, ROLES } from './lib/polls.mjs';
+import { harvest, aggregate } from './lib/feedback.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const P = (...a) => path.join(ROOT, ...a);
@@ -26,6 +28,9 @@ const MAX_AGE = (config.settings?.max_age_days ?? 30) * 864e5;
 const BRIEF_WINDOW = (config.settings?.brief_window_days ?? 7) * 864e5;
 const MAX_LLM = Number(process.env.MAX_LLM_ITEMS || 40);
 const mode = llmMode();
+const FEEDBACK_ONLY = process.env.FEEDBACK_ONLY === '1';
+const MAX_POLLS = Number(process.env.MAX_POLL_ITEMS || 20);
+const fbCfg = readJson(P('config/feedback.json'), { adapter: 'none' });
 const now = Date.now();
 const clusterById = Object.fromEntries(config.clusters.map((c) => [c.id, c]));
 const stats = { feeds_ok: 0, feeds_failed: [], raw_items: 0, after_filter: 0, after_dedupe: 0, llm_calls: 0, llm_failures: 0, cache_hits: 0 };
@@ -151,8 +156,81 @@ async function buildBrief(cluster, cards) {
   return heuristicBrief(cluster, cards);
 }
 
+async function buildPolls(items) {
+  const prio = { negative: 0, watch: 1, positive: 2 };
+  const order = [...items].sort((a, b) => prio[a.credit_signal] - prio[b.credit_signal] || new Date(b.published) - new Date(a.published));
+  let left = MAX_POLLS, made = 0, failed = 0;
+  const polls = {};
+  for (const it of order) {
+    const key = `poll:${POLL_PROMPT_VERSION}:${it.id}`;
+    if (!cache[key] && mode !== 'none' && it.mode === 'ai' && left > 0) {
+      left--;
+      try {
+        stats.llm_calls++;
+        const { json, model } = await completeJson(POLL_SYSTEM, pollPrompt(it, clusterById[it.cluster]));
+        cache[key] = { poll: sanitizePoll(json, it), model, at: new Date().toISOString() };
+        made++;
+        if (made % 10 === 0) writeJson(P('data-cache/llm-cache.json'), cache);
+      } catch (e) { failed++; stats.llm_failures++; log('Poll LLM failed:', e.message.slice(0, 160)); }
+    }
+    if (cache[key]) polls[it.id] = { ...finalizePoll(structuredClone(cache[key].poll)), model: cache[key].model, prompt_version: POLL_PROMPT_VERSION };
+  }
+  const withPoll = Object.values(polls).filter((p) => !p.no_poll).length;
+  log(`polls: ${made} new, ${failed} failed, ${withPoll} live / ${Object.keys(polls).length - withPoll} no_poll / ${items.length} cards`);
+  const out = { generated_at: new Date().toISOString(), prompt_version: POLL_PROMPT_VERSION, roles: ROLES, coverage: { cards: items.length, with_poll: withPoll, no_poll: Object.keys(polls).length - withPoll, pending: items.length - Object.keys(polls).length }, polls };
+  writeJson(P('public/data/polls.json'), out);
+  return out;
+}
+
+async function fieldPulse(items, briefs, polls) {
+  const minN = fbCfg.min_responses || 5;
+  const { inbox, added, error } = await harvest(fbCfg, P('data-cache/feedback/inbox.jsonl'), log);
+  if (FEEDBACK_ONLY && !added && !process.env.FORCE_AGGREGATE) { log('field pulse: no new responses, nothing to write'); return; }
+  let agg;
+  try { agg = await aggregate({ inbox, polls, feedItems: items, minN }); }
+  catch (e) { log('aggregate failed:', e.message); agg = { pulse: {}, stats: { error: e.message } }; }
+  const { pulse, stats: fstats } = agg;
+  log(`field pulse: inbox ${inbox.length} (+${added}), ${JSON.stringify(fstats)}`);
+  for (const c of config.clusters) {
+    const b = briefs[c.id]; if (!b) continue;
+    const cards = items.filter((i) => i.cluster === c.id && now - new Date(i.published) <= BRIEF_WINDOW);
+    const rows = cards.map((i) => ({ card: i, p: pulse[i.id] })).filter((x) => x.p && x.p.n > 0);
+    const responses = rows.reduce((s, x) => s + x.p.n, 0);
+    const ready = rows.filter((x) => x.p.n >= minN);
+    const fp = { counts: { responses, cards_with_responses: rows.length, cards_meeting_threshold: ready.length, cards_with_polls: cards.filter((i) => polls.polls[i.id] && !polls.polls[i.id].no_poll).length, min_responses: minN }, confirms: [], contradicts: [], unknown: [] };
+    if (!ready.length) {
+      fp.status = 'insufficient';
+      fp.unknown = [responses ? `Only ${responses} field response(s) across ${rows.length} card(s); no card has reached ${minN} responses, so nothing is confirmed or contradicted yet.` : `No field responses yet on this week's ${fp.counts.cards_with_polls} polled cards.`];
+    } else {
+      const payload = ready.map(({ card, p }) => ({ id: card.id, headline: card.headline, news_signal: card.credit_signal, n: p.n, field_signal: p.field_signal, index: p.index, roles: Object.fromEntries(Object.entries(p.roles).map(([k, R]) => [R.label, { n: R.n, pct_confirm: R.pct_confirm, pct_contradict: R.pct_contradict, accuracy: R.accuracy }])), divergences: p.divergences }));
+      const key = 'pulse:' + sha(c.id + JSON.stringify(payload));
+      try {
+        if (!cache[key] && mode !== 'none') { stats.llm_calls++; const { json, model } = await completeJson(PULSE_SYSTEM, pulsePrompt(c, payload, rows.length - ready.length)); cache[key] = { fp: json, model }; }
+        if (!cache[key]) throw new Error('no LLM');
+        const arr = (x) => (Array.isArray(x) ? x.map(String).slice(0, 5) : []);
+        Object.assign(fp, { status: 'ai', model: cache[key].model, confirms: arr(cache[key].fp.confirms), contradicts: arr(cache[key].fp.contradicts), unknown: arr(cache[key].fp.unknown) });
+      } catch (e) {
+        fp.status = 'heuristic';
+        for (const { card, p } of ready) (p.field_signal === 'confirms' ? fp.confirms : p.field_signal === 'contradicts' ? fp.contradicts : fp.unknown).push(`${card.headline}: ${p.n} responses, field index ${p.index} [${card.id}]`);
+      }
+    }
+    b.field_pulse = fp;
+  }
+  writeJson(P('public/data/pulse.json'), { generated_at: new Date().toISOString(), adapter: fbCfg.adapter, min_responses: minN, label: 'Crowd field signal — anonymous, self-reported, unverified; not borrower-level evidence.', stats: fstats, harvest_error: error || null, cards: pulse });
+  writeJson(P('public/data/briefs.json'), briefs);
+  const { public_key_jwk, adapter, ntfy, apps_script, min_responses } = fbCfg;
+  writeJson(P('public/data/feedback.json'), { adapter, ntfy, apps_script: { url: apps_script?.url || '' }, public_key_jwk, min_responses });
+}
+
 async function main() {
-  log(`LLM mode: ${mode}`);
+  log(`LLM mode: ${mode}${FEEDBACK_ONLY ? ' (feedback-only run)' : ''}`);
+  if (FEEDBACK_ONLY) {
+    const items = prevFeed.items || [];
+    const polls = readJson(P('public/data/polls.json'), { polls: {} });
+    await fieldPulse(items, readJson(P('public/data/briefs.json'), {}), polls);
+    writeJson(P('data-cache/llm-cache.json'), cache);
+    return;
+  }
   const fresh = await collect();
   stats.after_filter = fresh.length;
   // Carry forward previously seen raw items (still inside the age window) so history persists between runs.
@@ -194,7 +272,9 @@ async function main() {
   stats.model_usage = usage; stats.rate_limits = rateLimits;
   const meta = { generated_at: new Date().toISOString(), llm_mode: effective, llm_configured: mode, counts: per, total: items.length, stats };
   writeJson(P('public/data/feed.json'), { generated_at: meta.generated_at, llm_mode: effective, items });
-  writeJson(P('public/data/briefs.json'), briefs);
+  const polls = await buildPolls(items);
+  meta.polls = polls.coverage;
+  await fieldPulse(items, briefs, polls);
   writeJson(P('public/data/meta.json'), meta);
   writeJson(P('public/data/clusters.json'), { clusters: config.clusters.map(({ queries, aliases, ...c }) => ({ ...c, industries: c.industries.map(({ keywords, ...i }) => i) })) });
   writeJson(P('public/data/hidden_ids.json'), { hidden_ids: [...hidden] });

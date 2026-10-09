@@ -67,3 +67,18 @@ Return JSON:
   "what_to_watch": ["2-4 bullets: next data points/events and account-level indicators"]
 }`;
 }
+
+export const PULSE_SYSTEM = `You are a senior MSME credit officer summarising CROWD FIELD RESPONSES (anonymous, self-reported, unverified) about news cards for a weekly cluster brief. Use ONLY the supplied counts and percentages. Always cite counts (n) and card ids in brackets. Never treat the crowd as borrower-level evidence. Be terse. Return ONLY JSON.`;
+
+export function pulsePrompt(cluster, cards, belowThreshold) {
+  return `Cluster: ${cluster.name}. Cards with >= 5 valid field responses (role-weighted field index: +1 all confirm the news, -1 all contradict):
+${JSON.stringify(cards, null, 1)}
+Cards with responses but still below 5: ${belowThreshold}
+
+Return JSON:
+{
+  "confirms": ["0-3 bullets: what the field confirms, with n and roles, cite [card id]"],
+  "contradicts": ["0-3 bullets: what the field contradicts or says is overstated, incl. role divergences, cite [card id]"],
+  "unknown": ["1-3 bullets: what is still unknown / thin evidence"]
+}`;
+}
