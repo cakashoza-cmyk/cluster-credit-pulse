@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T11:56:58.000Z",
+  "generated_at": "2026-10-09T18:49:23.787Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 77,
-    "with_poll": 75,
+    "cards": 78,
+    "with_poll": 76,
     "no_poll": 2,
     "pending": 0
   },
@@ -7155,6 +7155,264 @@
                   "સરખું",
                   "વધુ",
                   "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "42bc4e18e52d": {
+      "no_poll": false,
+      "hypothesis": "The fire at the Pipodara GIDC unit has caused immediate supply chain disruptions, affecting yarn delivery schedules and prompting inventory checks among neighboring weavers.",
+      "event_phrase": "massive fire at Pipodara textile and yarn unit",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Weaving unit owner (Pipodara)",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported massive fire at Pipodara textile and yarn unit accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "Have yarn deliveries from suppliers in Pipodara been disrupted this week?",
+              "options": [
+                "Yes, delayed",
+                "No impact",
+                "Not applicable"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Yes, delayed"
+              ],
+              "contradicts": [
+                "No impact"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has yarn availability from this industrial pocket changed following the incident?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn supplier / texturiser",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported massive fire at Pipodara textile and yarn unit accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "choice",
+              "text": "Have neighboring weavers rushed for emergency stock replenishment after the fire?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Branch manager (GIDC)",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported massive fire at Pipodara textile and yarn unit accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have borrowers requested ad-hoc credit limits for stock shifting or repairs?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વીવિંગ યુનિટ માલિક (પિપોદરા)",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ પિપોદરા ટેક્સટાઈલ અને યાર્ન યુનિટમાં ભીષણ આગ લાગ્યાનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "આ અઠવાડિયે પિપોદરાના સપ્લાયર્સ તરફથી યાર્નનો પુરવઠો અટક્યો છે?",
+                "options": [
+                  "હા, વિલંબ થયો",
+                  "કોઈ અસર નથી",
+                  "લાગુ પડતું નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "આ ઘટના પછી આ industrial ઔદ્યોગિક વિસ્તારમાંથી યાર્નની ઉપલબ્ધતા કેવી બદલાઈ છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સપ્લાયર / ટેક્શ્ચરર",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ પિપોદરા ટેક્સટાઈલ અને યાર્ન યુનિટમાં ભીષણ આગ લાગ્યાનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "શું આગની ઘટના બાદ આસપાસના વીવર્સે તાત્કાલિક સ્ટોક મંગાવ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોવા મળ્યું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "બ્રાન્ચ મેનેજર (GIDC)",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ પિપોદરા ટેક્સટાઈલ અને યાર્ન યુનિટમાં ભીષણ આગ લાગ્યાનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું બોરોવર્સે સ્ટોક ખસેડવા અથવા રિપેરિંગ માટે એડ-હોક લિમિટની માંગણી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોવા મળ્યું નથી"
                 ]
               }
             }
