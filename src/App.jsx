@@ -257,8 +257,10 @@ function Brief({ brief, cluster, items }) {
   if (!brief || !cluster) return <div className="center muted">No brief.</div>;
   const byId = Object.fromEntries(items.map((i) => [i.id, i]));
   const linkify = (s) => {
-    const parts = String(s).split(/\[([0-9a-f]{12})\]/g);
-    return parts.map((p, i) => (i % 2 && byId[p] ? <a key={i} className="ref" href={`#/item/${p}`}>card</a> : p));
+    const parts = String(s).split(/\[([0-9a-f]{12}(?:\s*,\s*[0-9a-f]{12})*)\]/g);
+    return parts.map((p, i) => (i % 2
+      ? p.split(/\s*,\s*/).map((id, k) => (byId[id] ? <a key={`${i}-${k}`} className="ref" href={`#/item/${id}`}>card</a> : null))
+      : p));
   };
   const List = ({ title, xs, cls }) => (
     <section className={`sec ${cls || ''}`}><h3>{title}</h3>{xs?.length ? <ul>{xs.map((x, i) => <li key={i}>{linkify(x)}</li>)}</ul> : <p className="muted">None this week.</p>}</section>
