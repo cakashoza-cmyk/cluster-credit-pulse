@@ -1,0 +1,35 @@
+// After-fix screenshots at 390x844: feed, a merged card's detail ("Also reported by"), and the poll section.
+// Usage: node scripts/fix-screenshots.mjs [baseUrl] [prefix]
+import { chromium } from 'playwright-core';
+import fs from 'node:fs';
+const BASE = process.argv[2] || 'http://localhost:4173/cluster-credit-pulse/';
+const PREFIX = process.argv[3] || 'fix-after-';
+const OUT = new URL('../screenshots/', import.meta.url).pathname;
+const exe = process.env.CHROME_PATH || ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find((p) => fs.existsSync(p));
+const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
+const ctx = await browser.newContext({ viewport: { width: Number(process.env.W || 390), height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+const page = await ctx.newPage();
+await page.addInitScript(() => { localStorage.setItem('ccp.fp.test', 'true'); localStorage.setItem('ccp.fp.role', JSON.stringify('banker')); });
+const shot = async (name, full) => { await page.waitForTimeout(700); const f = `${OUT}${PREFIX}${name}.png`; await page.screenshot({ path: f, fullPage: !!full }); console.log('saved', f); };
+await page.goto(BASE + '?v=' + Date.now(), { waitUntil: 'networkidle' });
+const skip = page.getByText('Skip — show everything'); if (await skip.count()) await skip.click();
+await shot('feed');
+const feed = await page.evaluate(async () => (await (await fetch('./data/feed.json', { cache: 'no-cache' })).json()));
+const polls = await page.evaluate(async () => (await (await fetch('./data/polls.json', { cache: 'no-cache' })).json()).polls);
+const merged = feed.items.filter((i) => i.merged_ids?.length).sort((a, b) => b.merged_ids.length - a.merged_ids.length)[0];
+console.log('merged card', merged?.id, merged?.headline, merged?.also_reported_by);
+await page.goto(`${BASE}#/item/${merged.id}`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(400);
+await page.evaluate(() => { const d = document.getElementById('also'); d.open = true; d.scrollIntoView({ block: 'start' }); window.scrollBy(0, -60); });
+await shot('merged-detail');
+await page.goto(`${BASE}#/item/${merged.id}`, { waitUntil: 'networkidle' });
+await page.evaluate(() => window.scrollTo(0, 0)); await shot('merged-detail-top');
+const pid = (polls[merged.id] && !polls[merged.id].no_poll) ? merged.id : feed.items.find((i) => polls[i.id] && !polls[i.id].no_poll).id;
+await page.goto(`${BASE}#/`, { waitUntil: 'networkidle' });
+await page.goto(`${BASE}#/item/${pid}?poll`, { waitUntil: 'networkidle' });
+await page.waitForTimeout(800);
+await page.evaluate(() => { const d = document.getElementById('poll'); d.open = true; d.scrollIntoView({ block: 'start' }); window.scrollBy(0, -56); });
+await shot('poll');
+await page.goto(BASE, { waitUntil: 'networkidle' });
+await page.locator('.filterbtn').click(); await shot('filter-sheet');
+await browser.close();

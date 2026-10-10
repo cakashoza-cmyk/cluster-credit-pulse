@@ -3,7 +3,9 @@ import { IndustryArt } from './icons.jsx';
 import { Poll, PollSheet, PulseBlock, FieldTag, RoleSetting, flushQueue, isDone, backendReady } from './pulse.jsx';
 
 const LS_KEY = 'ccp.selection.v1';
+const FILTER_KEY = 'ccp.filter.v1';
 const fmtDate = (iso) => new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+const fmtShort = (iso) => new Date(iso).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
 const ago = (iso) => {
   const h = Math.round((Date.now() - new Date(iso)) / 36e5);
   if (h < 1) return 'just now';
@@ -13,6 +15,17 @@ const ago = (iso) => {
 };
 const SIGNAL = { negative: { label: 'Negative', cls: 'neg' }, watch: { label: 'Watch', cls: 'watch' }, positive: { label: 'Positive', cls: 'pos' } };
 const EFFECT_LABELS = { volumes: 'Volumes', realisations: 'Realisations', input_costs: 'Input costs', margins: 'Margins', receivable_days: 'Receivable days', inventory: 'Inventory', creditors: 'Creditors', working_capital: 'Working capital', dscr: 'DSCR' };
+
+// Card text: drop the model's "the snippet does not state…" caveat sentences, keep 1–2 substantive ones.
+const CAVEAT = /(snippet|input|provides? no|contains? no|gives? no|not (?:stated|provided|specified|mentioned|disclosed)|no (?:further|additional|other|specific)|does not|do not|did not|remains? (?:unclear|unverified))/i;
+export function cardText(item) {
+  if (item.mode !== 'ai') return item.why_it_matters || '';
+  const sents = String(item.summary || '').split(/(?<=[.!?])\s+/).filter((x) => x && !CAVEAT.test(x))
+    .map((x) => x.replace(/^According to [^,]{2,70}?(?: on [^,]{3,25}(?:, \d{4})?)?, /i, '').replace(/^(?:The )?[A-Z][\w.&' -]{1,40}? (?:reports?|reported|states?|stated)(?: on [^,]{3,25}(?:, \d{4})?)?,? that /, '').replace(/^\w/, (c) => c.toUpperCase()));
+  let t = sents.slice(0, 2).join(' ');
+  if (t.length < 110 && item.why_it_matters) t = `${t} ${item.why_it_matters}`.trim();
+  return t || item.why_it_matters || item.summary;
+}
 
 function useHashRoute() {
   const [hash, setHash] = useState(window.location.hash || '#/');
@@ -29,7 +42,7 @@ function useData() {
       .then(([feed, briefs, clusters, hidden, polls, pulse, fb]) => {
         const hid = new Set(hidden.hidden_ids || []);
         flushQueue(fb);
-        setState({ loading: false, feed: { ...feed, items: feed.items.filter((i) => !hid.has(i.id)) }, briefs, clusters: clusters.clusters, polls: polls.polls || {}, pulse, fb });
+        setState({ loading: false, feed: { ...feed, aliases: feed.aliases || {}, items: feed.items.filter((i) => !hid.has(i.id)) }, briefs, clusters: clusters.clusters, polls: polls.polls || {}, pulse, fb });
       })
       .catch((e) => setState({ loading: false, error: e.message }));
   }, []);
@@ -37,11 +50,15 @@ function useData() {
 }
 
 function loadSelection() { try { return JSON.parse(localStorage.getItem(LS_KEY)); } catch { return null; } }
+function loadFilter() { try { return { cluster: 'all', signal: 'all', ...JSON.parse(sessionStorage.getItem(FILTER_KEY)) }; } catch { return { cluster: 'all', signal: 'all' }; } }
 
 export default function App() {
   const route = useHashRoute();
   const data = useData();
   const [sel, setSel] = useState(loadSelection);
+  const [filter, setFilterState] = useState(loadFilter);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const setFilter = (f) => { sessionStorage.setItem(FILTER_KEY, JSON.stringify(f)); setFilterState(f); };
   const saveSel = useCallback((s) => { localStorage.setItem(LS_KEY, JSON.stringify(s)); setSel(s); }, []);
 
   if (data.loading) return <div className="center muted">Loading cluster news…</div>;
@@ -52,21 +69,29 @@ export default function App() {
   const allInd = clusters.flatMap((c) => c.industries.map((i) => `${c.id}:${i.id}`));
   const selection = sel || { industries: allInd, skipped: false };
   const firstVisit = !sel;
+  const onFeed = !(firstVisit || route === '/setup') && !route.startsWith('/item/') && !route.startsWith('/brief');
+  const followed = clusters.filter((c) => c.industries.some((i) => selection.industries.includes(`${c.id}:${i.id}`)));
 
   let page;
   if (firstVisit || route === '/setup') page = <Picker clusters={clusters} selection={selection} onSave={(s) => { saveSel(s); go('/'); }} firstVisit={firstVisit} />;
-  else if (route.startsWith('/item/')) page = <Detail item={feed.items.find((i) => i.id === route.slice(6))} clusters={clusters} fp={fp} />;
+  else if (route.startsWith('/item/')) {
+    const [rid, q] = route.slice(6).split('?');
+    const id = feed.items.some((i) => i.id === rid) ? rid : feed.aliases[rid];
+    page = <Detail key={`${id || rid}${q || ""}`} item={feed.items.find((i) => i.id === id)} clusters={clusters} fp={fp} feed={feed} openPoll={q === 'poll'} />;
+  }
   else if (route.startsWith('/brief/')) page = <Brief brief={briefs[route.slice(7)]} cluster={clusters.find((c) => c.id === route.slice(7))} items={feed.items} pulse={data.pulse} />;
   else if (route === '/briefs') page = <BriefList briefs={briefs} clusters={clusters} />;
-  else page = <Feed feed={feed} clusters={clusters} selection={selection} fp={fp} />;
+  else page = <Feed feed={feed} clusters={clusters} selection={selection} fp={fp} filter={filter} />;
 
+  const fLabel = [filter.cluster === 'all' ? 'All clusters' : clusters.find((c) => c.id === filter.cluster)?.name, filter.signal === 'all' ? null : SIGNAL[filter.signal].label].filter(Boolean).join(' · ');
   return (
     <div className="app">
       <header className="topbar">
-        <div className="brand" onClick={() => go('/')}><span className="pulse" />Cluster Credit Pulse</div>
-        <div className="updated">Updated {ago(feed.generated_at)}</div>
+        <div className="brand" onClick={() => go('/')}><span className="dotmark" />Cluster Credit Pulse</div>
+        {onFeed && <button className={`filterbtn ${filter.cluster !== 'all' || filter.signal !== 'all' ? 'active' : ''}`} onClick={() => setFilterOpen(true)} aria-label="Filter feed">{fLabel}<span className="caret">▾</span></button>}
       </header>
       <main className="main">{page}</main>
+      {filterOpen && <FilterSheet clusters={followed} filter={filter} onChange={setFilter} onClose={() => setFilterOpen(false)} />}
       {!(firstVisit || route === '/setup') && (
         <nav className="bottomnav">
           <button className={route === '/' ? 'on' : ''} onClick={() => go('/')}>Feed</button>
@@ -74,6 +99,28 @@ export default function App() {
           <button onClick={() => go('/setup')}>My clusters</button>
         </nav>
       )}
+    </div>
+  );
+}
+
+function FilterSheet({ clusters, filter, onChange, onClose }) {
+  useEffect(() => { const f = (e) => e.key === 'Escape' && onClose(); window.addEventListener('keydown', f); return () => window.removeEventListener('keydown', f); }, []);
+  const Seg = ({ value, options, onPick }) => (
+    <div className="seg" role="radiogroup">{options.map(([k, label]) => <button key={k} role="radio" aria-checked={value === k} className={`${value === k ? 'on' : ''} ${k}`} onClick={() => onPick(k)}>{label}</button>)}</div>
+  );
+  return (
+    <div className="sheet-bg" onClick={onClose}>
+      <div className="sheet filter-sheet" onClick={(e) => e.stopPropagation()}>
+        <div className="sheet-top"><h2>Filter</h2><button className="x" onClick={onClose} aria-label="Close">✕</button></div>
+        <div className="flabel">Cluster</div>
+        <Seg value={filter.cluster} options={[['all', 'All'], ...clusters.map((c) => [c.id, c.name])]} onPick={(k) => onChange({ ...filter, cluster: k })} />
+        <div className="flabel">Credit signal</div>
+        <Seg value={filter.signal} options={[['all', 'All'], ['negative', 'Negative'], ['watch', 'Watch'], ['positive', 'Positive']]} onPick={(k) => onChange({ ...filter, signal: k })} />
+        <div className="sheet-actions">
+          <button className="btn" onClick={() => onChange({ cluster: 'all', signal: 'all' })}>Reset</button>
+          <button className="primary" onClick={onClose}>Show cards</button>
+        </div>
+      </div>
     </div>
   );
 }
@@ -110,30 +157,24 @@ function Picker({ clusters, selection, onSave, firstVisit }) {
   );
 }
 
-function Feed({ feed, clusters, selection, fp }) {
+function Feed({ feed, clusters, selection, fp, filter }) {
   const [sheet, setSheet] = useState(null);
-  const [cluster, setCluster] = useState('all');
-  const [signal, setSignal] = useState('all');
   const sel = new Set(selection.industries);
   const items = useMemo(() => feed.items.filter((i) =>
     i.industries.some((ind) => sel.has(`${i.cluster}:${ind}`)) &&
-    (cluster === 'all' || i.cluster === cluster) && (signal === 'all' || i.credit_signal === signal)), [feed, cluster, signal, selection]);
-  const followed = clusters.filter((c) => c.industries.some((i) => sel.has(`${c.id}:${i.id}`)));
+    (filter.cluster === 'all' || i.cluster === filter.cluster) && (filter.signal === 'all' || i.credit_signal === filter.signal)), [feed, filter, selection]);
+  const ai = feed.items.filter((i) => i.mode === 'ai').length;
   return (
     <div className="feed-wrap">
-      <div className="chips">
-        {[{ id: 'all', name: 'All clusters' }, ...followed].map((c) => <button key={c.id} className={`chip ${cluster === c.id ? 'on' : ''}`} onClick={() => setCluster(c.id)}>{c.name}</button>)}
-        <span className="sep" />
-        {['all', 'negative', 'watch', 'positive'].map((s) => <button key={s} className={`chip sig-${s} ${signal === s ? 'on' : ''}`} onClick={() => setSignal(s)}>{s === 'all' ? 'All signals' : SIGNAL[s].label}</button>)}
-      </div>
-      {feed.llm_mode === 'none'
-        ? <div className="modebar">No-key mode: tags and notes are rule-based, not AI. Add a free API key to switch on AI summaries.</div>
-        : (() => { const ai = feed.items.filter((i) => i.mode === 'ai').length; const t = feed.generated_at ? new Date(feed.generated_at).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '';
-            return <div className="modebar ai">AI credit notes (Gemini) on {ai}/{feed.items.length} cards{ai < feed.items.length ? ' · rest rule-based' : ''} · updated {t} · verify before acting</div>; })()}
       <div className="feed">
-        {items.length === 0 && <div className="center muted">No items for this filter.</div>}
+        {items.length === 0 && <div className="center muted">No cards for this filter.</div>}
         {items.map((it) => <Card key={it.id} item={it} clusters={clusters} fp={fp} onPoll={() => setSheet(it)} />)}
-        {items.length > 0 && <div className="feed-end muted">You're up to date · {items.length} cards</div>}
+        {items.length > 0 && (
+          <div className="feed-end">
+            <p>You're up to date · {items.length} cards</p>
+            <p className="footnote">Updated {ago(feed.generated_at)} · {feed.llm_mode === 'none' ? 'rule-based notes (no AI key)' : `AI notes on ${ai}/${feed.items.length} cards`} · verify before acting</p>
+          </div>
+        )}
       </div>
       {sheet && <PollSheet item={sheet} poll={fp.polls[sheet.id]} cfg={fp.cfg} onClose={() => setSheet(null)} />}
     </div>
@@ -146,111 +187,157 @@ function industryMeta(clusters, item) {
   return { c, inds, main: inds[0] || c?.industries[0] };
 }
 
-function shareUrl(item) {
+function shareText(item) {
   const app = `${window.location.origin}${window.location.pathname}#/item/${item.id}`;
-  const text = `${item.headline}\n\nCredit view (${SIGNAL[item.credit_signal].label}): ${item.why_it_matters}\n\nSource: ${item.link}\nVia Cluster Credit Pulse: ${app}`;
-  return `https://wa.me/?text=${encodeURIComponent(text)}`;
+  return { title: item.headline, text: `${item.headline}\n\nCredit view (${SIGNAL[item.credit_signal].label}): ${item.why_it_matters}\n\nSource: ${item.link}`, url: app };
 }
+function shareUrl(item) {
+  const s = shareText(item);
+  return `https://wa.me/?text=${encodeURIComponent(`${s.text}\nVia Cluster Credit Pulse: ${s.url}`)}`;
+}
+async function share(item) {
+  const s = shareText(item);
+  if (navigator.share) { try { await navigator.share(s); return; } catch (e) { if (e?.name === 'AbortError') return; } }
+  window.open(shareUrl(item), '_blank', 'noopener');
+}
+
+const Pill = ({ signal }) => <span className={`pill ${SIGNAL[signal].cls}`}>{SIGNAL[signal].label}</span>;
 
 function Card({ item, clusters, fp, onPoll }) {
   const poll = fp.polls[item.id];
-  const pn = fp.pulse?.cards?.[item.id]?.n || 0;
-  const { c, inds, main } = industryMeta(clusters, item);
-  const sig = SIGNAL[item.credit_signal];
+  const { c, main } = industryMeta(clusters, item);
+  const n = item.also_reported_by?.length || 0;
+  const updated = item.latest_at && new Date(item.latest_at) - new Date(item.published) > 864e5;
+  const open = () => go(`/item/${item.id}`);
   return (
     <article className="card">
-      <div className="art" style={{ '--c1': main.colors[0], '--c2': main.colors[1] }} onClick={() => go(`/item/${item.id}`)}>
-        <IndustryArt icon={main.icon} />
-        <div className="art-tags"><span className="tag">{c.name}</span>{inds.map((i) => <span key={i.id} className="tag">{i.name}</span>)}</div>
-        <span className={`badge ${sig.cls}`}>{sig.label}</span>
-        <FieldTag item={item} pulse={fp.pulse} />
+      <div className="art" style={{ '--c1': main.colors[0], '--c2': main.colors[1] }} onClick={open} aria-hidden="true">
+        <IndustryArt icon={main.icon} size={64} />
       </div>
       <div className="card-body">
-        <div className="etype">{item.event_type}</div>
-        <h2 onClick={() => go(`/item/${item.id}`)}>{item.headline}</h2>
-        {item.mode === 'ai' && <p className="summary">{item.summary}</p>}
-        <div className="why"><span>Why it matters</span>{item.why_it_matters}</div>
-        {item.credit_note?.what_to_check?.length > 0 && (
-          <div className="checks"><span>Check first</span><ul>{item.credit_note.what_to_check.slice(0, 2).map((x, i) => <li key={i}>{x}</li>)}</ul></div>
-        )}
+        <Pill signal={item.credit_signal} />
+        <h2 onClick={open}>{item.headline}</h2>
+        <p className="summary">{cardText(item)}</p>
+        <div className="card-foot">
         <div className="meta">
-          <span>{item.source}</span> · <span>{fmtDate(item.published)}</span>
-          {item.also_reported_by?.length > 0 && <span className="also"> · +{item.also_reported_by.length} sources</span>}
-          {item.lang !== 'en' && <span className="lang">{item.lang === 'gu' ? 'ગુજરાતી' : 'हिन्दी'}</span>}
+          {item.source} · {fmtShort(updated ? item.latest_at : item.published)}{updated ? ' (updated)' : ''} · {c.name}
+          {n > 0 && <span className="also"> · +{n} source{n > 1 ? 's' : ''}</span>}
         </div>
         {poll && !poll.no_poll && (isDone(item.id)
-          ? <div className="fp-cta done">✓ You answered · field pulse {pn}/{fp.pulse?.min_responses || 5}</div>
-          : <button className="fp-cta" onClick={onPoll}><span className="dot" />Are you seeing this? Tell us in 10 sec</button>)}
+          ? <div className="polllink done">✓ You answered — thanks</div>
+          : <button className="polllink" onClick={onPoll}>Are you seeing this? Answer in 10 sec →</button>)}
         <div className="actions">
-          <button className="primary" onClick={() => go(`/item/${item.id}`)}>Credit note</button>
-          <a className="btn wa" href={shareUrl(item)} target="_blank" rel="noopener">WhatsApp</a>
-          <a className="btn" href={item.link} target="_blank" rel="noopener noreferrer">Source ↗</a>
+          <button className="primary" onClick={open}>Read analysis</button>
+          <button className="btn" onClick={() => share(item)}>Share</button>
+        </div>
         </div>
       </div>
     </article>
   );
 }
 
-function Detail({ item, clusters, fp }) {
+function Acc({ title, meta, open, id, children }) {
+  return (
+    <details className="acc" open={open} id={id}>
+      <summary><span>{title}</span>{meta != null && <span className="acc-meta">{meta}</span>}</summary>
+      <div className="acc-body">{children}</div>
+    </details>
+  );
+}
+
+function Detail({ item, clusters, fp, openPoll }) {
   const [, bump] = useState(0);
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+  useEffect(() => {
+    if (openPoll) setTimeout(() => document.getElementById('poll')?.scrollIntoView({ block: 'start' }), 80);
+    else window.scrollTo(0, 0);
+  }, []);
   if (!item) return <div className="center muted">Card not found (it may have aged out or been hidden). <button className="ghost" onClick={() => go('/')}>Back to feed</button></div>;
-  const { c, inds, main } = industryMeta(clusters, item);
+  const { c, inds } = industryMeta(clusters, item);
   const n = item.credit_note || {};
-  const sig = SIGNAL[item.credit_signal];
   const fx = n.financial_effects || {};
+  const poll = fp.polls[item.id];
+  const pulseN = fp.pulse?.cards?.[item.id]?.n || 0;
+  const cov = item.coverage || (item.also_reported_by || []).map((s) => ({ source: s }));
+  const sources = item.also_reported_by || [];
+  const day = (iso) => (iso ? Math.floor(new Date(iso) / 864e5) : null);
   return (
     <div className="detail">
-      <button className="back" onClick={() => history.length > 1 ? history.back() : go('/')}>← Back</button>
-      <div className="art small" style={{ '--c1': main.colors[0], '--c2': main.colors[1] }}>
-        <IndustryArt icon={main.icon} size={56} />
-        <div className="art-tags"><span className="tag">{c.name}</span>{inds.map((i) => <span key={i.id} className="tag">{i.name}</span>)}</div>
-        <span className={`badge ${sig.cls}`}>{sig.label}</span>
-        <FieldTag item={item} pulse={fp.pulse} />
-      </div>
-      <div className="etype">{item.event_type}</div>
+      <button className="back" onClick={() => (history.length > 1 ? history.back() : go('/'))}>← Back</button>
+      <div className="d-top"><Pill signal={item.credit_signal} /><FieldTag item={item} pulse={fp.pulse} /></div>
       <h1>{item.headline}</h1>
-      {item.raw?.title && item.raw.title !== item.headline && <div className="orig">Original headline: {item.raw.title}</div>}
-      <div className="meta"><span>{item.source}</span> · Published {fmtDate(item.published)}{item.also_reported_by?.length > 0 && <> · also: {item.also_reported_by.join(', ')}</>}</div>
-      <div className={`ai-label ${item.mode}`}>
-        {item.mode === 'ai' ? 'AI analysis — verify before acting' : 'Rule-based checklist (no AI key configured) — verify before acting'}
-        {item.model && <span className="muted small"> · {item.model}</span>}
-      </div>
-      {item.mode === 'ai' && <p className="summary">{item.summary}</p>}
+      <div className="meta">{item.source} · {fmtDate(item.published)} · {c.name}{sources.length > 0 && <> · <a href="#also" onClick={(e) => { e.preventDefault(); const d = document.getElementById('also'); d.open = true; d.scrollIntoView({ behavior: 'smooth' }); }}>+{sources.length} source{sources.length > 1 ? 's' : ''}</a></>}</div>
+      {item.mode === 'ai' && <p className="lead">{cardText(item)}</p>}
       <div className="why"><span>Why it matters</span>{item.why_it_matters}</div>
       <div className="actions inline">
         <a className="btn primary" href={item.link} target="_blank" rel="noopener noreferrer">Original report ↗</a>
-        <a className="btn wa" href={shareUrl(item)} target="_blank" rel="noopener">Share on WhatsApp</a>
+        <button className="btn" onClick={() => share(item)}>Share</button>
       </div>
 
-      {fp.polls[item.id] && !fp.polls[item.id].no_poll && (
-        <section className="sec fp-sec" id="poll">
-          <h3>Are you seeing this on the ground?</h3>
-          <Poll item={item} poll={fp.polls[item.id]} cfg={fp.cfg} onDone={() => bump((x) => x + 1)} />
-        </section>
-      )}
-      <PulseBlock item={item} poll={fp.polls[item.id]} pulse={fp.pulse} cfg={fp.cfg} />
+      <Acc title="Credit note" open>
+        <Section title="What happened">{n.what_happened}</Section>
+        <Section title="Confirmed vs alleged">{n.confirmed_vs_alleged}</Section>
+        <Section title="Exposed sub-sectors">{n.exposed_subsectors}</Section>
+        {Object.keys(EFFECT_LABELS).some((k) => fx[k]) && (
+          <section className="sec">
+            <h3>Likely effect on borrower financials</h3>
+            <table className="fx"><tbody>{Object.keys(EFFECT_LABELS).filter((k) => fx[k]).map((k) => <tr key={k}><td>{EFFECT_LABELS[k]}</td><td>{fx[k]}</td></tr>)}</tbody></table>
+          </section>
+        )}
+        <Section title="Temporary or structural?">{n.temporary_or_structural}</Section>
+        {(n.confirm_or_disprove?.confirm || n.confirm_or_disprove?.disprove) && (
+          <section className="sec two">
+            <div><h3>Would confirm</h3><p>{n.confirm_or_disprove?.confirm}</p></div>
+            <div><h3>Would disprove</h3><p>{n.confirm_or_disprove?.disprove}</p></div>
+          </section>
+        )}
+      </Acc>
 
-      <Section title="What happened">{n.what_happened}</Section>
-      <Section title="Confirmed vs alleged vs uncertain">{n.confirmed_vs_alleged}</Section>
-      <Section title="Exposed sub-sectors · winners & losers">{n.exposed_subsectors}</Section>
-      <section className="sec">
-        <h3>Likely effect on borrower financials</h3>
-        <table className="fx"><tbody>
-          {Object.keys(EFFECT_LABELS).filter((k) => fx[k]).map((k) => <tr key={k}><td>{EFFECT_LABELS[k]}</td><td>{fx[k]}</td></tr>)}
-        </tbody></table>
-      </section>
-      <Section title="Temporary, cyclical or structural?">{n.temporary_or_structural}</Section>
-      <section className="sec">
-        <h3>What a credit officer should check next</h3>
-        <ul>{(n.what_to_check || []).map((x, i) => <li key={i}>{x}</li>)}</ul>
-      </section>
-      <section className="sec two">
-        <div><h3>Would confirm</h3><p>{n.confirm_or_disprove?.confirm}</p></div>
-        <div><h3>Would disprove</h3><p>{n.confirm_or_disprove?.disprove}</p></div>
-      </section>
-      <p className="muted small">Not a basis for any classification, sanction or borrower-specific decision on its own.</p>
-      <p className="muted small">Card id: <code>{item.id}</code> · via {item.via}</p>
+      {n.what_to_check?.length > 0 && (
+        <Acc title="Checklist for the credit officer" meta={n.what_to_check.length}>
+          <ul className="checklist">{n.what_to_check.map((x, i) => <li key={i}>{x}</li>)}</ul>
+        </Acc>
+      )}
+
+      {cov.length > 0 && (
+        <Acc id="also" title={sources.length ? 'Also reported by' : 'More coverage'} meta={sources.length ? `${sources.length} source${sources.length > 1 ? 's' : ''}` : `${cov.length} report${cov.length > 1 ? 's' : ''}`} open>
+          {sources.length > 0
+            ? <p className="also-line">Also reported by: {sources.slice(0, 4).join(', ')}{sources.length > 4 ? ` +${sources.length - 4} more` : ''} ({sources.length} source{sources.length > 1 ? 's' : ''})</p>
+            : <p className="also-line">{item.source} also covered this in {cov.length} more report{cov.length > 1 ? 's' : ''}, merged here.</p>}
+          <ul className="coverage">
+            {cov.map((x, i) => {
+              const dd = x.published ? day(x.published) - day(item.published) : 0;
+              return (
+                <li key={i}>
+                  {x.link ? <a href={x.link} target="_blank" rel="noopener noreferrer">{x.source} ↗</a> : <span>{x.source}</span>}
+                  {x.published && <span className="muted"> · {fmtShort(x.published)}{dd >= 1 ? ' · follow-up' : dd <= -1 ? ' · earlier report' : ''}</span>}
+                  {x.headline && <div className="cov-h">{x.headline}</div>}
+                </li>
+              );
+            })}
+          </ul>
+        </Acc>
+      )}
+
+      {poll && !poll.no_poll && (
+        <Acc id="poll" title="Field pulse: are you seeing this?" meta={`${pulseN}/${fp.pulse?.min_responses || 5}`} open={openPoll || pulseN >= (fp.pulse?.min_responses || 5)}>
+          <Poll item={item} poll={poll} cfg={fp.cfg} onDone={() => bump((x) => x + 1)} />
+          <PulseBlock item={item} poll={poll} pulse={fp.pulse} cfg={fp.cfg} />
+        </Acc>
+      )}
+
+      <Acc title="Tags & details">
+        <dl className="kv">
+          <dt>Event type</dt><dd>{item.event_type}</dd>
+          <dt>Cluster</dt><dd>{c.name}</dd>
+          <dt>Industries</dt><dd>{inds.map((i) => i.name).join(', ')}</dd>
+          {item.raw?.title && item.raw.title !== item.headline && <><dt>Original headline</dt><dd>{item.raw.title}</dd></>}
+          <dt>Language</dt><dd>{item.lang === 'gu' ? 'Gujarati' : item.lang === 'hi' ? 'Hindi' : 'English'}</dd>
+          <dt>Via</dt><dd>{item.via}</dd>
+          <dt>Card id</dt><dd><code>{item.id}</code></dd>
+        </dl>
+      </Acc>
+
+      <p className="footnote">{item.mode === 'ai' ? `AI analysis${item.model ? ` (${item.model.replace(/^gemini:/, '')})` : ''}` : 'Rule-based checklist (no AI key)'} — verify before acting. Not a basis for any classification, sanction or borrower-specific decision on its own.</p>
     </div>
   );
 }

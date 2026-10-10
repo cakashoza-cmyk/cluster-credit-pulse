@@ -9,23 +9,31 @@ No sign-in, no database, no paid services. It's a static web app (PWA) that read
 RSS (Google News search in English/Gujarati/Hindi + publisher feeds)
   → filter to cluster industries → dedupe (title similarity + same-event grouping)
   → card: free LLM (OpenRouter → Gemini) or rule-based fallback
+  → same-event merge across languages (English AI headline+summary: TF-IDF + entities + 1 batched Gemini call per cluster)
   → weekly brief per cluster → public/data/*.json → static app (Vite + React)
 ```
 
 ## Screens
 1. **First-visit picker**: choose clusters and industries (stored in `localStorage`). You can skip it to see everything.
-2. **Feed**: vertical snap-scroll cards, cluster and signal filter chips, and a Negative/Watch/Positive badge.
-3. **Card detail**: the credit note (what happened, confirmed vs alleged, exposed sub-sectors, effects on volumes/realisations/costs/margins/receivables/inventory/creditors/WC/DSCR, temporary vs structural, what to check, what would confirm or disprove), plus the source link.
+2. **Feed** (Inshorts-style, one card per screen): signal pill, large headline, 2–3 line summary (model caveat sentences stripped), one meta line (source · date · cluster · +n sources), a small "Are you seeing this?" link and two buttons (Read analysis, Share). The top bar holds only the app name and one filter button that opens a sheet (cluster + signal). The AI/no-key note is a footnote at the end of the feed and in the detail view.
+3. **Card detail**: headline, summary, why it matters, then accordions: **Credit note** (what happened, confirmed vs alleged, exposed sub-sectors, effects table, temporary vs structural, would confirm/disprove), **Checklist**, **Also reported by** (all merged sources with links, earlier reports and follow-ups), **Field pulse** (poll + aggregates; deep link `#/item/<id>?poll`), **Tags & details** (event type, industries, original headline, card id). Old ids of merged cards redirect to the primary card.
 4. **Weekly brief** per cluster: what changed, stress signals, improvement signals and what to watch.
 5. **WhatsApp share**: a `wa.me` link with the headline, the credit view, the original source URL and a deep link to the card.
 6. **Hidden admin**: `config/hidden_ids.json` (see below).
+
+## Same-event merging (duplicates)
+Raw RSS items are first grouped by title similarity (`pipeline/lib/dedup.mjs`). Because Gujarati, Hindi and English reports of one event have nothing in common at title level, a second pass (`pipeline/lib/merge.mjs`) runs **after** cards exist, on the AI-translated English headline + summary:
+- **Heuristic (free, no embeddings):** TF-IDF cosine within a cluster (headline weighted ×2, the model's "the snippet does not state…" caveat sentences and source/date phrases removed, event-verb synonyms such as blaze/torch/arson→fire, hike/surge/jump→rise, holiday/off/shutdown→shut), plus key-entity overlap (numbers such as `45%`, `24crore`, `10000`, `2day`; distinctive proper nouns). Pairs must be in the same cluster and within ±3 days; same-day pairs and the same outlet's language editions get a lower bar. Rare incident anchors (currently arson) thread an incident and its follow-ups within 14 days.
+- **LLM pass (cheap):** one batched call per cluster sending only `id | date | headline` lines to Gemini (`gemini-3.8-flash → 3.5-flash → 3.5-flash-lite`), asking for groups of ids that are the same event or a direct follow-up. Cached in `data-cache/llm-cache.json` under `merge:<version>:<sha1(cluster+id set)>`, so an unchanged feed costs nothing. LLM groups are split wherever consecutive reports are more than 8 days apart (guards against theme-level over-grouping). If the call fails, the heuristic runs alone. Set `LLM_MERGE=0` to skip it.
+- **Merged card:** primary = the previous primary (keeps ids stable) else the most informative (numbers, names, length) and earliest. It keeps its id, credit note and poll; others are listed under `coverage` / `also_reported_by` with links, `merged_ids` and `latest_at` (the feed is sorted by the latest update so an ongoing story resurfaces once instead of repeating). `feed.json → aliases` maps merged ids to the primary; Field Pulse responses given on a merged id are validated against the poll they were answered on and counted on the primary. Merged raw items are carried forward between runs (`merged_raws`).
+- Pipeline stats: `meta.json → stats.before_merge / after_merge / merge`.
 
 ## Field Pulse (anonymous crowd feedback)
 Readers (bankers and value-chain participants) answer a short, one-tap poll on a card, telling us whether they are seeing the event on the ground. The aggregates cross-check the news against what's happening in the field.
 
 **How it works for the reader**
 - The first time someone opens a poll, the app asks **"What best describes you?"**: Banker/lender, Manufacturer/promoter/operator, Input supplier/trader, Buyer/dealer/distributor/exporter, Logistics/transporter/CHA, Labour contractor, CA/consultant/association member, Other, or *Skip — just browsing*. The answer is saved in `localStorage`. There's no login, and the role can be changed under **My clusters**.
-- Feed cards have a button, **"Are you seeing this? Tell us in 10 sec"** (it opens a bottom sheet). The card detail page shows the poll inline, plus a **Field pulse** block.
+- Feed cards have a small link, **"Are you seeing this? Answer in 10 sec →"** (it opens a bottom sheet). The card detail page shows the poll and the **Field pulse** block in the "Field pulse" accordion.
 - Each poll shows 2–3 one-tap questions for the reader's role: an accuracy check and 1–2 behavioural questions. There's an optional free-text box (280 characters), a ગુજરાતી/English toggle, an *Answer as another role* option, and a thank-you state. Each device can answer once per card (random anonymous device id plus `localStorage`).
 - Field pulse shows **"Collecting field signals (n/5)"** until a card has at least 5 valid responses. After that it shows confirm% and contradict% for each role, a role-weighted field index, divergence flags and the latest free-text notes. It always carries the label *"Crowd field signal — anonymous, self-reported, unverified; not borrower-level evidence."*
 - A **"Field: confirms / contradicts / mixed"** tag appears next to the credit badge once n ≥ 5. The AI `credit_signal` itself is never changed.
@@ -64,7 +72,8 @@ config/clusters.json        clusters, industries, keywords, Google News queries,
 config/hidden_ids.json      admin suppression list
 pipeline/run.mjs            pipeline entry point
 pipeline/lib/rss.mjs        RSS fetch/parse (headline, link, date, source only; no article bodies)
-pipeline/lib/dedup.mjs      title normalisation + same-event clustering
+pipeline/lib/dedup.mjs      title normalisation + same-event clustering (raw items)
+pipeline/lib/merge.mjs      card-level cross-language same-event merge (TF-IDF + entities + batched LLM grouping)
 pipeline/lib/heuristic.mjs  no-key mode: keyword event typing, signal, rule-based credit checklist
 pipeline/lib/llm.mjs        OpenRouter / Gemini free-tier clients (keys from env only), retries, rate-limit backoff
 pipeline/lib/prompts.mjs    card + weekly-brief (+ brief field-pulse) prompts (credit-officer voice, JSON output)

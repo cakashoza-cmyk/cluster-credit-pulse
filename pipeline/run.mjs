@@ -12,6 +12,7 @@ import { llmMode, completeJson, usage, rateLimits } from './lib/llm.mjs';
 import { CARD_SYSTEM, cardPrompt, BRIEF_SYSTEM, briefPrompt, PULSE_SYSTEM, pulsePrompt } from './lib/prompts.mjs';
 import { POLL_SYSTEM, pollPrompt, sanitizePoll, finalizePoll, POLL_PROMPT_VERSION, ROLES } from './lib/polls.mjs';
 import { harvest, aggregate } from './lib/feedback.mjs';
+import { mergeCards, MERGE_SYSTEM, mergePrompt, MERGE_PROMPT_VERSION } from './lib/merge.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const P = (...a) => path.join(ROOT, ...a);
@@ -156,6 +157,33 @@ async function buildBrief(cluster, cards) {
   return heuristicBrief(cluster, cards);
 }
 
+// LLM-assisted same-event merge: ONE batched call per cluster with "id | date | headline" lines.
+// Cached by hash of the cluster's id set, so an unchanged feed costs nothing. Gemini only (3.8-flash -> 3.5-flash -> 3.5-flash-lite).
+// Returns { clusterId: groups[] | null }; null means the LLM was unavailable and the heuristic runs alone.
+async function llmMergeGroups(items) {
+  const out = {};
+  for (const c of config.clusters) {
+    const cs = items.filter((i) => i.cluster === c.id).sort((a, b) => new Date(a.published) - new Date(b.published));
+    if (cs.length < 2) { out[c.id] = []; continue; }
+    const key = `merge:${MERGE_PROMPT_VERSION}:` + sha(c.id + ':' + cs.map((i) => i.id).sort().join(','));
+    if (!cache[key] && process.env.GEMINI_API_KEY && process.env.LLM_MERGE !== '0') {
+      try {
+        stats.llm_calls++;
+        const lines = cs.map((i) => `${i.id} | ${i.published.slice(0, 10)} | ${String(i.headline).replace(/\s+/g, ' ')}`);
+        const { json, model } = await completeJson(MERGE_SYSTEM, mergePrompt(lines), { providers: ['gemini'] });
+        const ids = new Set(cs.map((i) => i.id)); const used = new Set();
+        const groups = (Array.isArray(json.groups) ? json.groups : []).map((g) => (Array.isArray(g) ? g : Array.isArray(g?.ids) ? g.ids : []).map(String).filter((id) => ids.has(id) && !used.has(id) && used.add(id))).filter((g) => g.length >= 2);
+        cache[key] = { groups, model, at: new Date().toISOString() };
+        log(`merge LLM ${c.id}: ${groups.length} groups from ${cs.length} cards (${model})`);
+      } catch (e) { stats.llm_failures++; log(`merge LLM ${c.id} failed, heuristic only:`, e.message.slice(0, 160)); }
+    }
+    out[c.id] = cache[key] ? cache[key].groups : null;
+  }
+  return out;
+}
+
+const aliasPollsFor = (aliases) => Object.fromEntries(Object.keys(aliases).map((id) => [id, cache[`poll:${POLL_PROMPT_VERSION}:${id}`]?.poll]).filter(([, p]) => p && !p.no_poll).map(([id, p]) => [id, finalizePoll(structuredClone(p))]));
+
 async function buildPolls(items) {
   const prio = { negative: 0, watch: 1, positive: 2 };
   const order = [...items].sort((a, b) => prio[a.credit_signal] - prio[b.credit_signal] || new Date(b.published) - new Date(a.published));
@@ -182,12 +210,12 @@ async function buildPolls(items) {
   return out;
 }
 
-async function fieldPulse(items, briefs, polls) {
+async function fieldPulse(items, briefs, polls, aliases = {}) {
   const minN = fbCfg.min_responses || 5;
   const { inbox, added, error } = await harvest(fbCfg, P('data-cache/feedback/inbox.jsonl'), log);
   if (FEEDBACK_ONLY && !added && !process.env.FORCE_AGGREGATE) { log('field pulse: no new responses, nothing to write'); return; }
   let agg;
-  try { agg = await aggregate({ inbox, polls, feedItems: items, minN }); }
+  try { agg = await aggregate({ inbox, polls, feedItems: items, minN, aliases, aliasPolls: aliasPollsFor(aliases) }); }
   catch (e) { log('aggregate failed:', e.message); agg = { pulse: {}, stats: { error: e.message } }; }
   const { pulse, stats: fstats } = agg;
   log(`field pulse: inbox ${inbox.length} (+${added}), ${JSON.stringify(fstats)}`);
@@ -227,14 +255,14 @@ async function main() {
   if (FEEDBACK_ONLY) {
     const items = prevFeed.items || [];
     const polls = readJson(P('public/data/polls.json'), { polls: {} });
-    await fieldPulse(items, readJson(P('public/data/briefs.json'), {}), polls);
+    await fieldPulse(items, readJson(P('public/data/briefs.json'), {}), polls, prevFeed.aliases || {});
     writeJson(P('data-cache/llm-cache.json'), cache);
     return;
   }
   const fresh = await collect();
   stats.after_filter = fresh.length;
   // Carry forward previously seen raw items (still inside the age window) so history persists between runs.
-  const prevRaw = (prevFeed.items || []).map((c) => c.raw).filter((r) => r && now - new Date(r.published) <= MAX_AGE);
+  const prevRaw = (prevFeed.items || []).flatMap((c) => [c.raw, ...(c.merged_raws || [])]).filter((r) => r && now - new Date(r.published) <= MAX_AGE);
   const seen = new Set();
   const all = [...prevRaw, ...fresh].filter((r) => (seen.has(r.id) ? false : (seen.add(r.id), true)));
   const groups = dedupe(all, 0.55, (r) => classify(`${r.title} ${r.snippet || ''}`).event_type);
@@ -243,12 +271,12 @@ async function main() {
 
   groups.sort((a, b) => new Date(b.published) - new Date(a.published)); // newest first get the LLM budget
   const budget = { left: MAX_LLM };
-  const items = [];
+  const cards = [];
   for (const raw of groups) {
     if (hidden.has(raw.id)) continue;
     const card = await buildCard(raw, budget);
     if (!card || card.event_type === 'not credit-relevant') continue;
-    items.push({
+    cards.push({
       id: raw.id,
       ...card,
       source: raw.source,
@@ -261,6 +289,17 @@ async function main() {
     });
   }
 
+  // Card-level same-event merge (cross-language, on AI English headline+summary) + LLM grouping pass
+  if (process.env.DUMP_CARDS) writeJson(process.env.DUMP_CARDS, cards); // debugging: pre-merge cards
+  const llmGroups = await llmMergeGroups(cards);
+  const prevPrimaries = new Set((prevFeed.items || []).filter((i) => i.merged_ids?.length).map((i) => i.id));
+  const merged = mergeCards(cards, { llmGroupsByCluster: llmGroups, prevPrimaries, log });
+  const items = merged.items.sort((a, b) => new Date(b.latest_at || b.published) - new Date(a.latest_at || a.published));
+  const aliases = merged.aliases;
+  stats.before_merge = cards.length; stats.after_merge = items.length;
+  stats.merge = { heuristic_edges: merged.edges.filter((e) => e.by === 'heuristic').length, llm_edges: merged.edges.filter((e) => e.by === 'llm').length, llm: Object.fromEntries(Object.entries(llmGroups).map(([k, v]) => [k, v ? 'ok' : 'unavailable'])) };
+  log(`same-event merge: ${cards.length} cards -> ${items.length} (${Object.keys(aliases).length} merged into primaries)`);
+
   const briefs = {};
   for (const c of config.clusters) {
     const cards = items.filter((i) => i.cluster === c.id && now - new Date(i.published) <= BRIEF_WINDOW);
@@ -271,10 +310,10 @@ async function main() {
   const effective = items.some((i) => i.mode === 'ai') ? mode : 'none'; // 'none' if every LLM call failed
   stats.model_usage = usage; stats.rate_limits = rateLimits;
   const meta = { generated_at: new Date().toISOString(), llm_mode: effective, llm_configured: mode, counts: per, total: items.length, stats };
-  writeJson(P('public/data/feed.json'), { generated_at: meta.generated_at, llm_mode: effective, items });
+  writeJson(P('public/data/feed.json'), { generated_at: meta.generated_at, llm_mode: effective, items, aliases });
   const polls = await buildPolls(items);
   meta.polls = polls.coverage;
-  await fieldPulse(items, briefs, polls);
+  await fieldPulse(items, briefs, polls, aliases);
   writeJson(P('public/data/meta.json'), meta);
   writeJson(P('public/data/clusters.json'), { clusters: config.clusters.map(({ queries, aliases, ...c }) => ({ ...c, industries: c.industries.map(({ keywords, ...i }) => i) })) });
   writeJson(P('public/data/hidden_ids.json'), { hidden_ids: [...hidden] });

@@ -54,8 +54,12 @@ export const scrub = (s) => String(s || '').slice(0, 280)
   .replace(/(\+?\d[\d\s-]{5,}\d)/g, '[number]').replace(/\b[A-Z]{5}\d{4}[A-Z]\b/g, '[id]').trim();
 
 /** Returns { pulse, summary } where pulse is the public per-card aggregate object. */
-export async function aggregate({ inbox, polls, feedItems, minN = 5, now = Date.now() }) {
+// aliases: { mergedCardId: primaryCardId } from same-event merging. A response given on a card that was later
+// merged is validated against the poll it was answered on (aliasPolls) and then counted on the primary card.
+export async function aggregate({ inbox, polls, feedItems, minN = 5, now = Date.now(), aliases = {}, aliasPolls = {} }) {
   const pollById = polls.polls || {};
+  const answeredPoll = (id) => pollById[id] || aliasPolls[id];
+  const qIndexOf = (poll) => Object.fromEntries(poll.roles.flatMap((ro) => ro.questions.map((q) => [q.id, q])));
   const cardById = Object.fromEntries(feedItems.map((i) => [i.id, i]));
   const stats = { messages: inbox.length, undecryptable: 0, invalid: 0, test_excluded: 0, duplicates_replaced: 0, dropped: { too_fast: 0, all_not_seen: 0, straight_line: 0, device_flood: 0 }, valid: 0 };
   const latest = new Map(); // did|card -> record
@@ -64,13 +68,16 @@ export async function aggregate({ inbox, polls, feedItems, minN = 5, now = Date.
     const r = await decrypt(m.message);
     if (!r) { stats.undecryptable++; continue; }
     if (r.test) { stats.test_excluded++; continue; }
-    const poll = pollById[r.card];
+    const poll = answeredPoll(r.card);
     if (!poll || poll.no_poll || !ROLES[r.role] || typeof r.answers !== 'object' || !r.did) { stats.invalid++; continue; }
-    const qIndex = Object.fromEntries(poll.roles.flatMap((ro) => ro.questions.map((q) => [q.id, q])));
+    const qIndex = qIndexOf(poll);
     const answers = {};
     for (const [qid, v] of Object.entries(r.answers)) if (qIndex[qid] && qIndex[qid].options.includes(v)) answers[qid] = v;
     if (!Object.keys(answers).length) { stats.invalid++; continue; }
-    const rec = { card: r.card, role: r.role, answers, text: scrub(r.text), did: String(r.did).slice(0, 40), ts: Number(r.ts) || m.time * 1000, dt: Number(r.dt) || 0, msgTime: m.time * 1000 };
+    const target = aliases[r.card] && pollById[aliases[r.card]] && !pollById[aliases[r.card]].no_poll ? aliases[r.card] : r.card;
+    if (target !== r.card) stats.carried_from_merged = (stats.carried_from_merged || 0) + 1;
+    if (!pollById[target]) { stats.invalid++; continue; }
+    const rec = { card: target, answeredOn: r.card, qIndex, role: r.role, answers, text: scrub(r.text), did: String(r.did).slice(0, 40), ts: Number(r.ts) || m.time * 1000, dt: Number(r.dt) || 0, msgTime: m.time * 1000 };
     const day = `${rec.did}|${new Date(rec.msgTime).toISOString().slice(0, 10)}`;
     perDeviceDay[day] = (perDeviceDay[day] || 0) + 1;
     if (perDeviceDay[day] > 40) { stats.dropped.device_flood++; continue; }
@@ -86,12 +93,11 @@ export async function aggregate({ inbox, polls, feedItems, minN = 5, now = Date.
     return new Set(idx).size === 1 && new Set(vals.map(([q]) => qIndex[q].options.join('|'))).size >= 2;
   };
   const slCount = {};
-  for (const rec of latest.values()) { const P = pollById[rec.card]; const qi = Object.fromEntries(P.roles.flatMap((ro) => ro.questions.map((q) => [q.id, q]))); if (isStraight(rec, qi)) slCount[rec.did] = (slCount[rec.did] || 0) + 1; }
+  for (const rec of latest.values()) { if (isStraight(rec, rec.qIndex)) slCount[rec.did] = (slCount[rec.did] || 0) + 1; }
   const slDevices = new Set(Object.keys(slCount).filter((d) => slCount[d] >= 3));
   const byCard = {};
   for (const rec of latest.values()) {
-    const poll = pollById[rec.card];
-    const qIndex = Object.fromEntries(poll.roles.flatMap((ro) => ro.questions.map((q) => [q.id, q])));
+    const qIndex = rec.qIndex;
     const vals = Object.entries(rec.answers);
     const n = vals.length;
     if (rec.dt && rec.dt < 600 * n + 600) { stats.dropped.too_fast++; continue; }
@@ -103,7 +109,8 @@ export async function aggregate({ inbox, polls, feedItems, minN = 5, now = Date.
       const s = Q.supports.includes(v) ? 1 : Q.contradicts.includes(v) ? -1 : 0;
       score += s; mech.push([Q.mechanism, s, Q.type === 'accuracy' ? v : null]);
     }
-    (byCard[rec.card] ||= []).push({ ...rec, net: score / n, mech });
+    const { qIndex: _q, ...keep } = rec;
+    (byCard[rec.card] ||= []).push({ ...keep, net: score / n, mech });
     stats.valid++;
   }
 

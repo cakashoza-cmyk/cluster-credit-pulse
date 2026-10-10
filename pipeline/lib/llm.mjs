@@ -28,7 +28,12 @@ function extractJson(text) {
   const raw = fenced ? fenced[1] : text;
   const start = raw.indexOf('{'), end = raw.lastIndexOf('}');
   if (start < 0 || end < 0) throw new Error('no JSON object in response');
-  return JSON.parse(raw.slice(start, end + 1));
+  const body = raw.slice(start, end + 1);
+  try { return JSON.parse(body); } catch (e) {
+    // lenient repair for common model slips: single quotes, unquoted keys, trailing commas
+    const fixed = body.replace(/'([^'\\]*)'/g, '"$1"').replace(/([{,]\s*)([A-Za-z_][\w]*)\s*:/g, '$1"$2":').replace(/,\s*([}\]])/g, '$1');
+    try { return JSON.parse(fixed); } catch { throw e; }
+  }
 }
 
 async function callOpenRouter(model, system, user) {
@@ -65,10 +70,10 @@ async function callGemini(model, system, user) {
 }
 
 /** Returns { json, model } or throws. Tries OpenRouter models, then Gemini models. */
-export async function completeJson(system, user) {
+export async function completeJson(system, user, { providers = ['openrouter', 'gemini'] } = {}) {
   const plan = [];
-  if (process.env.OPENROUTER_API_KEY) for (const m of OR_MODELS) plan.push(['openrouter', m]);
-  if (process.env.GEMINI_API_KEY) for (const m of GEMINI_MODELS) plan.push(['gemini', m]);
+  if (process.env.OPENROUTER_API_KEY && providers.includes('openrouter')) for (const m of OR_MODELS) plan.push(['openrouter', m]);
+  if (process.env.GEMINI_API_KEY && providers.includes('gemini')) for (const m of GEMINI_MODELS) plan.push(['gemini', m]);
   let lastErr = new Error('no LLM key configured');
   for (const [provider, model] of plan) {
     const key = `${provider}:${model}`;
