@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T14:42:27.821Z",
+  "generated_at": "2026-10-10T19:20:19.804Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 62,
-    "with_poll": 60,
+    "cards": 66,
+    "with_poll": 64,
     "no_poll": 2,
     "pending": 0
   },
@@ -4069,6 +4069,561 @@
                   "ઘણા કડક નિયમો",
                   "કોઈ ફેરફાર નહીં",
                   "હળવા નિયમો"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "2718cba9f837": {
+      "no_poll": false,
+      "hypothesis": "Surat textile and diamond trading networks are experiencing a spike in unsecured trade credit defaults, tightening market liquidity and raising borrower SMA levels.",
+      "event_phrase": "wave of trading fraud and payment defaults",
+      "roles": [
+        {
+          "role": "banker",
+          "label": "Surat Textile / Diamond Credit Banker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported wave of trading fraud and payment defaults accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you noticed any new SMA-0 or SMA-1 slippages in trading accounts this month?",
+              "options": [
+                "Yes, multiple accounts",
+                "Few isolated cases",
+                "No change"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes, multiple accounts"
+              ],
+              "contradicts": [
+                "No change"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "How is stock-statement submission frequency from trading borrowers behaving?",
+              "options": [
+                "Delayed",
+                "On time",
+                "Not applicable"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Delayed"
+              ],
+              "contradicts": [
+                "On time"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn Trader / Texturiser",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported wave of trading fraud and payment defaults accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have buyer payment delays changed over the last 2-4 weeks?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Same",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Shorter",
+                "Much shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "Are you tightening credit terms for new fabric buyers?",
+              "options": [
+                "Yes, asking advance",
+                "Slightly tighter",
+                "No change"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Yes, asking advance"
+              ],
+              "contradicts": [
+                "No change"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Ring Road Fabric Merchant",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported wave of trading fraud and payment defaults accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How easy is it to secure unsecured credit from yarn suppliers currently?",
+              "options": [
+                "Much easier",
+                "Easier",
+                "Same",
+                "Harder",
+                "Much harder"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Harder",
+                "Much harder"
+              ],
+              "contradicts": [
+                "Easier",
+                "Much easier"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "banker": {
+            "label": "સુરત ટેક્સટાઇલ / ડાયમંડ ક્રેડિટ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું વેપારમાં છેતરપિંડી અને પેમેન્ટ ડિફોલ્ટના નોંધાયેલા બનાવો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું આ મહિને ટ્રેડિંગ ખાતાઓમાં એસ.એમ.એ.-૦ અથવા એસ.એમ.એ.-૧ ની કોઈ નવી ફરિયાદો નોંધાઈ છે?",
+                "options": [
+                  "હા, અનેક ખાતાઓમાં",
+                  "હા, થોડા છૂટાછવાયા કેસો",
+                  "કોઈ ફેરફાર નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "ટ્રેડિંગ ધિરાણકર્તાઓ તરફથી સ્ટોક-સ્ટેટમેન્ટ જમા કરાવવાની આવર્તન કેવી રહી છે?",
+                "options": [
+                  "વિલંબિત",
+                  "સમયસર",
+                  "લાગુ પડતું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન વેપારી / ટેક્સટ્યુરાઇઝર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું વેપારમાં છેતરપિંડી અને પેમેન્ટ ડિફોલ્ટના નોંધાયેલા બનાવો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં ખરીદદારો દ્વારા પેમેન્ટ ચૂકવવામાં વિલંબ કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "શું તમે નવા ફેબ્રિક ખરીદદારો માટે ક્રેડિટ શરતો કડક કરી રહ્યા છો?",
+                "options": [
+                  "હા, એડવાન્સ માંગીએ છીએ",
+                  "થોડું કડક કર્યું છે",
+                  "કોઈ ફેરફાર નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "રિંગ રોડ ફેબ્રિક વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું વેપારમાં છેતરપિંડી અને પેમેન્ટ ડિફોલ્ટના નોંધાયેલા બનાવો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "હાલમાં યાર્ન સપ્લાયર્સ પાસેથી વિના જામીને ક્રેડિટ મેળવવું કેટલું સરળ છે?",
+                "options": [
+                  "ઘણું સરળ",
+                  "સરળ",
+                  "સમાન",
+                  "કઠિન",
+                  "ઘણું કઠિન"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "9d16b82be343": {
+      "no_poll": false,
+      "hypothesis": "Surat embroidery job-work units are facing worker disputes due to cash flow pressures, leading to wage delays and machine loan EMI default risks.",
+      "event_phrase": "worker disputes and wage delays in embroidery units",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Embroidery Job-Worker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "How are you currently clearing worker wages?",
+              "options": [
+                "On time",
+                "Delayed by 1-2 weeks",
+                "Delayed by over 2 weeks"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Delayed by 1-2 weeks",
+                "Delayed by over 2 weeks"
+              ],
+              "contradicts": [
+                "On time"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your machine loan EMI servicing compared to last month?",
+              "options": [
+                "Much easier",
+                "Slightly easier",
+                "Same",
+                "Slightly harder",
+                "Much harder"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Slightly harder",
+                "Much harder"
+              ],
+              "contradicts": [
+                "Much easier",
+                "Slightly easier"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Cluster Branch Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have machine loan EMI bounces or delays trended recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Embroidery Machine Operator",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "How are you receiving your weekly or monthly wages currently?",
+              "options": [
+                "Regularly on time",
+                "Delayed by a few days",
+                "Pending for weeks"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Delayed by a few days",
+                "Pending for weeks"
+              ],
+              "contradicts": [
+                "Regularly on time"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એમ્બ્રોઇડરી જોબ-વર્કર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવમાં કામદારોના વિવાદ અને મજૂરી વિલંબની અખબારી અસરો સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "તમે હાલમાં કામદારોના પગાર કેવી રીતે ચૂકવી રહ્યા છો?",
+                "options": [
+                  "સમયસર",
+                  "૧-૨ અઠવાડિયા મોડા",
+                  "૨ અઠવાડિયાથી વધુ મોડા"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારી મશીન લોનની EMI ચૂકવણી કેવી રહી છે?",
+                "options": [
+                  "ઘણી સરળ",
+                  "થોડી સરળ",
+                  "સમાન",
+                  "થોડી અઘરી",
+                  "ખૂબ જ અઘરી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ક્લસ્ટર બ્રાન્ચ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું એમ્બ્રોઇડરી યુનિટ્સને અસર કરતા કામદાર વિવાદના અહેવાલો સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "તાજેતરમાં મશીન લોન EMI બાઉન્સ કે વિલંબમાં શું વલણ રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર",
+            "questions": {
+              "labour.q1": {
+                "text": "શું તમારા યુનિટમાં મજૂરી વિલંબ અથવા કામદાર વિવાદની વાત સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "હાલમાં તમને સાપ્તાહિક કે માસિક મજૂરી કેવી રીતે મળી રહી છે?",
+                "options": [
+                  "નિયમિત સમયસર",
+                  "થોડા દિવસો મોડી",
+                  "અઠવાડિયા સુધી બાકી"
                 ]
               }
             }
@@ -10131,6 +10686,271 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "8e001af37543": {
+      "no_poll": false,
+      "hypothesis": "The weaver strike against the yarn syndicate has halted production, leading to constrained cash flows and delayed working capital repayments.",
+      "event_phrase": "weaver strike and yarn syndicate dispute",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet & powerloom weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported weaver strike and yarn syndicate dispute accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What is the status of your looms following the strike call?",
+              "options": [
+                "Fully operational",
+                "Partially halted (1-2 days)",
+                "Completely halted (3+ days)"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Completely halted (3+ days)",
+                "Partially halted (1-2 days)"
+              ],
+              "contradicts": [
+                "Fully operational"
+              ],
+              "supports_if": "Production is halted.",
+              "contradicts_if": "Production is normal."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has this production stoppage impacted your ability to meet working capital interest servicing this month?",
+              "options": [
+                "Much easier",
+                "Slightly easier",
+                "No change",
+                "Slightly harder",
+                "Much harder"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Slightly harder",
+                "Much harder"
+              ],
+              "contradicts": [
+                "Much easier",
+                "Slightly easier"
+              ],
+              "supports_if": "Repayment is strained.",
+              "contradicts_if": "Repayment is unaffected."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / texturiser (POY/FDY)",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported weaver strike and yarn syndicate dispute accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has the off-take of POY/FDY yarn changed from weavers in the last 2 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Yarn offtake has dropped due to strike.",
+              "contradicts_if": "Yarn offtake remains high."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Working capital branch manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported weaver strike and yarn syndicate dispute accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you observed an increase in CC/OD limit utilisation among your weaving clients?",
+              "options": [
+                "No change",
+                "Moderate increase",
+                "Near 100% limit breach"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Moderate increase",
+                "Near 100% limit breach"
+              ],
+              "contradicts": [
+                "No change"
+              ],
+              "supports_if": "Working capital utilization is stressed.",
+              "contradicts_if": "No stress observed."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ અને પાવરલૂમ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવમાં અહેવાલ થયેલ વીવર હડતાલ અને યાર્ન સિંડેટ વિવાદ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "હડતાલના આહ્વાન બાદ તમારા લૂમ્સની સ્થિતિ શું છે?",
+                "options": [
+                  "સંપૂર્ણપણે કાર્યરત",
+                  "અંશતઃ બંધ (૧-૨ દિવસ)",
+                  "સંપૂર્ણપણે બંધ (૩+ દિવસ)"
+                ]
+              },
+              "operator.q3": {
+                "text": "આ ઉત્પાદન અટકવાથી આ મહિને વર્કિંગ કેપિટલ વ્યાજ ચૂકવવાની તમારી ક્ષમતા પર કેવી અસર પડી છે?",
+                "options": [
+                  "ઘણું સરળ",
+                  "થોડું સરળ",
+                  "કોઈ ફેરફાર નહીં",
+                  "થોડું મુશ્કેલ",
+                  "ઘણું મુશ્કેલ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર ​​/ ટેક્સ્યુરાઇઝર (POY/FDY)",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું તમારા અનુભવમાં અહેવાલ થયેલ વીવર હડતાલ અને યાર્ન સિંડેટ વિવાદ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨ અઠવાડિયામાં વીવર્સ તરફથી POY/FDY યાર્નનું ઓફ-ટેક કેવી રીતે બદલાયું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "વર્કિંગ કેપિટલ બ્રાન્ચ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવમાં અહેવાલ થયેલ વીવર હડતાલ અને યાર્ન સિંડેટ વિવાદ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે તમારા વીવિંગ ગ્રાહકોમાં CC/OD મર્યાદાના ઉપયોગમાં વધારો જોયો છે?",
+                "options": [
+                  "કોઈ ફેરફાર નહીં",
+                  "મધ્યમ વધારો",
+                  "લગભગ ૧૦૦% મર્યાદા વટાવી ગઈ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "896694f4c688": {
       "no_poll": false,
       "hypothesis": "A fire at Regent Textile Market causes temporary trading suspension, stock damage, and payment-chain friction for traders.",
@@ -10413,220 +11233,6 @@
                   "સરખું",
                   "વધુ",
                   "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "59d97445ca2d": {
-      "no_poll": false,
-      "hypothesis": "The Surat textile market fire has caused localized inventory write-downs, insurance claim filings, and tighter credit or trade financing for exposed traders on Ring Road.",
-      "event_phrase": "Surat textile market fire and stock loss",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Ring Road textile market trader / processor",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Surat textile market fire and stock loss accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you filed or seen immediate insurance claim filings for inventory damage?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has this incident affected trade credit terms from your suppliers in the last 2-4 weeks?",
-              "options": [
-                "Much tighter",
-                "Tighter",
-                "Unchanged",
-                "Easier",
-                "Much easier"
-              ],
-              "mechanism": "creditors",
-              "supports": [
-                "Much tighter",
-                "Tighter"
-              ],
-              "contradicts": [
-                "Easier",
-                "Much easier"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "MMF textiles cluster branch manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Surat textile market fire and stock loss accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have exposed borrowers requested ad-hoc working capital or stock-statement revisions due to fire loss?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you observed any delayed stock-statements or early signs of stress (SMA-0/1) among affected traders?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "રિંગ રોડ ટેક્સટાઇલ માર્કેટ વેપારી / પ્રોસેસર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ટેક્સટાઇલ માર્કેટમાં આગ અને સ્ટોક નુકસાનના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "શું તમે ઇન્વેન્ટરી નુકસાન માટે વીમા દાવાઓની નોંધણી થતી જોઈ છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા સપ્લાયર્સ તરફથી મળતા વેપાર ધિરાણ (ક્રેડિટ) પર તેની શી અસર થઈ છે?",
-                "options": [
-                  "ઘણું કડક",
-                  "કડક",
-                  "અપરિવર્તિત",
-                  "સરળ",
-                  "ઘણું સરળ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "એમએમએફ ટેક્સટાઇલ ક્લસ્ટર બ્રાન્ચ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ટેક્સટાઇલ માર્કેટમાં આગ અને સ્ટોક નુકસાનના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું અસરગ્રસ્ત ગ્રાહકોએ આગના નુકસાનને કારણે વર્કિંગ કેપિટલ અથવા સ્ટોક સ્ટેટમેન્ટમાં ફેરફાર માટે અરજી કરી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે પ્રભાવિત વેપારીઓમાં મોડા સ્ટોક-સ્ટેટમેન્ટ્સ અથવા તણાવના પ્રારંભિક સંકેતો (SMA-0/1) જોયા છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
                 ]
               }
             }
@@ -11182,6 +11788,302 @@
                   "હા, નોંધપાત્ર રીતે",
                   "થોડું",
                   "કોઈ ફેરફાર નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "2ad6dea436ea": {
+      "no_poll": false,
+      "hypothesis": "The market fire causing a Rs 24-crore loss has disrupted inventory and credit cycles for exposed traders in the Ring Road market, triggering insurance verification and liquidity strains.",
+      "event_phrase": "Ring Road textile market fire and Rs 24-crore loss",
+      "roles": [
+        {
+          "role": "banker",
+          "label": "Ring Road Market Banker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported Ring Road textile market fire and Rs 24-crore loss accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have exposed borrowers requested ad-hoc credit or emergency working capital limits?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed delays in stock-statement submissions or insurance claim intimations?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Ring Road Textile Market Trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported Ring Road textile market fire and Rs 24-crore loss accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your inventory holding or stock availability changed following the incident?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How are your immediate receivables and buyer collections behaving post-incident?",
+              "options": [
+                "Much slower",
+                "Slower",
+                "Same",
+                "Faster",
+                "Much faster"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Much slower",
+                "Slower"
+              ],
+              "contradicts": [
+                "Faster",
+                "Much faster"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Grey Fabric Supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported Ring Road textile market fire and Rs 24-crore loss accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has offtake from traders in the affected market area changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "banker": {
+            "label": "રિંગ રોડ માર્કેટ બેન્કર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું રિંગ રોડ ટેક્સટાઇલ માર્કેટમાં આગ અને રૂ. ૨૪ કરોડના નુકસાનના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું પ્રભાવિત ગ્રાહકોએ એડ-હોક ક્રેડિટ અથવા ઇમરજન્સી વર્કિંગ કેપિટલ મર્યાદા માટે વિનંતી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે સ્ટોક-સ્ટેટમેન્ટ સબમિશન અથવા વીમા દાવાની જાણ કરવામાં વિલંબ નોંધ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "રિંગ રોડ ટેક્સટાઇલ માર્કેટ વેપારી",
+            "questions": {
+              "operator.q1": {
+                "text": "શું રિંગ રોડ ટેક્સટાઇલ માર્કેટમાં આગ અને રૂ. ૨૪ કરોડના નુકસાનના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ઘટના પછી તમારા ઇન્વેન્ટરી હોલ્ડિંગ અથવા સ્ટોકની ઉપલબ્ધતામાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ઘટના પછી તમારા તાત્કાલિક લેણાં અને ખરીદનાર પાસેથી નાણાંની ઉઘરાણી કેવી રહી છે?",
+                "options": [
+                  "ઘણી ધીમી",
+                  "ધીમી",
+                  "સમાન",
+                  "ઝડપી",
+                  "ઘણી ઝડપી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "ગ્રે ફેબ્રિક સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું રિંગ રોડ ટેક્સટાઇલ માર્કેટમાં આગ અને રૂ. ૨૪ કરોડના નુકસાનના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં પ્રભાવિત માર્કેટના વેપારીઓ તરફથી માલની ઉપાડ કેવી રહી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણી વધુ"
                 ]
               }
             }
@@ -12351,6 +13253,269 @@
               },
               "banker.q3": {
                 "text": "શું તમે ક્ષમતા અપગ્રેડ માટે કોઈ નવી ત્વરિત ક્રેડિટ મર્યાદા વિનંતીઓ નોંધી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "e4f802e55f28": {
+      "no_poll": false,
+      "hypothesis": "Imposition of UPI MDR is increasing transaction costs and squeezing margins for Surat textile traders.",
+      "event_phrase": "UPI MDR cost increase for textile traders",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Ring Road Textile Trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your digital transaction costs changed over the last 3 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you shifted towards cash transactions to avoid UPI fees?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Grey Fabric Supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has buyer payment delay changed in the last 3 weeks?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Same",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Shorter",
+                "Much shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat Branch Credit Manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have textile trader CC/OD utilization levels increased near limits this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "રિંગ રોડ ટેક્સટાઇલ વેપારી",
+            "questions": {
+              "operator.q1": {
+                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૩ અઠવાડિયામાં તમારા ડિજિટલ ટ્રાન્ઝેક્શન ખર્ચમાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે યુપીઆઈ ફી ટાળવા માટે રોકડ વ્યવહારો તરફ વળ્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "ગ્રે ફેબ્રિક સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૩ અઠવાડિયામાં ખરીદનાર દ્વારા ચુકવણીમાં વિલંબ કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણો ટૂંકો",
+                  "ટૂંકો",
+                  "સમાન",
+                  "લાંબો",
+                  "ઘણો લાંબો"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત શાખા ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું આ મહિને ટેક્સટાઇલ વેપારીઓની સીસી/ઓડી યુટિલાઇઝેશન મર્યાદાની નજીક વધી છે?",
                 "options": [
                   "હા",
                   "ના",
