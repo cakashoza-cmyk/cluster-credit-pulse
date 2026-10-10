@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T14:37:21.196Z",
+  "generated_at": "2026-10-10T14:38:48.889Z",
   "llm_mode": "gemini",
   "items": [
     {
@@ -128,9 +128,9 @@
       }
     },
     {
-      "id": "234bd8b150de",
-      "headline": "Yarn prices jump 45 percent, threatening Diwali shutdown for 50,000 Surat weavers",
-      "summary": "According to Divya Bhaskar, yarn prices have surged by 45%, triggering severe financial stress for an estimated 50,000 weavers in Surat. The report indicates a possibility of an extended one-month operational vacation during Diwali. Specific yarn types, price baselines, and exact dates or trade body sources are not stated in the brief report.",
+      "id": "b62552cc0c7d",
+      "headline": "Surat Textile Sector Faces Shutdown Risk Following 66% Yarn Price Hike",
+      "summary": "According to reports, Surat's textile industry is confronting shutdown risks following a steep 66% surge in yarn prices. The report provides no additional operational details, leaving the timeline of the price hike, the specific yarn grades affected, and the exact number of impacted units unstated. Cash flow compression across upstream weaving units is inferred.",
       "cluster": "surat",
       "industries": [
         "weaving",
@@ -138,248 +138,59 @@
       ],
       "event_type": "input-cost shock",
       "credit_signal": "negative",
-      "why_it_matters": "A 45% yarn price spike threatens powerloom and water-jet operating margins, risking extended festive plant shutdowns and term-loan EMI defaults.",
+      "why_it_matters": "A sharp 66% jump in raw yarn prices directly erodes gross margins for weavers and threatens operational viability and cash credit servicing.",
       "credit_note": {
-        "what_happened": "Yarn prices have reportedly escalated by 45%, leaving an estimated 50,000 weavers in financial distress and raising the prospect of an unprecedented one-month production closure over the Diwali period.",
-        "confirmed_vs_alleged": "Confirmed: Local media reports of sharp yarn price escalation and Weaver distress. Alleged/Uncertain: The exact 45% increase across specific yarn varieties (POY/FDY) is unspecified; the prospect of a full one-month Diwali shutdown remains a possibility rather than an official association mandate.",
-        "exposed_subsectors": "Exposed losers: Water-jet and rapier powerloom weavers, job-work weaving units unable to pass on yarn price hikes to grey fabric traders. Likely insulated/winners: Spinners and texturisers holding low-cost raw material inventory.",
+        "what_happened": "A news report indicates that the Surat textile industry faces the threat of plant shutdowns due to an abrupt 66% increase in yarn prices. Further specific data regarding base prices, duration, or specific market locations are not provided in the input.",
+        "confirmed_vs_alleged": "Confirmed: Reports claim a 66% price surge in yarn. Alleged/Uncertain: The immediate risk of widespread unit shutdowns is claimed, but the specific extent of closures or official industry-wide production cuts remains unverified.",
+        "exposed_subsectors": "Exposed/Losers: Water-jet and air-jet weavers, powerloom operators, and texturising units that absorb raw yarn costs without pricing power. Winners: Upstream primary yarn manufacturers holding pre-hike inventory, provided demand holds.",
         "financial_effects": {
-          "volumes": "↓ sharp contraction expected if 1-month Diwali shutdown materialises",
-          "realisations": "→ sluggish or lagging grey fabric price increases",
-          "input_costs": "↑ up 45% on yarn procurement",
-          "margins": "↓ severe compression as weavers fail to pass on costs",
-          "receivable_days": "↑ delayed payments from grey cloth traders",
-          "inventory": "↓ weavers cutting yarn purchases; unsold grey fabric accumulation",
-          "creditors": "↑ stretching out yarn supplier credit lines",
-          "working_capital": "↑ severe squeeze on cash credit Drawing Power limits",
-          "dscr": "↓ deterioration, raising risk of term loan machine EMI defaults"
+          "volumes": "↓ near term if units curtail looms to avoid operating losses",
+          "realisations": "→ / ↑ limited ability to immediately pass full 66% hike to grey-fabric buyers",
+          "input_costs": "↑ 66% surge in raw material yarn costs",
+          "margins": "↓ severe contraction in operating margins",
+          "receivable_days": "↑ potential stretch as buyers resist higher billing rates",
+          "inventory": "↓ risk of holding high-cost yarn stock if fabric demand softens",
+          "creditors": "↑ extended credit terms sought from yarn spinners/suppliers",
+          "working_capital": "↑ sharp inflation in DP requirement to fund equivalent physical volumes",
+          "dscr": "↓ pressure on debt servicing and term loan instalments for machine loans"
         },
-        "temporary_or_structural": "Cyclical to temporary, tied to raw material price volatility around festive production cycles, but could cause structural defaults among highly leveraged job-work units.",
+        "temporary_or_structural": "Cyclical / input-cost shock; sustainability depends on global/domestic raw material dynamics and downstream fabric price absorption.",
         "what_to_check": [
-          "Review monthly stock and book-debt statements for September/October to assess yarn purchase prices versus grey fabric billing rates.",
-          "Check power consumption bills of weaver borrowers to verify production curtailment or extended plant shutdowns.",
-          "Monitor CC account utilization and verify adequacy of Drawing Power against rising input costs and ageing receivables.",
-          "Track debt servicing records for weaving machinery term loans (TUFS/state subsidy-backed loans) for SMA-0/1 migration."
+          "Review monthly stock and book-debt statements to monitor yarn purchase rates and valuation of raw material stock",
+          "Check drawing power (DP) calculations to ensure inflated yarn invoices are not masking volume contraction",
+          "Inspect electricity consumption bills for powerloom and water-jet weaving units to detect production slowdowns or cut shifts",
+          "Track SMA migration and debit turnover in cash credit accounts over the latest billing cycles"
         ],
         "confirm_or_disprove": {
-          "confirm": "Prolonged drop in factory electricity usage and rising unpaid yarn creditor dues in weaver audited/stock statements.",
-          "disprove": "Prompt upward revision of grey fabric purchase rates by Ring Road textile traders offsetting the yarn increase without production cuts."
+          "confirm": "Drop in plant power meter readings, rising DP utilization, and requests for ad-hoc limits confirm severe liquidity stress.",
+          "disprove": "Normal power consumption patterns, stable margins on stock statements, and full pass-through in grey-fabric sales disprove shutdown risk."
         }
       },
       "mode": "ai",
       "model": "gemini:gemini-3.8-flash",
-      "source": "Divya Bhaskar",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQa2RzNnhiZ01NSnFUTFJFXzhpY2tnalM2RENjWHhNMlpYZWdTZXZaUThTM1hoVHpGU1B5MXB0VlhYVmg5SVBxNzE0SGs3VWZLeFlDWTQ2T2hUcXR0aHdnQ1g2aUllYjdMUzZUQWJtcGZJWmdWcGdBYlVURS1HdVVHXzRqUDI4aWNKNVlqWU9aVjBxWkw3OHhxWWpITE53MC0yZVN1T1JGNWMyX3hvT1plUFdLVFNYY25RVk1aZnBZNERGb3NNazhTbmpmZ9IB0AFBVV95cUxOckxpRzgwMXVadWlGRnJOZ0o4Zjc5RUZYVEV5Zm9la1lLblVRTkE4OVVSckJ4cFBGWk1KVmNXMXFJYVJsM2xxV3lpZmRNV1VFUUpoU2NnMGtqRWtGX0VmbHQ0dC10Xy0tRzhxZ3VwaWloc1lTQlhxeE9fRkVKTFZfLUF6bDYyUjV4R2N0WEljVDRWTkxpc1FuN2ktS0E4OHMwdjd1MUQxNmMwaXdCRHQzRzBvWHhFZUJfOElxbE9iR25NbnpUVkFyMUxGN3dSVW1I?oc=5",
-      "published": "2026-09-21T07:00:00.000Z",
-      "lang": "gu",
+      "source": "Urban Acres",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMThoZlFBTXkwZklORjNFUEEwdWxVOE44b0U3X3ZPRTgtRlBmcVZqcmtCUTVma0lkTVhiZVlVTjE1T2w3Sy1lSTdsQ1FtSDdaTUZjX18ybko4RExwZGpVSEoxV1lFN1pkQ3JBNVBpSmJBZ0h6VlFYX09MMDk1X0s4WDU0Qy1rZWVBYVlPU2N3?oc=5",
+      "published": "2026-10-10T00:52:15.000Z",
+      "lang": "en",
       "via": "Google News RSS",
-      "also_reported_by": [
-        "Bhaskar English",
-        "The New Indian Express",
-        "The Blunt Times",
-        "Gujarati Jagran",
-        "Urban Acres"
-      ],
+      "also_reported_by": [],
       "raw": {
-        "id": "234bd8b150de",
-        "title": "યાર્નના ભાવમાં 45%નો તોતિંગ વધારો: દિવાળીએ 1 મહિનાના વેકેશનની શક્યતા, 50,000 વિવર્સ આર્થિક સંકટમાં",
-        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQa2RzNnhiZ01NSnFUTFJFXzhpY2tnalM2RENjWHhNMlpYZWdTZXZaUThTM1hoVHpGU1B5MXB0VlhYVmg5SVBxNzE0SGs3VWZLeFlDWTQ2T2hUcXR0aHdnQ1g2aUllYjdMUzZUQWJtcGZJWmdWcGdBYlVURS1HdVVHXzRqUDI4aWNKNVlqWU9aVjBxWkw3OHhxWWpITE53MC0yZVN1T1JGNWMyX3hvT1plUFdLVFNYY25RVk1aZnBZNERGb3NNazhTbmpmZ9IB0AFBVV95cUxOckxpRzgwMXVadWlGRnJOZ0o4Zjc5RUZYVEV5Zm9la1lLblVRTkE4OVVSckJ4cFBGWk1KVmNXMXFJYVJsM2xxV3lpZmRNV1VFUUpoU2NnMGtqRWtGX0VmbHQ0dC10Xy0tRzhxZ3VwaWloc1lTQlhxeE9fRkVKTFZfLUF6bDYyUjV4R2N0WEljVDRWTkxpc1FuN2ktS0E4OHMwdjd1MUQxNmMwaXdCRHQzRzBvWHhFZUJfOElxbE9iR25NbnpUVkFyMUxGN3dSVW1I?oc=5",
-        "source": "Divya Bhaskar",
-        "source_home": "https://www.divyabhaskar.co.in",
-        "published": "2026-09-21T07:00:00.000Z",
+        "id": "b62552cc0c7d",
+        "title": "Surat Textile Industry Faces Shutdown Risk After 66% Yarn Price Rise",
+        "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMThoZlFBTXkwZklORjNFUEEwdWxVOE44b0U3X3ZPRTgtRlBmcVZqcmtCUTVma0lkTVhiZVlVTjE1T2w3Sy1lSTdsQ1FtSDdaTUZjX18ybko4RExwZGpVSEoxV1lFN1pkQ3JBNVBpSmJBZ0h6VlFYX09MMDk1X0s4WDU0Qy1rZWVBYVlPU2N3?oc=5",
+        "source": "Urban Acres",
+        "source_home": "https://urbanacres.in",
+        "published": "2026-10-10T00:52:15.000Z",
         "snippet": "",
-        "lang": "gu",
+        "lang": "en",
         "via": "Google News RSS",
         "cluster": "surat",
         "industries": [
+          "mmf-textiles",
           "weaving"
         ],
         "also": []
-      },
-      "coverage": [
-        {
-          "id": "6ad02ad1a9dd",
-          "source": "Bhaskar English",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQVzBnYTUzV1o5NzNKdklTTTR1YnJISDJTVl9QdWppb053YVZkOW9ueWp3OUJycHVvdmE3bzZ2Y1ZhSTRocHdVOGk2MjVJd3g0cElZVWNIUWJRSGxQcUhoZDV5MGoyLWkzNnlLS2tBUDRCUjlLb0h0SHVvM3hkRU5pcGYyV1RPaTlJY2I5T2dSdHNBbkhLTGV0Q3R0dHUtQnFEOTBnUVpPRktlS2ZfZHYxdlpubFF4dlBBWHFCQmllMmpoNnQ2WDVGOdIBzgFBVV95cUxNNEFCTU1JcUJoZlg1RGtnWVo2dzJTaC0wdXE0ZlJwTHFPX3A3TXViTnhEcG9pZUFvMGFWc2pMeGYteWNhNWJsZHZ0cW00bmExS3RKcnF4b19oWjQwbUwyNGQwZldYblhfZjFqQlFKcEhRbTRXNDRIWl9iUHpEcHVrTEhxc3V6Z2szTVNYOU1jZ21ZUllWVWQwYnBnRjJ1cWs0T213S0pnMHRqNTNFcnc3S1RaM19Rdjc4cGp6LU1jYURseUpWVDFyRmFFU1BGZw?oc=5",
-          "headline": "Surat yarn prices surge 45%; weavers face Diwali shutdown",
-          "published": "2026-09-21T22:46:20.000Z",
-          "lang": "en"
-        },
-        {
-          "id": "c6c6a9e285de",
-          "source": "The New Indian Express",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUlpwVFlTSFd6NFdFSVJoSU1IaXZUckZ3bmpWdjgzZFAwZG42MVVBd2syMHppbGhkS2tNRXNGemRIdFQ3N2ZrMDBjbXlMTzJyc01xekxablBLME9qcUxiR3pjSFhxMHBxbzNLVExSWEF5TXZTM0dEX01CSVBVdDhVdnVKb2RCalZJOExNTVpTX3RzWURXWTludG4zVkk3NGpTTFRwRzNvR2lQYmpUS1hwN3Q4V2ZxNW9fU3BXbFFRczdqZFZZR2htVDFhSkVMNjVX0gHeAUFVX3lxTFA2MkJXRi1pX1RMbldEbkFFZmZuWmJUMUtUcnk1emlDcVEtZU1FTzZyQkZEZFV3Uzg2dFEzU0dPNHotQUZiRkRZdkZMZWVJd3RqV2VyWWNoN0w5dGM2eEZyWTJvU0lpNUxFOWF0TWl3Y3JiMG04Z2dfdUlZLXJrQ09sRWpLOU9sZEtiWUFxdS1wY2M5cWFfeVZNb25IWXZhUTdhT2dKeFFGQXM1M0tmTnpUSTc5bU1IbVJBMEhvczRlLVN2eTdlVXlFTXFUWDZDdU1YZTBGYmVyT0NzRndSUQ?oc=5",
-          "headline": "Gujarat weavers reel under soaring yarn prices, seek intervention",
-          "published": "2026-09-22T07:00:00.000Z",
-          "lang": "en"
-        },
-        {
-          "id": "8e001af37543",
-          "source": "Divya Bhaskar",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOS1ZWTG1VN29ma0xlWTJtRERFN2lKRXl3QkJNTmR1WGNPMDgwczljUUZnUzZUUlVLVjg3dHl6dTAwRE1LUldGaXpJX01PbW5lN3Nhdmx0NnN4ajdUYXV1cHBDamZXSUw4ck1OSVgwVEliTjZoNGpEZ2NKa0pwQmRfYjczb2t6eks5alVoWkFnekZfaDh5MjZyUmRoUXE1QWUwa0RNSlp2Q1U1U2EzZXNMajdKajhLSzVicmp3bHluR0NONW90Zkc4TzRnNkvSAdIBQVVfeXFMUG5RUkF6ZFZBbXRnRDg5aFZHYk54SThQR0s2VG5wdkxFOVRXWmF3ZkxEOW4yLWsxZGhUWDkxUUU5WFdiM0U5M3BWdUlkXy1UVjBlRHdpeThXOWZRYkQtTEk5dlV5ZENUZE5lVWhLQWlzVDF1OG1JTzNhaDZIMC1ra0FGQmUwcTBERXJDMElUS0xxYUpsd2lvM2FLVVRSNTZSOU12VDJvVi1PVkpZcWRDeW1oUEpXeTNnT0wxWlJKY3VQQkVUM3A4M1JBNTB2X0hqci1n?oc=5",
-          "headline": "Surat weavers halt 6 crore meter fabric production protesting yarn syndicate",
-          "published": "2026-09-27T09:17:58.000Z",
-          "lang": "gu"
-        },
-        {
-          "id": "3b5a022a3b39",
-          "source": "Bhaskar English",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZkNGcWNVWkF2MzVObC1lTThFVFpxUWpWNVZVNUVSZlBVakt5TTVtOGlUTDZOSkthZ240WDFkLTZYMi1IZHVOVUFZaTdIVVFpanpaQjZnUm1VY2tISnR1U3kxWEk0cDlzekcyYThWLUZzWG9zT3FWTlU0TUltaUVUYVFzQVg2UFBvckJwendmV1NPT2dySWtqVXFLM2pMZ1JvZDhzdVRHWkE1aE00UXFfczhVODU2ZkFNRnR4VmxES2jSAcYBQVVfeXFMT1QwU0tVa1dhaXUwc0liV0RfRktUWEJkakNvcXhDLVZCbHZURmtQa3FrdGZHYllRNjRPU1Nhb3RablN1XzNpc19sUjE1bjJ5d0hjQTlUbmwtUzNFbG45cnVTYkRRQmh6ZFRDOEh2R0UxQmJhOHJSOFBadEFlQU9VSlhrMHlMNFVVaWdyMmt1bWM5bVVYcFZyOUJENERIaF8tekExRTFUeEp2Sl8zV2tuVV9ObmtTUU9VZlNZZWN5NUdYcFJMNUZn?oc=5",
-          "headline": "Surat Weavers' Strike Drops Daily Power Consumption by ₹50 Crore",
-          "published": "2026-09-29T07:07:42.000Z",
-          "lang": "en"
-        },
-        {
-          "id": "7a4b00c02d40",
-          "source": "The Blunt Times",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdTNwRV9YZFo3WHpiU3VyUFRlWWVxU0hNYUt4VTdLSUxId29PcEk5REctTmgzMWFicWpJcFZMN3FBSUpLdjlESmZuOXVaRGw0QTVFNkJNZVVpaWJaTEF5ZVhmTWlaN2l0dGQzc2hVOWJVckZ1RVc5ZWRJeXZyY2NpZ3FIMXh2Mi1MaGdhYUhfRHV6dEU?oc=5",
-          "headline": "Surat Weavers Seek PM Modi’s Intervention Over Yarn Prices",
-          "published": "2026-10-01T13:00:07.000Z",
-          "lang": "en"
-        },
-        {
-          "id": "17d2f5591336",
-          "source": "Gujarati Jagran",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcTlZUVcweUlnekNWLXlCMUlxYmJfV1VjcDROQlFHbmNWSVVNallsWmZlNXNxNWhja3N4M18zeVMxZUJ0NXY3ZU9fb0d0d3dzWWxHbFpyWlNNOV9GcWdQWGJyV09wRW1UVE83U2ItX244cVV0RE9IUkw2Q29WSm1KT0NPTFdyci1yeTBCR2NSeU56NnBmTWtRZHRETUFHNGgzczB2LTRqbjkwaVBnLUhLeGdxMURTalpKSDN6aFRrU3VoYno4NXJzQXZuQjdsRU1XaExqUFVGc2xRSFIyOXVQSXZB?oc=5",
-          "headline": "Union Minister Giriraj Singh Addresses Rising Yarn Prices During Surat Visit",
-          "published": "2026-10-09T10:22:00.000Z",
-          "lang": "gu"
-        },
-        {
-          "id": "b62552cc0c7d",
-          "source": "Urban Acres",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMThoZlFBTXkwZklORjNFUEEwdWxVOE44b0U3X3ZPRTgtRlBmcVZqcmtCUTVma0lkTVhiZVlVTjE1T2w3Sy1lSTdsQ1FtSDdaTUZjX18ybko4RExwZGpVSEoxV1lFN1pkQ3JBNVBpSmJBZ0h6VlFYX09MMDk1X0s4WDU0Qy1rZWVBYVlPU2N3?oc=5",
-          "headline": "Surat Textile Sector Faces Shutdown Risk Following 66% Yarn Price Hike",
-          "published": "2026-10-10T00:52:15.000Z",
-          "lang": "en"
-        }
-      ],
-      "merged_ids": [
-        "6ad02ad1a9dd",
-        "c6c6a9e285de",
-        "8e001af37543",
-        "3b5a022a3b39",
-        "7a4b00c02d40",
-        "17d2f5591336",
-        "b62552cc0c7d"
-      ],
-      "merged_raws": [
-        {
-          "id": "6ad02ad1a9dd",
-          "title": "Yarn prices surge 45%: One-month Diwali shutdown likely; 50,000 weavers face financial crisis",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQVzBnYTUzV1o5NzNKdklTTTR1YnJISDJTVl9QdWppb053YVZkOW9ueWp3OUJycHVvdmE3bzZ2Y1ZhSTRocHdVOGk2MjVJd3g0cElZVWNIUWJRSGxQcUhoZDV5MGoyLWkzNnlLS2tBUDRCUjlLb0h0SHVvM3hkRU5pcGYyV1RPaTlJY2I5T2dSdHNBbkhLTGV0Q3R0dHUtQnFEOTBnUVpPRktlS2ZfZHYxdlpubFF4dlBBWHFCQmllMmpoNnQ2WDVGOdIBzgFBVV95cUxNNEFCTU1JcUJoZlg1RGtnWVo2dzJTaC0wdXE0ZlJwTHFPX3A3TXViTnhEcG9pZUFvMGFWc2pMeGYteWNhNWJsZHZ0cW00bmExS3RKcnF4b19oWjQwbUwyNGQwZldYblhfZjFqQlFKcEhRbTRXNDRIWl9iUHpEcHVrTEhxc3V6Z2szTVNYOU1jZ21ZUllWVWQwYnBnRjJ1cWs0T213S0pnMHRqNTNFcnc3S1RaM19Rdjc4cGp6LU1jYURseUpWVDFyRmFFU1BGZw?oc=5",
-          "source": "Bhaskar English",
-          "source_home": "https://www.bhaskarenglish.in",
-          "published": "2026-09-21T22:46:20.000Z",
-          "snippet": "",
-          "lang": "en",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "weaving"
-          ],
-          "also": []
-        },
-        {
-          "id": "c6c6a9e285de",
-          "title": "Gujarat weavers reel under soaring yarn prices, seek State govt intervention",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUlpwVFlTSFd6NFdFSVJoSU1IaXZUckZ3bmpWdjgzZFAwZG42MVVBd2syMHppbGhkS2tNRXNGemRIdFQ3N2ZrMDBjbXlMTzJyc01xekxablBLME9qcUxiR3pjSFhxMHBxbzNLVExSWEF5TXZTM0dEX01CSVBVdDhVdnVKb2RCalZJOExNTVpTX3RzWURXWTludG4zVkk3NGpTTFRwRzNvR2lQYmpUS1hwN3Q4V2ZxNW9fU3BXbFFRczdqZFZZR2htVDFhSkVMNjVX0gHeAUFVX3lxTFA2MkJXRi1pX1RMbldEbkFFZmZuWmJUMUtUcnk1emlDcVEtZU1FTzZyQkZEZFV3Uzg2dFEzU0dPNHotQUZiRkRZdkZMZWVJd3RqV2VyWWNoN0w5dGM2eEZyWTJvU0lpNUxFOWF0TWl3Y3JiMG04Z2dfdUlZLXJrQ09sRWpLOU9sZEtiWUFxdS1wY2M5cWFfeVZNb25IWXZhUTdhT2dKeFFGQXM1M0tmTnpUSTc5bU1IbVJBMEhvczRlLVN2eTdlVXlFTXFUWDZDdU1YZTBGYmVyT0NzRndSUQ?oc=5",
-          "source": "The New Indian Express",
-          "source_home": "https://www.newindianexpress.com",
-          "published": "2026-09-22T07:00:00.000Z",
-          "snippet": "",
-          "lang": "en",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "weaving"
-          ],
-          "also": []
-        },
-        {
-          "id": "8e001af37543",
-          "title": "યાર્ન સિન્ડિકેટ સામે સુરતના વીવર્સનો હલ્લાબોલ: એક જ દિવસમાં 6 કરોડ મીટર કાપડનું ઉત્પાદન અટક્યું,યાર્નના ભાવ...",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOS1ZWTG1VN29ma0xlWTJtRERFN2lKRXl3QkJNTmR1WGNPMDgwczljUUZnUzZUUlVLVjg3dHl6dTAwRE1LUldGaXpJX01PbW5lN3Nhdmx0NnN4ajdUYXV1cHBDamZXSUw4ck1OSVgwVEliTjZoNGpEZ2NKa0pwQmRfYjczb2t6eks5alVoWkFnekZfaDh5MjZyUmRoUXE1QWUwa0RNSlp2Q1U1U2EzZXNMajdKajhLSzVicmp3bHluR0NONW90Zkc4TzRnNkvSAdIBQVVfeXFMUG5RUkF6ZFZBbXRnRDg5aFZHYk54SThQR0s2VG5wdkxFOVRXWmF3ZkxEOW4yLWsxZGhUWDkxUUU5WFdiM0U5M3BWdUlkXy1UVjBlRHdpeThXOWZRYkQtTEk5dlV5ZENUZE5lVWhLQWlzVDF1OG1JTzNhaDZIMC1ra0FGQmUwcTBERXJDMElUS0xxYUpsd2lvM2FLVVRSNTZSOU12VDJvVi1PVkpZcWRDeW1oUEpXeTNnT0wxWlJKY3VQQkVUM3A4M1JBNTB2X0hqci1n?oc=5",
-          "source": "Divya Bhaskar",
-          "source_home": "https://www.divyabhaskar.co.in",
-          "published": "2026-09-27T09:17:58.000Z",
-          "snippet": "",
-          "lang": "gu",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "mmf-textiles",
-            "weaving"
-          ],
-          "also": []
-        },
-        {
-          "id": "3b5a022a3b39",
-          "title": "Weavers’ strike reduces electricity consumption: Power consumption drops by ₹50 crore in a single day",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZkNGcWNVWkF2MzVObC1lTThFVFpxUWpWNVZVNUVSZlBVakt5TTVtOGlUTDZOSkthZ240WDFkLTZYMi1IZHVOVUFZaTdIVVFpanpaQjZnUm1VY2tISnR1U3kxWEk0cDlzekcyYThWLUZzWG9zT3FWTlU0TUltaUVUYVFzQVg2UFBvckJwendmV1NPT2dySWtqVXFLM2pMZ1JvZDhzdVRHWkE1aE00UXFfczhVODU2ZkFNRnR4VmxES2jSAcYBQVVfeXFMT1QwU0tVa1dhaXUwc0liV0RfRktUWEJkakNvcXhDLVZCbHZURmtQa3FrdGZHYllRNjRPU1Nhb3RablN1XzNpc19sUjE1bjJ5d0hjQTlUbmwtUzNFbG45cnVTYkRRQmh6ZFRDOEh2R0UxQmJhOHJSOFBadEFlQU9VSlhrMHlMNFVVaWdyMmt1bWM5bVVYcFZyOUJENERIaF8tekExRTFUeEp2Sl8zV2tuVV9ObmtTUU9VZlNZZWN5NUdYcFJMNUZn?oc=5",
-          "source": "Bhaskar English",
-          "source_home": "https://www.bhaskarenglish.in",
-          "published": "2026-09-29T07:07:42.000Z",
-          "snippet": "",
-          "lang": "en",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "weaving"
-          ],
-          "also": []
-        },
-        {
-          "id": "7a4b00c02d40",
-          "title": "Surat Weavers Seek PM Modi’s Intervention Over Yarn Prices",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdTNwRV9YZFo3WHpiU3VyUFRlWWVxU0hNYUt4VTdLSUxId29PcEk5REctTmgzMWFicWpJcFZMN3FBSUpLdjlESmZuOXVaRGw0QTVFNkJNZVVpaWJaTEF5ZVhmTWlaN2l0dGQzc2hVOWJVckZ1RVc5ZWRJeXZyY2NpZ3FIMXh2Mi1MaGdhYUhfRHV6dEU?oc=5",
-          "source": "The Blunt Times",
-          "source_home": "https://theblunttimes.in",
-          "published": "2026-10-01T13:00:07.000Z",
-          "snippet": "",
-          "lang": "en",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "weaving"
-          ],
-          "also": []
-        },
-        {
-          "id": "17d2f5591336",
-          "title": "કેન્દ્રીયમંત્રી ગિરિરાજ સિંહ સુરતની મુલાકાતે, જ્ઞાનેશ કુમારના રાજીનામાં અને યાર્નના વધી રહેલા ભાવ અંગે આપ્યું નિવેદન | Giriraj Singh Responds to Demand for Gyanesh Kumar's Resignation and Rising",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcTlZUVcweUlnekNWLXlCMUlxYmJfV1VjcDROQlFHbmNWSVVNallsWmZlNXNxNWhja3N4M18zeVMxZUJ0NXY3ZU9fb0d0d3dzWWxHbFpyWlNNOV9GcWdQWGJyV09wRW1UVE83U2ItX244cVV0RE9IUkw2Q29WSm1KT0NPTFdyci1yeTBCR2NSeU56NnBmTWtRZHRETUFHNGgzczB2LTRqbjkwaVBnLUhLeGdxMURTalpKSDN6aFRrU3VoYno4NXJzQXZuQjdsRU1XaExqUFVGc2xRSFIyOXVQSXZB?oc=5",
-          "source": "Gujarati Jagran",
-          "source_home": "https://www.gujaratijagran.com",
-          "published": "2026-10-09T10:22:00.000Z",
-          "snippet": "",
-          "lang": "gu",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "weaving"
-          ],
-          "also": []
-        },
-        {
-          "id": "b62552cc0c7d",
-          "title": "Surat Textile Industry Faces Shutdown Risk After 66% Yarn Price Rise",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQMThoZlFBTXkwZklORjNFUEEwdWxVOE44b0U3X3ZPRTgtRlBmcVZqcmtCUTVma0lkTVhiZVlVTjE1T2w3Sy1lSTdsQ1FtSDdaTUZjX18ybko4RExwZGpVSEoxV1lFN1pkQ3JBNVBpSmJBZ0h6VlFYX09MMDk1X0s4WDU0Qy1rZWVBYVlPU2N3?oc=5",
-          "source": "Urban Acres",
-          "source_home": "https://urbanacres.in",
-          "published": "2026-10-10T00:52:15.000Z",
-          "snippet": "",
-          "lang": "en",
-          "via": "Google News RSS",
-          "cluster": "surat",
-          "industries": [
-            "mmf-textiles",
-            "weaving"
-          ],
-          "also": []
-        }
-      ],
-      "latest_at": "2026-10-10T00:52:15.000Z"
+      }
     },
     {
       "id": "6b6e98ad9c2d",
@@ -674,6 +485,69 @@
         }
       ],
       "latest_at": "2026-10-09T10:45:59.000Z"
+    },
+    {
+      "id": "17d2f5591336",
+      "headline": "Union Minister Giriraj Singh Addresses Rising Yarn Prices During Surat Visit",
+      "summary": "Union Minister Giriraj Singh visited Surat and addressed statements regarding the demand for Gyanesh Kumar's resignation and the rising prices of yarn. The report does not provide specific data on yarn price hikes, the exact statements made by the minister, or the timeline of the price increases.",
+      "cluster": "surat",
+      "industries": [
+        "weaving"
+      ],
+      "event_type": "input-cost shock",
+      "credit_signal": "watch",
+      "why_it_matters": "Rising yarn prices directly squeeze the margins of water-jet and air-jet weavers who cannot easily pass on costs to grey-fabric traders.",
+      "credit_note": {
+        "what_happened": "Union Minister Giriraj Singh visited Surat and responded to local concerns regarding rising yarn prices and political demands surrounding Gyanesh Kumar. Specific details of the price hike or the minister's exact policy response were not detailed in the report.",
+        "confirmed_vs_alleged": "Confirmed: The minister's visit to Surat and his addressing of the yarn price issue. Alleged/Uncertain: The exact quantum of the yarn price increase and the government's concrete steps to mitigate it are not stated.",
+        "exposed_subsectors": "Exposed: Water-jet and air-jet weavers, powerloom units, and yarn spinners/texturisers (POY/FDY buyers) who are highly sensitive to raw material price fluctuations.",
+        "financial_effects": {
+          "volumes": "→ stable in the short term but risks slowdown if weavers halt looms",
+          "realisations": "→ lagging behind raw material cost increases",
+          "input_costs": "↑ rising yarn (POY/FDY) prices",
+          "margins": "↓ compressed due to inability to fully pass on yarn costs to grey-fabric traders",
+          "receivable_days": "→ not stated",
+          "inventory": "↑ potential accumulation of high-cost yarn stock",
+          "creditors": "↑ increased reliance on yarn dealer credit",
+          "working_capital": "↑ higher credit limit utilization to fund more expensive yarn purchases",
+          "dscr": "↓ potential pressure on DSCR for highly leveraged units with machinery loans"
+        },
+        "temporary_or_structural": "Cyclical, driven by raw material price volatility in the synthetic fiber chain, which typically stabilizes post-festival season or with policy interventions.",
+        "what_to_check": [
+          "Verify the movement of POY/FDY purchase prices in the borrower's recent stock statements compared to market benchmarks.",
+          "Check the utilization levels of Cash Credit (CC) limits to see if high yarn prices are stretching working capital.",
+          "Assess the debtor turnover ratio to ensure weavers are successfully recovering dues from grey-fabric traders.",
+          "Review the DSCR of borrowers with active machinery loans to ensure operating cash flows can cover debt obligations despite margin compression."
+        ],
+        "confirm_or_disprove": {
+          "confirm": "A continuous rise in yarn prices coupled with stagnant grey-fabric selling prices would confirm margin compression.",
+          "disprove": "A correction in crude oil/PTA prices leading to lower yarn costs, or a corresponding rise in grey-fabric prices, would disprove the stress."
+        }
+      },
+      "mode": "ai",
+      "model": "gemini:gemini-3.5-flash",
+      "source": "Gujarati Jagran",
+      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcTlZUVcweUlnekNWLXlCMUlxYmJfV1VjcDROQlFHbmNWSVVNallsWmZlNXNxNWhja3N4M18zeVMxZUJ0NXY3ZU9fb0d0d3dzWWxHbFpyWlNNOV9GcWdQWGJyV09wRW1UVE83U2ItX244cVV0RE9IUkw2Q29WSm1KT0NPTFdyci1yeTBCR2NSeU56NnBmTWtRZHRETUFHNGgzczB2LTRqbjkwaVBnLUhLeGdxMURTalpKSDN6aFRrU3VoYno4NXJzQXZuQjdsRU1XaExqUFVGc2xRSFIyOXVQSXZB?oc=5",
+      "published": "2026-10-09T10:22:00.000Z",
+      "lang": "gu",
+      "via": "Google News RSS",
+      "also_reported_by": [],
+      "raw": {
+        "id": "17d2f5591336",
+        "title": "કેન્દ્રીયમંત્રી ગિરિરાજ સિંહ સુરતની મુલાકાતે, જ્ઞાનેશ કુમારના રાજીનામાં અને યાર્નના વધી રહેલા ભાવ અંગે આપ્યું નિવેદન | Giriraj Singh Responds to Demand for Gyanesh Kumar's Resignation and Rising",
+        "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOcTlZUVcweUlnekNWLXlCMUlxYmJfV1VjcDROQlFHbmNWSVVNallsWmZlNXNxNWhja3N4M18zeVMxZUJ0NXY3ZU9fb0d0d3dzWWxHbFpyWlNNOV9GcWdQWGJyV09wRW1UVE83U2ItX244cVV0RE9IUkw2Q29WSm1KT0NPTFdyci1yeTBCR2NSeU56NnBmTWtRZHRETUFHNGgzczB2LTRqbjkwaVBnLUhLeGdxMURTalpKSDN6aFRrU3VoYno4NXJzQXZuQjdsRU1XaExqUFVGc2xRSFIyOXVQSXZB?oc=5",
+        "source": "Gujarati Jagran",
+        "source_home": "https://www.gujaratijagran.com",
+        "published": "2026-10-09T10:22:00.000Z",
+        "snippet": "",
+        "lang": "gu",
+        "via": "Google News RSS",
+        "cluster": "surat",
+        "industries": [
+          "weaving"
+        ],
+        "also": []
+      }
     },
     {
       "id": "2b47ff4fa01a",
@@ -2158,6 +2032,69 @@
       }
     },
     {
+      "id": "7a4b00c02d40",
+      "headline": "Surat Weavers Seek PM Modi’s Intervention Over Yarn Prices",
+      "summary": "The Blunt Times reported on 2026-10-01 that Surat weavers are seeking Prime Minister Narendra Modi's intervention regarding yarn prices. The snippet contains no further details, and specific figures on price hikes, names of affected units, or official government responses are not stated in the input.",
+      "cluster": "surat",
+      "industries": [
+        "weaving"
+      ],
+      "event_type": "input-cost shock",
+      "credit_signal": "watch",
+      "why_it_matters": "Yarn price disputes can compress margins for water-jet and powerloom weavers, straining working capital limits.",
+      "credit_note": {
+        "what_happened": "Surat weavers have sought Prime Minister Modi's intervention regarding yarn prices, indicating ongoing tensions over input costs.",
+        "confirmed_vs_alleged": "Confirmed: Weavers are seeking PM intervention over yarn prices as per the news source. Alleged/Uncertain: The exact magnitude of yarn price increases, extent of margin compression, and official response are not stated.",
+        "exposed_subsectors": "Water-jet/air-jet weavers and powerloom units (POY/FDY buyers) are exposed as losers if yarn costs rise without a corresponding increase in grey fabric realisations.",
+        "financial_effects": {
+          "volumes": "→ not stated",
+          "realisations": "→ not stated",
+          "input_costs": "↑ potential upward pressure claimed by weavers",
+          "margins": "↓ potential squeeze if output prices lag",
+          "receivable_days": "→ not stated",
+          "inventory": "→ not stated",
+          "creditors": "→ not stated",
+          "working_capital": "↓ strain on Cash Credit limits likely if cost increases persist",
+          "dscr": "→ not stated"
+        },
+        "temporary_or_structural": "temporary, pending further details on actual price movements and market settlement",
+        "what_to_check": [
+          "Review latest stock and book-debt statements for inventory build-up of grey fabric",
+          "Check power consumption trends in bank account statements to verify operating capacity",
+          "Enquire with borrowing weavers regarding current POY/FDY purchase costs vs grey fabric selling prices",
+          "Monitor frequency of drawing power limit overutilization"
+        ],
+        "confirm_or_disprove": {
+          "confirm": "Widening of trade association protests and formal representation data showing sustained high yarn prices",
+          "downward": "Stabilization of yarn prices or successful pass-through to grey fabric buyers"
+        }
+      },
+      "mode": "ai",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "source": "The Blunt Times",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdTNwRV9YZFo3WHpiU3VyUFRlWWVxU0hNYUt4VTdLSUxId29PcEk5REctTmgzMWFicWpJcFZMN3FBSUpLdjlESmZuOXVaRGw0QTVFNkJNZVVpaWJaTEF5ZVhmTWlaN2l0dGQzc2hVOWJVckZ1RVc5ZWRJeXZyY2NpZ3FIMXh2Mi1MaGdhYUhfRHV6dEU?oc=5",
+      "published": "2026-10-01T13:00:07.000Z",
+      "lang": "en",
+      "via": "Google News RSS",
+      "also_reported_by": [],
+      "raw": {
+        "id": "7a4b00c02d40",
+        "title": "Surat Weavers Seek PM Modi’s Intervention Over Yarn Prices",
+        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQdTNwRV9YZFo3WHpiU3VyUFRlWWVxU0hNYUt4VTdLSUxId29PcEk5REctTmgzMWFicWpJcFZMN3FBSUpLdjlESmZuOXVaRGw0QTVFNkJNZVVpaWJaTEF5ZVhmTWlaN2l0dGQzc2hVOWJVckZ1RVc5ZWRJeXZyY2NpZ3FIMXh2Mi1MaGdhYUhfRHV6dEU?oc=5",
+        "source": "The Blunt Times",
+        "source_home": "https://theblunttimes.in",
+        "published": "2026-10-01T13:00:07.000Z",
+        "snippet": "",
+        "lang": "en",
+        "via": "Google News RSS",
+        "cluster": "surat",
+        "industries": [
+          "weaving"
+        ],
+        "also": []
+      }
+    },
+    {
       "id": "5d2490c9d0ea",
       "headline": "Diamond factories report 12-18 hour work shifts amid labor shortage",
       "summary": "News18 Hindi reports that Surat diamond factories are operating for 12-18 hours due to high demand and are facing a shortage of artisans. The snippet contains no additional details, and specific figures on production volumes, export realizations, or financial metrics are not stated.",
@@ -2550,6 +2487,105 @@
           }
         ]
       }
+    },
+    {
+      "id": "3b5a022a3b39",
+      "headline": "Surat Weavers' Strike Drops Daily Power Consumption by ₹50 Crore",
+      "summary": "According to Bhaskar English on 2026-09-29, a weavers' strike in Surat led to a single-day drop in power consumption valued at ₹50 crore. The input snippet does not state the duration of the strike, the specific demands of the weavers, or the exact power tariff rates applied. This indicates a sudden halt in production for water-jet, air-jet, and powerloom units.",
+      "cluster": "surat",
+      "industries": [
+        "weaving",
+        "mmf-textiles"
+      ],
+      "event_type": "supply-chain disruption",
+      "credit_signal": "negative",
+      "why_it_matters": "Abrupt production halt via weavers' strike impairs cash generation, directly threatening near-term Cash Credit servicing and machinery loan EMIs.",
+      "credit_note": {
+        "what_happened": "A weavers' strike in Surat caused a single-day drop of ₹50 crore in power consumption, indicating a large-scale shutdown of weaving operations.",
+        "confirmed_vs_alleged": "Confirmed: A drop in power consumption by ₹50 crore due to a weavers' strike. Alleged/Unclaimed: Specific demands of the strike and exact duration are not stated.",
+        "exposed_subsectors": "Water-jet/air-jet weavers and powerloom units are directly exposed; yarn spinners and texturisers face secondary demand contraction.",
+        "financial_effects": {
+          "volumes": "↓ sharp drop during the strike days",
+          "realisations": "→ not affected directly",
+          "input_costs": "↓ lower power and variable utility costs",
+          "margins": "↓ fixed overheads continue without production",
+          "receivable_days": "↑ realization delays from market debtors",
+          "inventory": "↑ build-up of raw yarn or unfulfilled grey fabric",
+          "creditors": "→ payment stretch to yarn suppliers likely",
+          "working_capital": "↓ immediate liquidity strain",
+          "dscr": "↓ near term debt service coverage impaired"
+        },
+        "temporary_or_structural": "Temporary disruption, as the event is a strike whose resolution will dictate production resumption.",
+        "what_to_check": [
+          "Review latest stock and book-debt statements for inventory pile-up.",
+          "Check CC account operations for sudden lack of turnover or devolvement of LCs.",
+          "Inquire with borrowers about the strike duration and core demands.",
+          "Verify upcoming term loan and equipment EMI bounce status."
+        ],
+        "confirm_or_disprove": {
+          "confirm": "Prolonged low power bills and stagnant CC account turnovers indicating extended shutdown.",
+          "disprove": "Immediate withdrawal of the strike and a surge in capacity utilization to clear backlogs."
+        }
+      },
+      "mode": "ai",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "source": "Bhaskar English",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZkNGcWNVWkF2MzVObC1lTThFVFpxUWpWNVZVNUVSZlBVakt5TTVtOGlUTDZOSkthZ240WDFkLTZYMi1IZHVOVUFZaTdIVVFpanpaQjZnUm1VY2tISnR1U3kxWEk0cDlzekcyYThWLUZzWG9zT3FWTlU0TUltaUVUYVFzQVg2UFBvckJwendmV1NPT2dySWtqVXFLM2pMZ1JvZDhzdVRHWkE1aE00UXFfczhVODU2ZkFNRnR4VmxES2jSAcYBQVVfeXFMT1QwU0tVa1dhaXUwc0liV0RfRktUWEJkakNvcXhDLVZCbHZURmtQa3FrdGZHYllRNjRPU1Nhb3RablN1XzNpc19sUjE1bjJ5d0hjQTlUbmwtUzNFbG45cnVTYkRRQmh6ZFRDOEh2R0UxQmJhOHJSOFBadEFlQU9VSlhrMHlMNFVVaWdyMmt1bWM5bVVYcFZyOUJENERIaF8tekExRTFUeEp2Sl8zV2tuVV9ObmtTUU9VZlNZZWN5NUdYcFJMNUZn?oc=5",
+      "published": "2026-09-29T07:07:42.000Z",
+      "lang": "en",
+      "via": "Google News RSS",
+      "also_reported_by": [
+        "Divya Bhaskar"
+      ],
+      "raw": {
+        "id": "3b5a022a3b39",
+        "title": "Weavers’ strike reduces electricity consumption: Power consumption drops by ₹50 crore in a single day",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNZkNGcWNVWkF2MzVObC1lTThFVFpxUWpWNVZVNUVSZlBVakt5TTVtOGlUTDZOSkthZ240WDFkLTZYMi1IZHVOVUFZaTdIVVFpanpaQjZnUm1VY2tISnR1U3kxWEk0cDlzekcyYThWLUZzWG9zT3FWTlU0TUltaUVUYVFzQVg2UFBvckJwendmV1NPT2dySWtqVXFLM2pMZ1JvZDhzdVRHWkE1aE00UXFfczhVODU2ZkFNRnR4VmxES2jSAcYBQVVfeXFMT1QwU0tVa1dhaXUwc0liV0RfRktUWEJkakNvcXhDLVZCbHZURmtQa3FrdGZHYllRNjRPU1Nhb3RablN1XzNpc19sUjE1bjJ5d0hjQTlUbmwtUzNFbG45cnVTYkRRQmh6ZFRDOEh2R0UxQmJhOHJSOFBadEFlQU9VSlhrMHlMNFVVaWdyMmt1bWM5bVVYcFZyOUJENERIaF8tekExRTFUeEp2Sl8zV2tuVV9ObmtTUU9VZlNZZWN5NUdYcFJMNUZn?oc=5",
+        "source": "Bhaskar English",
+        "source_home": "https://www.bhaskarenglish.in",
+        "published": "2026-09-29T07:07:42.000Z",
+        "snippet": "",
+        "lang": "en",
+        "via": "Google News RSS",
+        "cluster": "surat",
+        "industries": [
+          "weaving"
+        ],
+        "also": []
+      },
+      "coverage": [
+        {
+          "id": "8e001af37543",
+          "source": "Divya Bhaskar",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOS1ZWTG1VN29ma0xlWTJtRERFN2lKRXl3QkJNTmR1WGNPMDgwczljUUZnUzZUUlVLVjg3dHl6dTAwRE1LUldGaXpJX01PbW5lN3Nhdmx0NnN4ajdUYXV1cHBDamZXSUw4ck1OSVgwVEliTjZoNGpEZ2NKa0pwQmRfYjczb2t6eks5alVoWkFnekZfaDh5MjZyUmRoUXE1QWUwa0RNSlp2Q1U1U2EzZXNMajdKajhLSzVicmp3bHluR0NONW90Zkc4TzRnNkvSAdIBQVVfeXFMUG5RUkF6ZFZBbXRnRDg5aFZHYk54SThQR0s2VG5wdkxFOVRXWmF3ZkxEOW4yLWsxZGhUWDkxUUU5WFdiM0U5M3BWdUlkXy1UVjBlRHdpeThXOWZRYkQtTEk5dlV5ZENUZE5lVWhLQWlzVDF1OG1JTzNhaDZIMC1ra0FGQmUwcTBERXJDMElUS0xxYUpsd2lvM2FLVVRSNTZSOU12VDJvVi1PVkpZcWRDeW1oUEpXeTNnT0wxWlJKY3VQQkVUM3A4M1JBNTB2X0hqci1n?oc=5",
+          "headline": "Surat weavers halt 6 crore meter fabric production protesting yarn syndicate",
+          "published": "2026-09-27T09:17:58.000Z",
+          "lang": "gu"
+        }
+      ],
+      "merged_ids": [
+        "8e001af37543"
+      ],
+      "merged_raws": [
+        {
+          "id": "8e001af37543",
+          "title": "યાર્ન સિન્ડિકેટ સામે સુરતના વીવર્સનો હલ્લાબોલ: એક જ દિવસમાં 6 કરોડ મીટર કાપડનું ઉત્પાદન અટક્યું,યાર્નના ભાવ...",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOS1ZWTG1VN29ma0xlWTJtRERFN2lKRXl3QkJNTmR1WGNPMDgwczljUUZnUzZUUlVLVjg3dHl6dTAwRE1LUldGaXpJX01PbW5lN3Nhdmx0NnN4ajdUYXV1cHBDamZXSUw4ck1OSVgwVEliTjZoNGpEZ2NKa0pwQmRfYjczb2t6eks5alVoWkFnekZfaDh5MjZyUmRoUXE1QWUwa0RNSlp2Q1U1U2EzZXNMajdKajhLSzVicmp3bHluR0NONW90Zkc4TzRnNkvSAdIBQVVfeXFMUG5RUkF6ZFZBbXRnRDg5aFZHYk54SThQR0s2VG5wdkxFOVRXWmF3ZkxEOW4yLWsxZGhUWDkxUUU5WFdiM0U5M3BWdUlkXy1UVjBlRHdpeThXOWZRYkQtTEk5dlV5ZENUZE5lVWhLQWlzVDF1OG1JTzNhaDZIMC1ra0FGQmUwcTBERXJDMElUS0xxYUpsd2lvM2FLVVRSNTZSOU12VDJvVi1PVkpZcWRDeW1oUEpXeTNnT0wxWlJKY3VQQkVUM3A4M1JBNTB2X0hqci1n?oc=5",
+          "source": "Divya Bhaskar",
+          "source_home": "https://www.divyabhaskar.co.in",
+          "published": "2026-09-27T09:17:58.000Z",
+          "snippet": "",
+          "lang": "gu",
+          "via": "Google News RSS",
+          "cluster": "surat",
+          "industries": [
+            "mmf-textiles",
+            "weaving"
+          ],
+          "also": []
+        }
+      ],
+      "latest_at": "2026-09-29T07:07:42.000Z"
     },
     {
       "id": "9b03a2483acb",
@@ -3629,6 +3665,130 @@
       }
     },
     {
+      "id": "234bd8b150de",
+      "headline": "Yarn prices jump 45 percent, threatening Diwali shutdown for 50,000 Surat weavers",
+      "summary": "According to Divya Bhaskar, yarn prices have surged by 45%, triggering severe financial stress for an estimated 50,000 weavers in Surat. The report indicates a possibility of an extended one-month operational vacation during Diwali. Specific yarn types, price baselines, and exact dates or trade body sources are not stated in the brief report.",
+      "cluster": "surat",
+      "industries": [
+        "weaving",
+        "mmf-textiles"
+      ],
+      "event_type": "input-cost shock",
+      "credit_signal": "negative",
+      "why_it_matters": "A 45% yarn price spike threatens powerloom and water-jet operating margins, risking extended festive plant shutdowns and term-loan EMI defaults.",
+      "credit_note": {
+        "what_happened": "Yarn prices have reportedly escalated by 45%, leaving an estimated 50,000 weavers in financial distress and raising the prospect of an unprecedented one-month production closure over the Diwali period.",
+        "confirmed_vs_alleged": "Confirmed: Local media reports of sharp yarn price escalation and Weaver distress. Alleged/Uncertain: The exact 45% increase across specific yarn varieties (POY/FDY) is unspecified; the prospect of a full one-month Diwali shutdown remains a possibility rather than an official association mandate.",
+        "exposed_subsectors": "Exposed losers: Water-jet and rapier powerloom weavers, job-work weaving units unable to pass on yarn price hikes to grey fabric traders. Likely insulated/winners: Spinners and texturisers holding low-cost raw material inventory.",
+        "financial_effects": {
+          "volumes": "↓ sharp contraction expected if 1-month Diwali shutdown materialises",
+          "realisations": "→ sluggish or lagging grey fabric price increases",
+          "input_costs": "↑ up 45% on yarn procurement",
+          "margins": "↓ severe compression as weavers fail to pass on costs",
+          "receivable_days": "↑ delayed payments from grey cloth traders",
+          "inventory": "↓ weavers cutting yarn purchases; unsold grey fabric accumulation",
+          "creditors": "↑ stretching out yarn supplier credit lines",
+          "working_capital": "↑ severe squeeze on cash credit Drawing Power limits",
+          "dscr": "↓ deterioration, raising risk of term loan machine EMI defaults"
+        },
+        "temporary_or_structural": "Cyclical to temporary, tied to raw material price volatility around festive production cycles, but could cause structural defaults among highly leveraged job-work units.",
+        "what_to_check": [
+          "Review monthly stock and book-debt statements for September/October to assess yarn purchase prices versus grey fabric billing rates.",
+          "Check power consumption bills of weaver borrowers to verify production curtailment or extended plant shutdowns.",
+          "Monitor CC account utilization and verify adequacy of Drawing Power against rising input costs and ageing receivables.",
+          "Track debt servicing records for weaving machinery term loans (TUFS/state subsidy-backed loans) for SMA-0/1 migration."
+        ],
+        "confirm_or_disprove": {
+          "confirm": "Prolonged drop in factory electricity usage and rising unpaid yarn creditor dues in weaver audited/stock statements.",
+          "disprove": "Prompt upward revision of grey fabric purchase rates by Ring Road textile traders offsetting the yarn increase without production cuts."
+        }
+      },
+      "mode": "ai",
+      "model": "gemini:gemini-3.8-flash",
+      "source": "Divya Bhaskar",
+      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQa2RzNnhiZ01NSnFUTFJFXzhpY2tnalM2RENjWHhNMlpYZWdTZXZaUThTM1hoVHpGU1B5MXB0VlhYVmg5SVBxNzE0SGs3VWZLeFlDWTQ2T2hUcXR0aHdnQ1g2aUllYjdMUzZUQWJtcGZJWmdWcGdBYlVURS1HdVVHXzRqUDI4aWNKNVlqWU9aVjBxWkw3OHhxWWpITE53MC0yZVN1T1JGNWMyX3hvT1plUFdLVFNYY25RVk1aZnBZNERGb3NNazhTbmpmZ9IB0AFBVV95cUxOckxpRzgwMXVadWlGRnJOZ0o4Zjc5RUZYVEV5Zm9la1lLblVRTkE4OVVSckJ4cFBGWk1KVmNXMXFJYVJsM2xxV3lpZmRNV1VFUUpoU2NnMGtqRWtGX0VmbHQ0dC10Xy0tRzhxZ3VwaWloc1lTQlhxeE9fRkVKTFZfLUF6bDYyUjV4R2N0WEljVDRWTkxpc1FuN2ktS0E4OHMwdjd1MUQxNmMwaXdCRHQzRzBvWHhFZUJfOElxbE9iR25NbnpUVkFyMUxGN3dSVW1I?oc=5",
+      "published": "2026-09-21T07:00:00.000Z",
+      "lang": "gu",
+      "via": "Google News RSS",
+      "also_reported_by": [
+        "Bhaskar English",
+        "The New Indian Express"
+      ],
+      "raw": {
+        "id": "234bd8b150de",
+        "title": "યાર્નના ભાવમાં 45%નો તોતિંગ વધારો: દિવાળીએ 1 મહિનાના વેકેશનની શક્યતા, 50,000 વિવર્સ આર્થિક સંકટમાં",
+        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQa2RzNnhiZ01NSnFUTFJFXzhpY2tnalM2RENjWHhNMlpYZWdTZXZaUThTM1hoVHpGU1B5MXB0VlhYVmg5SVBxNzE0SGs3VWZLeFlDWTQ2T2hUcXR0aHdnQ1g2aUllYjdMUzZUQWJtcGZJWmdWcGdBYlVURS1HdVVHXzRqUDI4aWNKNVlqWU9aVjBxWkw3OHhxWWpITE53MC0yZVN1T1JGNWMyX3hvT1plUFdLVFNYY25RVk1aZnBZNERGb3NNazhTbmpmZ9IB0AFBVV95cUxOckxpRzgwMXVadWlGRnJOZ0o4Zjc5RUZYVEV5Zm9la1lLblVRTkE4OVVSckJ4cFBGWk1KVmNXMXFJYVJsM2xxV3lpZmRNV1VFUUpoU2NnMGtqRWtGX0VmbHQ0dC10Xy0tRzhxZ3VwaWloc1lTQlhxeE9fRkVKTFZfLUF6bDYyUjV4R2N0WEljVDRWTkxpc1FuN2ktS0E4OHMwdjd1MUQxNmMwaXdCRHQzRzBvWHhFZUJfOElxbE9iR25NbnpUVkFyMUxGN3dSVW1I?oc=5",
+        "source": "Divya Bhaskar",
+        "source_home": "https://www.divyabhaskar.co.in",
+        "published": "2026-09-21T07:00:00.000Z",
+        "snippet": "",
+        "lang": "gu",
+        "via": "Google News RSS",
+        "cluster": "surat",
+        "industries": [
+          "weaving"
+        ],
+        "also": []
+      },
+      "coverage": [
+        {
+          "id": "6ad02ad1a9dd",
+          "source": "Bhaskar English",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQVzBnYTUzV1o5NzNKdklTTTR1YnJISDJTVl9QdWppb053YVZkOW9ueWp3OUJycHVvdmE3bzZ2Y1ZhSTRocHdVOGk2MjVJd3g0cElZVWNIUWJRSGxQcUhoZDV5MGoyLWkzNnlLS2tBUDRCUjlLb0h0SHVvM3hkRU5pcGYyV1RPaTlJY2I5T2dSdHNBbkhLTGV0Q3R0dHUtQnFEOTBnUVpPRktlS2ZfZHYxdlpubFF4dlBBWHFCQmllMmpoNnQ2WDVGOdIBzgFBVV95cUxNNEFCTU1JcUJoZlg1RGtnWVo2dzJTaC0wdXE0ZlJwTHFPX3A3TXViTnhEcG9pZUFvMGFWc2pMeGYteWNhNWJsZHZ0cW00bmExS3RKcnF4b19oWjQwbUwyNGQwZldYblhfZjFqQlFKcEhRbTRXNDRIWl9iUHpEcHVrTEhxc3V6Z2szTVNYOU1jZ21ZUllWVWQwYnBnRjJ1cWs0T213S0pnMHRqNTNFcnc3S1RaM19Rdjc4cGp6LU1jYURseUpWVDFyRmFFU1BGZw?oc=5",
+          "headline": "Surat yarn prices surge 45%; weavers face Diwali shutdown",
+          "published": "2026-09-21T22:46:20.000Z",
+          "lang": "en"
+        },
+        {
+          "id": "c6c6a9e285de",
+          "source": "The New Indian Express",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUlpwVFlTSFd6NFdFSVJoSU1IaXZUckZ3bmpWdjgzZFAwZG42MVVBd2syMHppbGhkS2tNRXNGemRIdFQ3N2ZrMDBjbXlMTzJyc01xekxablBLME9qcUxiR3pjSFhxMHBxbzNLVExSWEF5TXZTM0dEX01CSVBVdDhVdnVKb2RCalZJOExNTVpTX3RzWURXWTludG4zVkk3NGpTTFRwRzNvR2lQYmpUS1hwN3Q4V2ZxNW9fU3BXbFFRczdqZFZZR2htVDFhSkVMNjVX0gHeAUFVX3lxTFA2MkJXRi1pX1RMbldEbkFFZmZuWmJUMUtUcnk1emlDcVEtZU1FTzZyQkZEZFV3Uzg2dFEzU0dPNHotQUZiRkRZdkZMZWVJd3RqV2VyWWNoN0w5dGM2eEZyWTJvU0lpNUxFOWF0TWl3Y3JiMG04Z2dfdUlZLXJrQ09sRWpLOU9sZEtiWUFxdS1wY2M5cWFfeVZNb25IWXZhUTdhT2dKeFFGQXM1M0tmTnpUSTc5bU1IbVJBMEhvczRlLVN2eTdlVXlFTXFUWDZDdU1YZTBGYmVyT0NzRndSUQ?oc=5",
+          "headline": "Gujarat weavers reel under soaring yarn prices, seek intervention",
+          "published": "2026-09-22T07:00:00.000Z",
+          "lang": "en"
+        }
+      ],
+      "merged_ids": [
+        "6ad02ad1a9dd",
+        "c6c6a9e285de"
+      ],
+      "merged_raws": [
+        {
+          "id": "6ad02ad1a9dd",
+          "title": "Yarn prices surge 45%: One-month Diwali shutdown likely; 50,000 weavers face financial crisis",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQVzBnYTUzV1o5NzNKdklTTTR1YnJISDJTVl9QdWppb053YVZkOW9ueWp3OUJycHVvdmE3bzZ2Y1ZhSTRocHdVOGk2MjVJd3g0cElZVWNIUWJRSGxQcUhoZDV5MGoyLWkzNnlLS2tBUDRCUjlLb0h0SHVvM3hkRU5pcGYyV1RPaTlJY2I5T2dSdHNBbkhLTGV0Q3R0dHUtQnFEOTBnUVpPRktlS2ZfZHYxdlpubFF4dlBBWHFCQmllMmpoNnQ2WDVGOdIBzgFBVV95cUxNNEFCTU1JcUJoZlg1RGtnWVo2dzJTaC0wdXE0ZlJwTHFPX3A3TXViTnhEcG9pZUFvMGFWc2pMeGYteWNhNWJsZHZ0cW00bmExS3RKcnF4b19oWjQwbUwyNGQwZldYblhfZjFqQlFKcEhRbTRXNDRIWl9iUHpEcHVrTEhxc3V6Z2szTVNYOU1jZ21ZUllWVWQwYnBnRjJ1cWs0T213S0pnMHRqNTNFcnc3S1RaM19Rdjc4cGp6LU1jYURseUpWVDFyRmFFU1BGZw?oc=5",
+          "source": "Bhaskar English",
+          "source_home": "https://www.bhaskarenglish.in",
+          "published": "2026-09-21T22:46:20.000Z",
+          "snippet": "",
+          "lang": "en",
+          "via": "Google News RSS",
+          "cluster": "surat",
+          "industries": [
+            "weaving"
+          ],
+          "also": []
+        },
+        {
+          "id": "c6c6a9e285de",
+          "title": "Gujarat weavers reel under soaring yarn prices, seek State govt intervention",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxNUlpwVFlTSFd6NFdFSVJoSU1IaXZUckZ3bmpWdjgzZFAwZG42MVVBd2syMHppbGhkS2tNRXNGemRIdFQ3N2ZrMDBjbXlMTzJyc01xekxablBLME9qcUxiR3pjSFhxMHBxbzNLVExSWEF5TXZTM0dEX01CSVBVdDhVdnVKb2RCalZJOExNTVpTX3RzWURXWTludG4zVkk3NGpTTFRwRzNvR2lQYmpUS1hwN3Q4V2ZxNW9fU3BXbFFRczdqZFZZR2htVDFhSkVMNjVX0gHeAUFVX3lxTFA2MkJXRi1pX1RMbldEbkFFZmZuWmJUMUtUcnk1emlDcVEtZU1FTzZyQkZEZFV3Uzg2dFEzU0dPNHotQUZiRkRZdkZMZWVJd3RqV2VyWWNoN0w5dGM2eEZyWTJvU0lpNUxFOWF0TWl3Y3JiMG04Z2dfdUlZLXJrQ09sRWpLOU9sZEtiWUFxdS1wY2M5cWFfeVZNb25IWXZhUTdhT2dKeFFGQXM1M0tmTnpUSTc5bU1IbVJBMEhvczRlLVN2eTdlVXlFTXFUWDZDdU1YZTBGYmVyT0NzRndSUQ?oc=5",
+          "source": "The New Indian Express",
+          "source_home": "https://www.newindianexpress.com",
+          "published": "2026-09-22T07:00:00.000Z",
+          "snippet": "",
+          "lang": "en",
+          "via": "Google News RSS",
+          "cluster": "surat",
+          "industries": [
+            "weaving"
+          ],
+          "also": []
+        }
+      ],
+      "latest_at": "2026-09-22T07:00:00.000Z"
+    },
+    {
       "id": "718ab3997c30",
       "headline": "Ceramic tiles manufacturer opens Rs 708 crore IPO with 6% GMP",
       "summary": "The Economic Times Hindi reported on September 22, 2026, that a tiles manufacturing and marketing company opened its Rs 708 crore initial public offering today with a 6% grey market premium. The report mentions price band details and 10 key highlights. No further financial metrics, borrower identities, or cluster-wide operational impacts are stated in the input snippet.",
@@ -4676,13 +4836,6 @@
     }
   ],
   "aliases": {
-    "6ad02ad1a9dd": "234bd8b150de",
-    "c6c6a9e285de": "234bd8b150de",
-    "8e001af37543": "234bd8b150de",
-    "3b5a022a3b39": "234bd8b150de",
-    "7a4b00c02d40": "234bd8b150de",
-    "17d2f5591336": "234bd8b150de",
-    "b62552cc0c7d": "234bd8b150de",
     "ce4764831b1f": "73dfcce5d3f4",
     "81627c3e849c": "a9383cbae2cf",
     "57e5e152a5cb": "0c72a246c955",
@@ -4690,6 +4843,7 @@
     "161041af6dcb": "0c72a246c955",
     "1e9ddd9216ac": "af6d72aecf71",
     "835138f2fadb": "61d1cd16788e",
+    "8e001af37543": "3b5a022a3b39",
     "c40335aea77c": "401e000ad52c",
     "6f0f411c6fb8": "59d97445ca2d",
     "6cc274f2c4c5": "59d97445ca2d",
@@ -4698,6 +4852,8 @@
     "3e022e5c3096": "59d97445ca2d",
     "2ad6dea436ea": "59d97445ca2d",
     "9422bed87531": "59d97445ca2d",
+    "6ad02ad1a9dd": "234bd8b150de",
+    "c6c6a9e285de": "234bd8b150de",
     "e4f802e55f28": "491e7cbba3b4",
     "ebcfa990c44d": "491e7cbba3b4"
   }

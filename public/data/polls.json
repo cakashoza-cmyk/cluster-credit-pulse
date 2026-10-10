@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T14:37:21.203Z",
+  "generated_at": "2026-10-10T14:38:48.896Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,12 +12,349 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 58,
-    "with_poll": 56,
+    "cards": 62,
+    "with_poll": 60,
     "no_poll": 2,
     "pending": 0
   },
   "polls": {
+    "b62552cc0c7d": {
+      "no_poll": false,
+      "hypothesis": "Surat weavers face severe margin compression and plant curtailments as yarn prices spike, driving up working capital stress and drawing power limits.",
+      "event_phrase": "surge in yarn prices leading to shutdown risks",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Weaving unit owner / Powerloom operator",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices leading to shutdown risks accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your loom capacity utilisation changed compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Capacity utilization has dropped due to unviable raw material costs",
+              "contradicts_if": "Capacity utilization is steady or increasing"
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "To what extent are you able to pass on higher yarn costs to grey-fabric buyers?",
+              "options": [
+                "Full pass-through",
+                "Partial pass-through",
+                "Negligible pass-through",
+                "No pass-through",
+                "Selling at discount"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Negligible pass-through",
+                "No pass-through",
+                "Selling at discount"
+              ],
+              "contradicts": [
+                "Full pass-through",
+                "Partial pass-through"
+              ],
+              "supports_if": "Weavers cannot pass on yarn costs to buyers",
+              "contradicts_if": "Weavers are successfully passing on yarn costs"
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / Texturiser / Trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices leading to shutdown risks accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has fresh yarn buying volume from local weavers changed over the last 3-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Yarn offtake has dropped sharply indicating weaver cutbacks",
+              "contradicts_if": "Yarn buying remains steady or higher"
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What payment terms are you currently offering to weaving units for yarn deliveries?",
+              "options": [
+                "Advance payment only",
+                "Shortened credit period",
+                "Usual credit terms",
+                "Extended credit period"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Advance payment only",
+                "Shortened credit period"
+              ],
+              "contradicts": [
+                "Usual credit terms",
+                "Extended credit period"
+              ],
+              "supports_if": "Suppliers are tightening credit to manage weaver default risk",
+              "contradicts_if": "Credit terms remain regular or relaxed"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Textile cluster SME credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices leading to shutdown risks accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has Cash Credit / Overdraft limit utilisation across weaver accounts changed over the past 30 days?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower",
+                "Same"
+              ],
+              "supports_if": "Weavers are maxing out working capital limits under input-cost pressure",
+              "contradicts_if": "Working capital utilisation is steady or falling"
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an uptick in requests for ad-hoc limits or working capital enhancements from weavers?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Weavers require emergency liquidity support",
+              "contradicts_if": "No unusual requests for ad-hoc facilities"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વીવિંગ યુનિટ માલિક / પાવરલૂમ ઓપરેટર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું યાર્નના ભાવમાં તીવ્ર ઉછાળો અને પ્લાન્ટ બંધ થવાના જોખમનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા મહિનાની સરખામણીમાં તમારા લૂમની ક્ષમતા વપરાશ (capacity utilisation) માં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "યાર્નના વધેલા ભાવ તમે ગ્રે-કાપડના ખરીદદારો પર કેટલા અંશે પાસ કરી શક્યા છો?",
+                "options": [
+                  "સંપૂર્ણ પાસ-થ્રૂ",
+                  "આંશિક પાસ-થ્રૂ",
+                  "નહિવત પાસ-થ્રૂ",
+                  "બિલકુલ નહીં",
+                  "ડિસ્કાઉન્ટ પર વેચાણ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સચરાઇઝર / ટ્રેડર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું યાર્નના ભાવમાં તીવ્ર ઉછાળો અને પ્લાન્ટ બંધ થવાના જોખમનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 3-4 અઠવાડિયામાં સ્થાનિક વીવર્સ તરફથી યાર્નની નવી ખરીદીના વોલ્યુમમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "તેટલું જ",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "હાલમાં તમે વીવિંગ એકમોને યાર્ન ડિલિવરી માટે કઈ પેમેન્ટ શરતો આપી રહ્યા છો?",
+                "options": [
+                  "માત્ર એડવાન્સ પેમેન્ટ",
+                  "ટૂંકી ક્રેડિટ મુદત",
+                  "સામાન્ય ક્રેડિટ શરતો",
+                  "વધારેલી ક્રેડિટ મુદત"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ટેક્સટાઇલ ક્લસ્ટર SME ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું યાર્નના ભાવમાં તીવ્ર ઉછાળો અને પ્લાન્ટ બંધ થવાના જોખમનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા 30 દિવસમાં વીવર ખાતાઓમાં કેશ ક્રેડિટ / ઓવરડ્રાફ્ટ લિમિટ વપરાશમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે વીવર્સ તરફથી એડ-હોક લિમિટ અથવા વર્કિંગ કેપિટલ વધારવાની માંગમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
+      "prompt_version": "poll-v1"
+    },
     "0c72a246c955": {
       "no_poll": false,
       "hypothesis": "Surat weavers are facing severe liquidity stress, forcing a two-day weekly holiday and compressed 15-day yarn payment cycles.",
@@ -2255,6 +2592,302 @@
                   "સરખા",
                   "વધુ",
                   "ઘણા વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "3b5a022a3b39": {
+      "no_poll": false,
+      "hypothesis": "The weavers' strike in Surat has caused an abrupt production halt, leading to severely reduced power consumption and immediate strain on working capital and loan repayments.",
+      "event_phrase": "Surat weavers' strike and drop in power consumption",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet & Powerloom Unit Owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported Surat weavers' strike and drop in power consumption accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your daily production volume changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your machinery and powerloom capacity utilization currently running?",
+              "options": [
+                "Significantly reduced",
+                "Slightly reduced",
+                "Normal",
+                "Higher",
+                "Full capacity"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significantly reduced",
+                "Slightly reduced"
+              ],
+              "contradicts": [
+                "Higher",
+                "Full capacity"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn Spinner / Texturiser",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported Surat weavers' strike and drop in power consumption accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have POY/FDY yarn offtake and orders from weavers changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Bank Credit Officer (Surat Branch)",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported Surat weavers' strike and drop in power consumption accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you observed delayed or requests for deferment on CC/OD interest or machinery loan EMIs?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have CC/OD account turnovers dropped significantly below drawing power limits?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ અને પાવરલૂમ યુનિટના માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવમાં સુરતના વણકરોની હડતાલ અને વીજળીના વપરાશમાં ઘટાડાનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા દૈનિક ઉત્પાદન વોલ્યુમમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "તમારી મશીનરી અને પાવરલૂમ ક્ષમતાનો ઉપયોગ હાલમાં કેવી રીતે ચાલી રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો થયો",
+                  "થોડો ઓછો થયો",
+                  "સામાન્ય",
+                  "વધુ",
+                  "પૂર્ણ ક્ષમતા"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સ્યુરાઇઝર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું તમારા અનુભવમાં સુરતના વણકરોની હડતાલ અને વીજળીના વપરાશમાં ઘટાડાનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં વણકરો તરફથી POY/FDY યાર્નની માંગમાં કેવી અસર થઈ છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "બેંક ક્રેડિટ ઓફિસર (સુરત શાખા)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવમાં સુરતના વણકરોની હડતાલ અને વીજળીના વપરાશમાં ઘટાડાનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે CC/OD વ્યાજ અથવા મશીનરી લોન EMI ચૂકવવામાં વિલંબ અથવા મુલતવી રાખવાની વિનંતીઓ જોઈ છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું CC/OD એકાઉન્ટ ટર્નઓવર ડ્રોઇંગ પાવર મર્યાદાથી નોંધપાત્ર રીતે ઘટી ગયું છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }
@@ -4515,6 +5148,299 @@
                   "હા",
                   "ના",
                   "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "17d2f5591336": {
+      "no_poll": false,
+      "hypothesis": "Rising yarn prices are squeezing weavers' margins, leading to higher working capital utilization and delayed payments to yarn suppliers.",
+      "event_phrase": "rise in yarn prices",
+      "roles": [
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / texturiser",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has yarn offtake volume from Surat weavers changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What credit terms are weavers currently demanding for new yarn purchases?",
+              "options": [
+                "Longer credit days",
+                "Normal credit terms",
+                "Paying cash/advance"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Longer credit days"
+              ],
+              "contradicts": [
+                "Paying cash/advance"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Water-jet / air-jet weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your operating margins on grey-fabric changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you reducing loom operating hours or shutting down capacity due to high yarn costs?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "SME Credit Officer (Surat)",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you seen an increase in CC/OD limit utilization or ad-hoc requests from weavers?",
+              "options": [
+                "Significant increase",
+                "Minor increase",
+                "No change",
+                "Decrease"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase",
+                "Minor increase"
+              ],
+              "contradicts": [
+                "Decrease"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સચરાઇઝર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું તમારા અનુભવ મુજબ યાર્નના ભાવમાં વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સુરતના વણકરો (weavers) તરફથી યાર્નની ખરીદીમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ ઓછી",
+                  "ઓછી",
+                  "તેટલી જ",
+                  "વધુ",
+                  "ખૂબ વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "નવી યાર્ન ખરીદી માટે વણકરો હાલમાં કેવી ક્રેડિટ શરતોની માંગ કરી રહ્યા છે?",
+                "options": [
+                  "વધુ લાંબી ઉધાર મુદત",
+                  "સામાન્ય ઉધાર મુદત",
+                  "રોકડા અથવા એડવાન્સ ચુકવણી"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "વોટર-જેટ / એર-જેટ વણકર (Weaver)",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવ મુજબ યાર્નના ભાવમાં વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં ગ્રે-કાપડ પર તમારા ઓપરેટિંગ માર્જિનમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ ઓછું",
+                  "ઓછું",
+                  "તેટલું જ",
+                  "વધુ",
+                  "ખૂબ વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે યાર્નના ઊંચા ભાવને કારણે લૂમ્સના કામકાજના કલાકો ઘટાડી રહ્યા છો અથવા યુનિટ બંધ કરી રહ્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "SME ક્રેડિટ ઓફિસર (સુરત)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવ મુજબ યાર્નના ભાવમાં વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે વણકરો તરફથી CC/OD લિમિટના વપરાશમાં વધારો અથવા એડ-હોક વિનંતીઓ જોઈ છે?",
+                "options": [
+                  "મોટો વધારો",
+                  "સાધારણ વધારો",
+                  "કોઈ ફેરફાર નહીં",
+                  "ઘટાડો"
                 ]
               }
             }
@@ -7457,6 +8383,336 @@
                   "સમાન",
                   "વધુ",
                   "ઘણો વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "7a4b00c02d40": {
+      "no_poll": false,
+      "hypothesis": "Surat weavers are facing severe margin squeeze due to high yarn prices, leading to stretched working capital and representation to authorities.",
+      "event_phrase": "yarn price hike and weavers' PM representation",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet / Powerloom weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported yarn price hike and weavers' representation accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your input yarn costs moved relative to grey fabric realisations?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower",
+                "Same"
+              ],
+              "supports_if": "higher",
+              "contradicts_if": "lower"
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your current loom capacity utilisation compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "lower",
+              "contradicts_if": "higher"
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "POY / FDY yarn spinner or trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported yarn price hike and weavers' representation accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How is yarn offtake by Surat weavers compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "lower",
+              "contradicts_if": "higher"
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What credit terms are weavers currently demanding for yarn purchases?",
+              "options": [
+                "Shorter credit / cash",
+                "Normal credit days",
+                "Extended credit days demanded"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Extended credit days demanded"
+              ],
+              "contradicts": [
+                "Shorter credit / cash"
+              ],
+              "supports_if": "extended",
+              "contradicts_if": "shorter"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME branch credit officer (Surat)",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported yarn price hike and weavers' representation accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How are CC/OD limit utilisations for weaver accounts trending?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "higher",
+              "contradicts_if": "lower"
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed any rise in ad-hoc working capital or restructuring requests from weaving units?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "yes",
+              "contradicts_if": "no"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ / પાવરલૂમ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું યાર્ન ભાવ વધારા અને વણકરોના રજૂઆત અંગેના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગ્રે ફેબ્રિકના ભાવની સરખામણીમાં તમારા કાચા مال (યાર્ન)નો ખર્ચ કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારી લૂમ્સની ઉત્પાદન ક્ષમતા કેટલી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "પીઓવાય / એફડીવાય યાર્ન સ્પિનર કે ટ્રેડર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું યાર્ન ભાવ વધારા અને વણકરોના રજૂઆત અંગેના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં સુરતના વણકરો દ્વારા યાર્નની ખરીદી કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "વણકરો હાલમાં યાર્નની ખરીદી માટે કેવા ક્રેડિટ ટર્મ્સ માંગી રહ્યા છે?",
+                "options": [
+                  "ટૂંકી મુદત / રોકડ",
+                  "સામાન્ય ક્રેડિટ દિવસો",
+                  "વધુ ક્રેડિટ દિવસોની માંગ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "એમએસએમઈ બ્રાન્ચ ક્રેડિટ ઓફિસર (સુરત)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું યાર્ન ભાવ વધારા અને વણકરોના રજૂઆત અંગેના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "વણકર ખાતાઓમાં સીસી/ઓડી લિમિટનો ઉપયોગ કેવી રીતે વધી રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું વીવિંગ યુનિટ્સ તરફથી એડ-હોક વર્કિંગ કેપિટલ અથવા રિસ્ટ્રક્ચરિંગની અરજીઓમાં કોઈ વધારો જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }

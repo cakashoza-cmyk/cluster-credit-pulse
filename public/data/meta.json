@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-10T14:37:21.196Z",
+  "generated_at": "2026-10-10T14:38:48.889Z",
   "llm_mode": "gemini",
   "llm_configured": "gemini",
   "counts": {
     "morbi": 12,
-    "surat": 46
+    "surat": 50
   },
-  "total": 58,
+  "total": 62,
   "stats": {
     "feeds_ok": 24,
     "feeds_failed": [
@@ -15,33 +15,28 @@
     "raw_items": 383,
     "after_filter": 245,
     "after_dedupe": 134,
-    "llm_calls": 2,
+    "llm_calls": 0,
     "llm_failures": 0,
     "cache_hits": 134,
     "before_merge": 82,
-    "after_merge": 58,
+    "after_merge": 62,
     "merge": {
       "heuristic_edges": 33,
-      "llm_edges": 21,
+      "llm_edges": 22,
       "llm": {
         "morbi": "ok",
         "surat": "ok"
       }
     },
-    "model_usage": {
-      "gemini:gemini-3.5-flash-lite": 2
-    },
+    "model_usage": {},
     "rate_limits": {
-      "count": 2,
-      "daily": [
-        "gemini:gemini-3.8-flash",
-        "gemini:gemini-3.5-flash"
-      ]
+      "count": 0,
+      "daily": []
     }
   },
   "polls": {
-    "cards": 58,
-    "with_poll": 56,
+    "cards": 62,
+    "with_poll": 60,
     "no_poll": 2,
     "pending": 0
   }
