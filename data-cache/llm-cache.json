@@ -33056,5 +33056,387 @@
     },
     "model": "gemini:gemini-3.5-flash-lite",
     "at": "2026-10-10T19:20:19.799Z"
+  },
+  "ea927dd361f9c0075cb670d6288eaada16331033": {
+    "card": {
+      "headline": "Morbi Ceramic Industry Propane Gas Price Hiked by Rs 3700 Per Ton",
+      "summary": "According to Sandesh, the price of propane gas used by the ceramic industry in Morbi has increased by Rs 3,700 per metric ton. The report gives no further details regarding the supplier or the effective date. The price hike raises kiln firing fuel costs for ceramic tile manufacturers using propane.",
+      "cluster": "morbi",
+      "industries": [
+        "ceramic-tiles"
+      ],
+      "event_type": "input-cost shock",
+      "credit_signal": "negative",
+      "why_it_matters": "A sharp Rs 3,700/ton fuel hike immediately compresses EBITDA margins for propane-based ceramic kiln operators unable to pass costs downstream.",
+      "credit_note": {
+        "what_happened": "The price of industrial propane gas supplied to Morbi's ceramic manufacturing cluster has been raised by Rs 3,700 per ton.",
+        "confirmed_vs_alleged": "Confirmed: Price increase of Rs 3,700 per ton reported by local media. Uncertain: Effective date, supplier identity (e.g., private vs PSU marketing firms), baseline price per ton, and duration of the revision.",
+        "exposed_subsectors": "Exposed: Propane/LPG-fired vitrified, floor, and wall tile manufacturers. Relatively insulated: PNG-fired units (Gujarat Gas consumers) unless equivalent parity hikes occur.",
+        "financial_effects": {
+          "volumes": "→ to ↓ slight risk of kiln curtailment if margins invert",
+          "realisations": "→ domestic prices sticky; immediate pass-through unlikely",
+          "input_costs": "↑ fuel costs increase by Rs 3,700/ton",
+          "margins": "↓ EBITDA margin compression across propane-fired kilns",
+          "receivable_days": "→ not stated",
+          "inventory": "→ finished goods holding costs increase",
+          "creditors": "↑ higher trade credit requirement for gas procurement",
+          "working_capital": "↑ increased requirement for power & fuel outgo",
+          "dscr": "↓ lower operational cash flow available for term-loan debt service"
+        },
+        "temporary_or_structural": "Cyclical / temporary, tied to global LPG/propane benchmark prices and Saudi Aramco contract prices.",
+        "what_to_check": [
+          "Check borrower fuel mix: proportion of propane/LPG usage versus piped natural gas (PNG).",
+          "Review upcoming stock and book-debt statements for margin erosion and cash credit limit utilization spikes.",
+          "Track borrower current account and CC debit churn for timely payment to gas supply vendors.",
+          "Examine borrower ability to pass on fuel surcharges to domestic dealers or export buyers."
+        ],
+        "confirm_or_disprove": {
+          "confirm": "Spike in operating debit churn, vendor dues expansion, and downward revision of gross margins in quarterly financials confirm stress.",
+          "disprove": "Immediate cluster-wide revision in tile ex-factory realization or borrower fuel-switching back to cheaper alternative fuels disproves margin impact."
+        }
+      }
+    },
+    "model": "gemini:gemini-3.8-flash",
+    "at": "2026-10-10T23:35:00.154Z",
+    "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQTGpKOXV1M3ZuQ0ZDYk14MDJRTTN1SWs3QWpvM3pfbjRhUDBlWFNQWnZPN01DNl9iM3pMQTg2QTRzOUE5Yk1SYUpMTk1hZWlYbzhqQzhmQV9Uei1RYU9Iam5fem1DSmJsZVJfZzIwaEs5VnZBaU5KZmpTeVZQbW51a3ZBZ2YzU1hkT1lRN0U0UDE2Z0I0VS0taHp4RFpBSHd1ZGRnOXI2LVFFaTd2RTBDTGh2c1otWkhJQzBHcVBPZlJPUTZQc1NiYl9FN2I3T0hMMDBPRWFkYTZ4VTl3WjU3OQ?oc=5"
+  },
+  "merge:m2:2666d60886a6d56d5261a63a66701ee2d16c555b": {
+    "groups": [
+      [
+        "61d1cd16788e",
+        "835138f2fadb"
+      ]
+    ],
+    "model": "gemini:gemini-3.8-flash",
+    "at": "2026-10-10T23:35:06.684Z"
+  },
+  "poll:poll-v1:ea927dd361f9": {
+    "poll": {
+      "no_poll": false,
+      "hypothesis": "The Rs 3,700/ton propane price hike increases fuel costs for Morbi ceramic units, leading to margin compression, increased working capital reliance, or supplier payment delays.",
+      "event_phrase": "propane gas price hike",
+      "roles": [
+        {
+          "role": "supplier",
+          "label": "Propane / LPG trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported propane gas price hike accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has propane order volume from Morbi tile units changed over the last 2-4 weeks?",
+              "options": [
+                "Substantially lower",
+                "Slightly lower",
+                "Unchanged",
+                "Slightly higher",
+                "Substantially higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Substantially lower",
+                "Slightly lower"
+              ],
+              "contradicts": [
+                "Slightly higher",
+                "Substantially higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "Are propane buyers asking for extended payment terms or credit relaxation this month?",
+              "options": [
+                "Demanding longer credit",
+                "Paying on usual terms",
+                "Moving to cash/advance",
+                "Not clear"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Demanding longer credit"
+              ],
+              "contradicts": [
+                "Paying on usual terms",
+                "Moving to cash/advance"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Ceramic tile kiln operator",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported propane gas price hike accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you been able to pass on this fuel price hike to tile buyers via higher ex-factory rates?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "What action are you taking in response to this fuel cost increase?",
+              "options": [
+                "Shutting down / scaling back kilns",
+                "Switching fuel back to PNG/natural gas",
+                "Absorbing cost & continuing operations",
+                "No change in operations"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Shutting down / scaling back kilns",
+                "Absorbing cost & continuing operations"
+              ],
+              "contradicts": [
+                "No change in operations"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME credit officer / Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported propane gas price hike accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have propane-reliant ceramic borrowers requested ad-hoc limits or working capital enhancements recently?",
+              "options": [
+                "Significant increase in requests",
+                "Minor increase in requests",
+                "No change",
+                "Decreased demand"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase in requests",
+                "Minor increase in requests"
+              ],
+              "contradicts": [
+                "No change",
+                "Decreased demand"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "scale5",
+              "text": "How has cash credit / overdraft limit utilization changed for propane-fired tile units this month?",
+              "options": [
+                "Much lower",
+                "Slightly lower",
+                "Same",
+                "Slightly higher",
+                "Near 100% limit"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near 100% limit",
+                "Slightly higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Slightly lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "supplier": {
+            "label": "પ્રોપેન / LPG વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું પ્રોપેન ગેસના ભાવમાં થયેલો વધારો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં મોરબીના ટાઇલ્સ એકમો તરફથી પ્રોપેન ઓર્ડરના વોલ્યુમમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "થોડો ઓછો",
+                  "કોઈ ફેરફાર નહીં",
+                  "થોડો વધારે",
+                  "ઘણો વધારે"
+                ]
+              },
+              "supplier.q3": {
+                "text": "શું પ્રોપેન ખરીદદારો આ મહિને લાંબી ક્રેડિટ મુદત અથવા ચુકવણીમાં છૂટછાટ માગી રહ્યા છે?",
+                "options": [
+                  "વધુ ક્રેડિટ સમયગાળાની માંગ",
+                  "સામાન્ય શરતો મુજબ ચુકવણી",
+                  "રોકડ/એડવાન્સ તરફ શિફ્ટ",
+                  "સ્પષ્ટ નથી"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "સિરામિક ટાઇલ્સ ફેક્ટરી માલિક / ઓપરેટર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું પ્રોપેન ગેસના ભાવમાં થયેલો વધારો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "શું તમે ઊંચા એક્સ-ફેક્ટરી ભાવ દ્વારા ટાઇલ્સ ખરીદદારો પર આ બળતણ ભાવ વધારો પાસ કરી શક્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "ઇંધણના ખર્ચમાં આ વધારાના જવાબમાં તમે શું પગલાં લઈ રહ્યા છો?",
+                "options": [
+                  "ભઠ્ઠીઓ બંધ કરવી / પ્રોડક્શન ઘટાડવું",
+                  "ફરીથી PNG/કુદરતી ગેસ પર શિફ્ટ થવું",
+                  "ખર્ચ સહન કરીને ઉત્પાદન ચાલુ રાખવું",
+                  "ઉત્પાદનમાં કોઈ ફેરફાર નહીં"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "MSME ક્રેડિટ ઓફિસર / બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું પ્રોપેન ગેસના ભાવમાં થયેલો વધારો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું પ્રોપેન આધારિત સિરામિક ઉધારકર્તાઓએ તાજેતરમાં એડ-હોક લિમિટ અથવા વર્કિંગ કેપિટલ વધારાની વિનંતી કરી છે?",
+                "options": [
+                  "વિનંતીઓમાં નોંધપાત્ર વધારો",
+                  "વિનંતીઓમાં મામૂલી વધારો",
+                  "કોઈ ફેરફાર નથી",
+                  "માંગમાં ઘટાડો"
+                ]
+              },
+              "banker.q3": {
+                "text": "આ મહિને પ્રોપેન આધારિત ટાઇલ્સ એકમો માટે કેશ ક્રેડિટ / ઓવરડ્રાફ્ટ લિમિટ વપરાશમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "થોડો ઓછો",
+                  "સરખો",
+                  "થોડો વધારે",
+                  "૧૦૦% લિમિટની નજીક"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "model": "gemini:gemini-3.5-flash",
+    "at": "2026-10-10T23:35:26.741Z"
   }
 }
