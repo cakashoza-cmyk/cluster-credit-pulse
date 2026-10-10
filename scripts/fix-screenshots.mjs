@@ -9,7 +9,7 @@ const exe = process.env.CHROME_PATH || ['/usr/bin/google-chrome', '/usr/bin/chro
 const browser = await chromium.launch({ executablePath: exe, args: ['--no-sandbox'] });
 const ctx = await browser.newContext({ viewport: { width: Number(process.env.W || 390), height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 const page = await ctx.newPage();
-await page.addInitScript(() => { localStorage.setItem('ccp.fp.test', 'true'); localStorage.setItem('ccp.fp.role', JSON.stringify('banker')); });
+await page.addInitScript(() => { localStorage.setItem('ccp.fp.role', JSON.stringify('banker')); });
 const shot = async (name, full) => { await page.waitForTimeout(700); const f = `${OUT}${PREFIX}${name}.png`; await page.screenshot({ path: f, fullPage: !!full }); console.log('saved', f); };
 await page.goto(BASE + '?v=' + Date.now(), { waitUntil: 'networkidle' });
 const skip = page.getByText('Skip — show everything'); if (await skip.count()) await skip.click();
