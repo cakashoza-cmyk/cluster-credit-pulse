@@ -193,7 +193,11 @@ export function mergeCards(cards, { llmGroupsByCluster = {}, prevPrimaries = new
     const members = ids.map((id) => byId[id]);
     const primary = pickPrimary(members, prevPrimaries);
     const others = members.filter((m) => m !== primary).sort((a, b) => new Date(a.published) - new Date(b.published));
-    if (!others.length) { out.push(primary); continue; }
+    if (!others.length) {
+      const coverage = (primary.raw?.also || []).filter((a) => a.link && a.link !== primary.link).map((a) => ({ source: a.source, link: a.link }));
+      out.push(coverage.length ? { ...primary, coverage } : primary);
+      continue;
+    }
     const coverage = [];
     const seenLink = new Set([primary.link]);
     const add = (o) => { if (!o.link || seenLink.has(o.link)) return; seenLink.add(o.link); coverage.push(o); };
