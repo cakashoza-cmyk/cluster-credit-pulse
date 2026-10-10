@@ -169,18 +169,22 @@ export function mergeCards(cards, { llmGroupsByCluster = {}, prevPrimaries = new
       // when the LLM pass succeeded, only high-confidence heuristic edges are added on top of it
       if (d.same) { uf.union(F[i].id, F[j].id); edges.push({ a: F[i].id, b: F[j].id, by: 'heuristic', why: d.why }); }
     }
+    // LLM groups are only trusted pairwise where the pair is plausible on its own: reported within 4 days of each other,
+    // or within 10 days with some textual/entity support. Members are then joined by connected components, so a
+    // theme-level group (e.g. every yarn-price story over three weeks) falls apart into its real events.
+    const fi = Object.fromEntries(F.map((f) => [f.id, f]));
     for (const g of llm || []) {
-      const ok = g.filter((id) => byId[id] && byId[id].cluster === cl);
+      const ok = g.filter((id) => fi[id]);
       if (ok.length < 2) continue;
-      // guard against theme-level over-grouping: break the group wherever consecutive reports are >8 days apart
-      const sorted = ok.sort((a, b) => new Date(byId[a].published) - new Date(byId[b].published));
-      const parts = [[sorted[0]]];
-      for (let k = 1; k < sorted.length; k++) {
-        const gap = new Date(byId[sorted[k]].published) - new Date(byId[sorted[k - 1]].published);
-        if (gap > 8 * DAY) parts.push([sorted[k]]); else parts.at(-1).push(sorted[k]);
+      const kept = [];
+      for (let a = 0; a < ok.length; a++) for (let b = a + 1; b < ok.length; b++) {
+        const A = fi[ok[a]], B = fi[ok[b]];
+        const dt = Math.abs(A.t - B.t) / DAY;
+        const cos = cosine(A.vec, B.vec);
+        const ent = inter(A.nums, B.nums).filter((n) => !/^\d+$/.test(n) || Number(n) >= 13).length + inter(A.names, B.names).length;
+        if ((dt <= 4 && cos >= 0.12) || (dt <= 10 && ((cos >= 0.25 && ent >= 1) || cos >= 0.45))) { kept.push([A.id, B.id]); uf.union(A.id, B.id); edges.push({ a: A.id, b: B.id, by: 'llm', why: `dt=${dt.toFixed(1)} cos=${cos.toFixed(2)} ent=${ent}` }); }
       }
-      if (parts.length > 1) log(`merge: LLM group split on date gaps: ${parts.map((p) => p.join('+')).join(' | ')}`);
-      for (const part of parts) for (const id of part.slice(1)) { uf.union(part[0], id); edges.push({ a: part[0], b: id, by: 'llm' }); }
+      if (kept.length < (ok.length * (ok.length - 1)) / 2) log(`merge: LLM group of ${ok.length} kept ${kept.length} plausible pair(s)`);
     }
   }
   const out = [];
