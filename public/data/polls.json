@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T05:49:25.166Z",
+  "generated_at": "2026-10-11T16:31:17.553Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 68,
-    "with_poll": 66,
+    "cards": 69,
+    "with_poll": 67,
     "no_poll": 2,
     "pending": 0
   },
@@ -4403,6 +4403,337 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "1a925ede03e9": {
+      "no_poll": false,
+      "hypothesis": "Weaving units in Surat continue normal loom operations without widespread shutdowns despite margin pressures.",
+      "event_phrase": "denial of loom shutdown rumors and normal operations",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Powerloom / Water-jet weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported denial of loom shutdown rumors and normal operations accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your loom capacity utilization changed over the past 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Capacity utilization remains stable or higher, confirming normal operations.",
+              "contradicts_if": "Loom utilization drops significantly, suggesting rumors had an operational basis."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your unsold grey-fabric inventory changed over the last 30 days?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Much lower",
+                "Lower",
+                "Same"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Inventories are not piling up excessively.",
+              "contradicts_if": "Rapid inventory build-up indicates demand bottleneck that triggers shutdown pressure."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / Texturiser trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported denial of loom shutdown rumors and normal operations accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How is POY/FDY yarn offtake from Surat weavers compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Yarn orders remain steady or rising, confirming active weaving operations.",
+              "contradicts_if": "Drop in yarn purchases points to silent or partial production cuts."
+            },
+            {
+              "id": "supplier.q3",
+              "type": "yes_no_notseen",
+              "text": "Have weaving units requested extension of credit terms beyond normal cycles in the past 30 days?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "Payment terms remain stable without stretch requests.",
+              "contradicts_if": "Weavers demanding longer credit terms indicates underlying liquidity distress."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Textile cluster credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported denial of loom shutdown rumors and normal operations accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "What is the trend in CC/OD limit utilization among weaving MSME borrowers over the last 30 days?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Lower",
+                "Same"
+              ],
+              "contradicts": [
+                "Much higher"
+              ],
+              "supports_if": "Working capital utilization is not maxing out.",
+              "contradicts_if": "Near 100% utilization indicates trapped liquidity or unpaid stocks."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you observed an increase in cheque/NACH bounces or SMA-0 migration among weaving units recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "Repayment discipline is normal, refuting distress rumors.",
+              "contradicts_if": "Spike in early delinquency confirms genuine operational stress."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "પાવરલૂમ / વોટર-જેટ વણકર",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ લૂમ્સ બંધની અફવાઓનું ખંડન અને સામાન્ય કામગીરીનો અહેવાલ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા લૂમની ક્ષમતા વપરાશ (કેપેસિટી) માં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા ૩૦ દિવસમાં તમારા વણવેલા ગ્રે કાપડના અનસોલ્ડ સ્ટોકમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સચરાઇઝર વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ લૂમ્સ બંધની અફવાઓનું ખંડન અને સામાન્ય કામગીરીનો અહેવાલ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીએ સુરતના વણકરો તરફથી POY/FDY યાર્નની ખરીદી કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "તેટલી જ",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "શું છેલ્લા ૩૦ દિવસમાં વણાટ એકમોએ સામાન્ય મુદત કરતાં વધુ લાંબી ક્રેડિટ માંગી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ટેક્સટાઇલ ક્લસ્ટર ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ લૂમ્સ બંધની અફવાઓનું ખંડન અને સામાન્ય કામગીરીનો અહેવાલ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા ૩૦ દિવસમાં વણાટ MSME લોનધારકોના CC/OD લિમિટ વપરાશમાં શું વલણ જોવા મળ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "તેટલું જ",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે તાજેતરમાં વણાટ એકમોમાં ચેક/NACH બાઉન્સ અથવા SMA-0 સ્લિપેજમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
     "a6a3c64ac321": {
@@ -11249,6 +11580,272 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "b4421ef1d9a3": {
+      "no_poll": false,
+      "hypothesis": "LIMIRA's entry into the LGD e-commerce market is generating direct vendor tie-ups and order flows for Surat-based lab-grown diamond growers and polishers.",
+      "event_phrase": "LIMIRA's entry into the Indian LGD jewellery market",
+      "roles": [
+        {
+          "role": "supplier",
+          "label": "LGD grower / polished diamond manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported LIMIRA's entry into the Indian LGD jewellery market accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "Accurate",
+              "contradicts_if": "Not seeing it"
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have direct orders from new e-commerce LGD brands changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "Higher",
+              "contradicts_if": "Lower"
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What credit terms are new LGD e-commerce buyers demanding?",
+              "options": [
+                "Advance payment",
+                "7-15 days",
+                "30-45 days",
+                "60+ days"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Advance payment",
+                "7-15 days"
+              ],
+              "contradicts": [
+                "60+ days"
+              ],
+              "supports_if": "Advance payment",
+              "contradicts_if": "60+ days"
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "LGD trader / exporter",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported LIMIRA's entry into the Indian LGD jewellery market accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "Accurate",
+              "contradicts_if": "Not seeing it"
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How is domestic design-led LGD demand compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "Higher",
+              "contradicts_if": "Lower"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Cluster MSME branch manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported LIMIRA's entry into the Indian LGD jewellery market accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "Accurate",
+              "contradicts_if": "Not seeing it"
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have LGD unit working capital limit enhancement requests increased due to new brand orders?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Yes",
+              "contradicts_if": "No"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "supplier": {
+            "label": "એલજીડી ઉત્પાદક / પોલિશ્ડ ડાયમંડ મેન્યુફેક્ચરર",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ ભારતીય એલજીડી બજારમાં લિમીરા (LIMIRA) નો પ્રવેશ અને સોર્સિંગ સાચું છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં નવી ઇકોમર્સ એલજીડી બ્રાન્ડ્સ તરફથી સીધા ઓર્ડરમાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "નવા એલજીડી ઇકોમર્સ ખરીદદારો કેવા પ્રકારની ક્રેડિટ શરતોની માંગ કરી રહ્યા છે?",
+                "options": [
+                  "એડવાન્સ પેમેન્ટ",
+                  "૭-૧૫ દિવસ",
+                  "૩૦-૪૫ દિવસ",
+                  "૬૦+ દિવસ"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "એલજીડી વેપારી / નિકાસકાર",
+            "questions": {
+              "buyer.q1": {
+                "text": "તમારા અનુભવ મુજબ ભારતીય એલજીડી બજારમાં લિમીરા (LIMIRA) નો પ્રવેશ અને સોર્સિંગ સાચું છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં સ્થાનિક ડિઝાઇન-આધારિત એલજીડીની માંગ કેવી છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ક્લસ્ટર એમએસએમઇ બ્રાન્ચ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ ભારતીય એલજીડી બજારમાં લિમીરા (LIMIRA) નો પ્રવેશ અને સોર્સિંગ સાચું છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું નવી બ્રાન્ડના ઓર્ડરને કારણે એલજીડી યુનિટ્સ તરફથી વર્કિંગ કેપિટલ લિમિટ વધારવાની અરજીઓ વધી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "896694f4c688": {
       "no_poll": false,
       "hypothesis": "A fire at Regent Textile Market causes temporary trading suspension, stock damage, and payment-chain friction for traders.",
@@ -15351,275 +15948,6 @@
               },
               "banker.q3": {
                 "text": "શું વીવિંગ ગ્રાહકો તરફથી વર્કિંગ કેપિટલ ચૂકવણીમાં કોઈ તાણ કે વિલંબ જોવા મળ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "0f642d309dd8": {
-      "no_poll": false,
-      "hypothesis": "Somany Ceramics' debottlenecking-led capacity expansion is increasing competitive pressure and demand for local OEM suppliers and tile manufacturers in Morbi.",
-      "event_phrase": "Somany Ceramics' capacity hike via debottlenecking",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Ceramic tile manufacturer / OEM supplier",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Somany Ceramics' capacity hike via debottlenecking accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your order book from large tile brands changed over the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has pricing pressure from major tile buyers moved in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Packaging & raw material supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported Somany Ceramics' capacity hike via debottlenecking accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How is material offtake by local ceramic tile makers compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Cluster branch banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Somany Ceramics' capacity hike via debottlenecking accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have local ceramic units requested working capital limit enhancements for expansion in the last 2-4 weeks?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "સિરેમિક ટાઇલ ઉત્પાદક / OEM સપ્લાયર",
-            "questions": {
-              "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ સોમાની સિરેમિક્સ દ્વારા ક્ષમતા વધારાનો અહેવાલ કેટલો સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં મોટી ટાઇલ બ્રાન્ડ્સ તરફથી તમારા ઓર્ડરની સ્થિતિ કેવી રહી છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં મોટા ટાઇલ ખરીદદારો તરફથી ભાવનું દબાણ કેવું રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "પેકેજિંગ અને કાચા માલના સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "તમારા અનુભવ મુજબ સોમાની સિરેમિક્સ દ્વારા ક્ષમતા વધારાનો અહેવાલ કેટલો સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં સ્થાનિક સિરેમિક ટાઇલ ઉત્પાદકો દ્વારા કાચા માલની ઉપાડ કેવી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ક્લસ્ટર બ્રાન્ચ બેન્કર",
-            "questions": {
-              "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ સોમાની સિરેમિક્સ દ્વારા ક્ષમતા વધારાનો અહેવાલ કેટલો સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું છેલ્લા ૨-૪ અઠવાડિયામાં સ્થાનિક સિરેમિક એકમો દ્વારા વિસ્તરણ માટે વર્કિંગ કેપિટલ લિમિટ વધારવાની માંગણી કરવામાં આવી છે?",
                 "options": [
                   "હા",
                   "ના",
