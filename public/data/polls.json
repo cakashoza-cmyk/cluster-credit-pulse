@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-12T06:01:47.051Z",
+  "generated_at": "2026-10-12T19:57:30.965Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 69,
-    "with_poll": 67,
+    "cards": 70,
+    "with_poll": 68,
     "no_poll": 2,
     "pending": 0
   },
@@ -15961,6 +15961,567 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "ab1c8067653c": {
+      "no_poll": false,
+      "hypothesis": "Localized disruptions from flood alerts, fire probes, and worker protests are causing labor shortages and logistics delays, temporarily stalling Surat's textile dispatches.",
+      "event_phrase": "disruptions from flood alerts, fire probes, and protests",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Weaving / Processing Unit Owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported disruptions from flood alerts, fire probes, and protests accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has worker attendance at your unit changed over the last two weeks?",
+              "options": [
+                "Much lower",
+                "Slightly lower",
+                "No change",
+                "Slightly higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Slightly lower"
+              ],
+              "contradicts": [
+                "No change",
+                "Slightly higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you facing delays in receiving raw materials or dispatching finished grey/processed fabric?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "logistics",
+          "label": "Textile Transporter / Logistics Agent",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "logistics.q1",
+              "type": "accuracy",
+              "text": "Is the reported disruptions from flood alerts, fire probes, and protests accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "logistics.q2",
+              "type": "scale5",
+              "text": "How have daily textile dispatches from Ring Road markets changed in the last 2 weeks?",
+              "options": [
+                "Much lower",
+                "Slightly lower",
+                "No change",
+                "Slightly higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Slightly lower"
+              ],
+              "contradicts": [
+                "No change"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "SME Credit Officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported disruptions from flood alerts, fire probes, and protests accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an increase in ad-hoc limit or temporary overdraft requests from textile units this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વીવિંગ / પ્રોસેસિંગ યુનિટના માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા વિસ્તારમાં પૂરની ચેતવણી, કામદારોના વિરોધ પ્રદર્શન અથવા આગની તપાસથી કામગીરીમાં વિક્ષેપ પડ્યો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા બે અઠવાડિયામાં તમારા યુનિટમાં કામદારોની હાજરીમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "થોડી ઓછી",
+                  "કોઈ ફેરફાર નહીં",
+                  "થોડી વધુ",
+                  "ઘણી વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમને કાચો માલ મેળવવામાં અથવા તૈયાર ગ્રે/પ્રોસેસ્ડ કાપડ મોકલવામાં વિલંબનો સામનો કરવો પડી રહ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "logistics": {
+            "label": "ટેક્સટાઇલ ટ્રાન્સપોર્ટર / લોજિસ્ટિક્સ એજન્ટ",
+            "questions": {
+              "logistics.q1": {
+                "text": "શું પૂરની ચેતવણી અને વિરોધ પ્રદર્શનને કારણે સુરત ટેક્સટાઇલના ડિસ્પેચમાં વિલંબ થઈ રહ્યો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "logistics.q2": {
+                "text": "છેલ્લા ૨ અઠવાડિયામાં રિંગ રોડ માર્કેટમાંથી દૈનિક ટેક્સટાઇલ ડિસ્પેચમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "થોડી ઓછી",
+                  "કોઈ ફેરફાર નહીં",
+                  "થોડી વધુ",
+                  "ઘણી વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "SME ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું સુરતના ટેક્સટાઇલ લોનધારકો તાજેતરના વિરોધ પ્રદર્શન અથવા પૂરની ચેતવણીને કારણે કામગીરીમાં વિક્ષેપની જાણ કરી રહ્યા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે આ મહિને ટેક્સટાઇલ યુનિટ્સ તરફથી એડ-હોક લિમિટ અથવા કામચલાઉ ઓવરડ્રાફ્ટની વિનંતીઓમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "c6627fe5f9af": {
+      "no_poll": false,
+      "hypothesis": "Diamond export contraction is causing production cuts, delayed export bill realizations, and elevated bank limit utilization in Surat.",
+      "event_phrase": "sharp drop in diamond exports and turnover",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Diamond cutting & polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported sharp drop in diamond exports and turnover accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have polishing factory operating days or active hours changed in the last 4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Factory shifts or operational days are cut due to weak export orders.",
+              "contradicts_if": "Operations remain steady or expanding."
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "What is the primary trend in export receivables from overseas buyers over the past month?",
+              "options": [
+                "On-time payments",
+                "Delays of 15-30 days",
+                "Delays exceeding 30 days",
+                "Order cancellations"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Delays of 15-30 days",
+                "Delays exceeding 30 days",
+                "Order cancellations"
+              ],
+              "contradicts": [
+                "On-time payments"
+              ],
+              "supports_if": "Foreign buyers are stretching payments or cancelling consignments.",
+              "contradicts_if": "Export realizations are coming through on regular credit terms."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat MSME / diamond credit manager",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported sharp drop in diamond exports and turnover accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has borrower utilization of PCFC / export packing credit lines trended this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Near 100% / Stretched"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near 100% / Stretched"
+              ],
+              "contradicts": [
+                "Lower",
+                "Same"
+              ],
+              "supports_if": "Working capital lines are pinned at limits due to delayed liquidation.",
+              "contradicts_if": "Export credit utilization is comfortable or declining alongside lower volumes."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an increase in overdue export bills or requests for PCFC tenure extension?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Exporters are requesting tenure rollovers or entering SMA status.",
+              "contradicts_if": "Export bills are liquidating smoothly within sanctioned tenures."
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Diamond worker contractor / labour representative",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported sharp drop in diamond exports and turnover accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "What is the prevailing pattern regarding diamond artisan wages and work availability this month?",
+              "options": [
+                "Normal full-time work",
+                "Reduced piece-rates / fewer hours",
+                "Extended unpaid leave / layoffs",
+                "Worker migration to hometowns"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Reduced piece-rates / fewer hours",
+                "Extended unpaid leave / layoffs",
+                "Worker migration to hometowns"
+              ],
+              "contradicts": [
+                "Normal full-time work"
+              ],
+              "supports_if": "Labour stress is directly evident via wage cuts or joblessness.",
+              "contradicts_if": "Artisans have full employment and normal pay cycles."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "હીરા કટિંગ અને પોલિશિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું હીરાની નિકાસ અને ટર્નઓવરમાં મોટો ઘટાડો તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 4 અઠવાડિયામાં પોલિશિંગ ફેક્ટરીના કામકાજના દિવસો કે કલાકોમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ નીચા",
+                  "નીચા",
+                  "તેટલા જ",
+                  "વધુ",
+                  "ખૂબ વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા મહિનામાં વિદેશી ખરીદદારો પાસેથી પેમેન્ટ મળવાની સ્થિતિ કેવી છે?",
+                "options": [
+                  "સમયસર ચુકવણી",
+                  "15-30 દિવસનો વિલંબ",
+                  "30 દિવસથી વધુ વિલંબ",
+                  "ઓર્ડર રદ થવા"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત MSME / ડાયમંડ ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું હીરાની નિકાસ અને ટર્નઓવરમાં મોટો ઘટાડો તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "આ મહિને ગ્રાહકો દ્વારા PCFC / એક્સપોર્ટ પેકિંગ ક્રેડિટ લિમિટનો વપરાશ કેવો રહ્યો છે?",
+                "options": [
+                  "ખૂબ ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "લગભગ 100% / તણાવપૂર્ણ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે નિકાસ બિલમાં વિલંબ અથવા PCFC મુદત લંબાવવાની વિનંતીઓમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "હીરા રત્નકલાકાર કોન્ટ્રાક્ટર / શ્રમિક પ્રતિનિધિ",
+            "questions": {
+              "labour.q1": {
+                "text": "શું હીરાની નિકાસ અને ટર્નઓવરમાં મોટો ઘટાડો તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "આ મહિને રત્નકલાકારોના વેતન અને કામની ઉપલબ્ધતાની મુખ્ય સ્થિતિ શું છે?",
+                "options": [
+                  "સામાન્ય પૂર્ણ-સમયનું કામ",
+                  "ઓછા કલાક / ઘટેલા દર",
+                  "લાંબી રજા / છટણી",
+                  "વતન તરફ હિજરત"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
+      "prompt_version": "poll-v1"
+    },
     "2b47ff4fa01a": {
       "no_poll": false,
       "hypothesis": "Shorter Diwali holidays in Surat's diamond units reflect recovering order books, higher capacity utilization, and improved working capital turnover.",
@@ -18205,301 +18766,6 @@
     "d1aafe8e55b4": {
       "no_poll": true,
       "reason": "The news is about a specific mid-sized company (Nityas Gems) filing an SME IPO DRHP. This is a company-specific corporate event with no direct, observable cluster-wide value chain or credit transmission effects that peer units or general ba",
-      "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "3df2932eb5c0": {
-      "no_poll": false,
-      "hypothesis": "The Rs 1,225 Cr IPO filing by a major Surat LGD player signals strong sector confidence, driving stable credit terms and active reactor/machinery inquiries.",
-      "event_phrase": "Rs 1,225 Crore IPO filing by Anjali LabTech",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "LGD Grower / Reactor Unit Owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Rs 1,225 Crore IPO filing by Anjali LabTech accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have inquiries or orders for new LGD reactors/machinery changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "choice",
-              "text": "What is the current credit period demanded by seed and machinery suppliers?",
-              "options": [
-                "Strictly advance payment",
-                "Normal credit (30-60 days)",
-                "Extended credit (>60 days)"
-              ],
-              "mechanism": "creditors",
-              "supports": [
-                "Normal credit (30-60 days)"
-              ],
-              "contradicts": [
-                "Strictly advance payment"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Surat Diamond Cluster Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Rs 1,225 Crore IPO filing by Anjali LabTech accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have credit enhancement or term loan requests from LGD units changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Same",
-                "Higher"
-              ],
-              "contradicts": [
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "Are you seeing any increase in cheque/ECS bounces or SMA-0/1 slippages in LGD accounts?",
-              "options": [
-                "No increase",
-                "Minor increase",
-                "Significant increase"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "No increase"
-              ],
-              "contradicts": [
-                "Significant increase"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "LGD Seed / Reactor Supplier",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported Rs 1,225 Crore IPO filing by Anjali LabTech accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How have your sales of LGD seeds or reactor consumables changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "એલજીડી ઉત્પાદક / રિએક્ટર યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું અંજલિ લેબટેક દ્વારા રૂ. 1,225 કરોડના આઈપીઓ ફાઇલિંગના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં નવા એલજીડી રિએક્ટર/મશીનરી માટેની પૂછપરછ અથવા ઓર્ડરમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ખૂબ ઓછો",
-                  "ઓછો",
-                  "તેટલો જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "સીડ અને મશીનરી સપ્લાયર્સ દ્વારા હાલમાં કેટલા સમયની ક્રેડિટ મર્યાદા માંગવામાં આવી રહી છે?",
-                "options": [
-                  "માત્ર એડવાન્સ પેમેન્ટ",
-                  "સામાન્ય ક્રેડિટ (૩૦-૬૦ દિવસ)",
-                  "વધુ ક્રેડિટ (>૬૦ દિવસ)"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "સુરત ડાયમંડ ક્લસ્ટર બેન્કર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું અંજલિ લેબટેક દ્વારા રૂ. 1,225 કરોડના આઈપીઓ ફાઇલિંગના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં એલજીડી એકમો તરફથી ક્રેડિટ વધારવા અથવા ટર્મ લોનની વિનંતીઓમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ખૂબ ઓછો",
-                  "ઓછો",
-                  "તેટલો જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે એલજીડી ખાતાઓમાં ચેક/ECS બાઉન્સ અથવા SMA-0/1 સ્લિપેજમાં કોઈ વધારો જોઈ રહ્યા છો?",
-                "options": [
-                  "કોઈ વધારો નથી",
-                  "સામાન્ય વધારો",
-                  "મોટો વધારો"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "એલજીડી સીડ / રિએક્ટર સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું અંજલિ લેબટેક દ્વારા રૂ. 1,225 કરોડના આઈપીઓ ફાઇલિંગના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં એલજીડી સીડ્સ અથવા રિએક્ટર વપરાશની વસ્તુઓના વેચાણમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ખૂબ ઓછો",
-                  "ઓછો",
-                  "તેટલો જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
