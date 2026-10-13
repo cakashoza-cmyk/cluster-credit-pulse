@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T02:07:47.920Z",
+  "generated_at": "2026-10-13T12:48:35.016Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 70,
-    "with_poll": 68,
+    "cards": 66,
+    "with_poll": 64,
     "no_poll": 2,
     "pending": 0
   },
@@ -10509,275 +10509,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "2cc803e3edfd": {
-      "no_poll": false,
-      "hypothesis": "Pre-strike talks and potential embroidery stir in Surat are disrupting job-work cash flows and impacting machine loan repayments for highly leveraged units.",
-      "event_phrase": "embroidery stir and talks in Surat",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Computerised embroidery unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported embroidery stir and talks in Surat accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your job-work volume changed in the last 2-4 weeks due to disruptions?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How are your receivables and payment collection periods from traders currently?",
-              "options": [
-                "Much faster",
-                "Faster",
-                "Same",
-                "Slower",
-                "Much slower"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Slower",
-                "Much slower"
-              ],
-              "contradicts": [
-                "Faster",
-                "Much faster"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "MSME branch credit officer (Surat)",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported embroidery stir and talks in Surat accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you seen an increase in machine loan EMI delays or restructuring requests?",
-              "options": [
-                "Yes, noticeable increase",
-                "No change",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes, noticeable increase"
-              ],
-              "contradicts": [
-                "No change"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Embroidery machine operator / contractor",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported embroidery stir and talks in Surat accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "scale5",
-              "text": "How many operating hours or shifts have you worked in the past 2 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "કમ્પ્યુરાઇઝ્ડ એમ્બ્રોઇડરી યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા અનુભવમાં એમ્બ્રોઇડરી હડતાલ અને ચર્ચા અંગેના અહેવાલો સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં અગવડતાને કારણે તમારા જોબ-વર્કનું પ્રમાણ કેવું રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "વેપારીઓ પાસેથી બાકી રકમ અને પેમેન્ટ કલેક્શનનો સમય કેવો ચાલી રહ્યો છે?",
-                "options": [
-                  "ઘણું ઝડપી",
-                  "ઝડપી",
-                  "સરખું",
-                  "ધીમું",
-                  "ઘણું ધીમું"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "MSME બ્રાન્ચ ક્રેડિટ ઓફિસર (સુરત)",
-            "questions": {
-              "banker.q1": {
-                "text": "શું તમે લોન લેનારાઓમાં એમ્બ્રોઇડરી હડતાલ સંબંધિત તણાવ જોઈ રહ્યા છો?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે મશીન લોનના હપ્તા (EMI) માં વિલંબ કે રીસ્ટ્રક્ચરિંગની અરજીઓમાં વધારો જોયો છે?",
-                "options": [
-                  "હા, નોંધપાત્ર વધારો",
-                  "કોઈ ફેરફાર નથી",
-                  "જોવા મળ્યું નથી"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર / ઠેકેદાર",
-            "questions": {
-              "labour.q1": {
-                "text": "શું એમ્બ્રોઇડરી કામદારોમાં અશાંતિ અને હડતાલની તૈયારીના અહેવાલો સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "છેલ્લા 2 અઠવાડિયામાં તમે કેટલા કલાક કે શિફ્ટ કામ કર્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "9b03a2483acb": {
       "no_poll": false,
       "hypothesis": "US tariff deadline front-loading is causing a temporary export rush in Surat diamond units, which will lead to post-deadline order drops and delayed PCFC liquidations.",
@@ -14912,6 +14643,269 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "e4f802e55f28": {
+      "no_poll": false,
+      "hypothesis": "Imposition of UPI MDR is increasing transaction costs and squeezing margins for Surat textile traders.",
+      "event_phrase": "UPI MDR cost increase for textile traders",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Ring Road Textile Trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your digital transaction costs changed over the last 3 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you shifted towards cash transactions to avoid UPI fees?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Grey Fabric Supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has buyer payment delay changed in the last 3 weeks?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Same",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Shorter",
+                "Much shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat Branch Credit Manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have textile trader CC/OD utilization levels increased near limits this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "રિંગ રોડ ટેક્સટાઇલ વેપારી",
+            "questions": {
+              "operator.q1": {
+                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૩ અઠવાડિયામાં તમારા ડિજિટલ ટ્રાન્ઝેક્શન ખર્ચમાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે યુપીઆઈ ફી ટાળવા માટે રોકડ વ્યવહારો તરફ વળ્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "ગ્રે ફેબ્રિક સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૩ અઠવાડિયામાં ખરીદનાર દ્વારા ચુકવણીમાં વિલંબ કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણો ટૂંકો",
+                  "ટૂંકો",
+                  "સમાન",
+                  "લાંબો",
+                  "ઘણો લાંબો"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત શાખા ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું આ મહિને ટેક્સટાઇલ વેપારીઓની સીસી/ઓડી યુટિલાઇઝેશન મર્યાદાની નજીક વધી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "87e65897bae5": {
       "no_poll": false,
       "hypothesis": "Rising raw material costs are squeezing operating margins and widening working capital gaps across Surat MMF and weaving units.",
@@ -15433,98 +15427,27 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "4f30390f653b": {
+    "7dc3005e0b28": {
       "no_poll": false,
-      "hypothesis": "Relief package reaching 47,000 diamond workers indicates severe operational distress, wage arrears, or layoffs in natural diamond cutting and polishing units.",
-      "event_phrase": "relief package for diamond workers",
+      "hypothesis": "MANTRA-trained entrepreneurs are scaling up Surat textile businesses with active bank turnover and steady supplier demand.",
+      "event_phrase": "scale-up of MANTRA-trained textile businesses",
       "roles": [
         {
-          "role": "operator",
-          "label": "Natural diamond unit owner / manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported relief package for diamond workers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "How has worker availability and wage pressure changed in the last 2-4 weeks?",
-              "options": [
-                "Severe shortage and rising wages",
-                "Stable availability and wages",
-                "Surplus labour due to layoffs"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Surplus labour due to layoffs"
-              ],
-              "contradicts": [
-                "Severe shortage and rising wages"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How is your cutting and polishing capacity utilisation compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
           "role": "banker",
-          "label": "Diamond cluster branch banker",
+          "label": "Textile Branch Manager, Surat",
           "proximity": 3,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported relief package for diamond workers accurate in your experience?",
+              "text": "Is the reported scale-up of MANTRA-trained textile businesses accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
                 "Understated",
                 "Not seeing it"
               ],
-              "mechanism": "repayment",
+              "mechanism": "wc_utilisation",
               "supports": [
                 "Accurate",
                 "Understated"
@@ -15538,213 +15461,8 @@
             },
             {
               "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you observed an increase in restructuring or loan default requests from diamond units?",
-              "options": [
-                "Yes, noticeable increase",
-                "No change",
-                "Decreased"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes, noticeable increase"
-              ],
-              "contradicts": [
-                "Decreased"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Diamond artisan / cutter",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported relief package for diamond workers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "choice",
-              "text": "Have you faced wage delays, job loss, or reduced working hours recently?",
-              "options": [
-                "Yes, severe impact",
-                "Minor impact",
-                "No impact"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Yes, severe impact"
-              ],
-              "contradicts": [
-                "No impact"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "નેચરલ ડાયમંડ યુનિટ માલિક / મેનેજર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું ડાયમંડ કામદારો માટે જાહેર થયેલ રાહત પેકેજ તમારા અનુભવમાં સાચું છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં કામદારોની ઉપલબ્ધતા અને વેતનમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "કામદારોની ભારે અછત અને વધતું વેતન",
-                  "સ્થિર ઉપલબ્ધતા અને વેતન",
-                  "છટણીને કારણે કામદારોની વધુ આવક"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારા કટીંગ અને પૉલિશિંગ યુનિટની ક્ષમતાનો ઉપયોગ કેવો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું ડાયમંડ કામદારો માટે જાહેર થયેલ રાહત પેકેજ તમારા અનુભવમાં સાચું છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે ડાયમંડ યુનિટ્સ તરફથી લોન રીસ્ટ્રક્ચરિંગ અથવા ડિફોલ્ટની અરજીઓમાં વધારો નોંધ્યો છે?",
-                "options": [
-                  "હા, નોંધપાત્ર વધારો",
-                  "કોઈ ફેરફાર નહીં",
-                  "ઘટાડો થયો છે"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "ડાયમંડ કારીગર / કટર",
-            "questions": {
-              "labour.q1": {
-                "text": "શું ડાયમંડ કામદારો માટે જાહેર થયેલ રાહત પેકેજ તમારા અનુભવમાં સાચું છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "શું તમને તાજેતરમાં વેતન વિલંબ, નોકરી ગુમાવવી અથવા કામના કલાકો ઘટવાનો સામનો કરવો પડ્યો છે?",
-                "options": [
-                  "હા, ગંભીર અસર",
-                  "સામાન્ય અસર",
-                  "કોઈ અસર નહીં"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "039ceb99b6a2": {
-      "no_poll": false,
-      "hypothesis": "Labor protests over 12-hour shifts are causing operational disruptions, wage cost pressures, or regulatory scrutiny in Surat weaving and processing units.",
-      "event_phrase": "protest over 12-hour shifts by textile workers",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Weaving / Processing Unit Owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported protest over 12-hour shifts accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Have factory inspectors or labor officials visited your unit regarding shift timings in the last 2-4 weeks?",
-              "options": [
-                "Yes, strict checks",
-                "Visited, no major action",
-                "No visits"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes, strict checks"
-              ],
-              "contradicts": [
-                "No visits"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
               "type": "scale5",
-              "text": "How have daily wage rates or labor costs changed at your unit recently?",
+              "text": "How has working capital limit utilisation for newer MMF textile borrowers moved recently?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -15752,136 +15470,14 @@
                 "Higher",
                 "Much higher"
               ],
-              "mechanism": "input_cost",
+              "mechanism": "wc_utilisation",
               "supports": [
                 "Higher",
                 "Much higher"
               ],
               "contradicts": [
-                "Stable",
                 "Lower",
                 "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Weaving Loom Supervisor / Labor Contractor",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported protest over 12-hour shifts accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "choice",
-              "text": "Are workers currently willing to work 12-hour shifts, or is there resistance?",
-              "options": [
-                "Willing as before",
-                "Demanding 8-hour shifts",
-                "Refusing overtime work"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Demanding 8-hour shifts",
-                "Refusing overtime work"
-              ],
-              "contradicts": [
-                "Willing as before"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q3",
-              "type": "scale5",
-              "text": "How has worker absenteeism or labor shortage been at your units recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Normal",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Normal",
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Surat Textile Branch Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported protest over 12-hour shifts accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have borrowing textile units reported lower capacity utilization due to labor issues?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
               ],
               "supports_if": "",
               "contradicts_if": ""
@@ -15889,286 +15485,7 @@
             {
               "id": "banker.q3",
               "type": "yes_no_notseen",
-              "text": "Have you observed any stress or delay in working capital servicing from weaving clients?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "વીવિંગ / પ્રોસેસિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું ૧૨ કલાકની શિફ્ટ સામેના વિરોધનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં શિફ્ટના સમય અંગે ફેક્ટરી ઇન્સ્પેક્ટરો કે શ્રમ અધિકારીઓ તમારા યુનિટની મુલાકાતે આવ્યા છે?",
-                "options": [
-                  "હા, કડક તપાસ",
-                  "મુલાકાત લીધી, કોઈ મોટી કાર્યવાહી નહીં",
-                  "કોઈ મુલાકાત નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "તમારા યુનિટમાં દૈનિક મજૂરી દર અથવા લેબર કોસ્ટમાં તાજેતરમાં કેવી ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "લૂમ્સ સુપરવાઇઝર / લેબર કોન્ટ્રાક્ટર",
-            "questions": {
-              "labour.q1": {
-                "text": "શું ૧૨ કલાકની શિફ્ટ સામેના વિરોધનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "શું કામદારો હાલમાં ૧૨ કલાક કામ કરવા તૈયાર છે કે વિરોધ છે?",
-                "options": [
-                  "પહેલાંની જેમ તૈયાર",
-                  "૮ કલાકની શિફ્ટની માંગ",
-                  "ઓવરટાઇમ કામ કરવાનો ઇનકાર"
-                ]
-              },
-              "labour.q3": {
-                "text": "તમારા યુનિટ્સમાં કામદારોની ગેરહાજરી અથવા મજૂરોની અછત તાજેતરમાં કેવી રહી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સામાન્ય",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "સુરત ટેક્સટાઇલ બ્રાન્ચ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું ૧૨ કલાકની શિફ્ટ સામેના વિરોધનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું લોન લેનાર ટેક્સટાઇલ યુનિટ્સે મજૂર સમસ્યાઓના કારણે ઉત્પાદન ક્ષમતા ઘટ્યાનું જણાવ્યું છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું વીવિંગ ગ્રાહકો તરફથી વર્કિંગ કેપિટલ ચૂકવણીમાં કોઈ તાણ કે વિલંબ જોવા મળ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "ab1c8067653c": {
-      "no_poll": false,
-      "hypothesis": "Localized disruptions from flood alerts, fire probes, and worker protests are causing labor shortages and logistics delays, temporarily stalling Surat's textile dispatches.",
-      "event_phrase": "disruptions from flood alerts, fire probes, and protests",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Weaving / Processing Unit Owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported disruptions from flood alerts, fire probes, and protests accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has worker attendance at your unit changed over the last two weeks?",
-              "options": [
-                "Much lower",
-                "Slightly lower",
-                "No change",
-                "Slightly higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Slightly lower"
-              ],
-              "contradicts": [
-                "No change",
-                "Slightly higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "yes_no_notseen",
-              "text": "Are you facing delays in receiving raw materials or dispatching finished grey/processed fabric?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "logistics",
-          "label": "Textile Transporter / Logistics Agent",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "logistics.q1",
-              "type": "accuracy",
-              "text": "Is the reported disruptions from flood alerts, fire probes, and protests accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "logistics.q2",
-              "type": "scale5",
-              "text": "How have daily textile dispatches from Ring Road markets changed in the last 2 weeks?",
-              "options": [
-                "Much lower",
-                "Slightly lower",
-                "No change",
-                "Slightly higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Slightly lower"
-              ],
-              "contradicts": [
-                "No change"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "SME Credit Officer",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported disruptions from flood alerts, fire probes, and protests accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you seen an increase in ad-hoc limit or temporary overdraft requests from textile units this month?",
+              "text": "Have you observed new term loan or credit enhancement requests from these emerging units?",
               "options": [
                 "Yes",
                 "No",
@@ -16185,108 +15502,16 @@
               "contradicts_if": ""
             }
           ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "વીવિંગ / પ્રોસેસિંગ યુનિટના માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા વિસ્તારમાં પૂરની ચેતવણી, કામદારોના વિરોધ પ્રદર્શન અથવા આગની તપાસથી કામગીરીમાં વિક્ષેપ પડ્યો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા બે અઠવાડિયામાં તમારા યુનિટમાં કામદારોની હાજરીમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "થોડી ઓછી",
-                  "કોઈ ફેરફાર નહીં",
-                  "થોડી વધુ",
-                  "ઘણી વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "શું તમને કાચો માલ મેળવવામાં અથવા તૈયાર ગ્રે/પ્રોસેસ્ડ કાપડ મોકલવામાં વિલંબનો સામનો કરવો પડી રહ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "logistics": {
-            "label": "ટેક્સટાઇલ ટ્રાન્સપોર્ટર / લોજિસ્ટિક્સ એજન્ટ",
-            "questions": {
-              "logistics.q1": {
-                "text": "શું પૂરની ચેતવણી અને વિરોધ પ્રદર્શનને કારણે સુરત ટેક્સટાઇલના ડિસ્પેચમાં વિલંબ થઈ રહ્યો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "logistics.q2": {
-                "text": "છેલ્લા ૨ અઠવાડિયામાં રિંગ રોડ માર્કેટમાંથી દૈનિક ટેક્સટાઇલ ડિસ્પેચમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "થોડી ઓછી",
-                  "કોઈ ફેરફાર નહીં",
-                  "થોડી વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "SME ક્રેડિટ ઓફિસર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ લોનધારકો તાજેતરના વિરોધ પ્રદર્શન અથવા પૂરની ચેતવણીને કારણે કામગીરીમાં વિક્ષેપની જાણ કરી રહ્યા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે આ મહિને ટેક્સટાઇલ યુનિટ્સ તરફથી એડ-હોક લિમિટ અથવા કામચલાઉ ઓવરડ્રાફ્ટની વિનંતીઓમાં વધારો જોયો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "c6627fe5f9af": {
-      "no_poll": false,
-      "hypothesis": "Diamond export contraction is causing production cuts, delayed export bill realizations, and elevated bank limit utilization in Surat.",
-      "event_phrase": "sharp drop in diamond exports and turnover",
-      "roles": [
+        },
         {
           "role": "operator",
-          "label": "Diamond cutting & polishing unit owner",
-          "proximity": 3,
+          "label": "Powerloom / Processing Unit Owner",
+          "proximity": 2,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported sharp drop in diamond exports and turnover accurate in your experience?",
+              "text": "Is the reported scale-up of MANTRA-trained textile businesses accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -16308,7 +15533,7 @@
             {
               "id": "operator.q2",
               "type": "scale5",
-              "text": "How have polishing factory operating days or active hours changed in the last 4 weeks?",
+              "text": "How are order volumes from new or expanding MANTRA-linked clients compared to last month?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -16318,58 +15543,35 @@
               ],
               "mechanism": "volume",
               "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Same",
                 "Higher",
                 "Much higher"
               ],
-              "supports_if": "Factory shifts or operational days are cut due to weak export orders.",
-              "contradicts_if": "Operations remain steady or expanding."
-            },
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn Supplier / Texturiser",
+          "proximity": 2,
+          "questions": [
             {
-              "id": "operator.q3",
-              "type": "choice",
-              "text": "What is the primary trend in export receivables from overseas buyers over the past month?",
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported scale-up of MANTRA-trained textile businesses accurate in your experience?",
               "options": [
-                "On-time payments",
-                "Delays of 15-30 days",
-                "Delays exceeding 30 days",
-                "Order cancellations"
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
               ],
               "mechanism": "receivables",
               "supports": [
-                "Delays of 15-30 days",
-                "Delays exceeding 30 days",
-                "Order cancellations"
-              ],
-              "contradicts": [
-                "On-time payments"
-              ],
-              "supports_if": "Foreign buyers are stretching payments or cancelling consignments.",
-              "contradicts_if": "Export realizations are coming through on regular credit terms."
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Surat MSME / diamond credit manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported sharp drop in diamond exports and turnover accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
                 "Accurate",
                 "Understated"
               ],
@@ -16381,96 +15583,27 @@
               "contradicts_if": ""
             },
             {
-              "id": "banker.q2",
+              "id": "supplier.q2",
               "type": "scale5",
-              "text": "How has borrower utilization of PCFC / export packing credit lines trended this month?",
+              "text": "How is the payment discipline and realization cycle from newer MMF weaving units?",
               "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Near 100% / Stretched"
+                "Much slower",
+                "Slower",
+                "Stable",
+                "Faster",
+                "Much faster"
               ],
-              "mechanism": "wc_utilisation",
+              "mechanism": "receivables",
               "supports": [
-                "Near 100% / Stretched"
+                "Faster",
+                "Much faster"
               ],
               "contradicts": [
-                "Lower",
-                "Same"
-              ],
-              "supports_if": "Working capital lines are pinned at limits due to delayed liquidation.",
-              "contradicts_if": "Export credit utilization is comfortable or declining alongside lower volumes."
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you seen an increase in overdue export bills or requests for PCFC tenure extension?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "Exporters are requesting tenure rollovers or entering SMA status.",
-              "contradicts_if": "Export bills are liquidating smoothly within sanctioned tenures."
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Diamond worker contractor / labour representative",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported sharp drop in diamond exports and turnover accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
+                "Slower",
+                "Much slower"
               ],
               "supports_if": "",
               "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "choice",
-              "text": "What is the prevailing pattern regarding diamond artisan wages and work availability this month?",
-              "options": [
-                "Normal full-time work",
-                "Reduced piece-rates / fewer hours",
-                "Extended unpaid leave / layoffs",
-                "Worker migration to hometowns"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Reduced piece-rates / fewer hours",
-                "Extended unpaid leave / layoffs",
-                "Worker migration to hometowns"
-              ],
-              "contradicts": [
-                "Normal full-time work"
-              ],
-              "supports_if": "Labour stress is directly evident via wage cuts or joblessness.",
-              "contradicts_if": "Artisans have full employment and normal pay cycles."
             }
           ]
         }
@@ -16478,44 +15611,11 @@
       "translation": {
         "lang": "gu",
         "roles": {
-          "operator": {
-            "label": "હીરા કટિંગ અને પોલિશિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું હીરાની નિકાસ અને ટર્નઓવરમાં મોટો ઘટાડો તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 4 અઠવાડિયામાં પોલિશિંગ ફેક્ટરીના કામકાજના દિવસો કે કલાકોમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ખૂબ નીચા",
-                  "નીચા",
-                  "તેટલા જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "છેલ્લા મહિનામાં વિદેશી ખરીદદારો પાસેથી પેમેન્ટ મળવાની સ્થિતિ કેવી છે?",
-                "options": [
-                  "સમયસર ચુકવણી",
-                  "15-30 દિવસનો વિલંબ",
-                  "30 દિવસથી વધુ વિલંબ",
-                  "ઓર્ડર રદ થવા"
-                ]
-              }
-            }
-          },
           "banker": {
-            "label": "સુરત MSME / ડાયમંડ ક્રેડિટ મેનેજર",
+            "label": "ટેક્સટાઈલ બ્રાન્ચ મેનેજર, સુરત",
             "questions": {
               "banker.q1": {
-                "text": "શું હીરાની નિકાસ અને ટર્નઓવરમાં મોટો ઘટાડો તમારા અનુભવ મુજબ સચોટ છે?",
+                "text": "શું મંત્ર (MANTRA) પ્રશિક્ષિત ટેક્સટાઈલ વ્યવસાયોનો નોંધાયેલ વિકાસ તમારા અનુભવમાં સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -16524,17 +15624,17 @@
                 ]
               },
               "banker.q2": {
-                "text": "આ મહિને ગ્રાહકો દ્વારા PCFC / એક્સપોર્ટ પેકિંગ ક્રેડિટ લિમિટનો વપરાશ કેવો રહ્યો છે?",
+                "text": "તાજેતરમાં નવા એમએમએફ (MMF) ટેક્સટાઈલ કર્જદારો માટે વર્કિંગ કેપિટલ મર્યાદાનો ઉપયોગ કેવો રહ્યો છે?",
                 "options": [
-                  "ખૂબ ઓછો",
+                  "ઘણો ઓછો",
                   "ઓછો",
-                  "તેટલો જ",
+                  "સ્થિર",
                   "વધુ",
-                  "લગભગ 100% / તણાવપૂર્ણ"
+                  "ઘણો વધુ"
                 ]
               },
               "banker.q3": {
-                "text": "શું તમે નિકાસ બિલમાં વિલંબ અથવા PCFC મુદત લંબાવવાની વિનંતીઓમાં વધારો જોયો છે?",
+                "text": "શું તમે આ ઉભરતા એકમો તરફથી નવી લોન અથવા ક્રેડિટ વધારવાની અરજીઓ જોઈ છે?",
                 "options": [
                   "હા",
                   "ના",
@@ -16543,11 +15643,11 @@
               }
             }
           },
-          "labour": {
-            "label": "હીરા રત્નકલાકાર કોન્ટ્રાક્ટર / શ્રમિક પ્રતિનિધિ",
+          "operator": {
+            "label": "પાવરલૂમ / પ્રોસેસિંગ યુનિટ માલિક",
             "questions": {
-              "labour.q1": {
-                "text": "શું હીરાની નિકાસ અને ટર્નઓવરમાં મોટો ઘટાડો તમારા અનુભવ મુજબ સચોટ છે?",
+              "operator.q1": {
+                "text": "શું મંત્ર (MANTRA) પ્રશિક્ષિત ટેક્સટાઈલ વ્યવસાયોનો નોંધાયેલ વિકાસ તમારા અનુભવમાં સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -16555,20 +15655,45 @@
                   "મને દેખાતું નથી"
                 ]
               },
-              "labour.q2": {
-                "text": "આ મહિને રત્નકલાકારોના વેતન અને કામની ઉપલબ્ધતાની મુખ્ય સ્થિતિ શું છે?",
+              "operator.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં નવા અથવા વિસ્તરતા MANTRA-સંબંધિત ગ્રાહકો પાસેથી ઓર્ડરનું પ્રમાણ કેવું છે?",
                 "options": [
-                  "સામાન્ય પૂર્ણ-સમયનું કામ",
-                  "ઓછા કલાક / ઘટેલા દર",
-                  "લાંબી રજા / છટણી",
-                  "વતન તરફ હિજરત"
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સપ્લાયર / ટેક્સટ્યુરાઇઝર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું મંત્ર (MANTRA) પ્રશિક્ષિત ટેક્સટાઈલ વ્યવસાયોનો નોંધાયેલ વિકાસ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "નવા MMF વીવિંગ યુનિટ્સ પાસેથી પેમેન્ટ શિસ્ત અને નાણાં વસૂલાતનું ચક્ર કેવું છે?",
+                "options": [
+                  "ઘણું મોડું",
+                  "મોડું",
+                  "સ્થિર",
+                  "ઝડપી",
+                  "ઘણું ઝડપી"
                 ]
               }
             }
           }
         }
       },
-      "model": "gemini:gemini-3.8-flash",
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "2b47ff4fa01a": {
@@ -17179,27 +16304,27 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "26bd1ecd549c": {
+    "fb1f8d884062": {
       "no_poll": false,
-      "hypothesis": "ICA-GemLab opening in Surat reduces certification costs and turnaround times for diamond and jewellery exporters, leading to faster inventory turnover.",
-      "event_phrase": "opening of ICA-GemLab in Surat",
+      "hypothesis": "Local lab opening by ICA GemLab reduces certification transit time, shortening inventory cycles and boosting certified sales for Surat diamond and gemstone traders.",
+      "event_phrase": "opening of ICA GemLab testing laboratory in Surat",
       "roles": [
         {
           "role": "supplier",
-          "label": "Diamond testing & grading equipment supplier",
-          "proximity": 2,
+          "label": "Gem testing & certification provider",
+          "proximity": 3,
           "questions": [
             {
               "id": "supplier.q1",
               "type": "accuracy",
-              "text": "Is the reported opening of ICA-GemLab in Surat accurate in your experience?",
+              "text": "Is the reported opening of ICA GemLab testing laboratory in Surat accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
                 "Understated",
                 "Not seeing it"
               ],
-              "mechanism": "input_cost",
+              "mechanism": "volume",
               "supports": [
                 "Accurate",
                 "Understated"
@@ -17214,7 +16339,7 @@
             {
               "id": "supplier.q2",
               "type": "scale5",
-              "text": "How have lab-related service inquiries from local exporters changed in the last 2-4 weeks?",
+              "text": "How has sample testing volume at your local facility changed over the last 2-4 weeks?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -17231,27 +16356,27 @@
                 "Lower",
                 "Much lower"
               ],
-              "supports_if": "higher",
-              "contradicts_if": "lower"
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         },
         {
-          "role": "operator",
-          "label": "Diamond exporter / Polishing unit owner",
+          "role": "buyer",
+          "label": "Diamond and gemstone trader / exporter",
           "proximity": 3,
           "questions": [
             {
-              "id": "operator.q1",
+              "id": "buyer.q1",
               "type": "accuracy",
-              "text": "Is the reported opening of ICA-GemLab in Surat accurate in your experience?",
+              "text": "Is the reported opening of ICA GemLab testing laboratory in Surat accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
                 "Understated",
                 "Not seeing it"
               ],
-              "mechanism": "margin",
+              "mechanism": "receivables",
               "supports": [
                 "Accurate",
                 "Understated"
@@ -17264,62 +16389,39 @@
               "contradicts_if": ""
             },
             {
-              "id": "operator.q2",
+              "id": "buyer.q2",
               "type": "scale5",
-              "text": "How have your stone certification turnaround times changed compared to last month?",
+              "text": "How has the time taken to get stones certified changed this month compared to last month?",
               "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
+                "Much longer",
                 "Longer",
-                "Much longer"
+                "Same",
+                "Shorter",
+                "Much shorter"
               ],
               "mechanism": "inventory",
               "supports": [
-                "Much shorter",
-                "Shorter"
+                "Shorter",
+                "Much shorter"
               ],
               "contradicts": [
                 "Longer",
                 "Much longer"
               ],
-              "supports_if": "shorter",
-              "contradicts_if": "longer"
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How have your testing and logistics expenses for certification changed?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "lower",
-              "contradicts_if": "higher"
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         },
         {
           "role": "banker",
-          "label": "Diamond cluster credit manager",
-          "proximity": 3,
+          "label": "Cluster bank branch manager (Diamonds)",
+          "proximity": 1,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported opening of ICA-GemLab in Surat accurate in your experience?",
+              "text": "Is the reported opening of ICA GemLab testing laboratory in Surat accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -17340,22 +16442,26 @@
             },
             {
               "id": "banker.q2",
-              "type": "choice",
-              "text": "Have export-packing credit (PCFC) or working capital drawdowns for certified stock changed?",
+              "type": "scale5",
+              "text": "How has working capital / packing credit utilisation moved among your diamond trading clients recently?",
               "options": [
-                "Decreased",
-                "Stable",
-                "Increased due to faster cycle"
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
               ],
               "mechanism": "wc_utilisation",
               "supports": [
-                "Increased due to faster cycle"
+                "Higher",
+                "Much higher"
               ],
               "contradicts": [
-                "Decreased"
+                "Much lower",
+                "Lower"
               ],
-              "supports_if": "increased",
-              "contradicts_if": "decreased"
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         }
@@ -17364,10 +16470,10 @@
         "lang": "gu",
         "roles": {
           "supplier": {
-            "label": "ડાયમંડ ટેસ્ટિંગ અને ગ્રેડિંગ સાધનોના સપ્લાયર",
+            "label": "જેમ ટેસ્ટિંગ અને સર્ટિફિકેશન પ્રોવાઇડર",
             "questions": {
               "supplier.q1": {
-                "text": "શું સુરતમાં ICA-GemLab શરૂ થવાના અહેવાલ તમારા અનુભવમાં સાચા છે?",
+                "text": "શું સુરતમાં આઈસીએ જેમલેબ ટેસ્ટિંગ લેબોરેટરીના ઉદ્ઘાટનના અહેવાલો તમારા અનુભવમાં સાચા છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -17376,268 +16482,22 @@
                 ]
               },
               "supplier.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સ્થાનિક નિકાસકારો તરફથી લેબ-સંબંધિત પૂછપરછ કેવી રહી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સરખી",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "ડાયમંડ નિકાસકાર / પૉલિશિંગ યુનિટના માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરતમાં ICA-GemLab શરૂ થવાના અહેવાલ તમારા અનુભવમાં સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ગયા મહિનાની સરખામણીમાં તમારા પથ્થર પ્રમાણપત્ર (સર્ટિફિકેશન)નો સમય કેટલો બદલાયો છે?",
-                "options": [
-                  "ઘણો ટૂંકો",
-                  "ટૂંકો",
-                  "સરખો",
-                  "લાંબો",
-                  "ઘણો લાંબો"
-                ]
-              },
-              "operator.q3": {
-                "text": "તમારા પ્રમાણપત્ર માટેના ટેસ્ટિંગ અને લોજિસ્ટિક્સ ખર્ચમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરતમાં ICA-GemLab શરૂ થવાના અહેવાલ તમારા અનુભવમાં સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "પ્રમાણિત સ્ટૉક માટે એક્સપોર્ટ-પેકિંગ ક્રેડિટ (PCFC) અથવા વર્કિંગ કેપિટલનો ઉપયોગ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘટ્યો છે",
-                  "સ્થિર છે",
-                  "ઝડપી સાયકલને કારણે વધ્યો છે"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "0b9a805766c6": {
-      "no_poll": false,
-      "hypothesis": "Local MMF exporters are utilizing new Surat-based testing facilities, leading to lower testing costs and faster export LC negotiations.",
-      "event_phrase": "MANTRA becoming a global textile testing hub",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Textile Branch Banker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported MANTRA becoming a global textile testing hub accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have export LC negotiations and bill discounting volumes changed for MMF clients?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "MMF Exporter / Processor",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported MANTRA becoming a global textile testing hub accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How have your testing lead times and certification costs changed?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "consultant",
-          "label": "Textile Testing & Certification Consultant",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "consultant.q1",
-              "type": "accuracy",
-              "text": "Is the reported MANTRA becoming a global textile testing hub accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "consultant.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you seen a drop in reliance on out-of-station labs for global buyers?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ટેક્સટાઈલ બ્રાન્ચ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું MANTRA વૈશ્વિક ટેસ્ટિંગ હબ બન્યાના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "MMF ગ્રાહકો માટે એક્સપોર્ટ એલસી અને બિલ ડિસ્કાઉન્ટિંગના વોલ્યુમમાં કેવો ફેરફાર થયો છે?",
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારી સ્થાનિક લેબમાં સેમ્પલ ટેસ્ટિંગનું પ્રમાણ કેવું રહ્યું છે?",
                 "options": [
                   "ઘણું ઓછું",
                   "ઓછું",
-                  "સરખું",
+                  "એ જ",
                   "વધુ",
                   "ઘણું વધુ"
                 ]
               }
             }
           },
-          "supplier": {
-            "label": "MMF નિકાસકાર / પ્રોસેસર",
+          "buyer": {
+            "label": "ડાયમંડ અને જેમ્સ વેપારી / નિકાસકાર",
             "questions": {
-              "supplier.q1": {
-                "text": "શું MANTRA તમારી નિકાસ માટે વૈશ્વિક ટેસ્ટિંગ હબ તરીકે કામ કરી રહ્યું છે?",
+              "buyer.q1": {
+                "text": "શું સુરતમાં આઈસીએ જેમલેબ ટેસ્ટિંગ લેબોરેટરીના ઉદ્ઘાટનના અહેવાલો તમારા અનુભવમાં સાચા છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -17645,23 +16505,23 @@
                   "મને દેખાતું નથી"
                 ]
               },
-              "supplier.q2": {
-                "text": "તમારા ટેસ્ટિંગનો સમય અને સર્ટિફિકેશન ખર્ચ કેટલો બદલાયો છે?",
+              "buyer.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં આ મહિને હીરા સર્ટિફાઇડ કરાવવામાં લાગતો સમય કેટલો બદલાયો છે?",
                 "options": [
-                  "ઘણો ઓછો",
+                  "ઘણો લાંબો",
+                  "લાંબો",
+                  "એ જ",
                   "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
+                  "ઘણો ઓછો"
                 ]
               }
             }
           },
-          "consultant": {
-            "label": "ટેક્સટાઈલ ટેસ્ટિંગ કન્સલ્ટન્ટ",
+          "banker": {
+            "label": "ક્લસ્ટર બેંક બ્રાન્ચ મેનેજર (ડાયમંડ)",
             "questions": {
-              "consultant.q1": {
-                "text": "શું સ્થાનિક નિકાસકારોએ મુંબઈ/દક્ષિણ ભારતથી સર્ટિફિકેશન MANTRA તરફ ખસેડ્યું છે?",
+              "banker.q1": {
+                "text": "શું સુરતમાં આઈસીએ જેમલેબ ટેસ્ટિંગ લેબોરેટરીના ઉદ્ઘાટનના અહેવાલો તમારા અનુભવમાં સાચા છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -17669,12 +16529,14 @@
                   "મને દેખાતું નથી"
                 ]
               },
-              "consultant.q2": {
-                "text": "શું વૈશ્વિક ખરીદદારો માટે બહારની લેબ પરનો આધાર ઘટ્યો છે?",
+              "banker.q2": {
+                "text": "તમારા ડાયમંડ ટ્રેડિંગ ગ્રાહકોમાં વર્કિંગ કેપિટલ / પેકિંગ ક્રેડિટનો ઉપયોગ તાજેતરમાં કેવો રહ્યો છે?",
                 "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
+                  "ઘણો ઓછો",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણો વધુ"
                 ]
               }
             }
@@ -18818,6 +17680,301 @@
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
+    "3df2932eb5c0": {
+      "no_poll": false,
+      "hypothesis": "The Rs 1,225 Cr IPO filing by a major Surat LGD player signals strong sector confidence, driving stable credit terms and active reactor/machinery inquiries.",
+      "event_phrase": "Rs 1,225 Crore IPO filing by Anjali LabTech",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "LGD Grower / Reactor Unit Owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported Rs 1,225 Crore IPO filing by Anjali LabTech accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have inquiries or orders for new LGD reactors/machinery changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "What is the current credit period demanded by seed and machinery suppliers?",
+              "options": [
+                "Strictly advance payment",
+                "Normal credit (30-60 days)",
+                "Extended credit (>60 days)"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Normal credit (30-60 days)"
+              ],
+              "contradicts": [
+                "Strictly advance payment"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat Diamond Cluster Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported Rs 1,225 Crore IPO filing by Anjali LabTech accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have credit enhancement or term loan requests from LGD units changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Same",
+                "Higher"
+              ],
+              "contradicts": [
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "Are you seeing any increase in cheque/ECS bounces or SMA-0/1 slippages in LGD accounts?",
+              "options": [
+                "No increase",
+                "Minor increase",
+                "Significant increase"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "No increase"
+              ],
+              "contradicts": [
+                "Significant increase"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "LGD Seed / Reactor Supplier",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported Rs 1,225 Crore IPO filing by Anjali LabTech accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have your sales of LGD seeds or reactor consumables changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એલજીડી ઉત્પાદક / રિએક્ટર યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું અંજલિ લેબટેક દ્વારા રૂ. 1,225 કરોડના આઈપીઓ ફાઇલિંગના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં નવા એલજીડી રિએક્ટર/મશીનરી માટેની પૂછપરછ અથવા ઓર્ડરમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ખૂબ વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "સીડ અને મશીનરી સપ્લાયર્સ દ્વારા હાલમાં કેટલા સમયની ક્રેડિટ મર્યાદા માંગવામાં આવી રહી છે?",
+                "options": [
+                  "માત્ર એડવાન્સ પેમેન્ટ",
+                  "સામાન્ય ક્રેડિટ (૩૦-૬૦ દિવસ)",
+                  "વધુ ક્રેડિટ (>૬૦ દિવસ)"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ડાયમંડ ક્લસ્ટર બેન્કર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું અંજલિ લેબટેક દ્વારા રૂ. 1,225 કરોડના આઈપીઓ ફાઇલિંગના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં એલજીડી એકમો તરફથી ક્રેડિટ વધારવા અથવા ટર્મ લોનની વિનંતીઓમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ખૂબ વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે એલજીડી ખાતાઓમાં ચેક/ECS બાઉન્સ અથવા SMA-0/1 સ્લિપેજમાં કોઈ વધારો જોઈ રહ્યા છો?",
+                "options": [
+                  "કોઈ વધારો નથી",
+                  "સામાન્ય વધારો",
+                  "મોટો વધારો"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "એલજીડી સીડ / રિએક્ટર સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું અંજલિ લેબટેક દ્વારા રૂ. 1,225 કરોડના આઈપીઓ ફાઇલિંગના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં એલજીડી સીડ્સ અથવા રિએક્ટર વપરાશની વસ્તુઓના વેચાણમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ખૂબ વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
     "33c06537a81d": {
       "no_poll": false,
       "hypothesis": "Export demand for Surat's unique yarn to Japan, Turkey, and Sri Lanka is increasing order books, dispatches, and export credit drawdowns for local spinners and weavers.",
@@ -19354,311 +18511,6 @@
                   "હા, સ્પષ્ટપણે જોયું",
                   "કોઈ ફેરફાર નહીં",
                   "જોવા મળ્યું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "60e049af70b9": {
-      "no_poll": false,
-      "hypothesis": "Studded jewellery export growth is improving overseas demand, accelerating export realization proceeds and reducing inventory holding periods for diamond processors and traders in Surat.",
-      "event_phrase": "growth in studded jewellery exports",
-      "roles": [
-        {
-          "role": "supplier",
-          "label": "Diamond processor / Polished exporter",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported growth in studded jewellery exports accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How have your finished polished diamond export realizations moved compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q3",
-              "type": "scale5",
-              "text": "How is your finished goods inventory holding period compared to normal levels?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Much shorter",
-                "Shorter"
-              ],
-              "contradicts": [
-                "Longer",
-                "Much longer"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Surat diamond cluster branch manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported growth in studded jewellery exports accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How are export bill discounting and realization proceeds credited into current/CC accounts this month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "Have you noticed any change in working capital CC limit utilization for diamond accounts?",
-              "options": [
-                "Significant decrease",
-                "Moderate decrease",
-                "No change",
-                "Increase"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Significant decrease",
-                "Moderate decrease"
-              ],
-              "contradicts": [
-                "Increase"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Rough diamond trader / LGD grower",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported growth in studded jewellery exports accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How is the offtake of rough or lab-grown polished stones by domestic manufacturers compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "supplier": {
-            "label": "ડાયમંડ પ્રોસેસર / પોલીિશ્ડ નિકાસકાર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું તમારા અનુભવ મુજબ જડેલાં જ્વેલરીની નિકાસમાં નોંધાયેલો વધારો સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારા પોલિશ્ડ ડાયમંડની નિકાસના નાણાં વસૂલાત કેવી રહી છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "supplier.q3": {
-                "text": "સામાન્ય સ્તરની સરખામણીમાં તમારી તૈયાર માલની ઇન્વેન્ટરી હોલ્ડિંગનો સમયગાળો કેવો છે?",
-                "options": [
-                  "ઘણો ટૂંકો",
-                  "ટૂંકો",
-                  "સરખું",
-                  "લાંબો",
-                  "ઘણો લાંબો"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "સુરત ડાયમંડ ક્લસ્ટર બ્રાન્ચ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું તમારા અનુભવ મુજબ જડેલાં જ્વેલરીની નિકાસમાં નોંધાયેલો વધારો સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "આ મહિને કરંટ/સીસી એકાઉન્ટ્સમાં એક્સપોર્ટ બિલ ડિસ્કાઉન્ટિંગ અને વસૂલાતની રકમ કેવી જમા થઈ રહી છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "ડાયમંડ ખાતાઓ માટે વર્કિંગ કેપિટલ સીસી મર્યાદાના ઉપયોગમાં કોઈ ફેરફાર જોવા મળ્યો છે?",
-                "options": [
-                  "નોંધપાત્ર ઘટાડો",
-                  "મધ્યમ ઘટાડો",
-                  "કોઈ ફેરફાર નથી",
-                  "વધારો"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "કાચા હીરાના વેપારી / એલજીડી ગ્રોવર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા અનુભવ મુજબ જડેલાં જ્વેલરીની નિકાસમાં નોંધાયેલો વધારો સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં સ્થાનિક ઉત્પાદકો દ્વારા રફ અથવા એલજીડી પોલિશ્ડ પથ્થરોની ખરીદી કેવી છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
                 ]
               }
             }
