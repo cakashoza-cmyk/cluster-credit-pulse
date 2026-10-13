@@ -2,38 +2,34 @@
   "morbi": {
     "cluster": "morbi",
     "window_days": 7,
-    "item_count": 2,
-    "generated_at": "2026-10-13T12:46:44.990Z",
-    "headline": "Morbi faces operational stress with unit shutdowns, high inventory, and rising fuel costs",
+    "item_count": 1,
+    "generated_at": "2026-10-13T21:02:36.184Z",
+    "headline": "Morbi cluster faces minor supply chain friction as ceramic lab plans relocation.",
     "what_changed": [
-      "Morbi ceramic production cycle slowed down, resulting in full warehouses of unsold stock and 15% of units shutting down",
-      "Attempts to mitigate or control elevated propane gas prices have failed, increasing operational challenges",
-      "Proposed ceramic testing laboratory for Bikaner's 200 clay mines is being relocated to Jaipur due to building possession delays"
+      "Bikaner Ceramic Lab is relocating from Bikaner to Jaipur due to building possession delays [a58d75b862c5]."
     ],
     "stress_signals": [
-      "15% of ceramic manufacturing units have shut down due to high inventory and production slowdowns [64076d83f199]",
-      "Rising propane gas prices remain uncontrolled, straining operational costs for cluster units [64076d83f199]"
+      "Proposed ceramic laboratory relocation away from Bikaner clay mines due to possession delays [a58d75b862c5]."
     ],
     "improvement_signals": [],
     "what_to_watch": [
-      "Inventory liquidation trends and warehouse stock levels across ceramic manufacturing accounts",
-      "Propane gas price movements and impact on unit-level operating margins and debt serviceability",
-      "Operational continuity and capacity utilization metrics to identify further potential unit closures"
+      "Monitor clay testing timelines and mining operations impact following the lab relocation.",
+      "Track account-level cash flows of ceramic units relying on Bikaner clay testing infrastructure."
     ],
     "mode": "ai",
-    "model": "gemini:gemini-3.8-flash",
+    "model": "gemini:gemini-3.5-flash-lite",
     "field_pulse": {
       "counts": {
         "responses": 0,
         "cards_with_responses": 0,
         "cards_meeting_threshold": 0,
-        "cards_with_polls": 2,
+        "cards_with_polls": 1,
         "min_responses": 5
       },
       "confirms": [],
       "contradicts": [],
       "unknown": [
-        "No field responses yet on this week's 2 polled cards."
+        "No field responses yet on this week's 1 polled cards."
       ],
       "status": "insufficient"
     }
@@ -41,43 +37,42 @@
   "surat": {
     "cluster": "surat",
     "window_days": 7,
-    "item_count": 19,
-    "generated_at": "2026-10-13T12:46:44.990Z",
-    "headline": "Surat faces severe textile disruptions from yarn price shocks and labor strikes, despite diamond recovery.",
+    "item_count": 26,
+    "generated_at": "2026-10-13T21:02:41.003Z",
+    "headline": "Surat cluster faces severe labor and input-cost stress, offset by diamond sector recovery.",
     "what_changed": [
-      "Textile and weaving sub-segments face severe margin compression due to a reported 66% yarn price hike and stricter 15-day payment terms.",
-      "Widespread labor unrest, 'Gaon Chalo' protests, and early worker exodus are disrupting textile operations ahead of Diwali.",
-      "Diamond sub-segment shows operational recovery, shortening Diwali vacations due to improved demand."
+      "Surat textile sector encountered a massive 66% yarn price hike and recessionary pressures ahead of Diwali [b62552cc0c7d, 28ff6df05700].",
+      "Surat weavers instituted a two-day weekly holiday alongside mandatory 15-day yarn payment terms pre-Diwali [0c72a246c955].",
+      "Diamond industry shortened its traditional Diwali vacation for the first time in four years due to improved demand [2b47ff4fa01a]."
     ],
     "stress_signals": [
-      "66% hike in yarn prices creates shutdown risks for weaving units, forcing two-day weekly operational holidays [b62552cc0c7d, 0c72a246c955].",
-      "Escalating labor strikes, wage disputes, and worker exodus to UP/Bihar threaten cluster capacity [d6a4b0e6a74b, 6b7974c7f88e, 73dfcce5d3f4, a9383cbae2cf].",
-      "Pre-Diwali recessionary pressures and trade fraud cases (including a ₹15.57 crore scam) heighten liquidity and payment risks [28ff6df05700, cf2229091691, 2718cba9f837].",
-      "Kadodara Crossroads traffic gridlock is causing localized supply chain and freight delays [a6a3c64ac321]."
+      "Textile labor unrest and 'Gaon Chalo' protests triggered a migrant worker exodus to UP and Bihar, alongside union disputes [d6a4b0e6a74b, 73dfcce5d3f4].",
+      "Multiple high-value default and fraud cases surfaced, including a Rs 29.57 lakh grey fabric default and a Rs 15.57 crore textile fraud [c4997bb35d98, cf2229091691].",
+      "A boiler blast injured six workers at an Udhna textile unit [691b478fe424]."
     ],
     "improvement_signals": [
-      "Diamond industry reports operational resurgence, shortening Diwali vacations to meet demand and considering wage cut rollbacks [2b47ff4fa01a, ff0f473e0921].",
-      "MANTRA-trained entrepreneurs built ₹120 crore in textile businesses, and local units successfully tested technical textiles for defense [7dc3005e0b28, 5a6c6ad01d9d]."
+      "Surat's diamond boom raised hopes for a rollback in previous worker wage cuts [ff0f473e0921].",
+      "A Surat-made fabric-coated airship successfully achieved a 21km altitude for border surveillance [967bbbed3d39, 5a6c6ad01d9d]."
     ],
     "what_to_watch": [
-      "Weaving and processing accounts' working capital utilization amid mandatory 15-day yarn payment rules.",
-      "Capacity utilization and headcount drops in textile units due to early Diwali migrant worker exodus.",
-      "Compliance tracking with the newly mandated Textile Statistical Returns System (TSRS) portal."
+      "Monitor cash flow compression and working capital cycle pressures among upstream weaving units facing strict 15-day yarn payment terms [0c72a246c955].",
+      "Track the operational impact of labor agitations, worker exoduses, and the upcoming October 15 embroidery union protest [9d4f02830710, d6a4b0e6a74b].",
+      "Observe post-Diwali demand recovery in the MMF textile segment versus ongoing recessionary headwinds [28ff6df05700]."
     ],
     "mode": "ai",
-    "model": "gemini:gemini-3.5-flash",
+    "model": "gemini:gemini-3.5-flash-lite",
     "field_pulse": {
       "counts": {
         "responses": 0,
         "cards_with_responses": 0,
         "cards_meeting_threshold": 0,
-        "cards_with_polls": 19,
+        "cards_with_polls": 26,
         "min_responses": 5
       },
       "confirms": [],
       "contradicts": [],
       "unknown": [
-        "No field responses yet on this week's 19 polled cards."
+        "No field responses yet on this week's 26 polled cards."
       ],
       "status": "insufficient"
     }
