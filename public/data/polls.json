@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T15:15:14.931Z",
+  "generated_at": "2026-10-14T19:29:12.514Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 78,
-    "with_poll": 75,
+    "cards": 79,
+    "with_poll": 76,
     "no_poll": 3,
     "pending": 0
   },
@@ -5316,6 +5316,335 @@
         }
       },
       "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "58360d7e806a": {
+      "no_poll": false,
+      "hypothesis": "Surat textile traders are experiencing improved logistical dispatch via parcel trains, easing inventory holding and accelerating receivables ahead of Diwali.",
+      "event_phrase": "demand for regular parcel trains for Diwali dispatches",
+      "roles": [
+        {
+          "role": "logistics",
+          "label": "Rail logistics & transport agent",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "logistics.q1",
+              "type": "accuracy",
+              "text": "Is the reported demand for regular parcel trains for Diwali dispatches accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "logistics.q2",
+              "type": "scale5",
+              "text": "How has outward freight volume for outstation textile despatches changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "logistics.q3",
+              "type": "scale5",
+              "text": "How do railway parcel transit times compare to normal periods currently?",
+              "options": [
+                "Much slower",
+                "Slower",
+                "Same",
+                "Faster",
+                "Much faster"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Faster",
+                "Much faster"
+              ],
+              "contradicts": [
+                "Slower",
+                "Much slower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Ring Road MMF textile trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported demand for regular parcel trains for Diwali dispatches accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How are outstation buyers clearing their pending receivables compared to last month?",
+              "options": [
+                "Much slower",
+                "Slower",
+                "Same",
+                "Faster",
+                "Much faster"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Faster",
+                "Much faster"
+              ],
+              "contradicts": [
+                "Slower",
+                "Much slower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "scale5",
+              "text": "How is your finished inventory stock level compared to this time last season?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Lower",
+                "Much lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Textile Cluster Credit Officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported demand for regular parcel trains for Diwali dispatches accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you observed increased working capital limit drawdowns or ad-hoc requests from textile traders recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have there been any instances of cheque bounces or delayed bill discounting realisations from MMF borrowers?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "logistics": {
+            "label": "રેલ લોજિસ્ટિક્સ અને ટ્રાન્સપોર્ટ એજન્ટ",
+            "questions": {
+              "logistics.q1": {
+                "text": "તમારા અનુભવમાં દિવાળી ડિસ્પેચ માટે નિયમિત પાર્સલ ટ્રેનોની નોંધાયેલ માંગ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "logistics.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં બહારગામના ટેક્સટાઈલ ડિસ્પેચનું બહાર જતું ભાડાનું વોલ્યુમ કેવું રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "logistics.q3": {
+                "text": "હાલમાં સામાન્ય સમયની સરખામણીમાં રેલવે પાર્સલ ટ્રાન્ઝિટનો સમય કેવો છે?",
+                "options": [
+                  "ઘણો ધીમો",
+                  "ધીમો",
+                  "સરખો",
+                  "ઝડપી",
+                  "ઘણો ઝડપી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રિંગ રોડ એમએમએફ ટેક્સટાઈલ ટ્રેડર",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવમાં દિવાળી ડિસ્પેચ માટે નિયમિત પાર્સલ ટ્રેનોની નોંધાયેલ માંગ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં બહારગામના ખરીદદારો તેમની બાકી લેણી રકમ કેવી રીતે ચૂકવી રહ્યા છે?",
+                "options": [
+                  "ઘણા ધીમા",
+                  "ધીમા",
+                  "સરખા",
+                  "ઝડપી",
+                  "ઘણા ઝડપી"
+                ]
+              },
+              "supplier.q3": {
+                "text": "ગયા વર્ષની આ સિઝનની સરખામણીમાં તમારો તૈયાર مال (ઇન્વેન્ટરી) નો જથ્થો કેટલો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ટેક્સટાઈલ ક્લસ્ટર ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવમાં દિવાળી ડિસ્પેચ માટે નિયમિત પાર્સલ ટ્રેનોની નોંધાયેલ માંગ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે તાજેતરમાં ટેક્સટાઈલ વેપારીઓ તરફથી વર્કિંગ કેપિટલ મર્યાદા ઉપાડ અથવા વધારાની માંગણીઓ નોંધી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું એમએમએફ બોરોઅર્સ તરફથી ચેક બાઉન્સ કે બિલ ડિસ્કાઉન્ટિંગ રિયલાઈઝેશનમાં વિલંબના કોઈ કિસ્સા બન્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "7eaa09c3357d": {
