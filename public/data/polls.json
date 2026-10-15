@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T19:29:12.514Z",
+  "generated_at": "2026-10-15T04:42:26.543Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -21251,20 +21251,20 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "ed00622c622e": {
+    "b4616374fe1c": {
       "no_poll": false,
-      "hypothesis": "WCIL's bulk tiles train service from Morbi cargo terminal is reducing dispatch bottlenecks and lowering finished goods inventory holding days for tile exporters.",
-      "event_phrase": "start of bulk tiles train service from Morbi cargo terminal",
+      "hypothesis": "Western Carriers bulk tiles train launch is reducing domestic logistics costs and easing outward freight for Morbi ceramic tile manufacturers.",
+      "event_phrase": "launch of bulk tiles train by Western Carriers",
       "roles": [
         {
           "role": "operator",
-          "label": "Tile manufacturing unit / Exporter",
+          "label": "Ceramic tile manufacturer (domestic dispatch)",
           "proximity": 3,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported start of bulk tiles train service from Morbi cargo terminal accurate in your experience?",
+              "text": "Is the reported launch of bulk tiles train by Western Carriers accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -21280,13 +21280,13 @@
                 "Overstated",
                 "Not seeing it"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Accurate",
+              "contradicts_if": "Overstated"
             },
             {
               "id": "operator.q2",
               "type": "scale5",
-              "text": "How have your finished goods inventory holding days changed in the last 2-4 weeks?",
+              "text": "How have your long-distance domestic freight costs changed in the last 2-4 weeks?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -21294,7 +21294,7 @@
                 "Higher",
                 "Much higher"
               ],
-              "mechanism": "inventory",
+              "mechanism": "input_cost",
               "supports": [
                 "Much lower",
                 "Lower"
@@ -21303,43 +21303,20 @@
                 "Higher",
                 "Much higher"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has your average logistics cost per box dispatched changed recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Lower",
+              "contradicts_if": "Higher"
             }
           ]
         },
         {
           "role": "logistics",
-          "label": "Rail / Container logistics provider",
+          "label": "Rail and road freight forwarder",
           "proximity": 3,
           "questions": [
             {
               "id": "logistics.q1",
               "type": "accuracy",
-              "text": "Is the reported start of bulk tiles train service from Morbi cargo terminal accurate in your experience?",
+              "text": "Is the reported launch of bulk tiles train by Western Carriers accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -21355,13 +21332,13 @@
                 "Overstated",
                 "Not seeing it"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Accurate",
+              "contradicts_if": "Overstated"
             },
             {
               "id": "logistics.q2",
               "type": "scale5",
-              "text": "How has the volume of tile containers handled at the cargo terminal changed in the last 2-4 weeks?",
+              "text": "How has the volume of ceramic tiles booked via rail rakes changed in the last 2-4 weeks?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -21378,20 +21355,20 @@
                 "Lower",
                 "Much lower"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Higher",
+              "contradicts_if": "Lower"
             }
           ]
         },
         {
           "role": "banker",
-          "label": "Working Capital Banker (Morbi)",
+          "label": "Working capital banker to tile makers",
           "proximity": 2,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported start of bulk tiles train service from Morbi cargo terminal accurate in your experience?",
+              "text": "Is the reported launch of bulk tiles train by Western Carriers accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -21407,28 +21384,27 @@
                 "Overstated",
                 "Not seeing it"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Accurate",
+              "contradicts_if": "Overstated"
             },
             {
               "id": "banker.q2",
-              "type": "choice",
-              "text": "Have tile manufacturing clients reported faster realization or lower stock-statement aging recently?",
+              "type": "yes_no_notseen",
+              "text": "Have borrowers reported improved liquidity due to reduced outward logistics expenses?",
               "options": [
-                "Yes, clearly observed",
-                "No change",
-                "Not observed"
+                "Yes",
+                "No",
+                "Not seen"
               ],
-              "mechanism": "receivables",
+              "mechanism": "wc_utilisation",
               "supports": [
-                "Yes, clearly observed"
+                "Yes"
               ],
               "contradicts": [
-                "No change",
-                "Not observed"
+                "No"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Yes",
+              "contradicts_if": "No"
             }
           ]
         }
@@ -21437,10 +21413,10 @@
         "lang": "gu",
         "roles": {
           "operator": {
-            "label": "ટાઇલ ઉત્પાદન એકમ / નિકાસકાર",
+            "label": "સેરમિક ટાઇલ્સ ઉત્પાદક (ઘરેલુ ડિસ્પેચ)",
             "questions": {
               "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ મોરબી કાર્ગો ટર્મિનલથી બલ્ક ટાઇલ્સ ટ્રેન સે શરૂ થયાના અહેવાલો સાચા છે?",
+                "text": "શું વેસ્ટર્ન કેરિયર્સ દ્વારા જથ્થાબંધ ટાઇલ્સ ટ્રેનની શરૂૂઆતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -21449,21 +21425,11 @@
                 ]
               },
               "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા તૈયાર માલની ઇન્વેન્ટરી હોલ્ડિંગના દિવસોમાં કેવી ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સરખા",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "મોકલેલા પ્રત્યેક બોક્સ દીઠ તમારા લોજિસ્ટિક્સ ખર્ચમાં તાજેતરમાં શું ફેરફાર થયો છે?",
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા લાંબા અંતરના ઘરેલુ નૂર ખર્ચમાં કેવી બદલાવ આવ્યો છે?",
                 "options": [
                   "ઘણો ઓછો",
                   "ઓછો",
-                  "સરખો",
+                  "એ જ",
                   "વધુ",
                   "ઘણો વધુ"
                 ]
@@ -21471,10 +21437,10 @@
             }
           },
           "logistics": {
-            "label": "રેલ / કન્ટેનર લોજિસ્ટિક્સ પ્રદાતા",
+            "label": "રેલ અને રોડ ફ્રેટ ફોરવર્ડર",
             "questions": {
               "logistics.q1": {
-                "text": "તમારા અનુભવ મુજબ મોરબી કાર્ગો ટર્મિનલથી બલ્ક ટાઇલ્સ ટ્રેન સેવા શરૂ થયાના અહેવાલો સાચા છે?",
+                "text": "શું વેસ્ટર્ન કેરિયર્સ દ્વારા જથ્થાબંધ ટાઇલ્સ ટ્રેનની શરૂૂઆતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -21483,11 +21449,11 @@
                 ]
               },
               "logistics.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં કાર્ગો ટર્મિનલ પર ટાઇલ કન્ટેનરનું વૉલ્યુમ કેટલું બદલાયું છે?",
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં રેલવે દ્વારા બુક કરાયેલ સેરેમિક ટાઇલ્સનું પ્રમાણ કેવું રહ્યું છે?",
                 "options": [
                   "ઘણું ઓછું",
                   "ઓછું",
-                  "સરખું",
+                  "એ જ",
                   "વધુ",
                   "ઘણું વધુ"
                 ]
@@ -21495,10 +21461,10 @@
             }
           },
           "banker": {
-            "label": "વર્કિંગ કેપિટલ બેન્કર (મોરબી)",
+            "label": "ટાઇલ્સ નિર્માતાઓ માટે વર્કિંગ કેપિટલ બેંકર",
             "questions": {
               "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ મોરબી કાર્ગો ટર્મિનલથી બલ્ક ટાઇલ્સ ટ્રેન સેવા શરૂ થયાના અહેવાલો સાચા છે?",
+                "text": "શું વેસ્ટર્ન કેરિયર્સ દ્વારા જથ્થાબંધ ટાઇલ્સ ટ્રેનની શરૂૂઆતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -21507,11 +21473,11 @@
                 ]
               },
               "banker.q2": {
-                "text": "શું ટાઇલ ઉત્પાદક ગ્રાહકોએ તાજેતરમાં ઝડપી નાણાકીય વસૂલાત અથવા ઓછી સ્ટોક-સ્ટેટમેન્ટ એજિંગ નોંધાવી છે?",
+                "text": "શું લોજિસ્ટિક્સ ખર્ચ ઘટવાને કારણે ધિરાણકર્તાઓની તરલતામાં સુધારો જોવા મળ્યો છે?",
                 "options": [
-                  "હા, સ્પષ્ટપણે જોયું",
-                  "કોઈ ફેરફાર નહીં",
-                  "જોવા મળ્યું નથી"
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }
