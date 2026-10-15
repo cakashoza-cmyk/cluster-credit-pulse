@@ -1,49 +1,49 @@
 {
-  "generated_at": "2026-10-15T04:42:19.020Z",
+  "generated_at": "2026-10-15T10:00:06.434Z",
   "llm_mode": "gemini",
   "llm_configured": "gemini",
   "counts": {
-    "morbi": 12,
-    "surat": 67
+    "morbi": 13,
+    "surat": 63
   },
-  "total": 79,
+  "total": 76,
   "stats": {
     "feeds_ok": 24,
     "feeds_failed": [
       "https://indianexpress.com/section/cities/ahmedabad/feed/ :: HTTP 403"
     ],
-    "raw_items": 379,
-    "after_filter": 236,
-    "after_dedupe": 150,
-    "llm_calls": 5,
+    "raw_items": 382,
+    "after_filter": 240,
+    "after_dedupe": 151,
+    "llm_calls": 15,
     "llm_failures": 0,
-    "cache_hits": 148,
-    "before_merge": 102,
-    "after_merge": 79,
+    "cache_hits": 143,
+    "before_merge": 107,
+    "after_merge": 76,
     "merge": {
-      "heuristic_edges": 27,
-      "llm_edges": 26,
+      "heuristic_edges": 29,
+      "llm_edges": 36,
       "llm": {
         "morbi": "ok",
         "surat": "ok"
       }
     },
     "model_usage": {
-      "gemini:gemini-3.8-flash": 2,
-      "gemini:gemini-3.5-flash-lite": 3
+      "gemini:gemini-3.8-flash": 10,
+      "gemini:gemini-3.5-flash": 4,
+      "gemini:gemini-3.5-flash-lite": 1
     },
     "rate_limits": {
       "count": 2,
       "daily": [
-        "gemini:gemini-3.8-flash",
-        "gemini:gemini-3.5-flash"
+        "gemini:gemini-3.8-flash"
       ]
     }
   },
   "polls": {
-    "cards": 79,
-    "with_poll": 76,
-    "no_poll": 3,
+    "cards": 76,
+    "with_poll": 74,
+    "no_poll": 2,
     "pending": 0
   }
 }
