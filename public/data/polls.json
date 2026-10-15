@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T19:10:53.766Z",
+  "generated_at": "2026-10-15T23:07:08.550Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,12 +12,300 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 83,
-    "with_poll": 81,
+    "cards": 80,
+    "with_poll": 78,
     "no_poll": 2,
     "pending": 0
   },
   "polls": {
+    "e7921383cbb7": {
+      "no_poll": false,
+      "hypothesis": "The three-month embroidery sector impasse in Surat is causing severe cash flow halts, leading to zero revenue, EMI defaults on machine loans, and mounting debt stress for job-workers.",
+      "event_phrase": "three-month embroidery sector impasse",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Embroidery job-worker / machine owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported three-month embroidery sector impasse accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How is your current operational capacity utilisation compared to three months ago?",
+              "options": [
+                "Zero (fully shut)",
+                "Significantly lower",
+                "Slightly lower",
+                "Same",
+                "Normal"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Zero (fully shut)",
+                "Significantly lower"
+              ],
+              "contradicts": [
+                "Normal"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you suspended machinery loan EMI payments due to this impasse?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat MSME branch credit officer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported three-month embroidery sector impasse accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you observed a spike in SMA-0 or SMA-1 slippages in embroidery machine loan accounts?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Are embroidery units reporting zero credit summations in their current accounts?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Saree / dress-material trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported three-month embroidery sector impasse accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How severely are processing bottlenecks delaying your finished goods delivery?",
+              "options": [
+                "Not at all",
+                "Slightly",
+                "Moderately",
+                "Severely",
+                "Completely halted"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Severely",
+                "Completely halted"
+              ],
+              "contradicts": [
+                "Not at all"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એમ્બ્રોઇડરી જોબ-વર્કર / મશીન માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું એમ્બ્રોઇડરી સેક્ટરના ત્રણ મહિનાના સ્થગિત અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ત્રણ મહિના પહેલાની સરખામણીમાં તમારી વર્તમાન ઓપરેશનલ ક્ષમતાનો ઉપયોગ કેટલો છે?",
+                "options": [
+                  "શૂન્ય (સંપૂર્ણ બંધ)",
+                  "ઘણો ઓછો",
+                  "થોડો ઓછો",
+                  "સમાન",
+                  "સામાન્ય"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે આ ગતિરોધને કારણે મશીનરી લોનના હપ્તા (EMI) ભરવાનું સ્થગિત કર્યું છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત MSME શાખા ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું એમ્બ્રોઇડરી સેક્ટરના ત્રણ મહિનાના સ્થગિત અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે એમ્બ્રોઇડરી મશીન લોન ખાતાઓમાં SMA-0 અથવા SMA-1 ના ધસારામાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું એમ્બ્રોઇડરી યુનિટ્સના કરન્ટ એકાઉન્ટ્સમાં જમા રકમ શૂન્ય નોંધાઈ રહી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "સાડી / ડ્રેસ-મટીરિયલ વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું એમ્બ્રોઇડરી સેક્ટરના ત્રણ મહિનાના સ્થગિત અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "પ્રોસેસિંગની અડચણોને કારણે તૈયાર માલની ડિલિવરીમાં કેટલો વિલંબ થઈ રહ્યો છે?",
+                "options": [
+                  "બિલકુલ નહીં",
+                  "થોડો",
+                  "મધ્યમ",
+                  "ખૂબ જ ગંભીર",
+                  "સંપૂર્ણપણે અટકી ગયું"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "975918f112f3": {
       "no_poll": false,
       "hypothesis": "Surat diamond export slump is driving payment delays, inventory buildup, and pressure on working capital limits for cutting and polishing units.",
@@ -7860,537 +8148,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "af8a29b318b7": {
-      "no_poll": false,
-      "hypothesis": "Labor walkouts in Surat embroidery units are disrupting shift operations, leading to capacity under-utilization and potential machine loan EMI defaults.",
-      "event_phrase": "deepening embroidery labor dispute and walkouts",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Embroidery job-work unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your machine utilization changed in the last 2-4 weeks due to labor availability?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher",
-                "Same"
-              ],
-              "supports_if": "lower utilization confirms production disruption",
-              "contradicts_if": "higher utilization shows no impact"
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How are your turnaround times for completing client orders compared to last month?",
-              "options": [
-                "Much slower",
-                "Slower",
-                "Same",
-                "Faster",
-                "Much faster"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much slower",
-                "Slower"
-              ],
-              "contradicts": [
-                "Faster",
-                "Much faster",
-                "Same"
-              ],
-              "supports_if": "slower turnaround confirms labor shortage",
-              "contradicts_if": "normal speed shows no disruption"
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Embroidery machine operator / shift worker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "choice",
-              "text": "What are you observing regarding wage rates and shift availability in embroidery units?",
-              "options": [
-                "Wages rising due to labor shortage",
-                "Shifts idle due to disputes",
-                "Normal wages and stable shifts",
-                "Workers leaving for other sectors"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Shifts idle due to disputes",
-                "Workers leaving for other sectors"
-              ],
-              "contradicts": [
-                "Normal wages and stable shifts"
-              ],
-              "supports_if": "idle shifts or migration confirm dispute impact",
-              "contradicts_if": "normal conditions disprove disruption"
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "MSME branch credit officer",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you received requests for EMI moratoriums or restructuring from embroidery loan borrowers?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "restructuring requests indicate financial stress",
-              "contradicts_if": "no requests indicate stable repayment"
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you noticed any early-stage (SMA-0/SMA-1) loan delinquencies among embroidery units?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "delinquencies confirm cash flow stress from lost production",
-              "contradicts_if": "no delinquencies show healthy servicing"
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "કમ્પ્યુટરાઇઝ્ડ એમ્બ્રોઇડરી યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં મજૂરોની ઉપલબ્ધતાને કારણે તમારા મશીનનો ઉપયોગ કેટલો બદલાયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગયા મહિનાની સરખામણીમાં તમારા ક્લાયન્ટના ઓર્ડર પૂરા કરવાનો સમય કેટલો બદલાયો છે?",
-                "options": [
-                  "ઘણો પાછળ / ધીમો",
-                  "ધીમો",
-                  "સમાન",
-                  "ઝડપી",
-                  "ઘણો ઝડપી"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર / શિફ્ટ કામદાર",
-            "questions": {
-              "labour.q1": {
-                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "તમે એમ્બ્રોઇડરી યુનિટ્સમાં મજૂરી અને શિફ્ટની ઉપલબ્ધતા વિશે શું નોંધી રહ્યા છો?",
-                "options": [
-                  "મજૂરોની અછતને કારણે મજૂરી વધી રહી છે",
-                  "વિવાદોને કારણે શિફ્ટ બંધ રહી છે",
-                  "ಸಾಮಾન્ય મજૂરી અને સ્થિર શિફ્ટ",
-                  "કામદારો અન્ય ક્ષેત્રોમાં જઈ રહ્યા છે"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "એમએસએમઇ શાખા ધિરાણ અધિકારી",
-            "questions": {
-              "banker.q1": {
-                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમને એમ્બ્રોઇડરી લોન લેનારાઓ તરફથી EMI મોરેટોરિયમ અથવા રીસ્ટ્રક્ચરિંગ માટે અરજીઓ મળી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે એમ્બ્રોઇડરી યુનિટ્સમાં લોન ચૂકવણીમાં પ્રારંભિક વિલંબ (SMA-0/SMA-1) નોંધ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "967bbbed3d39": {
-      "no_poll": false,
-      "hypothesis": "Surat-made fabric coating for high-altitude airships generates new high-margin commercial orders and advances technical textile demand for local MMF manufacturers.",
-      "event_phrase": "Surat fabric-coated airship achieving high altitude",
-      "roles": [
-        {
-          "role": "supplier",
-          "label": "Technical textile fabric supplier / processor",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported Surat-made fabric-coated airship milestone accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How have inquiries or orders for specialized high-strength technical fabrics changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "MMF weaving & coating unit owner",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Surat-made fabric-coated airship milestone accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How are realisations or margins on specialized technical/industrial fabric orders compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Working capital branch manager (Ring Road / Sachin GIDC)",
-          "proximity": 1,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Surat-made fabric-coated airship milestone accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have technical textile unit clients requested working capital enhancements for defense/aerospace orders recently?",
-              "options": [
-                "Yes, new limits requested",
-                "No change",
-                "Accounts subdued"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes, new limits requested"
-              ],
-              "contradicts": [
-                "Accounts subdued"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "supplier": {
-            "label": "ટેકનિકલ ટેક્સટાઈલ ફેબ્રિક સપ્લાયર / પ્રોસેસર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરતમાં બનેલા ફેબ્રિક-કોટેડ એરશીપની આ સિદ્ધિનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં વિશિષ્ટ હાઇ-સ્ટ્રેન્થ ટેકનિકલ ફેબ્રિક્સ માટેની પૂછપરછ કે ઓર્ડરમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "એમએમએફ વીવિંગ અને કોટિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરતમાં બનેલા ફેબ્રિક-કોટેડ એરશીપની આ સિદ્ધિનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ગયા મહિનાની સરખામણીમાં વિશિષ્ટ ટેકનિકલ/ઔદ્યોગિક ફેબ્રિક ઓર્ડર પર વળતર અથવા માર્જિન કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "વર્કિંગ કેપિટલ બ્રાન્ચ મેનેજર (રિંગ રોડ / સચિન જીઆઈડીસી)",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરતમાં બનેલા ફેબ્રિક-કોટેડ એરશીપની આ સિદ્ધિનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું ટેકનિકલ ટેક્સટાઈલ યુનિટના ગ્રાહકોએ તાજેતરમાં રક્ષણ/એરોસ્પેસ ઓર્ડર માટે વર્કિંગ કેપિટલ મર્યાદા વધારવાની વિનંતી કરી છે?",
-                "options": [
-                  "હા, નવી મર્યાદાઓ મંગાઈ",
-                  "કોઈ ફેરફાર નથી",
-                  "એકાઉન્ટ્સ મંદ છે"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "1a925ede03e9": {
       "no_poll": false,
       "hypothesis": "Weaving units in Surat continue normal loom operations without widespread shutdowns despite margin pressures.",
@@ -9246,545 +9003,6 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "9d16b82be343": {
-      "no_poll": false,
-      "hypothesis": "Surat embroidery job-work units are facing worker disputes due to cash flow pressures, leading to wage delays and machine loan EMI default risks.",
-      "event_phrase": "worker disputes and wage delays in embroidery units",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Embroidery Job-Worker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "How are you currently clearing worker wages?",
-              "options": [
-                "On time",
-                "Delayed by 1-2 weeks",
-                "Delayed by over 2 weeks"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Delayed by 1-2 weeks",
-                "Delayed by over 2 weeks"
-              ],
-              "contradicts": [
-                "On time"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How is your machine loan EMI servicing compared to last month?",
-              "options": [
-                "Much easier",
-                "Slightly easier",
-                "Same",
-                "Slightly harder",
-                "Much harder"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Slightly harder",
-                "Much harder"
-              ],
-              "contradicts": [
-                "Much easier",
-                "Slightly easier"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Cluster Branch Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have machine loan EMI bounces or delays trended recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Embroidery Machine Operator",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "choice",
-              "text": "How are you receiving your weekly or monthly wages currently?",
-              "options": [
-                "Regularly on time",
-                "Delayed by a few days",
-                "Pending for weeks"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Delayed by a few days",
-                "Pending for weeks"
-              ],
-              "contradicts": [
-                "Regularly on time"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "એમ્બ્રોઇડરી જોબ-વર્કર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા અનુભવમાં કામદારોના વિવાદ અને મજૂરી વિલંબની અખબારી અસરો સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "તમે હાલમાં કામદારોના પગાર કેવી રીતે ચૂકવી રહ્યા છો?",
-                "options": [
-                  "સમયસર",
-                  "૧-૨ અઠવાડિયા મોડા",
-                  "૨ અઠવાડિયાથી વધુ મોડા"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારી મશીન લોનની EMI ચૂકવણી કેવી રહી છે?",
-                "options": [
-                  "ઘણી સરળ",
-                  "થોડી સરળ",
-                  "સમાન",
-                  "થોડી અઘરી",
-                  "ખૂબ જ અઘરી"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ક્લસ્ટર બ્રાન્ચ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું એમ્બ્રોઇડરી યુનિટ્સને અસર કરતા કામદાર વિવાદના અહેવાલો સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "તાજેતરમાં મશીન લોન EMI બાઉન્સ કે વિલંબમાં શું વલણ રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધારે"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર",
-            "questions": {
-              "labour.q1": {
-                "text": "શું તમારા યુનિટમાં મજૂરી વિલંબ અથવા કામદાર વિવાદની વાત સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "હાલમાં તમને સાપ્તાહિક કે માસિક મજૂરી કેવી રીતે મળી રહી છે?",
-                "options": [
-                  "નિયમિત સમયસર",
-                  "થોડા દિવસો મોડી",
-                  "અઠવાડિયા સુધી બાકી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "6b7974c7f88e": {
-      "no_poll": false,
-      "hypothesis": "Labor disputes and strikes in Surat's embroidery sector are causing operational halts, leading to revenue loss and cash-flow strain for machine-loan servicing.",
-      "event_phrase": "intensification of embroidery worker agitation and labor disputes",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Embroidery unit operator",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported intensification of embroidery worker agitation and labor disputes accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your machine operational hours/shifts changed over the past 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has your job-work order delivery timeline been impacted recently?",
-              "options": [
-                "Severely delayed",
-                "Slightly delayed",
-                "On time",
-                "Faster than usual",
-                "No work"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Severely delayed",
-                "Slightly delayed"
-              ],
-              "contradicts": [
-                "On time"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Saree & dress-material trader",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported intensification of embroidery worker agitation and labor disputes accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "scale5",
-              "text": "How has the supply of embroidered fabric from job-workers changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "MSME credit officer (Surat)",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported intensification of embroidery worker agitation and labor disputes accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you observed ad-hoc working capital demands or EMI delay requests from embroidery borrowers recently?",
-              "options": [
-                "Significant increase",
-                "Minor increase",
-                "No change",
-                "Decrease"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Significant increase",
-                "Minor increase"
-              ],
-              "contradicts": [
-                "No change",
-                "Decrease"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "એમ્બ્રોઈડરી યુનિટ ઓપરેટર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા અનુભવ મુજબ એમ્બ્રોઈડરી કામદારોના આંદોલન અને મજૂર વિવાદો વધવાના અહેવાલો સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા મશીન ઓપરેશનલ કલાકો/શિફ્ટમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સરખા",
-                  "વધારે",
-                  "ઘણા વધારે"
-                ]
-              },
-              "operator.q3": {
-                "text": "હાલમાં તમારા જોબ-વર્ક ઓર્ડરની ડિલિવરી સમયમર્યાદા પર કેવી અસર પડી છે?",
-                "options": [
-                  "ખૂબ વિલંબિત",
-                  "થોડો વિલંબ",
-                  "સમયસર",
-                  "સામાન્ય કરતાં ઝડપી",
-                  "કામ નથી"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "સાડી અને ડ્રેસ મટિરિયલ વેપારી",
-            "questions": {
-              "buyer.q1": {
-                "text": "શું તમારા અનુભવ મુજબ એમ્બ્રોઈડરી કામદારોના આંદોલન અને મજૂર વિવાદો વધવાના અહેવાલો સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં જોબ-વર્કર્સ પાસેથી એમ્બ્રોઈડરી વાળા કાપડના પુરવઠામાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધારે",
-                  "ઘણો વધારે"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "MSME ક્રેડિટ ઓફિસર (સુરત)",
-            "questions": {
-              "banker.q1": {
-                "text": "શું તમારા અનુભવ મુજબ એમ્બ્રોઈડરી કામદારોના આંદોલન અને મજૂર વિવાદો વધવાના અહેવાલો સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે તાજેતરમાં એમ્બ્રોઇડરી ઉધારકર્તાઓ તરફથી એડ-હોક વર્કિંગ કેપિટલ માંગ અથવા EMI વિલંબની વિનંતીઓ જોઈ છે?",
-                "options": [
-                  "મોટો વધારો",
-                  "નાનો વધારો",
-                  "કોઈ ફેરફાર નથી",
-                  "ઘટાડો"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "ff0f473e0921": {
