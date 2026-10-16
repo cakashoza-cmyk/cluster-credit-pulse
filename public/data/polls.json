@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T04:35:21.398Z",
+  "generated_at": "2026-10-16T09:54:41.069Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,10 +12,10 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 84,
-    "with_poll": 82,
-    "no_poll": 2,
-    "pending": 0
+    "cards": 82,
+    "with_poll": 77,
+    "no_poll": 3,
+    "pending": 2
   },
   "polls": {
     "698c779932f2": {
@@ -6163,6 +6163,12 @@
         }
       },
       "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "a3db8ea1103a": {
+      "no_poll": true,
+      "reason": "The news is a speculative report about the Centre studying the Surat textile hub for a future national policy with no specific immediate measures, financial allocations, or timelines. Therefore, no observable ground-level credit or operatio",
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "7697e96a190e": {
@@ -19150,308 +19156,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "fd202ab739ae": {
-      "no_poll": false,
-      "hypothesis": "External capital entry via Mazzini deal is tightening competitive pressure on existing tile makers, affecting working capital and distributor credit terms.",
-      "event_phrase": "Apollo Pipes acquiring a stake in ceramic tiles",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Ceramic Tile Manufacturer",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Apollo Pipes acquiring a stake in ceramic tiles accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your wholesale tile prices changed over the last 3 weeks due to competitive pressure?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How do you view your working capital utilisation compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Tile Dealer / Exporter",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported Apollo Pipes acquiring a stake in ceramic tiles accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "scale5",
-              "text": "How has your order offtake from local tile makers changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Cluster Branch Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Apollo Pipes acquiring a stake in ceramic tiles accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How are CC/OD limit utilisations trending among your ceramic manufacturing borrowers?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you noticed any new ad-hoc credit limit requests for capacity upgrades?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "સેરમિક ટાઇલ ઉત્પાદક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું અહેવાલ મુજબ અપોલો પાઇપ્સ દ્વારા સેરમિક ટાઇલ્સમાં હિસ્સો મેળવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "સ્પર્ધાત્મક દબાણને કારણે છેલ્લા ૩ અઠવાડિયામાં તમારા જથ્થાબંધ ટાઇલના ભાવ કેવી રીતે બદલાયા છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગયા મહિનાની સરખામણીમાં તમે તમારા કાર્યકારી મૂડીના ઉપયોગને કેવી રીતે જુઓ છો?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ટાઇલ ડીલર / નિકાસકાર",
-            "questions": {
-              "buyer.q1": {
-                "text": "શું અહેવાલ મુજબ અપોલો પાઇપ્સ દ્વારા સેરમિક ટાઇલ્સમાં હિસ્સો મેળવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સ્થાનિક ટાઇલ ઉત્પાદકો પાસેથી તમારા ઓર્ડરનો ઉપાડ કેવી રીતે બદલાયો છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ક્લસ્ટર બ્રાન્ચ બેન્કર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું અહેવાલ મુજબ અપોલો પાઇપ્સ દ્વારા સેરમિક ટાઇલ્સમાં હિસ્સો મેળવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "તમારા સેરમિક ઉત્પાદક ગ્રાહકોમાં CC/OD મર્યાદાનો ઉપયોગ કેવી રીતે વલણ ધરાવે છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે ક્ષમતા અપગ્રેડ માટે કોઈ નવી ત્વરિત ક્રેડિટ મર્યાદા વિનંતીઓ નોંધી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "acda95299928": {
       "no_poll": false,
       "hypothesis": "Persistent water shortages in Morbi are driving up private tanker procurement costs for ceramic and sanitaryware units, squeezing operating margins and increasing short-term working capital demand.",
@@ -19773,790 +19477,6 @@
         }
       },
       "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "e4f802e55f28": {
-      "no_poll": false,
-      "hypothesis": "Imposition of UPI MDR is increasing transaction costs and squeezing margins for Surat textile traders.",
-      "event_phrase": "UPI MDR cost increase for textile traders",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Ring Road Textile Trader",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your digital transaction costs changed over the last 3 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you shifted towards cash transactions to avoid UPI fees?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Grey Fabric Supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How has buyer payment delay changed in the last 3 weeks?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Longer",
-                "Much longer"
-              ],
-              "contradicts": [
-                "Shorter",
-                "Much shorter"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Surat Branch Credit Manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported UPI MDR cost increase accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have textile trader CC/OD utilization levels increased near limits this month?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "રિંગ રોડ ટેક્સટાઇલ વેપારી",
-            "questions": {
-              "operator.q1": {
-                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા ૩ અઠવાડિયામાં તમારા ડિજિટલ ટ્રાન્ઝેક્શન ખર્ચમાં કેવી ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "શું તમે યુપીઆઈ ફી ટાળવા માટે રોકડ વ્યવહારો તરફ વળ્યા છો?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ગ્રે ફેબ્રિક સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા ૩ અઠવાડિયામાં ખરીદનાર દ્વારા ચુકવણીમાં વિલંબ કેવી રીતે બદલાયો છે?",
-                "options": [
-                  "ઘણો ટૂંકો",
-                  "ટૂંકો",
-                  "સમાન",
-                  "લાંબો",
-                  "ઘણો લાંબો"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "સુરત શાખા ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું યુપીઆઈ એમડીઆર ખર્ચ વધારાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું આ મહિને ટેક્સટાઇલ વેપારીઓની સીસી/ઓડી યુટિલાઇઝેશન મર્યાદાની નજીક વધી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "87e65897bae5": {
-      "no_poll": false,
-      "hypothesis": "Rising raw material costs are squeezing operating margins and widening working capital gaps across Surat MMF and weaving units.",
-      "event_phrase": "rise in Surat textile raw material costs",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Surat textile credit manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in Surat textile raw material costs accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How has CC/OD limit utilisation moved for MMF and weaving borrowers this month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower",
-                "Same"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "Have you noticed any increase in ad-hoc working capital enhancement requests?",
-              "options": [
-                "Yes, significant rise",
-                "Slight increase",
-                "No change"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes, significant rise",
-                "Slight increase"
-              ],
-              "contradicts": [
-                "No change"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Water-jet / air-jet weaver",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in Surat textile raw material costs accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How are your operating margins affected by the recent raw material price increase?",
-              "options": [
-                "Much higher",
-                "Higher",
-                "Unchanged",
-                "Lower",
-                "Much lower"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Lower",
-                "Much lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher",
-                "Unchanged"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How much of the increased raw material cost have you been able to pass on to buyers?",
-              "options": [
-                "None",
-                "Partially",
-                "Mostly",
-                "Fully",
-                "Exceeded"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "None",
-                "Partially"
-              ],
-              "contradicts": [
-                "Mostly",
-                "Fully",
-                "Exceeded"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Grey-fabric trader / processor",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in Surat textile raw material costs accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "scale5",
-              "text": "How have buyer payment delays changed over the last 2-4 weeks?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Longer",
-                "Much longer"
-              ],
-              "contradicts": [
-                "Shorter",
-                "Much shorter",
-                "Same"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "સુરત ટેક્સટાઈલ ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ શું સુરતમાં કાચા માલના વધેલા ખર્ચનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "આ મહિને એમએમએફ અને વીવિંગ ધિરાણકર્તાઓ માટે સીસી/ઓડી મર્યાદાનો ઉપયોગ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે વર્કિંગ કેપિટલ વધારવાની અસ્થાયી માંગણીઓમાં કોઈ વધારો નોંધ્યો છે?",
-                "options": [
-                  "હા, નોંધપાત્ર વધારો",
-                  "સામાન્ય વધારો",
-                  "કોઈ ફેરફાર નથી"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "વોટર-જેટ / એર-જેટ વીવર",
-            "questions": {
-              "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ શું સુરતમાં કાચા માલના વધેલા ખર્ચનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "કાચા માલના ભાવ વધારાથી તમારા ઓપરેટિંગ માર્જિન પર કેવી અસર પડી છે?",
-                "options": [
-                  "ઘણું ઊંચું",
-                  "ઊંચું",
-                  "અપરિવર્તિત",
-                  "નીચું",
-                  "ઘણું નીચું"
-                ]
-              },
-              "operator.q3": {
-                "text": "કાચા માલના વધેલા ખર્ચમાંથી કેટલો હિસ્સો તમે ગ્રાહકો સુધી પહોંચાડી શક્યા છો?",
-                "options": [
-                  "કંઈ નહીં",
-                  "આંશિક",
-                  "મોટાભાગે",
-                  "સંપૂર્ણપણે",
-                  "વધુ પડતું"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ગ્રે-ફેબ્રિક વેપારી / પ્રોસેસર",
-            "questions": {
-              "buyer.q1": {
-                "text": "તમારા અનુભવ મુજબ શું સુરતમાં કાચા માલના વધેલા ખર્ચનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં ખરીદનાર દ્વારા ચુકવણીમાં વિલંબ કેવી રીતે બદલાયો છે?",
-                "options": [
-                  "ઘણા ઓછા દિવસો",
-                  "ઓછા દિવસો",
-                  "સમાન",
-                  "વધુ દિવસો",
-                  "ઘણા વધુ દિવસો"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "816d700a3897": {
-      "no_poll": false,
-      "hypothesis": "The fire at Saroli textile market has caused localized inventory loss and repayment stress for affected traders.",
-      "event_phrase": "fire at Saroli textile market",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Saroli Market Textile Trader",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported fire at Saroli textile market accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "yes_no_notseen",
-              "text": "Did surrounding shops face business disruption or temporary closures after the fire?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has the inventory value or stock safety perception changed in this complex?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Surat Commercial Branch Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported fire at Saroli textile market accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have affected borrowers requested stock statement adjustments or loan restructuring?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you noticed any delay in insurance claim processing for damaged stock?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "સરોલી માર્કેટ ટેક્સટાઇલ વેપારી",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સરોલી ટેક્સટાઇલ માર્કેટમાં આગ લાગવાની નોંધાયેલ ઘટના તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "શું આગ પછી આસપાસની દુકાનોને ધંધાકીય અડચણ કે અસ્થાયી બંધનો સામનો કરવો પડ્યો?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "આ સંકુલમાં ઇન્વેન્ટરીનું મૂલ્ય અથવા સ્ટોક સુરક્ષાની ધારણા કેવી બદલાઈ છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "સુરત કોમર્શિયલ બ્રાન્ચ બેન્કર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સરોલી ટેક્સટાઇલ માર્કેટમાં આગ લાગવાની નોંધાયેલ ઘટના તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું અસરગ્રસ્ત ધિરાણકર્તાઓએ સ્ટોક સ્ટેટમેન્ટમાં ફેરફાર કે લોન રિસ્ટ્રક્ચરિંગની માંગણી કરી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે ક્ષતિગ્રસ્ત સ્ટોક માટે વીમા દાવા પ્રક્રિયામાં કોઈ વિલંબ નોંધ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "17f0a015a73c": {
@@ -23177,256 +22097,20 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "b4616374fe1c": {
+    "ed00622c622e": {
       "no_poll": false,
-      "hypothesis": "Western Carriers bulk tiles train launch is reducing domestic logistics costs and easing outward freight for Morbi ceramic tile manufacturers.",
-      "event_phrase": "launch of bulk tiles train by Western Carriers",
+      "hypothesis": "WCIL's bulk tiles train service from Morbi cargo terminal is reducing dispatch bottlenecks and lowering finished goods inventory holding days for tile exporters.",
+      "event_phrase": "start of bulk tiles train service from Morbi cargo terminal",
       "roles": [
         {
           "role": "operator",
-          "label": "Ceramic tile manufacturer (domestic dispatch)",
+          "label": "Tile manufacturing unit / Exporter",
           "proximity": 3,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported launch of bulk tiles train by Western Carriers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "Accurate",
-              "contradicts_if": "Overstated"
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your long-distance domestic freight costs changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "Lower",
-              "contradicts_if": "Higher"
-            }
-          ]
-        },
-        {
-          "role": "logistics",
-          "label": "Rail and road freight forwarder",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "logistics.q1",
-              "type": "accuracy",
-              "text": "Is the reported launch of bulk tiles train by Western Carriers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "Accurate",
-              "contradicts_if": "Overstated"
-            },
-            {
-              "id": "logistics.q2",
-              "type": "scale5",
-              "text": "How has the volume of ceramic tiles booked via rail rakes changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "Higher",
-              "contradicts_if": "Lower"
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Working capital banker to tile makers",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported launch of bulk tiles train by Western Carriers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "Accurate",
-              "contradicts_if": "Overstated"
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have borrowers reported improved liquidity due to reduced outward logistics expenses?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "Yes",
-              "contradicts_if": "No"
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "સેરમિક ટાઇલ્સ ઉત્પાદક (ઘરેલુ ડિસ્પેચ)",
-            "questions": {
-              "operator.q1": {
-                "text": "શું વેસ્ટર્ન કેરિયર્સ દ્વારા જથ્થાબંધ ટાઇલ્સ ટ્રેનની શરૂૂઆતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા લાંબા અંતરના ઘરેલુ નૂર ખર્ચમાં કેવી બદલાવ આવ્યો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "એ જ",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "logistics": {
-            "label": "રેલ અને રોડ ફ્રેટ ફોરવર્ડર",
-            "questions": {
-              "logistics.q1": {
-                "text": "શું વેસ્ટર્ન કેરિયર્સ દ્વારા જથ્થાબંધ ટાઇલ્સ ટ્રેનની શરૂૂઆતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "logistics.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં રેલવે દ્વારા બુક કરાયેલ સેરેમિક ટાઇલ્સનું પ્રમાણ કેવું રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "એ જ",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ટાઇલ્સ નિર્માતાઓ માટે વર્કિંગ કેપિટલ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું વેસ્ટર્ન કેરિયર્સ દ્વારા જથ્થાબંધ ટાઇલ્સ ટ્રેનની શરૂૂઆતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું લોજિસ્ટિક્સ ખર્ચ ઘટવાને કારણે ધિરાણકર્તાઓની તરલતામાં સુધારો જોવા મળ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "2d364d892b54": {
-      "no_poll": false,
-      "hypothesis": "Varmora Granito's DRHP filing signals aggressive capacity expansion and formalization, increasing competitive pressure on unorganized tile makers and boosting demand for allied machinery and packaging.",
-      "event_phrase": "Varmora Granito filing its IPO DRHP",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Tile plant promoter / Director",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Varmora Granito filing its IPO DRHP accurate in your experience?",
+              "text": "Is the reported start of bulk tiles train service from Morbi cargo terminal accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -23448,7 +22132,30 @@
             {
               "id": "operator.q2",
               "type": "scale5",
-              "text": "How has competitive pressure from large players changed in your segment over the last 3 weeks?",
+              "text": "How have your finished goods inventory holding days changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your average logistics cost per box dispatched changed recently?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -23458,20 +22165,49 @@
               ],
               "mechanism": "margin",
               "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
                 "Higher",
                 "Much higher"
               ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "logistics",
+          "label": "Rail / Container logistics provider",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "logistics.q1",
+              "type": "accuracy",
+              "text": "Is the reported start of bulk tiles train service from Morbi cargo terminal accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
               "contradicts": [
-                "Lower",
-                "Much lower"
+                "Overstated",
+                "Not seeing it"
               ],
               "supports_if": "",
               "contradicts_if": ""
             },
             {
-              "id": "operator.q3",
+              "id": "logistics.q2",
               "type": "scale5",
-              "text": "How is your planned capital expenditure or capacity expansion looking compared to last month?",
+              "text": "How has the volume of tile containers handled at the cargo terminal changed in the last 2-4 weeks?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -23479,7 +22215,7 @@
                 "Higher",
                 "Much higher"
               ],
-              "mechanism": "wc_utilisation",
+              "mechanism": "volume",
               "supports": [
                 "Higher",
                 "Much higher"
@@ -23495,13 +22231,13 @@
         },
         {
           "role": "banker",
-          "label": "Ceramic cluster branch manager",
-          "proximity": 3,
+          "label": "Working Capital Banker (Morbi)",
+          "proximity": 2,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported Varmora Granito filing its IPO DRHP accurate in your experience?",
+              "text": "Is the reported start of bulk tiles train service from Morbi cargo terminal accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -23522,75 +22258,20 @@
             },
             {
               "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have term loan or working capital enhancement requests from mid-sized tile makers moved recently?",
+              "type": "choice",
+              "text": "Have tile manufacturing clients reported faster realization or lower stock-statement aging recently?",
               "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
+                "Yes, clearly observed",
+                "No change",
+                "Not observed"
               ],
-              "mechanism": "wc_utilisation",
+              "mechanism": "receivables",
               "supports": [
-                "Higher",
-                "Much higher"
+                "Yes, clearly observed"
               ],
               "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Packaging / Glaze supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported Varmora Granito filing its IPO DRHP accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How are raw material offtake volumes from large tile makers compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
+                "No change",
+                "Not observed"
               ],
               "supports_if": "",
               "contradicts_if": ""
@@ -23602,10 +22283,10 @@
         "lang": "gu",
         "roles": {
           "operator": {
-            "label": "ટાઇલ પ્લાન્ટ પ્રમોટર / ડિરેક્ટર",
+            "label": "ટાઇલ ઉત્પાદન એકમ / નિકાસકાર",
             "questions": {
               "operator.q1": {
-                "text": "તમારા અનુભવમાં વર્મોરા ગ્રેનિટો દ્વારા આઈપીઓ ડીઆરએચપી ફાઇલ કરવાના અહેવાલ કેટલા સચોટ છે?",
+                "text": "તમારા અનુભવ મુજબ મોરબી કાર્ગો ટર્મિનલથી બલ્ક ટાઇલ્સ ટ્રેન સે શરૂ થયાના અહેવાલો સાચા છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -23614,17 +22295,41 @@
                 ]
               },
               "operator.q2": {
-                "text": "છેલ્લા 3 અઠવાડિયામાં તમારા સેગમેન્ટમાં મોટી કંપનીઓ તરફથી સ્પર્ધાત્મક દબાણ કેવું રહ્યું છે?",
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા તૈયાર માલની ઇન્વેન્ટરી હોલ્ડિંગના દિવસોમાં કેવી ફેરફાર થયો છે?",
                 "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સરખા",
                   "વધુ",
-                  "ઘણું વધુ"
+                  "ઘણા વધુ"
                 ]
               },
               "operator.q3": {
-                "text": "ગયા મહિનાની સરખામણીમાં તમારું મૂડી ખર્ચ અથવા ક્ષમતા વિસ્તરણનું આયોજન કેવું છે?",
+                "text": "મોકલેલા પ્રત્યેક બોક્સ દીઠ તમારા લોજિસ્ટિક્સ ખર્ચમાં તાજેતરમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "logistics": {
+            "label": "રેલ / કન્ટેનર લોજિસ્ટિક્સ પ્રદાતા",
+            "questions": {
+              "logistics.q1": {
+                "text": "તમારા અનુભવ મુજબ મોરબી કાર્ગો ટર્મિનલથી બલ્ક ટાઇલ્સ ટ્રેન સેવા શરૂ થયાના અહેવાલો સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "logistics.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં કાર્ગો ટર્મિનલ પર ટાઇલ કન્ટેનરનું વૉલ્યુમ કેટલું બદલાયું છે?",
                 "options": [
                   "ઘણું ઓછું",
                   "ઓછું",
@@ -23636,10 +22341,10 @@
             }
           },
           "banker": {
-            "label": "સિરામિક ક્લસ્ટર બ્રાન્ચ મેનેજર",
+            "label": "વર્કિંગ કેપિટલ બેન્કર (મોરબી)",
             "questions": {
               "banker.q1": {
-                "text": "તમારા અનુભવમાં વર્મોરા ગ્રેનિટો દ્વારા આઈપીઓ ડીઆરએચપી ફાઇલ કરવાના અહેવાલ કેટલા સચોટ છે?",
+                "text": "તમારા અનુભવ મુજબ મોરબી કાર્ગો ટર્મિનલથી બલ્ક ટાઇલ્સ ટ્રેન સેવા શરૂ થયાના અહેવાલો સાચા છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -23648,37 +22353,11 @@
                 ]
               },
               "banker.q2": {
-                "text": "મધ્યમ કદની ટાઇલ બનાવતી કંપનીઓ તરફથી ટર્મ લોન અથવા વર્કિંગ કેપિટલ વધારવાની માંગણીઓ કેવી રહી છે?",
+                "text": "શું ટાઇલ ઉત્પાદક ગ્રાહકોએ તાજેતરમાં ઝડપી નાણાકીય વસૂલાત અથવા ઓછી સ્ટોક-સ્ટેટમેન્ટ એજિંગ નોંધાવી છે?",
                 "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સરખી",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "પેકેજિંગ / ગ્લેઝ સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "તમારા અનુભવમાં વર્મોરા ગ્રેનિટો દ્વારા આઈપીઓ ડીઆરએચપી ફાઇલ કરવાના અહેવાલ કેટલા સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગયા મહિનાની સરખામણીમાં મોટી ટાઇલ બનાવતી કંપનીઓ દ્વારા કાચા માલની ખરીદી કેવી રહી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સરખી",
-                  "વધુ",
-                  "ઘણી વધુ"
+                  "હા, સ્પષ્ટપણે જોયું",
+                  "કોઈ ફેરફાર નહીં",
+                  "જોવા મળ્યું નથી"
                 ]
               }
             }
