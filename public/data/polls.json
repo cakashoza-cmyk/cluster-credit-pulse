@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T14:55:55.472Z",
+  "generated_at": "2026-10-16T18:53:01.076Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -6163,6 +6163,300 @@
         }
       },
       "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "e694c857f915": {
+      "no_poll": false,
+      "hypothesis": "Rising outstation buyer defaults are forcing Morbi tile units to tighten credit terms and face working capital stress.",
+      "event_phrase": "rise in outstation buyer defaults or payment frauds",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Ceramic Tile Manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in outstation buyer defaults or payment frauds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have credit days granted to outstation domestic dealers changed over the past 30 days?",
+              "options": [
+                "Significantly tightened",
+                "Slightly tightened",
+                "Unchanged",
+                "Slightly extended",
+                "Significantly extended"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Significantly tightened",
+                "Slightly tightened"
+              ],
+              "contradicts": [
+                "Slightly extended",
+                "Significantly extended"
+              ],
+              "supports_if": "Manufacturers tighten credit terms and demand advances to avoid outstation frauds.",
+              "contradicts_if": "Manufacturers continue extending liberal credit terms despite default reports."
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an increase in delayed or returned payments from metro-based domestic buyers recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Outstation buyer payment stress is directly manifesting in metro receivables.",
+              "contradicts_if": "Buyer repayments from metro markets remain on schedule."
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Tile Wholesaler / Dealer Agent",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in outstation buyer defaults or payment frauds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "choice",
+              "text": "What payment terms are Morbi factories currently insisting on for fresh dispatches to outside dealers?",
+              "options": [
+                "100% advance or against lorry receipt",
+                "Part advance with balance on delivery",
+                "Standard 30-60 days unsecured credit",
+                "Extended credit above 60 days"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "100% advance or against lorry receipt",
+                "Part advance with balance on delivery"
+              ],
+              "contradicts": [
+                "Standard 30-60 days unsecured credit",
+                "Extended credit above 60 days"
+              ],
+              "supports_if": "Factories refuse unsecured credit due to counterparty fraud risks.",
+              "contradicts_if": "Factories continue business as usual on unsecured open credit."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi Commercial / MSME Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in outstation buyer defaults or payment frauds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has borrower cash-credit (CC/OD) limit utilisation trended among tile manufacturers over the past month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Near peak limit",
+                "Overdrawn / Ad-hoc requested"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near peak limit",
+                "Overdrawn / Ad-hoc requested"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Receivable lock-ins and dealer defaults push CC accounts to credit limits.",
+              "contradicts_if": "Working capital limits remain comfortable or under-utilised."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an uptick in inward cheque bounces or NACH/ECS return charges in ceramic accounts recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Buyer defaults directly cause cheque bounces in tile manufacturing accounts.",
+              "contradicts_if": "Cheque clearance rates remain healthy."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "સિરામિક ટાઇલ ઉત્પાદક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું બહારના રાજ્ય/શહેરના વેપારીઓ દ્વારા ડિફોલ્ટ કે છેતરપિંડીના બનાવોમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૩૦ દિવસમાં બહારના ડીલરોને આપવામાં આવતી ઉધાર મુદત (ક્રેડિટ ડેઝ) માં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણી કડક કરવામાં આવી",
+                  "થોડી કડક કરવામાં આવી",
+                  "યથાવત",
+                  "થોડી વધારવામાં આવી",
+                  "ઘણી વધારવામાં આવી"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તાજેતરમાં મેટ્રો શહેરોના ખરીદદારો તરફથી પેમેન્ટ મોડા આવવા કે અટકવાના બનાવો વધ્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "ટાઇલ હોલસેલર / ડીલર એજન્ટ",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું બહારના રાજ્ય/શહેરના વેપારીઓ દ્વારા ડિફોલ્ટ કે છેતરપિંડીના બનાવોમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "બહારના ડીલરો માટે નવા માલના મોકલવા પર મોરબીની ફેક્ટરીઓ હાલ કઈ શરતો પર ભાર મૂકી રહી છે?",
+                "options": [
+                  "૧૦૦% એડવાન્સ અથવા બિલ્ટી અગેઇન્સ્ટ",
+                  "અંશતઃ એડવાન્સ અને બાકી ડિલિવરી સમયે",
+                  "સામાન્ય ૩૦-૬૦ દિવસની ઉધાર ક્રેડિટ",
+                  "૬૦ દિવસથી વધુની લાંબી ક્રેડિટ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી કોમર્શિયલ / MSME બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું બહારના રાજ્ય/શહેરના વેપારીઓ દ્વારા ડિફોલ્ટ કે છેતરપિંડીના બનાવોમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા એક મહિનામાં ટાઇલ ઉત્પાદકોના કેશ-ક્રેડિટ (CC/OD) ખાતાના વપરાશમાં કેવો ટ્રેન્ડ જોવા મળ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "યથાવત",
+                  "મહત્તમ લિમિટ નજીક",
+                  "ઓવરડ્રોન / વધારાની લિમિટની માંગણી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તાજેતરમાં સિરામિક ખાતાઓમાં ઇનવર્ડ ચેક બાઉન્સ કે ECS/NACH રિટર્ન ચાર્જીસમાં વધારો જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
     "a3db8ea1103a": {
@@ -20017,329 +20311,6 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "acda95299928": {
-      "no_poll": false,
-      "hypothesis": "Persistent water shortages in Morbi are driving up private tanker procurement costs for ceramic and sanitaryware units, squeezing operating margins and increasing short-term working capital demand.",
-      "event_phrase": "water shortage in Morbi ceramic units",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Ceramic / Sanitaryware plant owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported water shortage in Morbi ceramic units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your unit's private water tanker expenses changed in the last 2-4 weeks?",
-              "options": [
-                "Significantly lower",
-                "Lower",
-                "Unchanged",
-                "Higher",
-                "Significantly higher"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Higher",
-                "Significantly higher"
-              ],
-              "contradicts": [
-                "Significantly lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you reduced polishing line shifts or wet-grinding operations due to water unavailability?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Water tanker supplier",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported water shortage in Morbi ceramic units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How has demand for water tanker deliveries to ceramic plants changed over the past month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q3",
-              "type": "choice",
-              "text": "What is the primary trend in water tanker spot rates per trip in the cluster?",
-              "options": [
-                "Decreased by >10%",
-                "Stable",
-                "Increased by 10-25%",
-                "Increased by >25%"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Increased by 10-25%",
-                "Increased by >25%"
-              ],
-              "contradicts": [
-                "Decreased by >10%"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Credit officer / Branch manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported water shortage in Morbi ceramic units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have ceramic borrowers requested ad-hoc working capital limits or enhancements recently?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "What is the average Cash Credit limit utilization trend for local ceramic clients?",
-              "options": [
-                "Below 70%",
-                "70% to 90%",
-                "Above 90% / Near limit",
-                "Overdrawn"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Above 90% / Near limit",
-                "Overdrawn"
-              ],
-              "contradicts": [
-                "Below 70%"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "સિરામિક / સેનિટરીવેર પ્લાન્ટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું મોરબીના સિરામિક એકમોમાં પાણીની અછતના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 2-4 સપ્તાહમાં તમારા એકમના ખાનગી વોટર ટેન્કરના ખર્ચમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "અપરિવર્તિત",
-                  "વધારે",
-                  "ઘણો વધારે"
-                ]
-              },
-              "operator.q3": {
-                "text": "શું તમે પાણીની અપ્રાપ્યતાને કારણે પોલિશિંગ લાઇન શિફ્ટ અથવા વેટ-ગ્રાઇન્ડિંગ કામગીરી ઘટાડી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "વોટર ટેન્કર સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું મોરબીના સિરામિક એકમોમાં પાણીની અછતના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા મહિનામાં સિરામિક પ્લાન્ટ્સમાં વોટર ટેન્કરની ડિલિવરીની માંગમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સરખી",
-                  "વધારે",
-                  "ઘણી વધારે"
-                ]
-              },
-              "supplier.q3": {
-                "text": "ક્લસ્ટરમાં ટ્રિપ દીઠ વોટર ટેન્કરના સ્પોટ રેટમાં મુખ્ય ટ્રેન્ડ શું છે?",
-                "options": [
-                  ">10% ઘટ્યો",
-                  "સ્થિર",
-                  "10-25% વધ્યો",
-                  ">25% વધ્યો"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ક્રેડિટ ઓફિસર / બ્રાન્ચ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું મોરબીના સિરામિક એકમોમાં પાણીની અછતના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું સિરામિક લેવાદારોએ તાજેતરમાં એડ-હોક વર્કિંગ કેપિટલ મર્યાદા અથવા વધારાની વિનંતી કરી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "સ્થાનિક સિરામિક ગ્રાહકો માટે સરેરાશ કેશ ક્રેડિટ મર્યાદાના ઉપયોગનો ટ્રેન્ડ શું છે?",
-                "options": [
-                  "70% થી નીચે",
-                  "70% થી 90%",
-                  "90% થી વધુ / મર્યાદા નજીક",
-                  "ઓવરડ્રોન"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "17f0a015a73c": {

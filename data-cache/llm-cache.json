@@ -48703,5 +48703,377 @@
     },
     "model": "gemini:gemini-3.5-flash-lite",
     "at": "2026-10-16T14:55:55.471Z"
+  },
+  "e694c857f915c8e8e00b6d92ff06be7909dd8d84": {
+    "card": {
+      "headline": "Mumbai Buyer Allegedly Defrauds Morbi Ceramic Unit of Rs 44 Lakh",
+      "summary": "According to Morbi Update, an individual from Mumbai ordered tiles from a ceramic manufacturing unit in Morbi and allegedly defaulted or cheated the unit of Rs 44 lakh. The report details an individual trade default or cheating case; specific details regarding the names of the parties involved or legal filings are not stated.",
+      "cluster": "morbi",
+      "industries": [
+        "ceramic-tiles"
+      ],
+      "event_type": "liquidity/payment stress",
+      "credit_signal": "watch",
+      "why_it_matters": "Domestic outstation dealer defaults directly cause bad debts, expanding receivable days and eroding cash flow in Morbi ceramic units.",
+      "credit_note": {
+        "what_happened": "A buyer based in Mumbai ordered ceramic tiles from a Morbi-based manufacturing unit and allegedly failed to pay, defrauding the unit of Rs 44 lakh. Detailed transaction terms and formal police complaint details are not stated.",
+        "confirmed_vs_alleged": "Alleged: The Mumbai buyer cheated the Morbi unit of Rs 44 lakh. Confirmed: A trade default/cheating complaint has surfaced locally. Uncertain: The identity of the unit, whether legal recovery or an FIR has been registered, and whether any partial recovery is possible.",
+        "exposed_subsectors": "Domestic ceramic tile manufacturers supplying outstation traders without letters of credit, bank guarantees, or advance payments.",
+        "financial_effects": {
+          "volumes": "→ not directly affected",
+          "realisations": "→ not affected",
+          "input_costs": "→ not affected",
+          "margins": "↓ impacted by bad-debt write-off of Rs 44 lakh",
+          "receivable_days": "↑ stretch in debtor days for the affected seller",
+          "inventory": "→ not affected",
+          "creditors": "→ unstated, but could delay local vendor payouts if cash is tight",
+          "working_capital": "↑ strain on operating cash flow and working capital cycle",
+          "dscr": "↓ marginal pressure on debt servicing if unit has thin buffers"
+        },
+        "temporary_or_structural": "Temporary operational issue for the specific unit, but indicative of cyclical counterparty credit risks inherent in unsecured domestic tile distribution.",
+        "what_to_check": [
+          "Review debtor aging schedule in the latest stock and book-debt statements to identify overdue Mumbai receivables.",
+          "Check borrower reliance on unsecured open-credit domestic dispatch versus secured terms (LC/advance).",
+          "Inspect drawing power calculation to ensure unpaid or stuck receivables >90 days are excluded.",
+          "Examine cash flow through the operative cash credit account to monitor for signs of SMA migration."
+        ],
+        "confirm_or_disprove": {
+          "confirm": "Receipt of formal police complaint/FIR or legal notice under Section 138/commercial suit confirming Rs 44 lakh bad debt.",
+          "disprove": "Bank statements showing full recovery or settlement of the outstanding invoice amount from the buyer."
+        }
+      }
+    },
+    "model": "gemini:gemini-3.8-flash",
+    "at": "2026-10-16T18:50:10.606Z",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNR19UU0RCZ2pZeWtpWEdsNzlTSEN3cWdCalVNczdjZVRETWpxSC1fX3FvMDRMSXVMRzVjSVZHdGZiTTNmc1YyUkFVTlNwWno1dWtkYVZISTFmTWYyY2ZsY1ZxcFZqc25lM3loWUhjVkdlTWZlbkwxOTVQLWp2b3NsSHVNLTZiaVFSb20yZkpSY2JBbXE3andUVHkyWVZSSHZKQUxBX3FzLURGeXVBYzdXX2NRV3pQS3ptdmpVMXZaSzA1dw?oc=5"
+  },
+  "merge:m2:64a12d441c2281e1af937fbb37ca31f7d60ce053": {
+    "groups": [
+      [
+        "9a8294a86b44",
+        "48b64b6fd2f1"
+      ],
+      [
+        "61d1cd16788e",
+        "835138f2fadb"
+      ]
+    ],
+    "model": "gemini:gemini-3.8-flash",
+    "at": "2026-10-16T18:50:42.545Z"
+  },
+  "brief:ad61f71fd9a7ba81514a3e23b68329226dbe32b6": {
+    "brief": {
+      "headline": "Trade default incident highlights counterparty payment risks for Morbi ceramic tile manufacturers.",
+      "what_changed": [
+        "A Mumbai-based buyer allegedly defaulted and cheated a local ceramic tile manufacturing unit of Rs 44 lakh."
+      ],
+      "stress_signals": [
+        "Buyer default of Rs 44 lakh reported by a ceramic manufacturing unit [e694c857f915]"
+      ],
+      "improvement_signals": [],
+      "what_to_watch": [
+        "Specific details regarding legal filings or recovery proceedings in the Mumbai buyer fraud case [e694c857f915]",
+        "Elongation of receivable cycles and outstation buyer default trends across ceramic tile units",
+        "Working capital utilization and unpaid debtor concentrations among MSME ceramic manufacturers"
+      ]
+    },
+    "model": "gemini:gemini-3.8-flash",
+    "at": "2026-10-16T18:51:41.557Z"
+  },
+  "poll:poll-v1:e694c857f915": {
+    "poll": {
+      "no_poll": false,
+      "hypothesis": "Rising outstation buyer defaults are forcing Morbi tile units to tighten credit terms and face working capital stress.",
+      "event_phrase": "rise in outstation buyer defaults or payment frauds",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Ceramic Tile Manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in outstation buyer defaults or payment frauds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have credit days granted to outstation domestic dealers changed over the past 30 days?",
+              "options": [
+                "Significantly tightened",
+                "Slightly tightened",
+                "Unchanged",
+                "Slightly extended",
+                "Significantly extended"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Significantly tightened",
+                "Slightly tightened"
+              ],
+              "contradicts": [
+                "Slightly extended",
+                "Significantly extended"
+              ],
+              "supports_if": "Manufacturers tighten credit terms and demand advances to avoid outstation frauds.",
+              "contradicts_if": "Manufacturers continue extending liberal credit terms despite default reports."
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an increase in delayed or returned payments from metro-based domestic buyers recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Outstation buyer payment stress is directly manifesting in metro receivables.",
+              "contradicts_if": "Buyer repayments from metro markets remain on schedule."
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Tile Wholesaler / Dealer Agent",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in outstation buyer defaults or payment frauds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "choice",
+              "text": "What payment terms are Morbi factories currently insisting on for fresh dispatches to outside dealers?",
+              "options": [
+                "100% advance or against lorry receipt",
+                "Part advance with balance on delivery",
+                "Standard 30-60 days unsecured credit",
+                "Extended credit above 60 days"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "100% advance or against lorry receipt",
+                "Part advance with balance on delivery"
+              ],
+              "contradicts": [
+                "Standard 30-60 days unsecured credit",
+                "Extended credit above 60 days"
+              ],
+              "supports_if": "Factories refuse unsecured credit due to counterparty fraud risks.",
+              "contradicts_if": "Factories continue business as usual on unsecured open credit."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi Commercial / MSME Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in outstation buyer defaults or payment frauds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has borrower cash-credit (CC/OD) limit utilisation trended among tile manufacturers over the past month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Near peak limit",
+                "Overdrawn / Ad-hoc requested"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near peak limit",
+                "Overdrawn / Ad-hoc requested"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Receivable lock-ins and dealer defaults push CC accounts to credit limits.",
+              "contradicts_if": "Working capital limits remain comfortable or under-utilised."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an uptick in inward cheque bounces or NACH/ECS return charges in ceramic accounts recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Buyer defaults directly cause cheque bounces in tile manufacturing accounts.",
+              "contradicts_if": "Cheque clearance rates remain healthy."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "સિરામિક ટાઇલ ઉત્પાદક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું બહારના રાજ્ય/શહેરના વેપારીઓ દ્વારા ડિફોલ્ટ કે છેતરપિંડીના બનાવોમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૩૦ દિવસમાં બહારના ડીલરોને આપવામાં આવતી ઉધાર મુદત (ક્રેડિટ ડેઝ) માં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણી કડક કરવામાં આવી",
+                  "થોડી કડક કરવામાં આવી",
+                  "યથાવત",
+                  "થોડી વધારવામાં આવી",
+                  "ઘણી વધારવામાં આવી"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તાજેતરમાં મેટ્રો શહેરોના ખરીદદારો તરફથી પેમેન્ટ મોડા આવવા કે અટકવાના બનાવો વધ્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "ટાઇલ હોલસેલર / ડીલર એજન્ટ",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું બહારના રાજ્ય/શહેરના વેપારીઓ દ્વારા ડિફોલ્ટ કે છેતરપિંડીના બનાવોમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "બહારના ડીલરો માટે નવા માલના મોકલવા પર મોરબીની ફેક્ટરીઓ હાલ કઈ શરતો પર ભાર મૂકી રહી છે?",
+                "options": [
+                  "૧૦૦% એડવાન્સ અથવા બિલ્ટી અગેઇન્સ્ટ",
+                  "અંશતઃ એડવાન્સ અને બાકી ડિલિવરી સમયે",
+                  "સામાન્ય ૩૦-૬૦ દિવસની ઉધાર ક્રેડિટ",
+                  "૬૦ દિવસથી વધુની લાંબી ક્રેડિટ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી કોમર્શિયલ / MSME બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું બહારના રાજ્ય/શહેરના વેપારીઓ દ્વારા ડિફોલ્ટ કે છેતરપિંડીના બનાવોમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા એક મહિનામાં ટાઇલ ઉત્પાદકોના કેશ-ક્રેડિટ (CC/OD) ખાતાના વપરાશમાં કેવો ટ્રેન્ડ જોવા મળ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "યથાવત",
+                  "મહત્તમ લિમિટ નજીક",
+                  "ઓવરડ્રોન / વધારાની લિમિટની માંગણી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તાજેતરમાં સિરામિક ખાતાઓમાં ઇનવર્ડ ચેક બાઉન્સ કે ECS/NACH રિટર્ન ચાર્જીસમાં વધારો જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "model": "gemini:gemini-3.8-flash",
+    "at": "2026-10-16T18:53:01.070Z"
   }
 }
