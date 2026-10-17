@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T17:54:47.096Z",
+  "generated_at": "2026-10-17T22:22:30.853Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 84,
-    "with_poll": 81,
+    "cards": 89,
+    "with_poll": 86,
     "no_poll": 3,
     "pending": 0
   },
@@ -6552,20 +6552,20 @@
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
-    "94bf5c2693d4": {
+    "167f80ff6cdc": {
       "no_poll": false,
-      "hypothesis": "Surat textile units are actively procuring specialised rapier/air-jet machinery and technical yarns for defence contract trial orders.",
-      "event_phrase": "expansion of Surat textile units into defence technical textiles",
+      "hypothesis": "Unannounced or extended power cuts in Surat textile clusters are forcing production halts, raising generator costs, and impacting operating cash flows.",
+      "event_phrase": "eight-hour power cuts in Surat textile units",
       "roles": [
         {
           "role": "operator",
-          "label": "Technical textile / advanced weaver",
+          "label": "Weaving & processing unit operator",
           "proximity": 3,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported expansion of Surat textile units into defence technical textiles accurate in your experience?",
+              "text": "Is the reported eight-hour power cuts in Surat textile units accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -6586,75 +6586,8 @@
             },
             {
               "id": "operator.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you received active trial orders or sample requests for defence-grade technical fabrics in the last 4 weeks?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "choice",
-              "text": "What is the primary capital expenditure status for modifying looms for high-tenacity technical yarns?",
-              "options": [
-                "Machinery ordered/installed",
-                "Enquiries made but no capex",
-                "No plans to modify looms"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Machinery ordered/installed"
-              ],
-              "contradicts": [
-                "No plans to modify looms"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "High-tenacity yarn / machinery supplier",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported expansion of Surat textile units into defence technical textiles accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
               "type": "scale5",
-              "text": "How has offtake of specialized high-tenacity polyester/nylon yarns changed over the last 30 days?",
+              "text": "How have your plant shutdown hours or generator operational costs changed over the last 2-4 weeks?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -6662,7 +6595,7 @@
                 "Higher",
                 "Much higher"
               ],
-              "mechanism": "volume",
+              "mechanism": "input_cost",
               "supports": [
                 "Higher",
                 "Much higher"
@@ -6673,18 +6606,41 @@
               ],
               "supports_if": "",
               "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your daily production volume of grey fabric or dyed goods changed compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         },
         {
           "role": "banker",
-          "label": "Textile cluster credit officer",
+          "label": "Textile portfolio credit officer",
           "proximity": 2,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported expansion of Surat textile units into defence technical textiles accurate in your experience?",
+              "text": "Is the reported eight-hour power cuts in Surat textile units accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -6706,7 +6662,7 @@
             {
               "id": "banker.q2",
               "type": "yes_no_notseen",
-              "text": "Have textile clients requested term loan enhancements or new capex lines for technical textile machinery recently?",
+              "text": "Have you seen an increase in ad-hoc limit requests or temporary overdraft demands from Surat textile borrowers?",
               "options": [
                 "Yes",
                 "No",
@@ -6723,16 +6679,68 @@
               "contradicts_if": ""
             }
           ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn supplier / POY trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported eight-hour power cuts in Surat textile units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has yarn dispatch volume to Surat weaving units changed over the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
         }
       ],
       "translation": {
         "lang": "gu",
         "roles": {
           "operator": {
-            "label": "ટેકનિકલ ટેક્સટાઇલ / એડવાન્સ્ડ વણાટ એકમ",
+            "label": "વીણાટ અને પ્રોસેસિંગ યુનિટ ઓપરેટર",
             "questions": {
               "operator.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ યુનિટોનું સંરક્ષણ ટેકનિકલ ટેક્સટાઇલમાં વિસ્તરણ આપના અનુભવ મુજબ સચોટ છે?",
+                "text": "શું સુરતના ટેક્સટાઇલ યુનિટોમાં ૮ કલાકના પાવર કાપના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -6741,37 +6749,7 @@
                 ]
               },
               "operator.q2": {
-                "text": "શું તમને છેલ્લા 4 સપ્તાહમાં ડિફેન્સ-ગ્રેડ ટેકનિકલ કાપડ માટે ટ્રાયલ ઓર્ડર અથવા સેમ્પલ વિનંતીઓ મળી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "હાઇ-ટેનાસિટી ટેકનિકલ યાર્ન માટે લૂમ્સને મોડિફાઇ કરવા માટે પ્રાથમિક મૂડી ખર્ચ (Capex) ની સ્થિતિ શું છે?",
-                "options": [
-                  "મશીનરીનો ઓર્ડર આપ્યો/ઇન્સ્ટોલ કરી",
-                  "પૂછપરછ કરી પણ મૂડી ખર્ચ નથી કર્યો",
-                  "લૂમ્સ મોડિફાઇ કરવાની કોઈ યોજના નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "હાઇ-ટેનાસિટી યાર્ન / મશીનરી સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ યુનિટોનું સંરક્ષણ ટેકનિકલ ટેક્સટાઇલમાં વિસ્તરણ આપના અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા 30 દિવસમાં સ્પેશિયલાઇઝ્ડ હાઇ-ટેનાસિટી પોલિએસ્ટર/નાઇલોન યાર્નની માંગમાં કેવો ફેરફાર થયો છે?",
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા પ્લાન્ટના બંધ રહેવાના કલાકો અથવા જનરેટર ઓપરેટિંગ ખર્ચમાં શું ફેરફાર થયો છે?",
                 "options": [
                   "ઘણો ઓછો",
                   "ઓછો",
@@ -6779,14 +6757,24 @@
                   "વધારે",
                   "ઘણો વધારે"
                 ]
+              },
+              "operator.q3": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારા ગ્રે કાપડ અથવા ડાઇડ પ્રોડક્ટ્સના દૈનિક ઉત્પાદનમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
               }
             }
           },
           "banker": {
-            "label": "ટેક્સટાઇલ ક્લસ્ટર ક્રેડિટ ઓફિસર",
+            "label": "ટેક્સટાઇલ પોર્ટફોલિયો ક્રેડિટ ઓફિસર",
             "questions": {
               "banker.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ યુનિટોનું સંરક્ષણ ટેકનિકલ ટેક્સટાઇલમાં વિસ્તરણ આપના અનુભવ મુજબ સચોટ છે?",
+                "text": "શું સુરતના ટેક્સટાઇલ યુનિટોમાં ૮ કલાકના પાવર કાપના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -6795,7 +6783,7 @@
                 ]
               },
               "banker.q2": {
-                "text": "શું ટેક્સટાઇલ ગ્રાહકોએ તાજેતરમાં ટેકનિકલ ટેક્સટાઇલ મશીનરી માટે ટર્મ લોન વધારવા કે નવી કેપેક્સ લાઇન માટે વિનંતી કરી છે?",
+                "text": "શું તમે સુરતના ટેક્સટાઇલ ઉધારકર્તાઓ તરફથી એડ-હોક લિમિટની વિનંતીઓ અથવા કામચલાઉ ઓવરડ્રાફ્ટની માંગમાં વધારો જોયો છે?",
                 "options": [
                   "હા",
                   "ના",
@@ -6803,10 +6791,291 @@
                 ]
               }
             }
+          },
+          "supplier": {
+            "label": "યાર્ન સપ્લાયર / POY વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું સુરતના ટેક્સટાઇલ યુનિટોમાં ૮ કલાકના પાવર કાપના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સુરતના વીણાટ એકમોને યાર્નની ડિસ્પેચ વોલ્યુમમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
           }
         }
       },
       "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "0f163b499572": {
+      "no_poll": false,
+      "hypothesis": "Surat textile units are undertaking capex and receiving technical textile orders or certifications for defence supply.",
+      "event_phrase": "Surat textile cluster expansion into defence technical textiles",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet / air-jet weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported expansion into defence technical textiles accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "Have you initiated capex or received technical textile certifications in the last 4 weeks?",
+              "options": [
+                "Yes, upgraded machinery / certified",
+                "Exploring feasibility",
+                "No change, standard production"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes, upgraded machinery / certified"
+              ],
+              "contradicts": [
+                "No change, standard production"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How do your institutional or technical textile inquiries compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "consultant",
+          "label": "Textile certifier / machinery consultant",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "consultant.q1",
+              "type": "accuracy",
+              "text": "Is the reported expansion into defence technical textiles accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "consultant.q2",
+              "type": "choice",
+              "text": "What is the trend in technical specification testing or consultancy requests?",
+              "options": [
+                "Surging",
+                "Steady",
+                "Negligible"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Surging"
+              ],
+              "contradicts": [
+                "Negligible"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME Credit Manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported expansion into defence technical textiles accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you received term loan enquiries for technical textile machinery upgrades?",
+              "options": [
+                "Yes, multiple enquiries",
+                "Few enquiries",
+                "None"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes, multiple enquiries"
+              ],
+              "contradicts": [
+                "None"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ / એર-જેટ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું રક્ષણાત્મક ટેકનિકલ ટેક્સટાઇલ્સમાં વિસ્તરણનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "શું તમે છેલ્લા 4 અઠવાડિયામાં કેપેક્સ શરૂ કર્યું છે અથવા ટેકનિકલ ટેક્સટાઇલ પ્રમાણપત્રો મેળવ્યા છે?",
+                "options": [
+                  "હા, મશીનરી અપગ્રેડ કરી / પ્રમાણપત્ર મેળવ્યું",
+                  "શક્યતાઓ ચકાસી રહ્યા છીએ",
+                  "કોઈ ફેરફાર નહીં, પ્રમાણભૂત ઉત્પાદન"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારી સંસ્થાગત અથવા ટેકનિકલ ટેક્સટાઇલની પૂછપરછ કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              }
+            }
+          },
+          "consultant": {
+            "label": "ટેક્સટાઇલ પ્રમાણપત્ર સલાહકાર",
+            "questions": {
+              "consultant.q1": {
+                "text": "શું રક્ષણાત્મક ટેકનિકલ ટેક્સટાઇલ્સમાં વિસ્તરણનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "consultant.q2": {
+                "text": "ટેકનિકલ સ્પેશિફિકેશન ટેસ્ટિંગ અથવા પરાమర్శની વિનંતીઓમાં શું વલણ છે?",
+                "options": [
+                  "વધારો થઈ રહ્યો છે",
+                  "સ્થિર",
+                  "નહિવત"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "એમએસએમઈ ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું રક્ષણાત્મક ટેકનિકલ ટેક્સટાઇલ્સમાં વિસ્તરણનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમને ટેકનિકલ ટેક્સટાઇલ મશીનરી અપગ્રેડ માટે ટર્મ લોનની પૂછપરછ મળી છે?",
+                "options": [
+                  "હા, અનેક પૂછપરછ",
+                  "ઓછી પૂછપરછ",
+                  "એકપણ નહીં"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "694aea903d0a": {
@@ -9955,6 +10224,301 @@
                   "કોઈ વિનંતી નથી",
                   "સામાન્ય પૂછપરછ",
                   "EMI મોકૂફી માટે અનેક વિનંતીઓ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "af8a29b318b7": {
+      "no_poll": false,
+      "hypothesis": "Labor walkouts in Surat embroidery units are disrupting shift operations, leading to capacity under-utilization and potential machine loan EMI defaults.",
+      "event_phrase": "deepening embroidery labor dispute and walkouts",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Embroidery job-work unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your machine utilization changed in the last 2-4 weeks due to labor availability?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "supports_if": "lower utilization confirms production disruption",
+              "contradicts_if": "higher utilization shows no impact"
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How are your turnaround times for completing client orders compared to last month?",
+              "options": [
+                "Much slower",
+                "Slower",
+                "Same",
+                "Faster",
+                "Much faster"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much slower",
+                "Slower"
+              ],
+              "contradicts": [
+                "Faster",
+                "Much faster",
+                "Same"
+              ],
+              "supports_if": "slower turnaround confirms labor shortage",
+              "contradicts_if": "normal speed shows no disruption"
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Embroidery machine operator / shift worker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "What are you observing regarding wage rates and shift availability in embroidery units?",
+              "options": [
+                "Wages rising due to labor shortage",
+                "Shifts idle due to disputes",
+                "Normal wages and stable shifts",
+                "Workers leaving for other sectors"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Shifts idle due to disputes",
+                "Workers leaving for other sectors"
+              ],
+              "contradicts": [
+                "Normal wages and stable shifts"
+              ],
+              "supports_if": "idle shifts or migration confirm dispute impact",
+              "contradicts_if": "normal conditions disprove disruption"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME branch credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you received requests for EMI moratoriums or restructuring from embroidery loan borrowers?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "restructuring requests indicate financial stress",
+              "contradicts_if": "no requests indicate stable repayment"
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed any early-stage (SMA-0/SMA-1) loan delinquencies among embroidery units?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "delinquencies confirm cash flow stress from lost production",
+              "contradicts_if": "no delinquencies show healthy servicing"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "કમ્પ્યુટરાઇઝ્ડ એમ્બ્રોઇડરી યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં મજૂરોની ઉપલબ્ધતાને કારણે તમારા મશીનનો ઉપયોગ કેટલો બદલાયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારા ક્લાયન્ટના ઓર્ડર પૂરા કરવાનો સમય કેટલો બદલાયો છે?",
+                "options": [
+                  "ઘણો પાછળ / ધીમો",
+                  "ધીમો",
+                  "સમાન",
+                  "ઝડપી",
+                  "ઘણો ઝડપી"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર / શિફ્ટ કામદાર",
+            "questions": {
+              "labour.q1": {
+                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "તમે એમ્બ્રોઇડરી યુનિટ્સમાં મજૂરી અને શિફ્ટની ઉપલબ્ધતા વિશે શું નોંધી રહ્યા છો?",
+                "options": [
+                  "મજૂરોની અછતને કારણે મજૂરી વધી રહી છે",
+                  "વિવાદોને કારણે શિફ્ટ બંધ રહી છે",
+                  "ಸಾಮಾન્ય મજૂરી અને સ્થિર શિફ્ટ",
+                  "કામદારો અન્ય ક્ષેત્રોમાં જઈ રહ્યા છે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "એમએસએમઇ શાખા ધિરાણ અધિકારી",
+            "questions": {
+              "banker.q1": {
+                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમને એમ્બ્રોઇડરી લોન લેનારાઓ તરફથી EMI મોરેટોરિયમ અથવા રીસ્ટ્રક્ચરિંગ માટે અરજીઓ મળી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે એમ્બ્રોઇડરી યુનિટ્સમાં લોન ચૂકવણીમાં પ્રારંભિક વિલંબ (SMA-0/SMA-1) નોંધ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }
@@ -14911,6 +15475,242 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "af6d72aecf71": {
+      "no_poll": false,
+      "hypothesis": "Unresolved wage disputes in Surat embroidery units are causing intermittent labor absenteeism and cash flow strain without formal closures.",
+      "event_phrase": "call-off of embroidery workers' protest with unresolved wage disputes",
+      "roles": [
+        {
+          "role": "labour",
+          "label": "Embroidery machine operator / contractor",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported call-off of embroidery workers' protest with unresolved wage disputes accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "Accurate",
+              "contradicts_if": "Overstated"
+            },
+            {
+              "id": "labour.q2",
+              "type": "scale5",
+              "text": "How is worker attendance compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Lower",
+              "contradicts_if": "Higher"
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Embroidery job-work unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported call-off of embroidery workers' protest with unresolved wage disputes accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "Accurate",
+              "contradicts_if": "Overstated"
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How are machine utilization rates compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Lower",
+              "contradicts_if": "Higher"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME branch credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported call-off of embroidery workers' protest with unresolved wage disputes accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "Accurate",
+              "contradicts_if": "Not seeing it"
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you seen an increase in machine loan installment delays from embroidery units?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Yes",
+              "contradicts_if": "No"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "labour": {
+            "label": "કઢાઈ મશીન ઓપરેટર / ઠેકેદાર",
+            "questions": {
+              "labour.q1": {
+                "text": "તમારા વિસ્તારમાં વણઉકેલાયેલા વેતન વિવાદ છતાં કામદારો કામ પર પાછા ફરી રહ્યા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં કામદારોની હાજરી કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "કઢાઈ જોબ-વર્ક યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું વણઉકેલાયેલા વેતન વિવાદ સાથે વિરોધ પ્રદર્શન સમાપ્ત થયાના સમાચાર તમારા યુનિટ માટે સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં મશીનનો ઉપયોગ કેવો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "MSME શાખા ધ્ધારા ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમે મજૂર અને વેતનની સમસ્યાઓના કારણે કઢાઈ ખાતાઓમાં રોકડ પ્રવાહનું દબાણ જોઈ રહ્યા છો?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું કઢાઈ યુનિટો તરફથી મશીન લોનના હપ્તા ચૂકવવામાં વિલંબ વધતો જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોવા મળ્યું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "5842e5fc4b2e": {
       "no_poll": false,
       "hypothesis": "Centre's credit focus has led to improved bank credit availability or inquiries for Surat MMF and weaving units.",
@@ -17824,6 +18624,308 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "42f213076cef": {
+      "no_poll": false,
+      "hypothesis": "Surging Section 138 cases and cheque bounces among domestic tile dealers are severely tightening trade liquidity and working capital realisation for ceramic manufacturers.",
+      "event_phrase": "rise in cheque bounce cases against tile traders",
+      "roles": [
+        {
+          "role": "banker",
+          "label": "Ceramic Cluster Branch Manager",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in cheque bounce cases against tile traders accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has the frequency of cheque or ECS returns in CC accounts of domestic tile dealers changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "scale5",
+              "text": "How has the incidence of SMA-0 or SMA-1 slippages among domestic trade borrowers changed?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Ceramic Tile Manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in legal disputes over bounced cheques from tile dealers accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have domestic trade receivable collection periods from tile dealers changed over the last 2-4 weeks?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Same",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Much shorter",
+                "Shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you tightened credit terms or demanded advance payments from domestic dealers due to payment defaults?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Domestic Tile Dealer / Intermediary",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported strict legal action on bounced cheques for tile trade transactions accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How difficult is it to secure unsecured trade credit from tile manufacturing units currently?",
+              "options": [
+                "Much easier",
+                "Easiest",
+                "Same",
+                "Harder",
+                "Much harder"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Harder",
+                "Much harder"
+              ],
+              "contradicts": [
+                "Much easier",
+                "Easiest"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "banker": {
+            "label": "સર્વેમિક ક્લસ્ટર બ્રાન્ચ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું ટાઇલ વેપારીઓ સામે ચેક બાઉન્સ કેસમાં થયેલો વધારો તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સ્થાનિક ટાઇલ ડીલરોના સીસી ખાતામાં ચેક અથવા ઇસીએસ રિટર્નની આવૃત્તિ કેવી રહી છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "સ્થાનિક વેપાર ધિરાણકર્તાઓમાં એસએમએ-૦ અથવા એસએમએ-૧ (SMA) થવાના બનાવોમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "સેરેમિક ટાઇલ ઉત્પાદક",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું ટાઇલ ડીલરોના બાઉન્સ થયેલા ચેકો પર કાનૂની વિવાદો વધ્યા હોવાની વાત સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં ટાઇલ ડીલરો પાસેથી વેપાર બાકી લેણાં (રિસીવેબલ્સ) વસૂલવાનો સમયગાળો કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ટૂંકો",
+                  "ટૂંકો",
+                  "સમાન",
+                  "લાંબો",
+                  "ઘણો લાંબો"
+                ]
+              },
+              "supplier.q3": {
+                "text": "શું ચૂકવણીના ડિફોલ્ટને કારણે તમે સ્થાનિક ડીલરોને ક્રેડિટ શરતો કડક બનાવી છે અથવા અગાઉથી પેમેન્ટ માંગ્યું છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "સ્થાનિક ટાઇલ ડીલર / વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું ટાઇલ વેપારમાં ચેક બાઉન્સ અંગે કડક કાનૂની કાર્યવાહી થવાની હકીકત સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "સેરેમિક ઉત્પાદકો પાસેથી વિના સિક્યોરિટીનું ટ્રેડ ક્રેડિટ મેળવવું હાલ કેટલું મુશ્કેલ બન્યું છે?",
+                "options": [
+                  "ઘણું સરળ",
+                  "સરળ",
+                  "સમાન",
+                  "કઠિન",
+                  "ઘણું કઠિન"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "896694f4c688": {
       "no_poll": false,
       "hypothesis": "A fire at Regent Textile Market causes temporary trading suspension, stock damage, and payment-chain friction for traders.",
@@ -18966,6 +20068,445 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "c6c6a9e285de": {
+      "no_poll": false,
+      "hypothesis": "Surat weavers are facing severe input-cost pressure from rising yarn prices, leading to margin compression, increased working capital utilization, and delayed realizations from grey-fabric buyers.",
+      "event_phrase": "surge in yarn prices",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet / powerloom weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your operating margins moved in the last 2-4 weeks due to yarn costs?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How difficult has it been to pass on yarn price hikes to grey-fabric buyers?",
+              "options": [
+                "Very easy",
+                "Easy",
+                "Moderate",
+                "Difficult",
+                "Very difficult"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Difficult",
+                "Very difficult"
+              ],
+              "contradicts": [
+                "Very easy",
+                "Easy"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "POY / FDY yarn supplier",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How are yarn sales volumes compared to the previous month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What credit terms are weavers currently demanding for yarn purchases?",
+              "options": [
+                "Mostly advance / cash",
+                "Standard credit days",
+                "Extended credit days requested"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Extended credit days requested"
+              ],
+              "contradicts": [
+                "Mostly advance / cash"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Ring Road grey-fabric trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How have grey-fabric purchase prices moved in response to yarn hikes?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Same",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q3",
+              "type": "scale5",
+              "text": "How are your payment delays to weaving units currently trending?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Unchanged",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Shorter",
+                "Much shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat textile credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How is CC/OD limit utilization trending among weaving borrowers?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Stable",
+                "Higher",
+                "Near limit / exceeded"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Near limit / exceeded"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed an increase in stock-statement delays from weaving units?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "וואטער-דזשעט / પાવરલૂમ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ શું યાર્ਨના ભાવમાં થયેલો વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં યાર્ન ખર્ચને કારણે તમારા ઓપરેટિંગ માર્જિનમાં કેવી અસર થઈ છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગ્રે-ફેબ્રિક ખરીદદારો પર યાર્ન ભાવ વધારો આગળ વધારવો કેટલો મુશ્કેલ બન્યો છે?",
+                "options": [
+                  "ખૂબ જ સરળ",
+                  "સરળ",
+                  "મધ્યમ",
+                  "મુશ્કેલ",
+                  "ખૂબ જ મુશ્કેલ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "POY / FDY યાર્ન સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ શું યાર્નના ભાવમાં થયેલો વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "પાછલા મહિનાની સરખામણીમાં યાર્નનું વેચાણ કેવું રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધારે"
+                ]
+              },
+              "supplier.q3": {
+                "text": "વીવર્સ દ્વારા યાર્ન ખરીદી માટે હાલમાં કેવા પ્રકારની ક્રેડિટની માંગ કરવામાં આવી રહી છે?",
+                "options": [
+                  "મોટાભાગે અગાઉથી ચૂકવણી / રોકડ",
+                  "ધોરણ મુજબ ક્રેડિટ દિવસો",
+                  "લાંબા ક્રેડિટ દિવસોની માંગ"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "રિંગ રોડ ગ્રે-ફેબ્રિક વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "તમારા અનુભવ મુજબ શું યાર્નના ભાવમાં થયેલો વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "યાર્ન વધારાના જવાબમાં ગ્રે-ફેબ્રિક ખરીદીના ભાવ કેવી રીતે બદલાયા છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણા વધારે"
+                ]
+              },
+              "buyer.q3": {
+                "text": "વીવિંગ યુનિટ્સને ચૂકવણી કરવામાં થતો વિલંબ હાલમાં કેવો ચાલી રહ્યો છે?",
+                "options": [
+                  "ઘણો ટૂંકો",
+                  "ટૂંકો",
+                  "યથાવત",
+                  "લાંબો",
+                  "ઘણો લાંબો"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ટેક્સટાઈલ ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ શું યાર્નના ભાવમાં થયેલો વધારો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "વીવિંગ ધિરાણકારોમાં CC/OD મર્યાદાનો ઉપયોગ કેવી રીતે બદલાઈ રહ્યો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સ્થિર",
+                  "વધુ",
+                  "મર્યાદાની નજીક / ઓળંગી ગયું"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું વીવિંગ યુનિટ્સ તરફથી સ્ટોક-સ્ટેટમેન્ટ સબમિટ કરવામાં વિલંબ વધ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "14eff35c70ba": {
       "no_poll": true,
       "reason": "The headline and summary are too vague ('looming worries') with no specific operational or financial event mentioned, making it impossible to frame observable ground-level questions.",
@@ -19803,339 +21344,6 @@
         }
       },
       "model": "gemini:gemini-3.8-flash",
-      "prompt_version": "poll-v1"
-    },
-    "85b969a3862c": {
-      "no_poll": false,
-      "hypothesis": "Varmora's IPO plan reflects strong equity backing and expansion intent among organized Morbi tile makers, potentially impacting competitor pricing and supplier credit terms.",
-      "event_phrase": "Varmora's IPO plan for its premium tile business",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Premium tile manufacturer",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported Varmora IPO plan accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your capital expenditure or capacity expansion plan changed in the last 4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How are your finished goods inventory levels compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Morbi industrial branch banker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Varmora IPO plan accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you seen requests for term loan restructuring or debt de-leveraging among tile units?",
-              "options": [
-                "Yes, increase",
-                "No change",
-                "Yes, decrease",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes, decrease"
-              ],
-              "contradicts": [
-                "Yes, increase"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "How is working capital (CC/OD) limit utilization trending among large tile makers?",
-              "options": [
-                "Near limit (>85%)",
-                "Moderate (50-85%)",
-                "Low (<50%)",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Low (<50%)"
-              ],
-              "contradicts": [
-                "Near limit (>85%)"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Glaze and raw material supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported Varmora IPO plan accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How are payment collection days from large tile manufacturers changing?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Much shorter",
-                "Shorter"
-              ],
-              "contradicts": [
-                "Longer",
-                "Much longer"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q3",
-              "type": "scale5",
-              "text": "How is material offtake by major tile plants compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "પ્રીમિયમ ટાઇલ ઉત્પાદક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું વર્મોરાના IPO પ્લાન અંગેના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 4 અઠવાડિયામાં તમારા મૂડી ખર્ચ અથવા ક્ષમતા વિસ્તરણ યોજનામાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગયા મહિનાની સરખામણીમાં તમારી તૈયાર માલની ઇન્વેન્ટરી સ્તર કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "મોરબી ઔદ્યોગિક શાખા બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું વર્મોરાના IPO પ્લાન અંગેના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે ટાઇલ યુનિટ્સમાં ટર્મ લોન રીસ્ટ્રક્ચરિંગ અથવા દેવું ઘટાડવાની વિનંતીઓ જોઈ છે?",
-                "options": [
-                  "હા, વધારો",
-                  "કોઈ ફેરફાર નહીં",
-                  "હા, ઘટાડો",
-                  "જોવા મળ્યું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "મોટા ટાઇલ ઉત્પાદકોમાં વર્કિંગ કેપિટલ (CC/OD) મર્યાદાનો ઉપયોગ કેવો છે?",
-                "options": [
-                  "મર્યાદાની નજીક (>85%)",
-                  "મધ્યમ (50-85%)",
-                  "ઓછું (<50%)",
-                  "જોવા મળ્યું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ગ્લેઝ અને કાચા માલના સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું વર્મોરાના IPO પ્લાન અંગેના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "મોટા ટાઇલ ઉત્પાદકો પાસેથી પેમેન્ટ કલેક્શનના દિવસોમાં કેવી ફેરફાર થઈ રહ્યો છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              },
-              "supplier.q3": {
-                "text": "ગયા મહિનાની સરખામણીમાં મોટા ટાઇલ પ્લાન્ટ્સ દ્વારા માલનું ઉપાડ કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "0c67408f7595": {
@@ -21911,6 +23119,339 @@
                   "એ જ",
                   "વધુ",
                   "ઘણો વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "262f92dfbd6c": {
+      "no_poll": false,
+      "hypothesis": "R&B Denims' Rs 25 cr polyester yarn investment in Surat is increasing local synthetic yarn supply competition and prompting local weavers to evaluate backward integration or local sourcing.",
+      "event_phrase": "R&B Denims investing Rs 25 crore in polyester yarn production in Surat",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet / air-jet weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported R&B Denims investing Rs 25 crore in polyester yarn production in Surat accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have local synthetic yarn quotation quotes moved in the past 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your current working capital utilisation compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / texturiser",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported R&B Denims investing Rs 25 crore in polyester yarn production in Surat accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How are your POY/FDY sales volumes compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "scale5",
+              "text": "How are your trade credit days demanded by weavers moving?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Same",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Much shorter",
+                "Shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Textile Cluster Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported R&B Denims investing Rs 25 crore in polyester yarn production in Surat accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "What is the trend in term loan or capex credit enhancements from local synthetic yarn units?",
+              "options": [
+                "Rising",
+                "Stable",
+                "Declining",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Rising"
+              ],
+              "contradicts": [
+                "Declining"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "How are CC/OD limit utilisations trending among your weaving and spinning borrowers?",
+              "options": [
+                "Near limits",
+                "Moderate",
+                "Low",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near limits"
+              ],
+              "contradicts": [
+                "Low"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ / એર-જેટ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ સુરતમાં પોલિએસ્ટર યાર્ન ઉત્પાદનમાં R&B ડેનિમ્સ દ્વારા રૂ. 25 કરોડના રોકાણનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સ્થાનિક સિન્થેટિક યાર્નના ભાવ કેવા રહ્યા છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સરખા",
+                  "વધુ",
+                  "ઘણા વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારો વર્તમાન વર્કિંગ કેપિટલ વપરાશ કેવો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સચરરાઇઝર",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ સુરતમાં પોલિએસ્ટર યાર્ન ઉત્પાદનમાં R&B ડેનિમ્સ દ્વારા રૂ. 25 કરોડના રોકાણનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારા POY/FDY વેચાણ વોલ્યુમ કેવું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "વીવર્સ દ્વારા કેટલા ક્રેડિટ દિવસોની માંગણી કરવામાં આવી રહી છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સરખા",
+                  "વધુ",
+                  "ઘણા વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ટેક્સટાઇલ ક્લસ્ટર બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ સુરતમાં પોલિએસ્ટર યાર્ન ઉત્પાદનમાં R&B ડેનિમ્સ દ્વારા રૂ. 25 કરોડના રોકાણનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "સ્થાનિક સિન્થેટિક યાર્ન એકમો તરફથી ટર્મ લોન અથવા કેપેક્સ ક્રેડિટની માંગમાં શું વલણ છે?",
+                "options": [
+                  "વધી રહી છે",
+                  "સ્થિર",
+                  "ઘટી રહી છે",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "તમારા વીવિંગ અને સ્પિનિંગ ગ્રાહકોમાં CC/OD મર્યાદાનો વપરાશ કેવો છે?",
+                "options": [
+                  "મર્યાદાની નજીક",
+                  "મધ્યમ",
+                  "ઓછો",
+                  "જોયું નથી"
                 ]
               }
             }
