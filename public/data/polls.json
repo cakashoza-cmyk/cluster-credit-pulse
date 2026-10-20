@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T04:58:14.904Z",
+  "generated_at": "2026-10-20T10:13:06.972Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 95,
-    "with_poll": 91,
+    "cards": 97,
+    "with_poll": 93,
     "no_poll": 4,
     "pending": 0
   },
@@ -9363,10 +9363,10 @@
       "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
-    "694aea903d0a": {
+    "7b427b07fc25": {
       "no_poll": false,
-      "hypothesis": "Increased domestic bridal demand for larger lab-grown diamonds is boosting order books and sales realizations for Surat LGD growers and polishers.",
-      "event_phrase": "surge in domestic bridal demand for larger lab-grown diamonds",
+      "hypothesis": "Shift in bridal preference toward larger lab-grown diamonds is driving higher order books and realizations for Surat's LGD growers and polishers.",
+      "event_phrase": "shift in bridal demand toward larger lab-grown diamond pieces",
       "roles": [
         {
           "role": "operator",
@@ -9376,7 +9376,7 @@
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported surge in domestic bridal demand for larger lab-grown diamonds accurate in your experience?",
+              "text": "Is the reported shift in bridal demand toward larger lab-grown diamond pieces accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -9392,13 +9392,13 @@
                 "Overstated",
                 "Not seeing it"
               ],
-              "supports_if": "Ground evidence confirms strong or understated domestic demand for large LGDs.",
-              "contradicts_if": "Ground evidence shows demand is overstated or non-existent."
+              "supports_if": "",
+              "contradicts_if": ""
             },
             {
               "id": "operator.q2",
               "type": "scale5",
-              "text": "How have your order volumes for large-carat LGDs (2ct+) changed compared to last month?",
+              "text": "How have your order volumes for lab-grown diamonds above 2 carats moved in the last month?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -9412,47 +9412,46 @@
                 "Much higher"
               ],
               "contradicts": [
-                "Much lower",
-                "Lower"
+                "Lower",
+                "Much lower"
               ],
-              "supports_if": "Order volumes for large-carat LGDs are rising.",
-              "contradicts_if": "Order volumes for large-carat LGDs are falling."
+              "supports_if": "",
+              "contradicts_if": ""
             },
             {
               "id": "operator.q3",
               "type": "scale5",
-              "text": "How have domestic selling prices (realizations) for polished LGDs moved over the last 4 weeks?",
+              "text": "How have per-carat realizations for your larger lab-grown stones changed recently?",
               "options": [
-                "Sharply lower",
+                "Much lower",
                 "Lower",
-                "Stable",
+                "Same",
                 "Higher",
-                "Sharply higher"
+                "Much higher"
               ],
               "mechanism": "realisation",
               "supports": [
-                "Stable",
                 "Higher",
-                "Sharply higher"
+                "Much higher"
               ],
               "contradicts": [
-                "Sharply lower",
-                "Lower"
+                "Lower",
+                "Much lower"
               ],
-              "supports_if": "Realizations are holding stable or increasing despite supply.",
-              "contradicts_if": "Realizations are dropping due to oversupply or weak demand."
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         },
         {
-          "role": "buyer",
-          "label": "LGD trader / jewelry wholesaler",
-          "proximity": 3,
+          "role": "supplier",
+          "label": "Rough LGD / HPHT machine supplier",
+          "proximity": 2,
           "questions": [
             {
-              "id": "buyer.q1",
+              "id": "supplier.q1",
               "type": "accuracy",
-              "text": "Is the reported surge in domestic bridal demand for larger lab-grown diamonds accurate in your experience?",
+              "text": "Is the reported shift in bridal demand toward larger lab-grown diamond pieces accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -9468,13 +9467,13 @@
                 "Overstated",
                 "Not seeing it"
               ],
-              "supports_if": "Wholesalers confirm strong domestic retail demand for large LGDs.",
-              "contradicts_if": "Wholesalers report slow off-take or overstatement of retail trends."
+              "supports_if": "",
+              "contradicts_if": ""
             },
             {
-              "id": "buyer.q2",
+              "id": "supplier.q2",
               "type": "scale5",
-              "text": "How has retail buyer off-take for large-carat LGD bridal jewelry moved in the past 2-4 weeks?",
+              "text": "How is the demand for rough lab-grown stones or reactor inputs for larger sizes compared to last month?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -9488,30 +9487,30 @@
                 "Much higher"
               ],
               "contradicts": [
-                "Much lower",
-                "Lower"
+                "Lower",
+                "Much lower"
               ],
-              "supports_if": "Retail off-take for large LGD bridal pieces is growing.",
-              "contradicts_if": "Retail off-take is flat or declining."
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         },
         {
           "role": "banker",
-          "label": "Diamond cluster credit officer",
+          "label": "Surat diamond cluster banker",
           "proximity": 2,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported surge in domestic bridal demand for larger lab-grown diamonds accurate in your experience?",
+              "text": "Is the reported shift in bridal demand toward larger lab-grown diamond pieces accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
                 "Understated",
                 "Not seeing it"
               ],
-              "mechanism": "volume",
+              "mechanism": "wc_utilisation",
               "supports": [
                 "Accurate",
                 "Understated"
@@ -9520,30 +9519,27 @@
                 "Overstated",
                 "Not seeing it"
               ],
-              "supports_if": "LGD borrower feedback aligns with reported bridal demand growth.",
-              "contradicts_if": "LGD borrowers report soft demand and high inventory."
+              "supports_if": "",
+              "contradicts_if": ""
             },
             {
               "id": "banker.q2",
               "type": "choice",
-              "text": "What is the primary trend in working capital (CC/OD) utilization among LGD manufacturing borrowers?",
+              "text": "How are working capital limits behaving among LGD borrowing accounts this month?",
               "options": [
-                "Near limit due to inventory build-up",
-                "Normal / aligned with seasonal sales",
-                "Lower due to rapid sales turnover",
-                "Increased defaults / SMA slippage"
+                "Increased utilization / limit enhancement requests",
+                "Stable utilization",
+                "Reduced utilization / surplus liquidity"
               ],
               "mechanism": "wc_utilisation",
               "supports": [
-                "Normal / aligned with seasonal sales",
-                "Lower due to rapid sales turnover"
+                "Increased utilization / limit enhancement requests"
               ],
               "contradicts": [
-                "Near limit due to inventory build-up",
-                "Increased defaults / SMA slippage"
+                "Reduced utilization / surplus liquidity"
               ],
-              "supports_if": "WC utilization is healthy and backed by fast inventory turnover.",
-              "contradicts_if": "WC is stretched due to unsold stock accumulation."
+              "supports_if": "",
+              "contradicts_if": ""
             }
           ]
         }
@@ -9552,10 +9548,10 @@
         "lang": "gu",
         "roles": {
           "operator": {
-            "label": "LGD ઉત્પાદક / પોલિશર",
+            "label": "LGD ઉત્પાદક / પોલીషર",
             "questions": {
               "operator.q1": {
-                "text": "શું મોટા લેબ-ગ્રોન ડાયમંડની સ્થાનિક લગ્નસરાની માંગમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "text": "તમારા અનુભવ મુજબ મોટા લેબ-ગ્રોન ડાયમંડ દાગીના તરફ ભારતીય દુલ્હનોની પસંદગીનો અહેવાલ કેટલો સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -9564,32 +9560,32 @@
                 ]
               },
               "operator.q2": {
-                "text": "છેલ્લા મહિનાની સરખામણીમાં મોટા કેરેટ (2ct+) LGDs માટે તમારા ઓર્ડર વોલ્યુમમાં શું ફેરફાર થયો છે?",
+                "text": "છેલ્લા મહિનામાં 2 કેરેટથી મોટા લેબ-ગ્રોન હીરાના તમારા ઓર્ડર વોલ્યુમમાં કેવો ફેરફાર થયો છે?",
                 "options": [
                   "ઘણું ઓછું",
                   "ઓછું",
-                  "સમાન",
-                  "વધારે",
+                  "એ જ",
+                  "વધુ",
                   "ઘણું વધારે"
                 ]
               },
               "operator.q3": {
-                "text": "છેલ્લા 4 અઠવાડિયામાં પોલિશ્ડ LGDs માટે સ્થાનિક વેચાણ કિંમતો (રિયલાઈઝેશન) કેવી રહી છે?",
+                "text": "તમારા મોટા લેબ-ગ્રોન સ્ટોન્સ માટે પ્રતિ કેરેટ કિંમત તાજેતરમાં કેવી રહી છે?",
                 "options": [
-                  "તીવ્ર ઘટાડો",
-                  "ઘટાડો",
-                  "સ્થિર",
-                  "વધારો",
-                  "તીવ્ર વધારો"
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણું વધારે"
                 ]
               }
             }
           },
-          "buyer": {
-            "label": "LGD વેપારી / જ્વેલરી હોલસેલર",
+          "supplier": {
+            "label": "રફ LGD / મશીન સપ્લાયર",
             "questions": {
-              "buyer.q1": {
-                "text": "શું મોટા લેબ-ગ્રોન ડાયમંડની સ્થાનિક લગ્નસરાની માંગમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ મોટા લેબ-ગ્રોન ડાયમંડ દાગીના તરફ ભારતીય દુલ્હનોની પસંદગીનો અહેવાલ કેટલો સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -9597,23 +9593,23 @@
                   "મને દેખાતું નથી"
                 ]
               },
-              "buyer.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં મોટા કેરેટ LGD બ્રાઇડલ જ્વેલરીની રિટેલ ખરીદી (ઓફ-ટેક) કેવી રહી છે?",
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં મોટા કદના રફ LGD ની માંગ કેવી છે?",
                 "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સમાન",
-                  "વધારે",
-                  "ઘણી વધારે"
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણું વધારે"
                 ]
               }
             }
           },
           "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ ઓફિસર",
+            "label": "સુરત ડાયમંડ ક્લસ્ટર બેંકર",
             "questions": {
               "banker.q1": {
-                "text": "શું મોટા લેબ-ગ્રોન ડાયમંડની સ્થાનિક લગ્નસરાની માંગમાં વધારાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "text": "તમારા અનુભવ મુજબ મોટા લેબ-ગ્રોન ડાયમંડ દાગીના તરફ ભારતીય દુલ્હનોની પસંદગીનો અહેવાલ કેટલો સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -9622,19 +9618,18 @@
                 ]
               },
               "banker.q2": {
-                "text": "LGD ઉત્પાદક લોનધારકોમાં વર્કિંગ કેપિટલ (CC/OD) નો વપરાશ મુખ્યત્વે કેવો જોવા મળે છે?",
+                "text": "આ મહિને LGD ધિરાણ ખાતાઓમાં વર્કિંગ કેપિટલ મર્યાદાઓ કેવી રીતે વર્તી રહી છે?",
                 "options": [
-                  "માલ ભરાઈ રહેવાને કારણે લિમિટની નજીક",
-                  "સામાન્ય / મોસમી વેચાણને અનુરૂપ",
-                  "ઝડપી વેચાણને કારણે ઓછો વપરાશ",
-                  "વધતા ડિફોલ્ટ / SMA સ્લિપેજ"
+                  "વધુ વપરાશ / મર્યાદા વધારવાની વિનંતીઓ",
+                  "સ્થિર વપરાશ",
+                  "ઘટાડો / સરપ્લસ લિક્વિડિટી"
                 ]
               }
             }
           }
         }
       },
-      "model": "gemini:gemini-3.5-flash",
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "29331b975c9e": {
@@ -21508,6 +21503,308 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "a5bfa15921ea": {
+      "no_poll": false,
+      "hypothesis": "The opening of the world's largest LGD jewelry showroom in Surat drives strong domestic retail offtake, increasing working capital utilization and POS transaction volumes for LGD manufacturers and polishers.",
+      "event_phrase": "opening of the world's largest LGD jewelry showroom in Surat",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "LGD jewelry manufacturer / polisher",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported opening of the world's largest LGD jewelry showroom in Surat accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your retail orders or domestic dispatch volumes changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your finished goods inventory movement compared to last month?",
+              "options": [
+                "Much slower",
+                "Slower",
+                "Same",
+                "Faster",
+                "Much faster"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Faster",
+                "Much faster"
+              ],
+              "contradicts": [
+                "Slower",
+                "Much slower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Banker handling diamond and LGD accounts",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported opening of the world's largest LGD jewelry showroom in Surat accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have POS terminal credit transactions or retail merchant collections moved for your LGD clients?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Stable",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "What is the recent trend in CC/OD utilization for LGD manufacturers?",
+              "options": [
+                "Decreasing",
+                "Stable",
+                "Increasing near limit"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Increasing near limit"
+              ],
+              "contradicts": [
+                "Decreasing"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Rough LGD / machinery supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported opening of the world's largest LGD jewelry showroom in Surat accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has the demand for rough LGD or processing supplies changed from local polishers?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એલજીડી જ્વેલરી ઉત્પાદક / પૉલિશર",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ સુરતમાં વિશ્વના સૌથી મોટા એલજીડી જ્વેલરી શોરૂમના ઉદ્ઘાટનનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા રિટેલ ઓર્ડર અથવા સ્થાનિક ડિસ્પેચ વોલ્યુમમાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારી તૈયાર માલની ઇન્વેન્ટરીની અવરજવર કેવી છે?",
+                "options": [
+                  "ઘણીધીમી",
+                  "ધીમી",
+                  "સરખી",
+                  "ઝડપી",
+                  "ઘણી ઝડપી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ડાયમંડ અને એલજીડી ખાતાં સંભાળતા બેન્કર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ સુરતમાં વિશ્વના સૌથી મોટા એલજીડી જ્વેલરી શોરૂમના ઉદ્ઘાટનનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "તમારા એલજીડી ગ્રાહકો માટે POS ટર્મિનલ ક્રેડિટ ટ્રાન્ઝેક્શન અથવા રિટેલ કલેクションમાં કેવી ગતિ રહી છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સ્થિર",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "એલજીડી ઉત્પાદકો માટે CC/OD મર્યાદાના ઉપયોગમાં તાજેતરનો ટ્રેન્ડ શું છે?",
+                "options": [
+                  "ઘટતો",
+                  "સ્થિર",
+                  "મર્યાદાની નજીક વધતો"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રફ એલજીડી / મશીનરી સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "તમારા અનુભવ મુજબ સુરતમાં વિશ્વના સૌથી મોટા એલજીડી જ્વેલરી શોરૂમના ઉદ્ઘાટનનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "સ્થાનિક પૉલિશર્સ તરફથી રફ એલજીડી અથવા પ્રોસેસિંગ સામગ્રીની માંગમાં કેવી ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "a9f65ab05890": {
       "no_poll": false,
       "hypothesis": "The commerce chamber's clarification that the 8-hour shift rule is not applicable should maintain stable shift operations, labor availability, and production schedules without triggering labor unrest or wage disputes in Surat's MMF textile ",
@@ -22804,6 +23101,199 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "c50407a387a7": {
+      "no_poll": false,
+      "hypothesis": "Surat textile traders are shifting from UPI to cash and cheques due to proposed UPI fees, reducing digital transaction transparency.",
+      "event_phrase": "proposed UPI fees and shift to cash/cheque settlements",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Ring Road textile market trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported proposed UPI fees and shift to cash/cheque settlements accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What is the primary payment mode used by your buyers in the last 2-4 weeks?",
+              "options": [
+                "Mostly UPI",
+                "Mixed UPI and Cash",
+                "Mostly Cash and Cheques"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Mostly Cash and Cheques"
+              ],
+              "contradicts": [
+                "Mostly UPI"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has the volume of cash transactions in your daily sales changed recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat commercial branch banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported proposed UPI fees and shift to cash/cheque settlements accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has the inflow of digital merchant collections in current accounts changed recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "રિંગ રોડ ટેક્સટાઇલ માર્કેટ વેપારી",
+            "questions": {
+              "operator.q1": {
+                "text": "શું સૂચિત UPI ફીને કારણે ટેક્સટાઇલ વેપારીઓ UPI થી રોકડ અથવા ચેક તરફ ખસી રહ્યા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા ખરીદદારો દ્વારા કઈ મુખ્ય ચુકવણી પદ્ધતિનો ઉપયોગ કરવામાં આવ્યો છે?",
+                "options": [
+                  "મોટે ભાગે UPI",
+                  "મિશ્રિત UPI અને રોકડ",
+                  "મોટે ભાગે રોકડ અને ચેક"
+                ]
+              },
+              "operator.q3": {
+                "text": "તમારા દૈનિક વેચાણમાં રોકડ વ્યવહારોનું પ્રમાણ તાજેતરમાં કેવી રીતે બદલાયું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત કોમર્શિયલ બ્રાન્ચ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા ટેક્સટાઇલ વેપાર ગ્રાહકો સૂચિત UPI ફી સંબંધિત સમસ્યાઓ જણાવી રહ્યા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "ચાલુ ખાતાઓમાં ડિજિટલ મર્ચન્ટ કલેક્શનનો પ્રવાહ તાજેતરમાં કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "c06ee7e4da3c": {
       "no_poll": false,
       "hypothesis": "Labor friction and rejection of weekly off demands in highly leveraged embroidery units are causing operational disruptions and cash flow stress.",
@@ -23294,309 +23784,6 @@
                   "સરખું",
                   "વધુ",
                   "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "491e7cbba3b4": {
-      "no_poll": false,
-      "hypothesis": "Surat textile dealers shifting from digital UPI to cash and cheques due to proposed fees, widening collection cycles and reconciliation friction.",
-      "event_phrase": "removal of QR codes by Surat textile dealers over proposed UPI fees",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Working Capital Banker, Surat Ring Road",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported removal of QR codes by Surat textile dealers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How has debtor realization and cash/cheque deposit frequency changed in your textile borrower accounts?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "scale5",
-              "text": "How has the frequency of stock-statement and book-debt reconciliation delays been in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Textile Market Trader, Ring Road",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported removal of QR codes by Surat textile dealers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "choice",
-              "text": "What is your primary mode of settling invoices with suppliers currently?",
-              "options": [
-                "UPI / Digital",
-                "Cash",
-                "Cheque / NEFT"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Cash",
-                "Cheque / NEFT"
-              ],
-              "contradicts": [
-                "UPI / Digital"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q3",
-              "type": "scale5",
-              "text": "How has your payment processing time to suppliers changed over the last 2-4 weeks?",
-              "options": [
-                "Much faster",
-                "Faster",
-                "Same",
-                "Slower",
-                "Much slower"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Slower",
-                "Much slower"
-              ],
-              "contradicts": [
-                "Faster",
-                "Much faster"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Processing House / Dyeing Unit Owner",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported removal of QR codes by Surat textile dealers accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has the share of cash and cheque collections from your market buyers changed recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "વર્કિંગ કેપિટલ બેંકર, રિંગ રોડ, સુરત",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ વેપારીઓ દ્વારા યુપીઆઈ ફી સામે ક્યુઆર કોડ હટાવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "તમારા ટેક્સટાઇલ લોન ખાતાઓમાં દેવાદાર વસૂલાત અને રોકડ/ચેક જમા થવાની આવર્તનમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "એ જ રહેલ",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સ્ટોક-સ્ટેટમેન્ટ અને બુક-ડેબ્ટ રિકન્સિએશનમાં વિલંબની આવર્તન કેવી રહી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "એ જ રહેલ",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ટેક્સટાઇલ માર્કેટ વેપારી, રિંગ રોડ",
-            "questions": {
-              "buyer.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ વેપારીઓ દ્વારા યુપીઆઈ ફી સામે ક્યુઆર કોડ હટાવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "હાલમાં તમે સપ્લાયર્સ સાથે બિલ ચૂકવણી માટે કઈ પદ્ધતિનો મુખ્ય ઉપયોગ કરો છો?",
-                "options": [
-                  "યુપીઆઈ / ડિજિટલ",
-                  "રોકડ",
-                  "ચેક / એનઇએફટી"
-                ]
-              },
-              "buyer.q3": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સપ્લાયર્સને ચુકવણી કરવામાં તમારો સમય કેટલો બદલાયો છે?",
-                "options": [
-                  "ઘણો ઝડપી",
-                  "ઝડપી",
-                  "એ જ રહેલ",
-                  "ધીમો",
-                  "ઘણો ધીમો"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "પ્રોસેસિંગ હાઉસ / ડાઈંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરતના ટેક્સટાઇલ વેપારીઓ દ્વારા યુપીઆઈ ફી સામે ક્યુઆર કોડ હટાવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "તાજેતરમાં તમારા માર્કેટ ખરીદદારો પાસેથી રોકડ અને ચેક દ્વારા વસૂલાતનો હિસ્સો કેટલો બદલાયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "એ જ રહેલ",
-                  "વધુ",
-                  "ઘણો વધુ"
                 ]
               }
             }
@@ -24514,6 +24701,302 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "79dc2058ef39": {
+      "no_poll": false,
+      "hypothesis": "Surat diamond units are reducing Diwali shutdown days due to strong export order books and stable working capital.",
+      "event_phrase": "shortening of Diwali vacation in Surat diamond units",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Diamond unit owner / polisher",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What is the planned Diwali vacation duration for your unit this year?",
+              "options": [
+                "Under 10 days",
+                "10 to 20 days",
+                "More than 20 days",
+                "Not decided"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Under 10 days",
+                "10 to 20 days"
+              ],
+              "contradicts": [
+                "More than 20 days"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How does your current polished diamond order book compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Diamond cluster credit manager",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have diamond borrowers requested ad-hoc limits or CC holding-period extensions ahead of Diwali?",
+              "options": [
+                "Increased significantly",
+                "Increased marginally",
+                "No change",
+                "Decreased"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "No change",
+                "Decreased"
+              ],
+              "contradicts": [
+                "Increased significantly"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you observing any unusual SMA-0/1 slippages among diamond processing borrowers this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Diamond artisan / worker representative",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "scale5",
+              "text": "How are job-work wages or piece-rates for artisans trending this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "હીરા યુનિટના માલિક / પોલિશર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "આ વર્ષે તમારા યુનિટ માટે દિવાળી વેકેશનનું આયોજન કેટલા દિવસનું છે?",
+                "options": [
+                  "10 દિવસથી ઓછું",
+                  "10 થી 20 દિવસ",
+                  "20 દિવસથી વધુ",
+                  "નક્કી નથી થયું"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારા તૈયાર હીરાના ઓર્ડર બુકની સ્થિતિ કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધારે",
+                  "ઘણી વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું હીરા ઉદ્યોગના ધિરાણદારોએ દિવાળી પહેલા એડ-હોક લિમિટ અથવા CC હોલ્ડિંગ પિરિયડ વધારવાની વિનંતી કરી છે?",
+                "options": [
+                  "નોંધપાત્ર વધારો થયો છે",
+                  "સહેજ વધારો થયો છે",
+                  "કોઈ ફેરફાર નથી",
+                  "ઘટાડો થયો છે"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે આ મહિને હીરા પ્રોસેસિંગ કરજદારોમાં અસામાન્ય SMA-0/1 સ્લિપેજ જોઈ રહ્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "હીરા રત્નકલાકાર / કામદાર પ્રતિનિધિ",
+            "questions": {
+              "labour.q1": {
+                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "આ મહિને રત્નકલાકારોના જોબ-વર્ક વેતન કે પીસ-રેટનો ટ્રેન્ડ કેવો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "2b47ff4fa01a": {
