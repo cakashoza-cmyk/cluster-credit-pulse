@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T10:21:36.395Z",
+  "generated_at": "2026-10-22T15:24:20.072Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,12 +12,275 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 97,
-    "with_poll": 94,
+    "cards": 99,
+    "with_poll": 96,
     "no_poll": 3,
     "pending": 0
   },
   "polls": {
+    "8f729a2b282e": {
+      "no_poll": false,
+      "hypothesis": "Surat diamond unit default before Diwali is causing severe payment chain disruption and worker livelihood crisis",
+      "event_phrase": "Surat diamond unit default before Diwali",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Natural diamond polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported Surat diamond unit default before Diwali accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you experienced increased payment delays or defaults from your diamond buyers in the last 2-4 weeks?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has the availability of skilled diamond polishers/workers changed near Diwali?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Lower",
+                "Much lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Rough diamond broker / supplier",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported Surat diamond unit default before Diwali accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have credit days demanded by diamond polishing units changed in the last 2-4 weeks?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Same",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Shorter",
+                "Much shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Diamond cluster branch manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported Surat diamond unit default before Diwali accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you observed any cheque or ECS returns in diamond borrower accounts recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "કુદરતી હીરા પોલિશિંગ યુનિટના માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું દિવાળી પહેલા સુરતના હીરા એકમની ડિફaultની અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "શું તમે છેલ્લા ૨-૪ અઠવાડિયામાં તમારા હીરા ખરીદદારો પાસેથી ચુકવણીમાં વધુ વિલંબ કે ડિફault અનુભવ્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "દિવાળી નજીક કુશળ હીરા પાલીશ કરનારા કામદારોની ઉપલબ્ધતા કેવી રહી છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રફ હીરાના દલાલ / સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું દિવાળી પહેલા સુરતના હીરા એકમની ડિફaultની અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં હીરા પોલિશિંગ યુનિટ્સ દ્વારા ક્રેડિટના દિવસોની માંગણી કેવી રહી છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સરખા",
+                  "વધુ",
+                  "ઘણા વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું દિવાળી પહેલા સુરતના હીરા એકમની ડિફaultની અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તાજેતરમાં હીરા ધિરાણ ખાતાઓમાં ચેક કે ECS રિટર્ન જોવા મળ્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "7b1fa98f465f": {
       "no_poll": false,
       "hypothesis": "Propane price hike by Rs 7300/tonne compresses operating margins for propane-fired tile units, raising working capital limits and payment delays.",
@@ -25048,6 +25311,302 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "79dc2058ef39": {
+      "no_poll": false,
+      "hypothesis": "Surat diamond units are reducing Diwali shutdown days due to strong export order books and stable working capital.",
+      "event_phrase": "shortening of Diwali vacation in Surat diamond units",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Diamond unit owner / polisher",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What is the planned Diwali vacation duration for your unit this year?",
+              "options": [
+                "Under 10 days",
+                "10 to 20 days",
+                "More than 20 days",
+                "Not decided"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Under 10 days",
+                "10 to 20 days"
+              ],
+              "contradicts": [
+                "More than 20 days"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How does your current polished diamond order book compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Diamond cluster credit manager",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have diamond borrowers requested ad-hoc limits or CC holding-period extensions ahead of Diwali?",
+              "options": [
+                "Increased significantly",
+                "Increased marginally",
+                "No change",
+                "Decreased"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "No change",
+                "Decreased"
+              ],
+              "contradicts": [
+                "Increased significantly"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you observing any unusual SMA-0/1 slippages among diamond processing borrowers this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Diamond artisan / worker representative",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "scale5",
+              "text": "How are job-work wages or piece-rates for artisans trending this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "હીરા યુનિટના માલિક / પોલિશર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "આ વર્ષે તમારા યુનિટ માટે દિવાળી વેકેશનનું આયોજન કેટલા દિવસનું છે?",
+                "options": [
+                  "10 દિવસથી ઓછું",
+                  "10 થી 20 દિવસ",
+                  "20 દિવસથી વધુ",
+                  "નક્કી નથી થયું"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારા તૈયાર હીરાના ઓર્ડર બુકની સ્થિતિ કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધારે",
+                  "ઘણી વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું હીરા ઉદ્યોગના ધિરાણદારોએ દિવાળી પહેલા એડ-હોક લિમિટ અથવા CC હોલ્ડિંગ પિરિયડ વધારવાની વિનંતી કરી છે?",
+                "options": [
+                  "નોંધપાત્ર વધારો થયો છે",
+                  "સહેજ વધારો થયો છે",
+                  "કોઈ ફેરફાર નથી",
+                  "ઘટાડો થયો છે"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે આ મહિને હીરા પ્રોસેસિંગ કરજદારોમાં અસામાન્ય SMA-0/1 સ્લિપેજ જોઈ રહ્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "હીરા રત્નકલાકાર / કામદાર પ્રતિનિધિ",
+            "questions": {
+              "labour.q1": {
+                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "આ મહિને રત્નકલાકારોના જોબ-વર્ક વેતન કે પીસ-રેટનો ટ્રેન્ડ કેવો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "2b47ff4fa01a": {
