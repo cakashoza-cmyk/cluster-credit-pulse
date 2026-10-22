@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T15:24:20.072Z",
+  "generated_at": "2026-10-22T23:30:03.807Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 99,
-    "with_poll": 96,
+    "cards": 98,
+    "with_poll": 95,
     "no_poll": 3,
     "pending": 0
   },
@@ -5850,336 +5850,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "deeb73328534": {
-      "no_poll": false,
-      "hypothesis": "Navsari diamond units are facing severe demand slowdown and liquidity stress leading to factory closures and delayed artisan payments.",
-      "event_phrase": "slowdown and unit closures in Navsari diamond industry",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Diamond unit owner / Cutter",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported slowdown and unit closures in Navsari diamond industry accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How is your operating capacity compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "choice",
-              "text": "What is the current status of artisan (ratnakalakar) wage payments?",
-              "options": [
-                "Paid on time",
-                "Delayed by 1-2 weeks",
-                "Delayed by over a month / unpaid"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Delayed by over a month / unpaid"
-              ],
-              "contradicts": [
-                "Paid on time"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Diamond Cluster Branch Banker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported slowdown and unit closures in Navsari diamond industry accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you noticed any new SMA-0 or SMA-1 slippages in diamond accounts this month?",
-              "options": [
-                "No slippages",
-                "A few slippages",
-                "Widespread slippages"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Widespread slippages",
-                "A few slippages"
-              ],
-              "contradicts": [
-                "No slippages"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "scale5",
-              "text": "How is the CC/OD limit utilization in diamond accounts compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Rough Diamond / Chemical Supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported slowdown and unit closures in Navsari diamond industry accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How are your rough diamond sales to Navsari units compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q3",
-              "type": "scale5",
-              "text": "How are your payment collection days from Navsari buyers?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Longer",
-                "Much longer"
-              ],
-              "contradicts": [
-                "Shorter",
-                "Much shorter"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "ડાયમંડ યુનિટ માલિક / કટર",
-            "questions": {
-              "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ નવસારી હીરા ઉદ્યોગમાં મંદી અને યુનિટ બંધ થવાના અહેવાલો કેટલા સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારી ઓપરેટિંગ ક્ષમતા કેવી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સરખી",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "રત્નકલાકારોના પગારની ચુકવણીની વર્તમાન સ્થિતિ શું છે?",
-                "options": [
-                  "સમયસર ચુકવણી",
-                  "૧-૨ અઠવાડિયા મોડા",
-                  "એક મહિનાથી વધુ મોડા / બાકી"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ નવસારી હીરા ઉદ્યોગમાં મંદી અને યુનિટ બંધ થવાના અહેવાલો કેટલા સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે આ મહિને ડાયમંડ એકાઉન્ટ્સમાં કોઈ નવા SMA-0 કે SMA-1 સ્લિપજ નોંધ્યા છે?",
-                "options": [
-                  "કોઈ સ્લિપજ નથી",
-                  "થોડા સ્લિપજ",
-                  "મોટા પ્રમાણમાં સ્લિપજ"
-                ]
-              },
-              "banker.q3": {
-                "text": "ગત મહિનાની સરખામણીમાં ડાયમંડ એકાઉન્ટ્સમાં CC/OD મર્યાદાનો ઉપયોગ કેવો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "રફ ડાયમંડ / કેમિકલ સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "તમારા અનુભવ મુજબ નવસારી હીરા ઉદ્યોગમાં મંદી અને યુનિટ બંધ થવાના અહેવાલો કેટલા સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં નવસારી યુનિટ્સને તમારા રફ ડાયમંડનું વેચાણ કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "supplier.q3": {
-                "text": "નવસારીના ખરીદદારો પાસેથી નાણાં વસૂલાતના દિવસો કેવા છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સરખા",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "3b5a022a3b39": {
       "no_poll": false,
       "hypothesis": "The weavers' strike in Surat has caused an abrupt production halt, leading to severely reduced power consumption and immediate strain on working capital and loan repayments.",
@@ -6474,6 +6144,409 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "7d6389a1be88": {
+      "no_poll": false,
+      "hypothesis": "Severe demand slump is causing widespread early factory closures, liquidity stress, and reduced bank limit clearance in the Navsari-Surat diamond cluster.",
+      "event_phrase": "early diamond unit shutdowns in Navsari",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Diamond cutting & polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported early diamond unit shutdowns in Navsari accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How does your planned Diwali vacation duration this year compare to last year?",
+              "options": [
+                "Much longer",
+                "Longer",
+                "About the same",
+                "Shorter",
+                "Much shorter"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much longer",
+                "Longer"
+              ],
+              "contradicts": [
+                "Shorter",
+                "Much shorter"
+              ],
+              "supports_if": "Vacations are significantly prolonged due to lack of rough polishing demand.",
+              "contradicts_if": "Vacation durations are normal or shorter, indicating active processing."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "Compared to last month, polished diamond inventory holding levels are:",
+              "options": [
+                "Much higher",
+                "Higher",
+                "Same",
+                "Lower",
+                "Much lower"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Much higher",
+                "Higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "Unsold finished goods are piling up, tying up capital.",
+              "contradicts_if": "Inventories are declining due to healthy offtake."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "SME credit officer (Navsari / Surat)",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported early diamond unit shutdowns in Navsari accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Over the past 30 days, diamond borrower CC/OD limit utilization has:",
+              "options": [
+                "Exceeded 90%",
+                "Stayed between 70-90%",
+                "Remained below 70%",
+                "Seen frequent ad-hoc requests"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Exceeded 90%",
+                "Seen frequent ad-hoc requests"
+              ],
+              "contradicts": [
+                "Remained below 70%"
+              ],
+              "supports_if": "Limits are maxed out or facing ad-hoc relief demand due to cash crunch.",
+              "contradicts_if": "Borrowers have ample drawing power and low limit utilization."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed an uptick in SMA-0/1 slippages among diamond job-work units this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Early-stage debt servicing delays are rising across the cluster.",
+              "contradicts_if": "Repayments and interest service remain on schedule."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Rough diamond trader / broker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported early diamond unit shutdowns in Navsari accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "Offtake of rough diamonds by Navsari/Surat small polishers over the last 4 weeks is:",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Rough stone demand has collapsed, confirming factory slowdowns.",
+              "contradicts_if": "Units are continuing to buy rough stones at stable rates."
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What is the prevailing payment settlement trend among small polishers?",
+              "options": [
+                "Demanding extra credit days",
+                "Delays in clearing past dues",
+                "Timely payments as usual",
+                "Cash/advance only"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Demanding extra credit days",
+                "Delays in clearing past dues"
+              ],
+              "contradicts": [
+                "Timely payments as usual"
+              ],
+              "supports_if": "Trade credit terms are stretching or defaulting.",
+              "contradicts_if": "Trade cycle settlements remain punctual."
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Diamond artisan / Ratnakalakar representative",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported early diamond unit shutdowns in Navsari accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "What is the status of Diwali bonus and wage payouts for workers this month?",
+              "options": [
+                "Paid in full on time",
+                "Delayed or paid partially",
+                "Not paid / completely skipped",
+                "Vacation declared unpaid"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Delayed or paid partially",
+                "Not paid / completely skipped",
+                "Vacation declared unpaid"
+              ],
+              "contradicts": [
+                "Paid in full on time"
+              ],
+              "supports_if": "Wage payment defaults confirm severe working capital erosion.",
+              "contradicts_if": "Normal wage and bonus payments disprove severe distress."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "હીરા કટીંગ અને પોલિશિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું નવસારીમાં હીરાના એકમો વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગત વર્ષની સરખામણીમાં આ વર્ષે દિવાળી વેકેશનનો સમયગાળો કેવો રહેવાની શક્યતા છે?",
+                "options": [
+                  "ઘણો લાંબો",
+                  "લાંબો",
+                  "લગભગ સરખો",
+                  "ટૂંકો",
+                  "ઘણો ટૂંકો"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા મહિનાની સરખામણીમાં, તૈયાર પોલિશ્ડ હીરાના સ્ટોકનું પ્રમાણ કેવું છે?",
+                "options": [
+                  "ઘણું વધારે",
+                  "વધારે",
+                  "સરખું",
+                  "ઓછું",
+                  "ઘણું ઓછું"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "SME ક્રેડિટ ઓફિસર (નવસારી / સુરત)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું નવસારીમાં હીરાના એકમો વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા ૩૦ દિવસમાં, હીરા ઉદ્યોગના ખાતાઓમાં CC/OD લિમિટ વપરાશ કેવો રહ્યો છે?",
+                "options": [
+                  "૯૦% થી વધુ",
+                  "૭૦-૯૦% વચ્ચે",
+                  "૭૦% થી નીચે",
+                  "વારંવાર એડ-હોક લિમિટની માંગ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું આ મહિને હીરા જોબ-વર્ક યુનિટ્સમાં SMA-0/1 સ્લિપેજમાં વધારો જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રફ હીરાના વેપારી / દલાલ",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું નવસારીમાં હીરાના એકમો વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૪ અઠવાડિયામાં નાના કારખાનેદારો દ્વારા રફ હીરાની ખરીદી કેવી રહી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધારે",
+                  "ઘણી વધારે"
+                ]
+              },
+              "supplier.q3": {
+                "text": "નાના કારખાનેદારોમાં પેમેન્ટ ચૂકવણીનું વલણ કેવું જોવા મળે છે?",
+                "options": [
+                  "વધારાના ઉધાર દિવસોની માંગણી",
+                  "જૂની બાકી રકમ ચૂકવવામાં વિલંબ",
+                  "સમયસર નિયમિત ચૂકવણી",
+                  "માત્ર રોકડ / એડવાન્સમાં વ્યવહાર"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "રત્નકલાકાર / કારીગર પ્રતિનિધિ",
+            "questions": {
+              "labour.q1": {
+                "text": "શું નવસારીમાં હીરાના એકમો વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "આ મહિને કારીગરોને દિવાળી બોનસ અને પગાર ચૂકવણીની સ્થિતિ શું છે?",
+                "options": [
+                  "સમયસર પૂરેપૂરી ચૂકવણી",
+                  "વિલંબ અથવા અડધી ચૂકવણી",
+                  "ચૂકવણી નથી થઈ / રદ કરી",
+                  "વેકેશન બિન-પગારી જાહેર કર્યું"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
     "401e000ad52c": {
@@ -7504,6 +7577,308 @@
                   "મધ્યમ વધારો",
                   "કોઈ ફેરફાર નહીં",
                   "ઘટાડો"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
+      "prompt_version": "poll-v1"
+    },
+    "37e6ab2a18cd": {
+      "no_poll": false,
+      "hypothesis": "Surat diamond exporters are seeing fresh export orders and improved liquidity from the US and non-traditional overseas markets.",
+      "event_phrase": "rebound in diamond export orders from the US and new markets",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Diamond cutting & polishing exporter",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported rebound in diamond export orders from the US and new markets accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your polished diamond export order book changed compared to the previous month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Order books are growing compared to last month.",
+              "contradicts_if": "Order books are stagnant or shrinking."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How have export receivable realization cycles from overseas buyers moved over the last 30 days?",
+              "options": [
+                "Shortened significantly",
+                "Slightly faster",
+                "No change",
+                "Slightly delayed",
+                "Severely delayed"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Shortened significantly",
+                "Slightly faster"
+              ],
+              "contradicts": [
+                "Slightly delayed",
+                "Severely delayed"
+              ],
+              "supports_if": "Receivables are clearing faster, indicating genuine export demand revival.",
+              "contradicts_if": "Buyer payments are stretching or remaining delayed."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Credit officer (Diamond cluster branches)",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rebound in diamond export orders from the US and new markets accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have fresh drawdowns under packing credit (PCFC) facilities moved across diamond exporters recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Exporters are drawing down export credit facilities to execute new orders.",
+              "contradicts_if": "Exporters show sluggish credit drawdown, signaling weak order intake."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you seen an increase in foreign inward remittances for diamond export bills in the last 4 weeks?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Foreign inward remittances are rising.",
+              "contradicts_if": "No observable pickup in foreign inward remittances."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Rough diamond merchant / broker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported rebound in diamond export orders from the US and new markets accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has rough diamond purchase offtake by cutting and polishing units moved this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Units are buying more rough diamonds to fulfill fresh export orders.",
+              "contradicts_if": "Rough diamond procurement remains suppressed."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "ડાયમંડ કટિંગ અને પોલિશિંગ નિકાસકાર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું યુએસ અને નવા બજારોમાંથી હીરાની નિકાસના ઓર્ડરમાં સુધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "પાછલા મહિનાની સરખામણીમાં તમારા પોલિશ્ડ હીરાના નિકાસ ઓર્ડર બુકમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા ૩૦ દિવસમાં વિદેશી ખરીદદારો પાસેથી નિકાસ પેમેન્ટ વસૂલાત ચક્રમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ખૂબ ઝડપી બન્યું છે",
+                  "થોડું ઝડપી",
+                  "કોઈ ફેરફાર નહીં",
+                  "થોડો વિલંબ",
+                  "ખૂબ વિલંબ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ક્રેડિટ ઓફિસર (હીરા ક્લસ્ટર શાખાઓ)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું યુએસ અને નવા બજારોમાંથી હીરાની નિકાસના ઓર્ડરમાં સુધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "તાજેતરમાં હીરા નિકાસકારો દ્વારા પેકિંગ ક્રેડિટ (PCFC) સુવિધા હેઠળ નવા ઉપાડમાં શું વલણ જોવા મળ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "તેટલું જ",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું છેલ્લા ૪ અઠવાડિયામાં હીરાના નિકાસ બિલ પેટે વિદેશી આવક (રેમિટન્સ)માં વધારો જોવા મળ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રફ હીરાના વેપારી / દલાલ",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું યુએસ અને નવા બજારોમાંથી હીરાની નિકાસના ઓર્ડરમાં સુધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "આ મહિને કટિંગ અને પોલિશિંગ એકમો દ્વારા રફ હીરાની ખરીદીના ઉપાડમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધારે",
+                  "ઘણો વધારે"
                 ]
               }
             }
@@ -13772,271 +14147,6 @@
                   "સમાન",
                   "કઠિન",
                   "ઘણું કઠિન"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "9d16b82be343": {
-      "no_poll": false,
-      "hypothesis": "Surat embroidery job-work units are facing worker disputes due to cash flow pressures, leading to wage delays and machine loan EMI default risks.",
-      "event_phrase": "worker disputes and wage delays in embroidery units",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Embroidery Job-Worker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "How are you currently clearing worker wages?",
-              "options": [
-                "On time",
-                "Delayed by 1-2 weeks",
-                "Delayed by over 2 weeks"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Delayed by 1-2 weeks",
-                "Delayed by over 2 weeks"
-              ],
-              "contradicts": [
-                "On time"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How is your machine loan EMI servicing compared to last month?",
-              "options": [
-                "Much easier",
-                "Slightly easier",
-                "Same",
-                "Slightly harder",
-                "Much harder"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Slightly harder",
-                "Much harder"
-              ],
-              "contradicts": [
-                "Much easier",
-                "Slightly easier"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Cluster Branch Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have machine loan EMI bounces or delays trended recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Embroidery Machine Operator",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "choice",
-              "text": "How are you receiving your weekly or monthly wages currently?",
-              "options": [
-                "Regularly on time",
-                "Delayed by a few days",
-                "Pending for weeks"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Delayed by a few days",
-                "Pending for weeks"
-              ],
-              "contradicts": [
-                "Regularly on time"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "એમ્બ્રોઇડરી જોબ-વર્કર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા અનુભવમાં કામદારોના વિવાદ અને મજૂરી વિલંબની અખબારી અસરો સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "તમે હાલમાં કામદારોના પગાર કેવી રીતે ચૂકવી રહ્યા છો?",
-                "options": [
-                  "સમયસર",
-                  "૧-૨ અઠવાડિયા મોડા",
-                  "૨ અઠવાડિયાથી વધુ મોડા"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારી મશીન લોનની EMI ચૂકવણી કેવી રહી છે?",
-                "options": [
-                  "ઘણી સરળ",
-                  "થોડી સરળ",
-                  "સમાન",
-                  "થોડી અઘરી",
-                  "ખૂબ જ અઘરી"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ક્લસ્ટર બ્રાન્ચ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું એમ્બ્રોઇડરી યુનિટ્સને અસર કરતા કામદાર વિવાદના અહેવાલો સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "તાજેતરમાં મશીન લોન EMI બાઉન્સ કે વિલંબમાં શું વલણ રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધારે"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર",
-            "questions": {
-              "labour.q1": {
-                "text": "શું તમારા યુનિટમાં મજૂરી વિલંબ અથવા કામદાર વિવાદની વાત સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "હાલમાં તમને સાપ્તાહિક કે માસિક મજૂરી કેવી રીતે મળી રહી છે?",
-                "options": [
-                  "નિયમિત સમયસર",
-                  "થોડા દિવસો મોડી",
-                  "અઠવાડિયા સુધી બાકી"
                 ]
               }
             }
@@ -25313,302 +25423,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "79dc2058ef39": {
-      "no_poll": false,
-      "hypothesis": "Surat diamond units are reducing Diwali shutdown days due to strong export order books and stable working capital.",
-      "event_phrase": "shortening of Diwali vacation in Surat diamond units",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Diamond unit owner / polisher",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "What is the planned Diwali vacation duration for your unit this year?",
-              "options": [
-                "Under 10 days",
-                "10 to 20 days",
-                "More than 20 days",
-                "Not decided"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Under 10 days",
-                "10 to 20 days"
-              ],
-              "contradicts": [
-                "More than 20 days"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How does your current polished diamond order book compare to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Diamond cluster credit manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have diamond borrowers requested ad-hoc limits or CC holding-period extensions ahead of Diwali?",
-              "options": [
-                "Increased significantly",
-                "Increased marginally",
-                "No change",
-                "Decreased"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "No change",
-                "Decreased"
-              ],
-              "contradicts": [
-                "Increased significantly"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Are you observing any unusual SMA-0/1 slippages among diamond processing borrowers this month?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "No"
-              ],
-              "contradicts": [
-                "Yes"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "labour",
-          "label": "Diamond artisan / worker representative",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "labour.q1",
-              "type": "accuracy",
-              "text": "Is the reported shortening of Diwali vacation in Surat diamond units accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "labour.q2",
-              "type": "scale5",
-              "text": "How are job-work wages or piece-rates for artisans trending this month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "હીરા યુનિટના માલિક / પોલિશર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "આ વર્ષે તમારા યુનિટ માટે દિવાળી વેકેશનનું આયોજન કેટલા દિવસનું છે?",
-                "options": [
-                  "10 દિવસથી ઓછું",
-                  "10 થી 20 દિવસ",
-                  "20 દિવસથી વધુ",
-                  "નક્કી નથી થયું"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારા તૈયાર હીરાના ઓર્ડર બુકની સ્થિતિ કેવી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સરખી",
-                  "વધારે",
-                  "ઘણી વધારે"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું હીરા ઉદ્યોગના ધિરાણદારોએ દિવાળી પહેલા એડ-હોક લિમિટ અથવા CC હોલ્ડિંગ પિરિયડ વધારવાની વિનંતી કરી છે?",
-                "options": [
-                  "નોંધપાત્ર વધારો થયો છે",
-                  "સહેજ વધારો થયો છે",
-                  "કોઈ ફેરફાર નથી",
-                  "ઘટાડો થયો છે"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે આ મહિને હીરા પ્રોસેસિંગ કરજદારોમાં અસામાન્ય SMA-0/1 સ્લિપેજ જોઈ રહ્યા છો?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "labour": {
-            "label": "હીરા રત્નકલાકાર / કામદાર પ્રતિનિધિ",
-            "questions": {
-              "labour.q1": {
-                "text": "શું સુરતના હીરા યુનિટોમાં દિવાળી વેકેશન ટૂંકાવવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "labour.q2": {
-                "text": "આ મહિને રત્નકલાકારોના જોબ-વર્ક વેતન કે પીસ-રેટનો ટ્રેન્ડ કેવો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધારે",
-                  "ઘણો વધારે"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
     "2b47ff4fa01a": {
       "no_poll": false,
       "hypothesis": "Shorter Diwali holidays in Surat's diamond units reflect recovering order books, higher capacity utilization, and improved working capital turnover.",
@@ -27067,95 +26881,20 @@
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
-    "a9e37bc1fac7": {
+    "3aaeddfada9c": {
       "no_poll": false,
-      "hypothesis": "CBIC approval of the Special Notified Zone at Surat Diamond Bourse reduces rough sourcing friction and increases direct import transactions in Surat.",
-      "event_phrase": "CBIC approval of a new Special Notified Zone at Surat Diamond Bourse",
+      "hypothesis": "CBIC approval for an SNZ at Surat Diamond Bourse is beginning to shift rough viewing and import credit setups from Mumbai to Surat.",
+      "event_phrase": "CBIC approval of the Special Notified Zone at SDB",
       "roles": [
         {
-          "role": "supplier",
-          "label": "Rough diamond trader / importer",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported approval of a new Special Notified Zone at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How have direct rough diamond imports or viewings through Surat Diamond Bourse changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q3",
-              "type": "scale5",
-              "text": "How has your reliance on Mumbai intermediaries for rough sourcing changed recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Lower",
-                "Much lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
           "role": "operator",
-          "label": "Natural diamond cutter & polisher",
-          "proximity": 2,
+          "label": "Surat diamond cutting & polishing unit",
+          "proximity": 3,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported approval of a new Special Notified Zone at Surat Diamond Bourse accurate in your experience?",
+              "text": "Is the reported CBIC approval of the Special Notified Zone at SDB accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -27176,38 +26915,131 @@
             },
             {
               "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has the ease of sourcing rough diamonds locally in Surat changed in the last 2-4 weeks?",
+              "type": "choice",
+              "text": "Where did your unit physically inspect rough diamond parcels over the last 2-4 weeks?",
               "options": [
-                "Much harder",
-                "Harder",
-                "Same",
-                "Easier",
-                "Much easier"
+                "Exclusively Mumbai BDB",
+                "Mostly Mumbai, some SDB",
+                "SDB viewings started",
+                "Imported directly via courier"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "SDB viewings started",
+                "Mostly Mumbai, some SDB"
+              ],
+              "contradicts": [
+                "Exclusively Mumbai BDB"
+              ],
+              "supports_if": "Units are shifting physical viewing and sourcing to SDB.",
+              "contradicts_if": "Units remain completely reliant on Mumbai BDB for viewings."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How have your local procurement and handling costs for rough diamonds changed in the last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
               ],
               "mechanism": "input_cost",
               "supports": [
-                "Easier",
-                "Much easier"
+                "Much lower",
+                "Lower"
               ],
               "contradicts": [
-                "Harder",
-                "Much harder"
+                "Unchanged",
+                "Higher"
+              ],
+              "supports_if": "Direct local viewing/procurement lowers intermediation and transit costs.",
+              "contradicts_if": "No operational change has occurred to compress procurement costs."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Rough diamond trader / broker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported CBIC approval of the Special Notified Zone at SDB accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
               ],
               "supports_if": "",
               "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "yes_no_notseen",
+              "text": "Have mining companies or consortiums announced scheduled rough viewing tenders at SDB for this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Miners are actively listing tenders at the Surat SNZ.",
+              "contradicts_if": "Tender schedules have not shifted to Surat SNZ."
+            },
+            {
+              "id": "supplier.q3",
+              "type": "scale5",
+              "text": "How has rough diamond trading inquiries at Surat Diamond Bourse offices changed over the last 30 days?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower",
+                "Unchanged"
+              ],
+              "supports_if": "Inquiries surge as operationalisation of SNZ nears.",
+              "contradicts_if": "Trading desks remain quiet with no traffic uptick."
             }
           ]
         },
         {
           "role": "banker",
-          "label": "Diamond cluster credit manager",
+          "label": "Diamond cluster branch manager / credit officer",
           "proximity": 2,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported approval of a new Special Notified Zone at Surat Diamond Bourse accurate in your experience?",
+              "text": "Is the reported CBIC approval of the Special Notified Zone at SDB accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -27229,11 +27061,11 @@
             {
               "id": "banker.q2",
               "type": "scale5",
-              "text": "How have PCFC or working capital limit utilization requests from diamond importers changed in the last 2-4 weeks?",
+              "text": "How have client requests for Surat-based Import LCs / Buyers Credit for rough imports trended recently?",
               "options": [
                 "Much lower",
                 "Lower",
-                "Same",
+                "Unchanged",
                 "Higher",
                 "Much higher"
               ],
@@ -27243,11 +27075,12 @@
                 "Much higher"
               ],
               "contradicts": [
+                "Much lower",
                 "Lower",
-                "Much lower"
+                "Unchanged"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Importers are routing trade finance facilities locally for SDB customs clearance.",
+              "contradicts_if": "Trade finance requests remain anchored in Mumbai branches."
             }
           ]
         }
@@ -27255,45 +27088,11 @@
       "translation": {
         "lang": "gu",
         "roles": {
-          "supplier": {
-            "label": "રફ ડાયમંડ ટ્રેડર / આયાતકાર",
-            "questions": {
-              "supplier.q1": {
-                "text": "તમારા અનુભવ મુજબ સુરત ડાયમંડ બોર્સ ખાતે નવી સ્પેશિયલ નોટિફાઇડ ઝોનની મંજૂરીના અહેવાલો સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સુરત ડાયમંડ બોર્સ દ્વારા સીધી રફ ડાયમંડની આયાત અથવા વ્યુઇંગમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "supplier.q3": {
-                "text": "તાજેતરમાં રફ સોર્સિંગ માટે મુંબઈના મધ્યસ્થીઓ પર તમારી નિર્ભરતા કેવી રીતે બદલાઈ છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
           "operator": {
-            "label": "નેચરલ ડાયમંડ કટર અને પોલિશર",
+            "label": "સુરત ડાયમંડ કટિંગ અને પોલિશિંગ યુનિટ",
             "questions": {
               "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ સુરત ડાયમંડ બોર્સ ખાતે નવી સ્પેશિયલ નોટિફાઇડ ઝોનની મંજૂરીના અહેવાલો સાચા છે?",
+                "text": "શું એસડીબી ખાતે સ્પેશિયલ નોટિફાઇડ ઝોનને સીબીઆઈસીની મંજૂરી તમારા અનુભવ મુજબ સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -27302,22 +27101,63 @@
                 ]
               },
               "operator.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સુરતમાં સ્થાનિક સ્તરે રફ હીરા મેળવવાની સરળતામાં કેવી ફેરફાર થયો છે?",
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા યુનિટે રફ હીરાના પાર્સલનું ભૌતિક નિરીક્ષણ ક્યાં કર્યું?",
                 "options": [
-                  "ઘણું મુશ્કેલ",
-                  "મુશ્કેલ",
-                  "સમાન",
-                  "સરળ",
-                  "ઘણું સરળ"
+                  "માત્ર મુંબઈ બીડીબી",
+                  "મોટાભાગે મુંબઈ, થોડું એસડીબી",
+                  "એસડીબી ખાતે જોવાનું શરૂ થયું",
+                  "સીધા કુરિયર મારફતે આયાત"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા મહિનામાં રફ હીરાની ખરીદી અને હેન્ડલિંગ ખર્ચમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "કોઈ ફેરફાર નહીં",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રફ ડાયમંડ વેપારી / દલાલ",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું એસડીબી ખાતે સ્પેશિયલ નોટિફાઇડ ઝોનને સીબીઆઈસીની મંજૂરી તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "શું માઇનિંગ કંપનીઓએ આ મહિને એસડીબી ખાતે રફ ડાયમંડ વ્યુઇંગ ટેન્ડર જાહેર કર્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "supplier.q3": {
+                "text": "છેલ્લા ૩૦ દિવસોમાં સુરત ડાયમંડ બુર્સની ઓફિસોમાં રફ ટ્રેડિંગ પૂછપરછમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "કોઈ ફેરફાર નહીં",
+                  "વધારે",
+                  "ઘણો વધારે"
                 ]
               }
             }
           },
           "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
+            "label": "ડાયમંડ ક્લસ્ટર શાખા પ્રબંધક / ક્રેડિટ ઓફિસર",
             "questions": {
               "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ સુરત ડાયમંડ બોર્સ ખાતે નવી સ્પેશિયલ નોટિફાઇડ ઝોનની મંજૂરીના અહેવાલો સાચા છે?",
+                "text": "શું એસડીબી ખાતે સ્પેશિયલ નોટિફાઇડ ઝોનને સીબીઆઈસીની મંજૂરી તમારા અનુભવ મુજબ સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -27326,20 +27166,20 @@
                 ]
               },
               "banker.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં હીરા આયાતકારો તરફથી PCFC અથવા વર્કિંગ કેપિટલ લિમિટના ઉપયોગની માંગમાં કેવો ફેરફાર થયો છે?",
+                "text": "રફ આયાત માટે સુરત-આધારિત ઇમ્પોર્ટ એલસી / બાયર્સ ક્રેડિટની માગમાં કેવો ટ્રેન્ડ જોવા મળ્યો છે?",
                 "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "કોઈ ફેરફાર નહીં",
+                  "વધારે",
+                  "ઘણો વધારે"
                 ]
               }
             }
           }
         }
       },
-      "model": "gemini:gemini-3.5-flash-lite",
+      "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
     "67d88129d3a3": {
