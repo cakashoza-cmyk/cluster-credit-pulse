@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T10:37:40.541Z",
+  "generated_at": "2026-10-27T20:09:21.483Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 97,
-    "with_poll": 93,
+    "cards": 100,
+    "with_poll": 96,
     "no_poll": 4,
     "pending": 0
   },
@@ -272,6 +272,308 @@
                   "હા",
                   "ના",
                   "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "c2e1d2a72338": {
+      "no_poll": false,
+      "hypothesis": "Simultaneous gas price hikes and a 50% export drop are squeezing kiln operating margins, leading to lower export volumes, falling PCFC utilization, and requests for credit relief.",
+      "event_phrase": "gas price hike and 50% export drop",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Ceramic kiln operator / exporter",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported gas price hike and 50% export drop accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your export order volumes changed compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your kiln operating margin moved after factoring in fuel costs?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi industrial branch banker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported gas price hike and 50% export drop accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you seen an increase in requests for ad-hoc working capital or loan restructuring?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "scale5",
+              "text": "How has PCFC and export credit limit utilization changed this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "logistics",
+          "label": "Container / truck transporter",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "logistics.q1",
+              "type": "accuracy",
+              "text": "Is the reported gas price hike and 50% export drop accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "logistics.q2",
+              "type": "scale5",
+              "text": "How has container booking volume for port-bound ceramic shipments changed?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "સિરામિક કિલન ઓપરેટર / નિકાસકાર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું ગેસના ભાવમાં વધારો અને નિકાસમાં 50% ઘટાડાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારા નિકાસ ઓર્ડરનું પ્રમાણ કેવું બદલાયું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "બળતણના ખર્ચને ધ્યાનમાં લીધા પછી તમારા કિલન ઓપરેટિંગ માર્જિનમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી ઔદ્યોગિક શાખા બેન્કર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું ગેસના ભાવમાં વધારો અને નિકાસમાં 50% ઘટાડાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે એડ-હોક વર્કિંગ કેપિટલ અથવા લોન રીસ્ટ્રક્ચરિંગ માટેની વિનંતીઓમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોવા મળ્યું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "આ મહિને PCFC અને નિકાસ ક્રેડિટ મર્યાદાનો ઉપયોગ કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "logistics": {
+            "label": "કન્ટેનર / ટ્રક ટ્રાન્સપોર્ટર",
+            "questions": {
+              "logistics.q1": {
+                "text": "શું ગેસના ભાવમાં વધારો અને નિકાસમાં 50% ઘટાડાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "logistics.q2": {
+                "text": "બંદર તરફ જતા સિરામિક શિપમેન્ટ માટે કન્ટેનર બુકિંગનું પ્રમાણ કેવી રીતે બદલાયું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "એ જ",
+                  "વધુ",
+                  "ઘણું વધુ"
                 ]
               }
             }
@@ -7218,6 +7520,275 @@
         }
       },
       "model": "gemini:gemini-3.8-flash",
+      "prompt_version": "poll-v1"
+    },
+    "f675c060fa53": {
+      "no_poll": false,
+      "hypothesis": "Discovery of suspicious coal in a closed unit indicates illegal fuel hoarding or distress liquidation, potentially tightening informal credit or impacting fuel supplier dealings.",
+      "event_phrase": "seizure of suspicious coal stocks in closed units",
+      "roles": [
+        {
+          "role": "banker",
+          "label": "Ceramic cluster branch banker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported seizure of suspicious coal stocks in closed units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has frequency of stock-statement delays by borrower units changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed any sudden SMA-0/1 slippages among tile manufacturing accounts?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Coal / fuel supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported seizure of suspicious coal stocks in closed units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have credit days demanded by ceramic units changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Tile manufacturing unit owner",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported seizure of suspicious coal stocks in closed units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your raw material inventory holding changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "banker": {
+            "label": "સિરામિક ક્લસ્ટર બ્રાન્ચ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું બંધ યુનિટોમાં શંકાસ્પદ કોલસાનો જથ્થો જપ્ત થયાના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં ઉધાર લેનાર યુનિટો દ્વારા સ્ટોક-સ્ટેટમેન્ટ આપવામાં થતા વિલંબમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે ટાઇલ્સ બનાવતા ખાતાઓમાં એસ.એમ.એ.-૦/૧ (SMA-0/1) ના ધિરાણમાં કોઈ અચાનક ઘટાડો કે સમસ્યા નોંધી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "કોલસા / ઇંધણ સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું બંધ યુનિટોમાં શંકાસ્પદ કોલસાનો જથ્થો જપ્ત થયાના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં સિરામિક યુનિટો દ્વારા ક્રેડિટ (ઉધાર) ના દિવસોની માંગણીમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "ટાઇલ્સ ઉત્પાદક યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું બંધ યુનિટોમાં શંકાસ્પદ કોલસાનો જથ્થો જપ્ત થયાના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તમારા કાચા માલના સ્ટોકનું પ્રમાણ કેવું રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "c8a89bd2019b": {
@@ -22674,6 +23245,275 @@
                   "હા",
                   "ના",
                   "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "279312659941": {
+      "no_poll": false,
+      "hypothesis": "A Rs 5 natural gas price reduction lowers fuel costs for PNG-fired tile makers, improving margins and easing working capital pressure.",
+      "event_phrase": "Rs 5 natural gas price reduction",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "PNG-fired tile plant owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported Rs 5 natural gas price reduction accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your utility fuel costs per box changed this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your operating margin moved following the gas price change?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Propane / alternate fuel supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported Rs 5 natural gas price reduction accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has offtake for propane/LPG shifted due to cheaper natural gas?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Lower",
+                "Much lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Ceramic cluster MSME banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported Rs 5 natural gas price reduction accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have CC/OD utilization levels for tile manufacturing clients changed?",
+              "options": [
+                "Decreased significantly",
+                "Stable",
+                "Increased"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Decreased significantly"
+              ],
+              "contradicts": [
+                "Increased"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "PNG-ફાયર્ડ ટાઇલ પ્લાન્ટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું કુદરતી ગેસમાં રૂ. 5 ના ઘટાડાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "આ મહિને પ્રતિ બોક્સ તમારા યુટિલિટી ઇંધણ ખર્ચમાં કેવો બદલાવ આવ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગેસના ભાવ ફેરફાર પછી તમારો ઓપરેટિંગ માર્જિન કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "પ્રોપેન / વૈકલ્પિક ઇંધણ સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું કુદરતી ગેસમાં રૂ. 5 ના ઘટાડાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "સસ્તા કુદરતી ગેસને કારણે પ્રોપેન/એલપીજીની માંગમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સિરામિક ક્લસ્ટર MSME બેન્કર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું કુદરતી ગેસમાં રૂ. 5 ના ઘટાડાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "ટાઇલ ઉત્પાદક ગ્રાહકો માટે સીસી/ઓડી (CC/OD) ઉપયોગ સ્તરમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઘટી ગયો છે",
+                  "સ્થિર છે",
+                  "વધ્યો છે"
                 ]
               }
             }
