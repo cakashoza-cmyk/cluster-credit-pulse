@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T00:14:07.945Z",
+  "generated_at": "2026-10-29T05:58:36.855Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -3727,6 +3727,329 @@
                   "હા",
                   "ના",
                   "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "1b54f570ed7b": {
+      "no_poll": false,
+      "hypothesis": "A 45 percent surge in yarn prices is forcing Surat weavers to curtail shifts or face early Diwali shutdowns due to severe margin compression and working capital strain.",
+      "event_phrase": "45 percent surge in yarn prices",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet & Powerloom Weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported 45 percent surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How do your current loom operating shifts compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "Are you planning an early Diwali shutdown due to high yarn costs?",
+              "options": [
+                "Yes, shutting early",
+                "Considering it",
+                "No, operating normally"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes, shutting early",
+                "Considering it"
+              ],
+              "contradicts": [
+                "No, operating normally"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "POY / FDY Yarn Supplier",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported 45 percent surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How is weaver offtake for synthetic yarn compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What credit terms are weavers currently demanding for yarn purchases?",
+              "options": [
+                "Shorter credit / Cash advance",
+                "Normal credit days",
+                "Extended credit requested"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Shorter credit / Cash advance"
+              ],
+              "contradicts": [
+                "Extended credit requested",
+                "Normal credit days"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat Industrial Branch Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported 45 percent surge in yarn prices accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you seen an increase in ad-hoc working capital or CC limit enhancement requests from weavers?",
+              "options": [
+                "Yes, significant rise",
+                "Slight increase",
+                "No change"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes, significant rise",
+                "Slight increase"
+              ],
+              "contradicts": [
+                "No change"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "Have you observed any delayed stock-statements or early SMA-0 slippages in textile accounts?",
+              "options": [
+                "Yes, multiple cases",
+                "Few isolated cases",
+                "None"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes, multiple cases",
+                "Few isolated cases"
+              ],
+              "contradicts": [
+                "None"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વટર-જેટ અને પાવરલૂમ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવમાં યાર્નના ભાવમાં 45 ટકાનો અહેવાલ થયેલ ઉછાળો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારી લૂમ્સની શિફ્ટ કેવી ચાલી રહી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે યાર્નના ઊંચા ભાવને કારણે દિવાળી પર વહેલી રજાઓ પાડવાનું વિચારી રહ્યા છો?",
+                "options": [
+                  "હા, વહેલી રજા",
+                  "વિચારી રહ્યા છીએ",
+                  "ના, સામાન્ય રીતે ચાલુ છે"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "POY / FDY યાર્ન સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું તમારા અનુભવમાં યાર્નના ભાવમાં 45 ટકાનો અહેવાલ થયેલ ઉછાળો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં વીવર્સ દ્વારા યાર્નની ખરીદી કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "સરખી",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "વીવર્સ યાર્નની ખરીદી માટે કેવા પ્રકારના પેમેન્ટ ટર્મ્સ માગી રહ્યા છે?",
+                "options": [
+                  "ટૂંકી મુદત / રોકડ અગાઉથી",
+                  "સામાન્ય ક્રેડિટ દિવસો",
+                  "વધારાના ક્રેડિટ દિવસો"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ઔદ્યોગિક શાખા બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવમાં યાર્નના ભાવમાં 45 ટકાનો અહેવાલ થયેલ ઉછાળો સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું વીવર્સ તરફથી વર્કિંગ કેપિટલ અથવા સીસી લિમિટ વધારવાની અરજીઓમાં વધારો થયો છે?",
+                "options": [
+                  "હા, મોટો વધારો",
+                  "થોડો વધારો",
+                  "કોઈ ફેરફાર નહીં"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું ટેક્સટાઈલ ખાતાઓમાં સ્ટોક-સ્ટેટમેન્ટમાં વિલંબ કે એસએમએ-0 (SMA-0) ના કેસો જોવા મળ્યા છે?",
+                "options": [
+                  "હા, ઘણા કેસો",
+                  "બહુ ઓછા કેસો",
+                  "એક પણ નહીં"
                 ]
               }
             }
@@ -22312,274 +22635,6 @@
       "no_poll": true,
       "reason": "The incident is an isolated fire affecting 10 individual shops without broader cluster-wide working capital transmission or observable value-chain impact across the Surat textile market.",
       "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "4ae73fd1a2f2": {
-      "no_poll": false,
-      "hypothesis": "Surat diamond units are beginning to test goods locally via ICA GemLab, reducing certification transit time and working capital lockup.",
-      "event_phrase": "launch of an ICA GemLab testing facility in Surat",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Diamond polisher / exporter",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported launch of an ICA GemLab testing facility in Surat accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Where are you currently sending polished stones for international certification?",
-              "options": [
-                "Surat local labs only",
-                "Both Surat and Mumbai",
-                "Exclusively Mumbai/abroad",
-                "Not certifying currently"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Surat local labs only",
-                "Both Surat and Mumbai"
-              ],
-              "contradicts": [
-                "Exclusively Mumbai/abroad"
-              ],
-              "supports_if": "Units are shifting certification volume to Surat facilities",
-              "contradicts_if": "Units still rely entirely on Mumbai or overseas transit"
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "Certification turnaround time for your diamond parcels in the past month has been:",
-              "options": [
-                "Much faster",
-                "Faster",
-                "Unchanged",
-                "Slower",
-                "Much slower"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Much faster",
-                "Faster"
-              ],
-              "contradicts": [
-                "Unchanged",
-                "Slower",
-                "Much slower"
-              ],
-              "supports_if": "Local lab presence is shortening certification turnaround time",
-              "contradicts_if": "Turnaround time remains unchanged or has worsened"
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Diamond merchant / trader",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported launch of an ICA GemLab testing facility in Surat accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "yes_no_notseen",
-              "text": "Are overseas buyers accepting Surat-issued ICA GemLab certificates without demanding Mumbai re-certification?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "Overseas buyers accept the new lab's local certificates",
-              "contradicts_if": "Overseas buyers reject Surat-issued certificates"
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Diamond cluster branch manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported launch of an ICA GemLab testing facility in Surat accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "Working capital cycle length (transit-to-sale days) reported in diamond stock statements has been:",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Unchanged",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Much shorter",
-                "Shorter"
-              ],
-              "contradicts": [
-                "Unchanged",
-                "Longer",
-                "Much longer"
-              ],
-              "supports_if": "Inventory transit reduction is shortening reported working capital cycles",
-              "contradicts_if": "Stock holding and transit duration remain static or longer"
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "હીરા પોલિશર / નિકાસકાર",
-            "questions": {
-              "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ સુરતમાં ICA જેમીલેબ ટેસ્ટિંગ સુવિધા શરૂ થવાના અહેવાલ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "તમે હાલમાં આંતરરાષ્ટ્રીય સર્ટિફિકેશન માટે પોલિશ્ડ હીરા ક્યાં મોકલી રહ્યા છો?",
-                "options": [
-                  "માત્ર સુરતની સ્થાનિક લેબ્સ",
-                  "સુરત અને મુંબઈ બંને",
-                  "માત્ર મુંબઈ/વિદેશ",
-                  "હાલમાં પ્રમાણપત્ર મેળવતા નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "છેલ્લા મહિનામાં તમારા હીરાના પાર્સલ માટે પ્રમાણપત્ર મળવાનો સમય કેવો રહ્યો છે?",
-                "options": [
-                  "ખૂબ ઝડપી",
-                  "ઝડપી",
-                  "કોઈ ફેરફાર નહીં",
-                  "ધીમો",
-                  "ખૂબ ધીમો"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "હીરા વેપારી / ટ્રેડર",
-            "questions": {
-              "buyer.q1": {
-                "text": "તમારા અનુભવ મુજબ સુરતમાં ICA જેમીલેબ ટેસ્ટિંગ સુવિધા શરૂ થવાના અહેવાલ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "શું વિદેશી ખરીદદારો મુંબઈના રી-સર્ટિફિકેશનની માંગણી કર્યા વિના સુરત દ્વારા જારી કરાયેલ ICA જેમીલેબ પ્રમાણપત્રો સ્વીકારી રહ્યા છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ સુરતમાં ICA જેમીલેબ ટેસ્ટિંગ સુવિધા શરૂ થવાના અહેવાલ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "હીરાના સ્ટોક સ્ટેટમેન્ટમાં કાર્યકારી મૂડી ચક્ર (ટ્રાન્ઝિટથી વેચાણના દિવસો) કેવું જણાય છે?",
-                "options": [
-                  "ખૂબ ટૂંકું",
-                  "ટૂંકું",
-                  "કોઈ ફેરફાર નહીં",
-                  "લાંબું",
-                  "ખૂબ લાંબું"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
     "01cb30b63e0d": {
