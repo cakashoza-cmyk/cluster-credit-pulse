@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T15:50:54.304Z",
+  "generated_at": "2026-10-31T23:35:23.221Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,12 +12,418 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 96,
-    "with_poll": 91,
-    "no_poll": 5,
+    "cards": 103,
+    "with_poll": 96,
+    "no_poll": 7,
     "pending": 0
   },
   "polls": {
+    "774ba602b06e": {
+      "no_poll": false,
+      "hypothesis": "Weaver payment cycles have stretched past 180-200 days, causing acute cash-flow stress, rising CC utilisation, and debt-service delays ahead of Diwali.",
+      "event_phrase": "stretch in textile payment dues exceeding 200 days",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Powerloom / water-jet weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported stretch in textile payment dues exceeding 200 days accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "What is the average credit period Ring Road traders are taking to settle grey fabric dues currently?",
+              "options": [
+                "Under 60 days",
+                "60-90 days",
+                "90-150 days",
+                "150-200 days",
+                "Over 200 days"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "150-200 days",
+                "Over 200 days"
+              ],
+              "contradicts": [
+                "Under 60 days",
+                "60-90 days"
+              ],
+              "supports_if": "Average credit period exceeds 150 days",
+              "contradicts_if": "Average credit period is 90 days or lower"
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your weaving loom operating capacity changed compared to this time last year?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Weaving unit capacity utilisation has dropped due to unpaid capital",
+              "contradicts_if": "Weaving unit capacity utilisation has increased"
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Ring Road grey fabric / textile trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported stretch in textile payment dues exceeding 200 days accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "choice",
+              "text": "What is the primary reason for extended settlement timelines to weavers this festive season?",
+              "options": [
+                "Slow downstream retail payments",
+                "Unsold inventory accumulation",
+                "Normal trade cycle",
+                "Disputes on fabric quality"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Slow downstream retail payments",
+                "Unsold inventory accumulation"
+              ],
+              "contradicts": [
+                "Normal trade cycle"
+              ],
+              "supports_if": "Traders cite slow retail collections or unsold stock causing weaver delays",
+              "contradicts_if": "Traders report regular payment cycles"
+            },
+            {
+              "id": "buyer.q3",
+              "type": "yes_no_notseen",
+              "text": "Are weavers refusing new grey delivery orders without advance or partial payment clearance?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Weavers halt fresh supplies due to accumulated dues",
+              "contradicts_if": "Supply continues on standard informal credit"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME credit officer / Branch manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported stretch in textile payment dues exceeding 200 days accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "What proportion of weavers' book debts in recent stock statements are older than 90 days?",
+              "options": [
+                "Under 15%",
+                "15-30%",
+                "30-50%",
+                "50-70%",
+                "Over 70%"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "50-70%",
+                "Over 70%"
+              ],
+              "contradicts": [
+                "Under 15%",
+                "15-30%"
+              ],
+              "supports_if": "Over half of book debts are aged over 90 days, reducing drawing power",
+              "contradicts_if": "Book debts older than 90 days remain under 30%"
+            },
+            {
+              "id": "banker.q3",
+              "type": "scale5",
+              "text": "How have ad-hoc working capital or restructuring requests from weavers changed in the last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Spike in requests for liquidity support and ad-hoc limits",
+              "contradicts_if": "Requests for liquidity support are flat or declining"
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / texturiser trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported stretch in textile payment dues exceeding 200 days accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "choice",
+              "text": "How are you offering yarn/POY credit terms to weaving units currently?",
+              "options": [
+                "Strictly advance or cash",
+                "Tightened credit days",
+                "Standard 30-45 days",
+                "Extended credit days"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Strictly advance or cash",
+                "Tightened credit days"
+              ],
+              "contradicts": [
+                "Standard 30-45 days",
+                "Extended credit days"
+              ],
+              "supports_if": "Yarn suppliers are cutting weaver credit terms",
+              "contradicts_if": "Yarn suppliers maintain or relax credit terms"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "પાવરલૂમ / વોટર-જેટ વણકર (વીવર)",
+            "questions": {
+              "operator.q1": {
+                "text": "શું ટેક્સટાઇલ પેમેન્ટ ૨૦૦ દિવસથી વધુ વિલંબિત થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "હાલમાં રિંગ રોડના વેપારીઓ ગ્રે કાપડના નાણાં ચૂકવવામાં સરેરાશ કેટલો સમય લઈ રહ્યા છે?",
+                "options": [
+                  "૬૦ દિવસથી ઓછો",
+                  "૬૦-૯૦ દિવસ",
+                  "૯૦-૧૫૦ દિવસ",
+                  "૧૫૦-૨૦૦ દિવસ",
+                  "૨૦૦ દિવસથી વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગયા વર્ષના આ સમયગાળાની સરખામણીમાં તમારા લૂમ્સની ક્ષમતા વપરાશમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "રિંગ રોડ ગ્રે કાપડ / ટેક્સટાઇલ વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું ટેક્સટાઇલ પેમેન્ટ ૨૦૦ દિવસથી વધુ વિલંબિત થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "આ તહેવારોની સિઝનમાં વણકરોને ચૂકવણી મોડી થવાનું મુખ્ય કારણ શું છે?",
+                "options": [
+                  "આગળના રિટેલ પેમેન્ટમાં વિલંબ",
+                  "ન વેચાયેલા માલનો ભરાવો",
+                  "સામાન્ય વેપાર ચક્ર",
+                  "કાપડની ગુણવત્તા બાબતે વિવાદ"
+                ]
+              },
+              "buyer.q3": {
+                "text": "શું વણકરો એડવાન્સ કે અંશતઃ ચુકવણી વગર નવા ગ્રે માલની ડિલિવરી આપવાની ના પાડી રહ્યા છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "MSME ક્રેડિટ ઓફિસર / બ્રાન્ચ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું ટેક્સટાઇલ પેમેન્ટ ૨૦૦ દિવસથી વધુ વિલંબિત થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "તાજેતરના સ્ટોક સ્ટેટમેન્ટમાં વણકરોના ૯૦ દિવસથી જૂના બુક ડેટ્સનું પ્રમાણ કેટલું છે?",
+                "options": [
+                  "૧૫% થી ઓછું",
+                  "૧૫-૩૦%",
+                  "૩૦-૫૦%",
+                  "૫૦-૭૦%",
+                  "૭૦% થી વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "છેલ્લા મહિનામાં વણકરો તરફથી એડ-હોક લિમિટ કે લોન રિસ્ટ્રક્ચરિંગની અરજીઓમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સચરાઇઝર વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું ટેક્સટાઇલ પેમેન્ટ ૨૦૦ દિવસથી વધુ વિલંબિત થવાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "હાલમાં તમે વણકરોને યાર્ન/POY કઈ શરતો પર આપી રહ્યા છો?",
+                "options": [
+                  "સંપૂર્ણ એડવાન્સ અથવા રોકડ",
+                  "ઉધાર દિવસો ઘટાડ્યા છે",
+                  "સામાન્ય ૩૦-૪૫ દિવસ",
+                  "વધુ ઉધાર દિવસો આપ્યા છે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
+      "prompt_version": "poll-v1"
+    },
     "80f44f3f370f": {
       "no_poll": false,
       "hypothesis": "Payment stretch between Ring Road textile traders and Surat weavers is escalating into severe liquidity disputes and extended receivable cycles.",
@@ -7740,6 +8146,12 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "ffcce3266213": {
+      "no_poll": true,
+      "reason": "The news card describes a future trade exhibition announcement (India ITME 2026) without concrete, immediate financial commitments or machinery orders, resulting in no observable ground-level credit or operational impact in the last 2-4 wee",
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "bc924716a59a": {
@@ -15910,6 +16322,301 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "af8a29b318b7": {
+      "no_poll": false,
+      "hypothesis": "Labor walkouts in Surat embroidery units are disrupting shift operations, leading to capacity under-utilization and potential machine loan EMI defaults.",
+      "event_phrase": "deepening embroidery labor dispute and walkouts",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Embroidery job-work unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your machine utilization changed in the last 2-4 weeks due to labor availability?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "supports_if": "lower utilization confirms production disruption",
+              "contradicts_if": "higher utilization shows no impact"
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How are your turnaround times for completing client orders compared to last month?",
+              "options": [
+                "Much slower",
+                "Slower",
+                "Same",
+                "Faster",
+                "Much faster"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much slower",
+                "Slower"
+              ],
+              "contradicts": [
+                "Faster",
+                "Much faster",
+                "Same"
+              ],
+              "supports_if": "slower turnaround confirms labor shortage",
+              "contradicts_if": "normal speed shows no disruption"
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Embroidery machine operator / shift worker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "What are you observing regarding wage rates and shift availability in embroidery units?",
+              "options": [
+                "Wages rising due to labor shortage",
+                "Shifts idle due to disputes",
+                "Normal wages and stable shifts",
+                "Workers leaving for other sectors"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Shifts idle due to disputes",
+                "Workers leaving for other sectors"
+              ],
+              "contradicts": [
+                "Normal wages and stable shifts"
+              ],
+              "supports_if": "idle shifts or migration confirm dispute impact",
+              "contradicts_if": "normal conditions disprove disruption"
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME branch credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported deepening embroidery labor dispute and walkouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have you received requests for EMI moratoriums or restructuring from embroidery loan borrowers?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "restructuring requests indicate financial stress",
+              "contradicts_if": "no requests indicate stable repayment"
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed any early-stage (SMA-0/SMA-1) loan delinquencies among embroidery units?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "delinquencies confirm cash flow stress from lost production",
+              "contradicts_if": "no delinquencies show healthy servicing"
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "કમ્પ્યુટરાઇઝ્ડ એમ્બ્રોઇડરી યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં મજૂરોની ઉપલબ્ધતાને કારણે તમારા મશીનનો ઉપયોગ કેટલો બદલાયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારા ક્લાયન્ટના ઓર્ડર પૂરા કરવાનો સમય કેટલો બદલાયો છે?",
+                "options": [
+                  "ઘણો પાછળ / ધીમો",
+                  "ધીમો",
+                  "સમાન",
+                  "ઝડપી",
+                  "ઘણો ઝડપી"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર / શિફ્ટ કામદાર",
+            "questions": {
+              "labour.q1": {
+                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "તમે એમ્બ્રોઇડરી યુનિટ્સમાં મજૂરી અને શિફ્ટની ઉપલબ્ધતા વિશે શું નોંધી રહ્યા છો?",
+                "options": [
+                  "મજૂરોની અછતને કારણે મજૂરી વધી રહી છે",
+                  "વિવાદોને કારણે શિફ્ટ બંધ રહી છે",
+                  "ಸಾಮಾન્ય મજૂરી અને સ્થિર શિફ્ટ",
+                  "કામદારો અન્ય ક્ષેત્રોમાં જઈ રહ્યા છે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "એમએસએમઇ શાખા ધિરાણ અધિકારી",
+            "questions": {
+              "banker.q1": {
+                "text": "શું અહેવાલ મુજબ એમ્બ્રોઇડરી ક્ષેત્રે મજૂર વિવાદ અને કામ છોડવાની ઘટના તમારા અનુભવમાં સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમને એમ્બ્રોઇડરી લોન લેનારાઓ તરફથી EMI મોરેટોરિયમ અથવા રીસ્ટ્રક્ચરિંગ માટે અરજીઓ મળી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે એમ્બ્રોઇડરી યુનિટ્સમાં લોન ચૂકવણીમાં પ્રારંભિક વિલંબ (SMA-0/SMA-1) નોંધ્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "1a925ede03e9": {
       "no_poll": false,
       "hypothesis": "Weaving units in Surat continue normal loom operations without widespread shutdowns despite margin pressures.",
@@ -16765,6 +17472,545 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "9d16b82be343": {
+      "no_poll": false,
+      "hypothesis": "Surat embroidery job-work units are facing worker disputes due to cash flow pressures, leading to wage delays and machine loan EMI default risks.",
+      "event_phrase": "worker disputes and wage delays in embroidery units",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Embroidery Job-Worker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "How are you currently clearing worker wages?",
+              "options": [
+                "On time",
+                "Delayed by 1-2 weeks",
+                "Delayed by over 2 weeks"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Delayed by 1-2 weeks",
+                "Delayed by over 2 weeks"
+              ],
+              "contradicts": [
+                "On time"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your machine loan EMI servicing compared to last month?",
+              "options": [
+                "Much easier",
+                "Slightly easier",
+                "Same",
+                "Slightly harder",
+                "Much harder"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Slightly harder",
+                "Much harder"
+              ],
+              "contradicts": [
+                "Much easier",
+                "Slightly easier"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Cluster Branch Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have machine loan EMI bounces or delays trended recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "Embroidery Machine Operator",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported worker disputes and wage delays in embroidery units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "How are you receiving your weekly or monthly wages currently?",
+              "options": [
+                "Regularly on time",
+                "Delayed by a few days",
+                "Pending for weeks"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Delayed by a few days",
+                "Pending for weeks"
+              ],
+              "contradicts": [
+                "Regularly on time"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એમ્બ્રોઇડરી જોબ-વર્કર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવમાં કામદારોના વિવાદ અને મજૂરી વિલંબની અખબારી અસરો સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "તમે હાલમાં કામદારોના પગાર કેવી રીતે ચૂકવી રહ્યા છો?",
+                "options": [
+                  "સમયસર",
+                  "૧-૨ અઠવાડિયા મોડા",
+                  "૨ અઠવાડિયાથી વધુ મોડા"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારી મશીન લોનની EMI ચૂકવણી કેવી રહી છે?",
+                "options": [
+                  "ઘણી સરળ",
+                  "થોડી સરળ",
+                  "સમાન",
+                  "થોડી અઘરી",
+                  "ખૂબ જ અઘરી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ક્લસ્ટર બ્રાન્ચ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું એમ્બ્રોઇડરી યુનિટ્સને અસર કરતા કામદાર વિવાદના અહેવાલો સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "તાજેતરમાં મશીન લોન EMI બાઉન્સ કે વિલંબમાં શું વલણ રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "એમ્બ્રોઇડરી મશીન ઓપરેટર",
+            "questions": {
+              "labour.q1": {
+                "text": "શું તમારા યુનિટમાં મજૂરી વિલંબ અથવા કામદાર વિવાદની વાત સાચી છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "હાલમાં તમને સાપ્તાહિક કે માસિક મજૂરી કેવી રીતે મળી રહી છે?",
+                "options": [
+                  "નિયમિત સમયસર",
+                  "થોડા દિવસો મોડી",
+                  "અઠવાડિયા સુધી બાકી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "6b7974c7f88e": {
+      "no_poll": false,
+      "hypothesis": "Labor disputes and strikes in Surat's embroidery sector are causing operational halts, leading to revenue loss and cash-flow strain for machine-loan servicing.",
+      "event_phrase": "intensification of embroidery worker agitation and labor disputes",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Embroidery unit operator",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported intensification of embroidery worker agitation and labor disputes accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your machine operational hours/shifts changed over the past 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your job-work order delivery timeline been impacted recently?",
+              "options": [
+                "Severely delayed",
+                "Slightly delayed",
+                "On time",
+                "Faster than usual",
+                "No work"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Severely delayed",
+                "Slightly delayed"
+              ],
+              "contradicts": [
+                "On time"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Saree & dress-material trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported intensification of embroidery worker agitation and labor disputes accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How has the supply of embroidered fabric from job-workers changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME credit officer (Surat)",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported intensification of embroidery worker agitation and labor disputes accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you observed ad-hoc working capital demands or EMI delay requests from embroidery borrowers recently?",
+              "options": [
+                "Significant increase",
+                "Minor increase",
+                "No change",
+                "Decrease"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Significant increase",
+                "Minor increase"
+              ],
+              "contradicts": [
+                "No change",
+                "Decrease"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એમ્બ્રોઈડરી યુનિટ ઓપરેટર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવ મુજબ એમ્બ્રોઈડરી કામદારોના આંદોલન અને મજૂર વિવાદો વધવાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા મશીન ઓપરેશનલ કલાકો/શિફ્ટમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સરખા",
+                  "વધારે",
+                  "ઘણા વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "હાલમાં તમારા જોબ-વર્ક ઓર્ડરની ડિલિવરી સમયમર્યાદા પર કેવી અસર પડી છે?",
+                "options": [
+                  "ખૂબ વિલંબિત",
+                  "થોડો વિલંબ",
+                  "સમયસર",
+                  "સામાન્ય કરતાં ઝડપી",
+                  "કામ નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "સાડી અને ડ્રેસ મટિરિયલ વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું તમારા અનુભવ મુજબ એમ્બ્રોઈડરી કામદારોના આંદોલન અને મજૂર વિવાદો વધવાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં જોબ-વર્કર્સ પાસેથી એમ્બ્રોઈડરી વાળા કાપડના પુરવઠામાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "MSME ક્રેડિટ ઓફિસર (સુરત)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવ મુજબ એમ્બ્રોઈડરી કામદારોના આંદોલન અને મજૂર વિવાદો વધવાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે તાજેતરમાં એમ્બ્રોઇડરી ઉધારકર્તાઓ તરફથી એડ-હોક વર્કિંગ કેપિટલ માંગ અથવા EMI વિલંબની વિનંતીઓ જોઈ છે?",
+                "options": [
+                  "મોટો વધારો",
+                  "નાનો વધારો",
+                  "કોઈ ફેરફાર નથી",
+                  "ઘટાડો"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "ff0f473e0921": {
@@ -20252,6 +21498,12 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "0f4e1fbd98dc": {
+      "no_poll": true,
+      "reason": "The report is vague and does not specify the concrete policy demands, tax issues, or operational bottlenecks being represented, making it impossible to measure specific observable ground impact on working capital or credit metrics.",
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
     "af6d72aecf71": {
       "no_poll": false,
       "hypothesis": "Unresolved wage disputes in Surat embroidery units are causing intermittent labor absenteeism and cash flow strain without formal closures.",
@@ -20479,305 +21731,6 @@
                   "હા",
                   "ના",
                   "જોવા મળ્યું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "61d1cd16788e": {
-      "no_poll": false,
-      "hypothesis": "A 12 percent tile price hike has been implemented, leading to sustained realization growth without a severe drop in sales volume or inventory build-up.",
-      "event_phrase": "12% tile price hike",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Tile manufacturing unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported 12% tile price hike accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your actual dispatch volume changed in the last 2-4 weeks after the price revision?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has your finished goods inventory level changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Lower",
-                "Much lower",
-                "Same"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Domestic tile dealer / distributor",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported 12% tile price hike accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "choice",
-              "text": "How has your customer price acceptance been for the revised tile prices?",
-              "options": [
-                "Full acceptance",
-                "Partial pushback / discounting",
-                "Rejected / halted orders"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Full acceptance"
-              ],
-              "contradicts": [
-                "Rejected / halted orders"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Morbi industrial branch banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported 12% tile price hike accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have CC/OD limit utilizations moved for tile manufacturing borrowers in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Lower",
-                "Much lower",
-                "Same"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you noticed any delays in stock-statement submissions or requests for ad-hoc working capital limits?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "No"
-              ],
-              "contradicts": [
-                "Yes"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "ટाइल ઉત્પાદન એકમ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ ટાઇલ્સના ભાવમાં ૧૨% વધારાના અહેવાલ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ભાવ વધારા પછી છેલ્લા ૨-૪ અઠવાડિયામાં તમારો વાસ્તવિક માલ મોકલવાનો (ડિસ્પેચ) જથ્થો કેવી રીતે બદલાયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તૈયાર માલની ઇન્વેન્ટરીનું સ્તર કેવી રીતે બદલાયું છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ઘરેલુ ટાઇલ ડીલર / ડિસ્ટ્રિબ્યુટર",
-            "questions": {
-              "buyer.q1": {
-                "text": "તમારા અનુભવ મુજબ ટાઇલ્સના ભાવમાં ૧૨% વધારાના અહેવાલ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "સુધારેલા ટાઇલના ભાવ માટે ગ્રાહકો તરફથી કેવો પ્રતિસાદ મળ્યો છે?",
-                "options": [
-                  "સંપૂર્ણ સ્વીકૃતિ",
-                  "આંશિક વિરોધ / ડિસ્કાઉન્ટ માંગણી",
-                  "અસ્વીકાર / ઓર્ડર અટકાવ્યા"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "મોરબી ઔદ્યોગિક શાખા બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ ટાઇલ્સના ભાવમાં ૧૨% વધારાના અહેવાલ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં ટાઇલ ઉત્પાદન કરનારા ગ્રાહકો માટે સીસી/ઓડી (CC/OD) મર્યાદાનો ઉપયોગ કેવી રીતે બદલાયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે સ્ટોક-સ્ટેટમેન્ટ રજૂ કરવામાં કોઈ વિલંબ અથવા વધારાની વર્કિંગ કેપિટલ મર્યાદા માટેની વિનંતીઓ નોંધી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
                 ]
               }
             }
@@ -21080,6 +22033,305 @@
                   "સમાન",
                   "વધુ",
                   "ઘણો વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "61d1cd16788e": {
+      "no_poll": false,
+      "hypothesis": "A 12 percent tile price hike has been implemented, leading to sustained realization growth without a severe drop in sales volume or inventory build-up.",
+      "event_phrase": "12% tile price hike",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Tile manufacturing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported 12% tile price hike accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your actual dispatch volume changed in the last 2-4 weeks after the price revision?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your finished goods inventory level changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Lower",
+                "Much lower",
+                "Same"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Domestic tile dealer / distributor",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported 12% tile price hike accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "choice",
+              "text": "How has your customer price acceptance been for the revised tile prices?",
+              "options": [
+                "Full acceptance",
+                "Partial pushback / discounting",
+                "Rejected / halted orders"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Full acceptance"
+              ],
+              "contradicts": [
+                "Rejected / halted orders"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi industrial branch banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported 12% tile price hike accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have CC/OD limit utilizations moved for tile manufacturing borrowers in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Lower",
+                "Much lower",
+                "Same"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you noticed any delays in stock-statement submissions or requests for ad-hoc working capital limits?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "ટाइल ઉત્પાદન એકમ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ ટાઇલ્સના ભાવમાં ૧૨% વધારાના અહેવાલ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ભાવ વધારા પછી છેલ્લા ૨-૪ અઠવાડિયામાં તમારો વાસ્તવિક માલ મોકલવાનો (ડિસ્પેચ) જથ્થો કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં તૈયાર માલની ઇન્વેન્ટરીનું સ્તર કેવી રીતે બદલાયું છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "ઘરેલુ ટાઇલ ડીલર / ડિસ્ટ્રિબ્યુટર",
+            "questions": {
+              "buyer.q1": {
+                "text": "તમારા અનુભવ મુજબ ટાઇલ્સના ભાવમાં ૧૨% વધારાના અહેવાલ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "સુધારેલા ટાઇલના ભાવ માટે ગ્રાહકો તરફથી કેવો પ્રતિસાદ મળ્યો છે?",
+                "options": [
+                  "સંપૂર્ણ સ્વીકૃતિ",
+                  "આંશિક વિરોધ / ડિસ્કાઉન્ટ માંગણી",
+                  "અસ્વીકાર / ઓર્ડર અટકાવ્યા"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી ઔદ્યોગિક શાખા બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ ટાઇલ્સના ભાવમાં ૧૨% વધારાના અહેવાલ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં ટાઇલ ઉત્પાદન કરનારા ગ્રાહકો માટે સીસી/ઓડી (CC/OD) મર્યાદાનો ઉપયોગ કેવી રીતે બદલાયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે સ્ટોક-સ્ટેટમેન્ટ રજૂ કરવામાં કોઈ વિલંબ અથવા વધારાની વર્કિંગ કેપિટલ મર્યાદા માટેની વિનંતીઓ નોંધી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }
@@ -22947,6 +24199,308 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "1ba68cb01727": {
+      "no_poll": false,
+      "hypothesis": "Strong retail ceramic demand reported by national brands reflects robust OEM order books and steady plant utilization across Morbi MSME manufacturers.",
+      "event_phrase": "surge in domestic ceramic tile demand and sales",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "OEM tile manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in domestic ceramic tile demand and sales accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How does your current order book for branded OEM/domestic dispatches compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "OEM order volumes from national tile brands are expanding.",
+              "contradicts_if": "OEM orders remain flat or are declining, showing brand growth is not reaching MSMEs."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How have your finished goods inventory days changed over the last 3-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Finished goods inventory is clearing faster due to strong offtake.",
+              "contradicts_if": "Finished goods inventory is accumulating at factory yards."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi commercial banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in domestic ceramic tile demand and sales accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "What trend are you observing in working capital CC/OD limit utilisation among tile borrowers?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Much lower",
+                "Lower",
+                "Same"
+              ],
+              "contradicts": [
+                "Much higher"
+              ],
+              "supports_if": "Working capital limits are comfortably managed with faster debtor realisation.",
+              "contradicts_if": "CC/OD utilisation is pinned at limits due to poor cash generation."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have tile manufacturing borrowers requested ad-hoc limit enhancements in the past month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "No"
+              ],
+              "contradicts": [
+                "Yes"
+              ],
+              "supports_if": "No liquidity stress or sudden working capital shortfall reported.",
+              "contradicts_if": "Frequent ad-hoc requests suggest cash flow mismatch despite reported industry growth."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Corrugated box / packaging supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in domestic ceramic tile demand and sales accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has packaging box offtake from local tile manufacturing units moved this month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Tile packaging orders are rising, confirming active dispatch volumes.",
+              "contradicts_if": "Packaging orders are subdued, contradicting claims of domestic demand growth."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "OEM ટાઇલ ઉત્પાદક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું સ્થાનિક સિરામિક ટાઇલ્સની માંગ અને વેચાણમાં થયેલો ઉછાળો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં બ્રાન્ડેડ OEM/સ્થાનિક ડિસ્પેચ માટે તમારી ઓર્ડર બુક કેવી છે?",
+                "options": [
+                  "ઘણી ઓછી",
+                  "ઓછી",
+                  "તેટલી જ",
+                  "વધુ",
+                  "ઘણી વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા 3-4 અઠવાડિયામાં તમારા તૈયાર માલ (ઇન્વેન્ટરી) ના સ્ટોક દિવસોમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી કોમર્શિયલ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું સ્થાનિક સિરામિક ટાઇલ્સની માંગ અને વેચાણમાં થયેલો ઉછાળો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "ટાઇલ ઉદ્યોગના ગ્રાહકોમાં વર્કિંગ કેપિટલ CC/OD લિમિટના વપરાશમાં તમે શું ટ્રેન્ડ જોઇ રહ્યા છો?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું ટાઇલ ઉત્પાદકોએ છેલ્લા મહિનામાં એડ-હોક લિમિટ વધારવા માટે અરજી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "કોરુગેટેડ બોક્સ / પેકેજિંગ સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું સ્થાનિક સિરામિક ટાઇલ્સની માંગ અને વેચાણમાં થયેલો ઉછાળો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "આ મહિને સ્થાનિક ટાઇલ ઉત્પાદકો તરફથી પેકેજિંગ બોક્સના ઓર્ડરમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "તેટલો જ",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.8-flash",
       "prompt_version": "poll-v1"
     },
     "3ede25f378d4": {
