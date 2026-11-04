@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T18:00:00.261Z",
+  "generated_at": "2026-11-04T00:45:41.282Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -13,9 +13,9 @@
   },
   "coverage": {
     "cards": 102,
-    "with_poll": 94,
+    "with_poll": 96,
     "no_poll": 6,
-    "pending": 2
+    "pending": 0
   },
   "polls": {
     "297b184838d2": {
@@ -8020,6 +8020,312 @@
                   "એ જ",
                   "વધુ",
                   "ઘણો વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "7cd58a5fce62": {
+      "no_poll": false,
+      "hypothesis": "Coal price doubling in Surat has severely squeezed processing margins and halved operational volumes, leading to delayed stock statements and tighter working capital utilisation.",
+      "event_phrase": "doubling of coal prices and 50% drop in textile business",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Processing & dyeing house owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported doubling of coal prices and 50% drop in textile business accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your boiler fuel cost per meter changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower",
+                "Same"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How is your current production capacity utilisation compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Coal / boiler fuel supplier",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported doubling of coal prices and 50% drop in textile business accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have coal offtake volumes from processing units changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher",
+                "Same"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "MSME branch credit manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported doubling of coal prices and 50% drop in textile business accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How has CC/OD limit utilisation changed for textile processing clients recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower",
+                "Same"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "Have you observed any delay in stock statement submissions from processing units?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "ಪ್ರೊಸೆಸಿಂಗ್ ಮತ್ತು ಡೈಯಿಂಗ್ ಯೂನಿಟ್ ಮಾಲೀಕ",
+            "questions": {
+              "operator.q1": {
+                "text": "ಅಲ್ಲಲ್ಲಿ ವರದಿಯಾದ কয়ಲ ಬೆಲೆ ಏರಿಕೆ ಮತ್ತು ಜವಳಿ ವ್ಯಾಪಾರದಲ್ಲಿ ಅರ್ಧದಷ್ಟು ಕುಸಿತವು ನಿಮ್ಮ ಅನುಭವದಲ್ಲಿ ನಿಖರವಾಗಿದೆಯೇ?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ಕಳೆದ 2-4 ವಾರಗಳಲ್ಲಿ ಪ್ರತಿ ಮೀಟರ್‌ಗೆ ನಿಮ್ಮ ಬಾಯ್ಲರ್ ಇಂಧನ ವೆಚ್ಚ ಹೇಗಿದೆ?",
+                "options": [
+                  "ತುಂಬಾ ಕಡಿಮೆ",
+                  "ಕಡಿಮೆ",
+                  "ಒಂದೇ ಸಮ",
+                  "ಹೆಚ್ಚು",
+                  "ತುಂಬಾ ಹೆಚ್ಚು"
+                ]
+              },
+              "operator.q3": {
+                "text": "ಕಳೆದ ತಿಂಗಳಿಗೆ ಹೋಲಿಸಿದರೆ ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಉತ್ಪಾದನಾ ಸಾಮರ್ಥ್ಯದ ಬಳಕೆ ಹೇಗಿದೆ?",
+                "options": [
+                  "ತುಂಬಾ ಕಡಿಮೆ",
+                  "ಕಡಿಮೆ",
+                  "ಒಂದೇ ಸಮ",
+                  "ಹೆಚ್ಚು",
+                  "ತುಂಬಾ ಹೆಚ್ಚು"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "ಕಲ್ಲಿದ್ದಲು / ಬಾಯ್ಲರ್ ಇಂಧನ ಪೂರೈಕೆದಾರ",
+            "questions": {
+              "supplier.q1": {
+                "text": "ಅಲ್ಲಲ್ಲಿ ವರದಿಯಾದ কয়ಲ ಬೆಲೆ ಏರಿಕೆ ಮತ್ತು ಜವಳಿ ವ್ಯಾಪಾರದಲ್ಲಿ ಅರ್ಧದಷ್ಟು ಕುಸಿತವು ನಿಮ್ಮ ಅನುಭವದಲ್ಲಿ ನಿಖರವಾಗಿದೆಯೇ?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ಕಳೆದ 2-4 ವಾರಗಳಲ್ಲಿ ಪ್ರೊಸೆಸಿಂಗ್ ಘಟಕಗಳಿಂದ ಕಲ್ಲಿದ್ದಲು ಬೇಡಿಕೆ ಪ್ರಮಾಣ ಹೇಗಿದೆ?",
+                "options": [
+                  "ತುಂಬಾ ಕಡಿಮೆ",
+                  "ಕಡಿಮೆ",
+                  "ಒಂದೇ ಸಮ",
+                  "ಹೆಚ್ಚು",
+                  "ತುಂಬಾ ಹೆಚ್ಚು"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ಎಂಎಸ್ಎಂಇ ಶಾಖೆಯ ಕ್ರೆಡಿಟ್ ಮ್ಯಾನೇಜರ್",
+            "questions": {
+              "banker.q1": {
+                "text": "ಅಲ್ಲಲ್ಲಿ ವರದಿಯಾದ কয়ಲ ಬೆಲೆ ಏರಿಕೆ ಮತ್ತು ಜವಳಿ ವ್ಯಾಪಾರದಲ್ಲಿ ಅರ್ಧದಷ್ಟು ಕುಸಿತವು ನಿಮ್ಮ ಅನುಭವದಲ್ಲಿ ನಿಖರವಾಗಿದೆಯೇ?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "ಇತ್ತೀಚೆಗೆ ಜವಳಿ ಪ್ರೊಸೆಸಿಂಗ್ ಗ್ರಾಹಕರಿಗೆ ಸಿಸಿ/ಒಡಿ ಮಿತಿ ಬಳಕೆ ಹೇಗಿದೆ?",
+                "options": [
+                  "ತುಂಬಾ ಕಡಿಮೆ",
+                  "ಕಡಿಮೆ",
+                  "ಒಂದೇ ಸಮ",
+                  "ಹೆಚ್ಚು",
+                  "ತುಂಬಾ ಹೆಚ್ಚು"
+                ]
+              },
+              "banker.q3": {
+                "text": "ಪ್ರೊಸೆಸಿಂಗ್ ಘಟಕಗಳಿಂದ ಸ್ಟಾಕ್ ಸ್ಟೇಟ್‌ಮೆಂಟ್ ಸಲ್ಲಿಕೆಯಲ್ಲಿ ಯಾವುದೇ ವಿಳಂಬವನ್ನು ನೀವು ಗಮನಿಸಿದ್ದೀರಾ?",
+                "options": [
+                  "ಹೌದು",
+                  "ಇಲ್ಲ",
+                  "ಕಂಡುಬಂದಿಲ್ಲ"
                 ]
               }
             }
@@ -22362,6 +22668,342 @@
                   "હા",
                   "ના",
                   "જોવા મળ્યું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "751cd1661531": {
+      "no_poll": false,
+      "hypothesis": "Festive demand for lab-grown diamonds is driving higher order volumes, capacity utilisation, and timely worker bonus payouts in Surat.",
+      "event_phrase": "rise in lab-grown diamond demand and bonus payouts",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "LGD Grower / Polisher",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in lab-grown diamond demand and bonus payouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How do your LGD order volumes compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you offering festive bonuses to your diamond cutting and polishing workers?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Rough LGD / Machinery Supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in lab-grown diamond demand and bonus payouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How is the offtake of rough lab-grown diamonds from your inventory?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat Commercial Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in lab-grown diamond demand and bonus payouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Are you observing increased credit turnover or lower CC/OD utilisation in LGD borrower accounts?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "labour",
+          "label": "LGD Factory Worker",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "labour.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in lab-grown demand and bonus payouts accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "labour.q2",
+              "type": "choice",
+              "text": "What bonus are you receiving from your unit this Diwali?",
+              "options": [
+                "No bonus",
+                "Up to 5%",
+                "Around 10%",
+                "More than 10%"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Around 10%",
+                "More than 10%"
+              ],
+              "contradicts": [
+                "No bonus"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એલજીડી ઉત્પાદક / પોલિશર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવમાં લેબ-ગ્રોન ડાયમંડની માંગ અને બોનસ ચૂકવણીમાં થયેલા વધારાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારા એલજીડી ઓર્ડરનું પ્રમાણ કેવું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે તમારા હીરા કાપવા અને પોલિશ કામદારોને તહેવારના બોનસ આપી રહ્યા છો?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "કાચા એલજીડી / મશીનરી સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું તમારા અનુભવમાં લેબ-ગ્રોન ડાયમંડની માંગ અને બોનસ ચૂકવણીમાં થયેલા વધારાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "તમારી ઇન્વેન્ટરીમાંથી કાચા લેબ-ગ્રોન ડાયમંડનો ઉપાડ કેવો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત કોમર્શિયલ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવમાં લેબ-ગ્રોન ડાયમંડની માંગ અને બોનસ ચૂકવણીમાં થયેલા વધારાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું એલજીડી ખાતાઓમાં ક્રેડિટ ટર્નઓવર વધતું કે સીસી/ઓડી વપરાશ ઘટતો જોવા મળે છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "labour": {
+            "label": "એલજીડી ફેક્ટરી કામદાર",
+            "questions": {
+              "labour.q1": {
+                "text": "શું તમારા અનુભવમાં લેબ-ગ્રોન ડાયમંડની માંગ અને બોનસ ચૂકવણીમાં થયેલા વધારાના અહેવાલો સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "labour.q2": {
+                "text": "આ દિવાળીએ તમારા યુનિટ તરફથી તમને કેટલું બોનસ મળી રહ્યું છે?",
+                "options": [
+                  "કોઈ બોનસ નથી",
+                  "૫% સુધી",
+                  "અંદાજે ૧૦%",
+                  "૧૦% થી વધુ"
                 ]
               }
             }
