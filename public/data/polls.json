@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T16:35:29.329Z",
+  "generated_at": "2026-11-07T23:44:24.766Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 106,
-    "with_poll": 100,
+    "cards": 108,
+    "with_poll": 102,
     "no_poll": 6,
     "pending": 0
   },
@@ -10431,6 +10431,303 @@
                   "વારંવાર એડ-હોક વિનંતીઓ",
                   "ક્યારેક વિનંતીઓ",
                   "કોઈ વધારાની વિનંતી નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "9a8429b49c99": {
+      "no_poll": false,
+      "hypothesis": "Payment delays and disputes from textile traders/buyers are causing increased receivable stress and trade credit friction for Surat weaving units.",
+      "event_phrase": "withholding of weaver dues by textile buyers",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet / powerloom weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported withholding of weaver dues by textile buyers accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your realization period (credit days) from grey-fabric traders changed compared to last month?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Unchanged",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Much shorter",
+                "Shorter"
+              ],
+              "supports_if": "Delayed receivables reflect spreading trade credit stress.",
+              "contradicts_if": "Stable or faster payments indicate isolated dispute rather than systemic stress."
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "Are yarn suppliers tightening credit terms or demanding cash/advance from your unit?",
+              "options": [
+                "Yes, strict advance/cash",
+                "Credit terms tightened",
+                "Unchanged credit days",
+                "Credit terms relaxed"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Yes, strict advance/cash",
+                "Credit terms tightened"
+              ],
+              "contradicts": [
+                "Unchanged credit days",
+                "Credit terms relaxed"
+              ],
+              "supports_if": "Upstream yarn suppliers tightening credit shows contagion of liquidity stress.",
+              "contradicts_if": "Normal supplier credit terms indicate liquidity remains manageable."
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Ring Road textile market trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported withholding of weaver dues by textile buyers accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How have your outstanding trade payables to weaving units changed over the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Rising payables to weavers confirm accumulation of unpaid dues.",
+              "contradicts_if": "Declining payables show dues are being cleared normally."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Textile cluster credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported withholding of weaver dues by textile buyers accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have weaving MSME borrowers requested ad-hoc limits or working capital enhancements in the last 4 weeks?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Demand for ad-hoc credit indicates cash flow gaps caused by payment delays.",
+              "contradicts_if": "Lack of enhancement requests suggests liquidity remains adequate."
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "What trend are you observing in CC/OD limit utilization levels for loom units?",
+              "options": [
+                "Near 100% capacity",
+                "70-90% utilization",
+                "Below 70%",
+                "Decreasing utilization"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near 100% capacity"
+              ],
+              "contradicts": [
+                "Below 70%",
+                "Decreasing utilization"
+              ],
+              "supports_if": "Maxed-out CC/OD limits point to stretched cash flows from unpaid receivables.",
+              "contradicts_if": "Low limit utilization indicates adequate cash buffer."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ / પાવરલૂમ વણકર (વિવર)",
+            "questions": {
+              "operator.q1": {
+                "text": "શું ટેક્સટાઇલ ખરીદદારો દ્વારા વણકરોના નાણાં અટકાવવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં ગ્રે-કાપડ વેપારીઓ પાસેથી ઉઘરાણીનો સમયગાળો (ક્રેડિટ દિવસો) કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ટૂંકો",
+                  "ટૂંકો",
+                  "અપરિવર્તિત",
+                  "લાંબો",
+                  "ઘણો લાંબો"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું યાર્ન સપ્લાયર્સ શરતો સખત કરી રહ્યા છે કે તમારા એકમ પાસે એડવાન્સ/રોકડની માંગ કરી રહ્યા છે?",
+                "options": [
+                  "હા, સખત એડવાન્સ/રોકડ",
+                  "ક્રેડિટ મુદત સખત થઈ",
+                  "અપરિવર્તિત ક્રેડિટ દિવસો",
+                  "ક્રેડિટ મુદતમાં રાહત"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "રિંગ રોડ ટેક્સટાઇલ માર્કેટ વેપારી",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું ટેક્સટાઇલ ખરીદદારો દ્વારા વણકરોના નાણાં અટકાવવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં વણાટ એકમોને ચૂકવવાપાત્ર વેપાર દેવામાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ટેક્સટાઇલ ક્લસ્ટર ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું ટેક્સટાઇલ ખરીદદારો દ્વારા વણકરોના નાણાં અટકાવવાના અહેવાલ તમારા અનુભવ મુજબ સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું વિવિંગ MSME ઉધારકર્તાઓએ છેલ્લા 4 અઠવાડિયામાં એડ-હોક મર્યાદા અથવા વર્કિંગ કેપિટલ વધારાની વિનંતી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "લૂમ એકમો માટે CC/OD મર્યાદાના ઉપયોગના સ્તરમાં તમે શું વલણ જોઈ રહ્યા છો?",
+                "options": [
+                  "100% મર્યાદાની નજીક",
+                  "70-90% ઉપયોગ",
+                  "70% થી નીચે",
+                  "ઉપયોગ ઘટી રહ્યો છે"
                 ]
               }
             }
@@ -22420,6 +22717,306 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "021c037e28d9": {
+      "no_poll": false,
+      "hypothesis": "Surat textile policy unit approvals are driving fresh capex inquiries, machinery orders, and term loan/enhancement applications.",
+      "event_phrase": "approval of 627 textile units under the Surat Textile Policy",
+      "roles": [
+        {
+          "role": "banker",
+          "label": "Surat SME Credit Officer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported approval of 627 textile units under the Surat Textile Policy accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have new term loan applications for textile capex changed in the past 4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have existing textile borrowers approached for credit limit enhancements to expand capacity?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Weaving / Processing Unit Owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported approval of 627 textile units under the Surat Textile Policy accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What is your current plan for loom/processing capacity expansion over the next 6 months?",
+              "options": [
+                "Adding new units",
+                "Upgrading existing machinery",
+                "Holding capex",
+                "Reducing capacity"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Adding new units",
+                "Upgrading existing machinery"
+              ],
+              "contradicts": [
+                "Holding capex",
+                "Reducing capacity"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has the release of state policy incentives and subsidies been over the past 4 weeks?",
+              "options": [
+                "Severely delayed",
+                "Slightly delayed",
+                "On track",
+                "Faster than usual",
+                "Not applicable"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "On track",
+                "Faster than usual"
+              ],
+              "contradicts": [
+                "Severely delayed",
+                "Slightly delayed"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Textile Machinery Supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported approval of 627 textile units under the Surat Textile Policy accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have new machine (water-jet/air-jet) inquiries and bookings shifted over the past 4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "banker": {
+            "label": "સુરત એસએમઈ ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું સુરત ટેક્સટાઈલ પોલિસી હેઠળ 627 ટેક્સટાઈલ યુનિટ્સની મંજૂરીના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા 4 સપ્તાહમાં ટેક્સટાઈલ કેપેક્સ માટે નવી ટર્મ લોનની અરજીઓમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું હયાત ટેક્સટાઈલ ઉધારકર્તાઓએ ક્ષમતા વિસ્તરણ માટે ક્રેડિટ લિમિટ વધારવા માટે સંપર્ક કર્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "વીવિંગ / પ્રોસેસિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું સુરત ટેક્સટાઈલ પોલિસી હેઠળ 627 ટેક્સટાઈલ યુનિટ્સની મંજૂરીના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "આગામી 6 મહિનામાં લૂમ/પ્રોસેસિંગ ક્ષમતા વિસ્તરણ માટે તમારી વર્તમાન યોજના શું છે?",
+                "options": [
+                  "નવા યુનિટ્સ ઉમેરવા",
+                  "હયાત મશીનરી અપગ્રેડ કરવી",
+                  "કેપેક્સ સ્થગિત રાખવું",
+                  "ક્ષમતા ઘટાડવી"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા 4 સપ્તાહમાં રાજ્ય નીતિના પ્રોત્સાહનો અને સબસીડીની ચુકવણી કેવી રહી છે?",
+                "options": [
+                  "ખૂબ મોડી",
+                  "થોડી મોડી",
+                  "સમયસર",
+                  "સામાન્ય કરતાં ઝડપી",
+                  "લાગુ પડતું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "ટેક્સટાઈલ મશીનરી સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું સુરત ટેક્સટાઈલ પોલિસી હેઠળ 627 ટેક્સટાઈલ યુનિટ્સની મંજૂરીના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 4 સપ્તાહમાં નવા મશીન (વોટર-જેટ/એર-જેટ) માટેની પૂછપરછ અને બુકિંગમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "d6c30857de2c": {
