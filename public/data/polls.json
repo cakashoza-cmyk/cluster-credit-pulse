@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T00:47:32.759Z",
+  "generated_at": "2026-11-11T12:54:04.429Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,9 +12,9 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 100,
+    "cards": 101,
     "with_poll": 94,
-    "no_poll": 6,
+    "no_poll": 7,
     "pending": 0
   },
   "polls": {
@@ -6458,6 +6458,12 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "8cfd965ad293": {
+      "no_poll": true,
+      "reason": "The news describes an academic/R&D selection for a research project with no immediate observable operational, price, or financial impact on Surat textile units in the last 2-4 weeks.",
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
     "ad48975ddfcf": {
       "no_poll": false,
       "hypothesis": "Surat textile printing houses have successfully enforced a 15% rate hike and tightened receivable cycles to 45 days post-Diwali.",
@@ -9984,20 +9990,20 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "9e8c549b7c05": {
+    "5acee2e18e08": {
       "no_poll": false,
-      "hypothesis": "Propane price hike to Rs 104/kg increases firing costs, squeezing margins and driving higher working capital utilization among Morbi ceramic tile manufacturers.",
-      "event_phrase": "rise in industrial propane gas prices to Rs 104/kg",
+      "hypothesis": "Propane price hike of ₹3/kg is squeezing operating margins and altering fuel choices or credit demand among Morbi tile units.",
+      "event_phrase": "₹3 per kg increase in propane gas prices",
       "roles": [
         {
           "role": "supplier",
-          "label": "Propane / fuel trader",
+          "label": "Propane / Gas supplier",
           "proximity": 3,
           "questions": [
             {
               "id": "supplier.q1",
               "type": "accuracy",
-              "text": "Is the reported rise in industrial propane gas prices to Rs 104/kg accurate in your experience?",
+              "text": "Is the reported ₹3 per kg increase in propane gas prices accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -10036,40 +10042,39 @@
                 "Higher",
                 "Much higher"
               ],
-              "supports_if": "Propane order volume from ceramic units decreases due to unviable fuel costs.",
-              "contradicts_if": "Propane off-take remains strong despite the price hike."
+              "supports_if": "Morbi tile units are cutting down production due to higher propane costs",
+              "contradicts_if": "Propane consumption remains robust despite price increase"
             },
             {
               "id": "supplier.q3",
-              "type": "choice",
-              "text": "Are propane-fired units requesting extended credit terms on fuel purchases?",
+              "type": "yes_no_notseen",
+              "text": "Are tile units asking to extend fuel supply payment terms?",
               "options": [
-                "Yes, significant extension requested",
-                "Mild pressure for extra credit days",
-                "No change in payment terms"
+                "Yes",
+                "No",
+                "Not seen"
               ],
               "mechanism": "creditors",
               "supports": [
-                "Yes, significant extension requested",
-                "Mild pressure for extra credit days"
+                "Yes"
               ],
               "contradicts": [
-                "No change in payment terms"
+                "No"
               ],
-              "supports_if": "Tile makers are facing cash flow stress from higher fuel bills.",
-              "contradicts_if": "Tile makers continue paying fuel suppliers on standard credit terms."
+              "supports_if": "Units are facing liquidity pressure from higher fuel bills",
+              "contradicts_if": "Units are paying for fuel supply within standard payment terms"
             }
           ]
         },
         {
           "role": "operator",
-          "label": "Propane-fired tile manufacturer",
+          "label": "Ceramic tile manufacturer",
           "proximity": 3,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported rise in industrial propane gas prices to Rs 104/kg accurate in your experience?",
+              "text": "Is the reported ₹3 per kg increase in propane gas prices accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -10091,57 +10096,56 @@
             {
               "id": "operator.q2",
               "type": "choice",
-              "text": "Have you been able to pass on the fuel price increase to tile buyers?",
+              "text": "Have you been able to pass on the fuel price hike to finished tile buyers?",
               "options": [
-                "Fully passed on via price hike",
-                "Partially passed on",
-                "Absorbed completely by us"
+                "Passed on fully",
+                "Passed on partially",
+                "Absorbed fully",
+                "Not attempted"
               ],
               "mechanism": "margin",
               "supports": [
-                "Absorbed completely by us",
-                "Partially passed on"
+                "Absorbed fully"
               ],
               "contradicts": [
-                "Fully passed on via price hike"
+                "Passed on fully"
               ],
-              "supports_if": "Tile manufacturers are absorbing the cost, directly eroding operating margins.",
-              "contradicts_if": "Manufacturers successfully pass fuel price increases to buyers without margin erosion."
+              "supports_if": "Margins are directly squeezed as manufacturers absorb fuel price hikes",
+              "contradicts_if": "Cost increase is successfully passed on to buyers"
             },
             {
               "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has your kiln capacity utilization changed over the past 2-4 weeks?",
+              "type": "choice",
+              "text": "What action are you taking regarding kiln fuel usage in the last 2-4 weeks?",
               "options": [
-                "Significantly lower",
-                "Slightly lower",
-                "Unchanged",
-                "Slightly higher",
-                "Significantly higher"
+                "Switching to PNG",
+                "Reducing kiln runs",
+                "Maintaining propane",
+                "Increasing production"
               ],
-              "mechanism": "volume",
+              "mechanism": "input_cost",
               "supports": [
-                "Significantly lower",
-                "Slightly lower"
+                "Switching to PNG",
+                "Reducing kiln runs"
               ],
               "contradicts": [
-                "Significantly higher",
-                "Slightly higher"
+                "Maintaining propane",
+                "Increasing production"
               ],
-              "supports_if": "Units are cutting production or shutting kilns due to unviable fuel costs.",
-              "contradicts_if": "Units maintain or increase kiln run rates despite fuel price hikes."
+              "supports_if": "Units are curtailing operations or switching away from expensive propane",
+              "contradicts_if": "Operations continue unchanged despite propane price hike"
             }
           ]
         },
         {
           "role": "banker",
-          "label": "SME credit officer (Morbi)",
+          "label": "Cluster Credit Officer",
           "proximity": 2,
           "questions": [
             {
               "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported rise in industrial propane gas prices to Rs 104/kg accurate in your experience?",
+              "text": "Is the reported ₹3 per kg increase in propane gas prices accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
@@ -10162,23 +10166,45 @@
             },
             {
               "id": "banker.q2",
-              "type": "choice",
-              "text": "Have propane-reliant ceramic borrowers requested ad-hoc CC limit enhancements in the last 2-4 weeks?",
+              "type": "yes_no_notseen",
+              "text": "Have propane-fired ceramic borrowers requested ad-hoc credit limit enhancements in the last 2-4 weeks?",
               "options": [
-                "Frequent ad-hoc requests",
-                "Occasional requests",
-                "No enhancement requests"
+                "Yes",
+                "No",
+                "Not seen"
               ],
               "mechanism": "wc_utilisation",
               "supports": [
-                "Frequent ad-hoc requests",
-                "Occasional requests"
+                "Yes"
               ],
               "contradicts": [
-                "No enhancement requests"
+                "No"
               ],
-              "supports_if": "Borrowers need additional working capital to fund inflated fuel bills.",
-              "contradicts_if": "Borrowers operate comfortably within existing cash credit limits."
+              "supports_if": "Higher fuel costs are driving increased working capital demand",
+              "contradicts_if": "Borrowers are managing working capital without additional credit support"
+            },
+            {
+              "id": "banker.q3",
+              "type": "scale5",
+              "text": "How is CC/OD limit utilization trending among propane-fired tile units?",
+              "options": [
+                "Near 100%",
+                "Increasing",
+                "Stable",
+                "Decreasing",
+                "Low utilization"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near 100%",
+                "Increasing"
+              ],
+              "contradicts": [
+                "Decreasing",
+                "Low utilization"
+              ],
+              "supports_if": "Working capital limits are being stretched by rising energy costs",
+              "contradicts_if": "Working capital utilization remains comfortable"
             }
           ]
         }
@@ -10187,10 +10213,10 @@
         "lang": "gu",
         "roles": {
           "supplier": {
-            "label": "પ્રોપેન / બળતણ વેપારી",
+            "label": "પ્રોપેન / ગેસ સપ્લાયર",
             "questions": {
               "supplier.q1": {
-                "text": "શું તમારા અનુભવ મુજબ ઔદ્યોગિક પ્રોપેન ગેસના ભાવ વધીને ₹104/કિલો થવાના અહેવાલ સાચા છે?",
+                "text": "શું તમારા અનુભવ મુજબ પ્રોપેન ગેસના ભાવમાં ₹3 પ્રતિ કિલોનો વધારો સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -10199,30 +10225,30 @@
                 ]
               },
               "supplier.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં સિરામિક એકમો તરફથી પ્રોપેનના ઓર્ડર વોલ્યુમમાં શું ફેરફાર થયો છે?",
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં સિરામિક યુનિટ્સ તરફથી પ્રોપેન ઓર્ડરના વોલ્યુમમાં શું ફેરફાર થયો છે?",
                 "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "યથાસ્થિત",
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "યથાવત",
                   "વધારે",
-                  "ઘણો વધારે"
+                  "ઘણું વધારે"
                 ]
               },
               "supplier.q3": {
-                "text": "શું પ્રોપેનથી ચાલતા એકમો બળતણ ખરીદી પર વધુ ક્રેડિટ મુદતની માંગણી કરી રહ્યા છે?",
+                "text": "શું ટાઇલ યુનિટ્સ ગેસ સપ્લાયની ચુકવણીની મુદત લંબાવવા માંગણી કરી રહ્યા છે?",
                 "options": [
-                  "હા, ક્રેડિટ મુદતમાં મોટો વધારો માંગ્યો છે",
-                  "વધારાના ક્રેડિટ દિવસો માટે સામાન્ય દબાણ",
-                  "ચૂકવણીની શરતોમાં કોઈ ફેરફાર નથી"
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }
           },
           "operator": {
-            "label": "પ્રોપેન આધારિત ટાઇલ્સ ઉત્પાદક",
+            "label": "સિરામિક ટાઇલ ઉત્પાદક",
             "questions": {
               "operator.q1": {
-                "text": "શું તમારા અનુભવ મુજબ ઔદ્યોગિક પ્રોપેન ગેસના ભાવ વધીને ₹104/કિલો થવાના અહેવાલ સાચા છે?",
+                "text": "શું તમારા અનુભવ મુજબ પ્રોપેન ગેસના ભાવમાં ₹3 પ્રતિ કિલોનો વધારો સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -10231,30 +10257,30 @@
                 ]
               },
               "operator.q2": {
-                "text": "શું તમે બળતણના ભાવ વધારાનો બોજ ટાઇલ્સ ખરીદદારો પર નાખી શક્યા છો?",
+                "text": "શું તમે બળતણના ભાવવધારાનો બોજ ટાઇલ ખરીદદારો પર પાસ કરી શક્યા છો?",
                 "options": [
-                  "ભાવ વધારા દ્વારા પૂરો બોજ પાસ કર્યો",
-                  "અંશતઃ બોજ પાસ કર્યો",
-                  "અમે પૂરેપૂરો બોજ સહન કર્યો"
+                  "સંપૂર્ણ પાસ કર્યો",
+                  "અંશતઃ પાસ કર્યો",
+                  "પોતે સહન કર્યો",
+                  "પ્રયાસ નથી કર્યો"
                 ]
               },
               "operator.q3": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારી ભઠ્ઠી (કિલન) ની ક્ષમતા વપરાશમાં શું ફેરફાર થયો છે?",
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં ભઠ્ઠી (કિલન) ના બળતણના વપરાશ અંગે તમે શું પગલાં લઈ રહ્યા છો?",
                 "options": [
-                  "નોંધપાત્ર રીતે ઓછો",
-                  "થોડો ઓછો",
-                  "યથાસ્થિત",
-                  "થોડો વધારે",
-                  "નોંધપાત્ર રીતે વધારે"
+                  "PNG તરફ શિફ્ટ થઈ રહ્યા છીએ",
+                  "કિલન ઉત્પાદન ઘટાડી રહ્યા છીએ",
+                  "પ્રોપેન ચાલુ રાખ્યું છે",
+                  "ઉત્પાદન વધારી રહ્યા છીએ"
                 ]
               }
             }
           },
           "banker": {
-            "label": "SME ક્રેડિટ ઓફિસર (મોરબી)",
+            "label": "ક્લસ્ટર ક્રેડિટ ઓફિસર",
             "questions": {
               "banker.q1": {
-                "text": "શું તમારા અનુભવ મુજબ ઔદ્યોગિક પ્રોપેન ગેસના ભાવ વધીને ₹104/કિલો થવાના અહેવાલ સાચા છે?",
+                "text": "શું તમારા અનુભવ મુજબ પ્રોપેન ગેસના ભાવમાં ₹3 પ્રતિ કિલોનો વધારો સાચો છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -10263,11 +10289,21 @@
                 ]
               },
               "banker.q2": {
-                "text": "શું પ્રોપેન આધારિત સિરામિક ગ્રાહકોએ છેલ્લા 2-4 અઠવાડિયામાં એડ-હોક CC લિમિટ વધારાની વિનંતી કરી છે?",
+                "text": "શું પ્રોપેન આધારિત સિરામિક ગ્રાહકોએ છેલ્લા 2-4 અઠવાડિયામાં એડ-હોક ક્રેડિટ લિમિટ વધારવાની વિનંતી કરી છે?",
                 "options": [
-                  "વારંવાર એડ-હોક વિનંતીઓ",
-                  "ક્યારેક વિનંતીઓ",
-                  "કોઈ વધારાની વિનંતી નથી"
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "પ્રોપેન આધારિત ટાઇલ યુનિટ્સમાં CC/OD લિમિટનો વપરાશ કેવો રહી રહ્યો છે?",
+                "options": [
+                  "100% ની નજીક",
+                  "વધી રહ્યો છે",
+                  "સ્થિર",
+                  "ઘટી રહ્યો છે",
+                  "ઓછો વપરાશ"
                 ]
               }
             }
