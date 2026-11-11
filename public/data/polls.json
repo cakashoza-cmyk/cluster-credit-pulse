@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T17:54:44.095Z",
+  "generated_at": "2026-11-11T00:47:32.759Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -13,9 +13,9 @@
   },
   "coverage": {
     "cards": 100,
-    "with_poll": 93,
+    "with_poll": 94,
     "no_poll": 6,
-    "pending": 1
+    "pending": 0
   },
   "polls": {
     "297b184838d2": {
@@ -6449,6 +6449,242 @@
                   "સરખું",
                   "વધુ",
                   "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "ad48975ddfcf": {
+      "no_poll": false,
+      "hypothesis": "Surat textile printing houses have successfully enforced a 15% rate hike and tightened receivable cycles to 45 days post-Diwali.",
+      "event_phrase": "15% printing rate hike and 45-day payment terms",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Textile processing & printing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported 15% printing rate hike and 45-day payment term accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has your average realization cycle for printing bills changed in the last 3-4 weeks?",
+              "options": [
+                "Below 45 days",
+                "Around 45 days",
+                "60-75 days",
+                "90 days",
+                "Above 90 days"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Below 45 days",
+                "Around 45 days"
+              ],
+              "contradicts": [
+                "90 days",
+                "Above 90 days"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Grey-fabric trader / dress-material seller",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported 15% printing rate hike and 45-day payment term accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How much are processing houses charging you for printing compared to pre-Diwali rates?",
+              "options": [
+                "No change",
+                "5-10% higher",
+                "10-15% higher",
+                "Over 15% higher",
+                "Negotiated lower"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "10-15% higher",
+                "Over 15% higher"
+              ],
+              "contradicts": [
+                "No change",
+                "Negotiated lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat MMF cluster credit manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported 15% printing rate hike and 45-day payment term accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "How are processing unit borrowers utilizing their working capital limits post-Diwali?",
+              "options": [
+                "Utilisation dropped due to better cash flow",
+                "Utilisation stable",
+                "Utilisation elevated due to delayed trader payments"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Utilisation dropped due to better cash flow"
+              ],
+              "contradicts": [
+                "Utilisation elevated due to delayed trader payments"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "ટેક્સટાઇલ પ્રોસેસિંગ અને પ્રિન્ટિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "તમારા અનુભવ મુજબ શું પ્રિન્ટિંગ દર ૧૫% વધારા અને ૪૫-દિવસની ચુકવણીની શરતનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૩-૪ અઠવાડિયામાં પ્રિન્ટિંગ બિલની વસૂલાતનું સરેરાશ ચક્ર કેવી રીતે બદલાયું છે?",
+                "options": [
+                  "૪૫ દિવસથી ઓછું",
+                  "આશરે ૪૫ દિવસ",
+                  "૬૦-૭૫ દિવસ",
+                  "૯૦ દિવસ",
+                  "૯૦ દિવસથી વધુ"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "ગ્રે-ફેબ્રિક વેપારી / ડ્રેસ-મટીરિયલ વેચનાર",
+            "questions": {
+              "buyer.q1": {
+                "text": "તમારા અનુભવ મુજબ શું પ્રિન્ટિંગ દર ૧૫% વધારા અને ૪૫-દિવસની ચુકવણીની શરતનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "દીવાળી પહેલાના દરોની સરખામણીમાં પ્રોસેસિંગ હાઉસિસ પ્રિન્ટિંગ માટે કેટલો ચાર્જ લઈ રહ્યા છે?",
+                "options": [
+                  "કોઈ ફેરફાર નહીં",
+                  "૫-૧૦% વધુ",
+                  "૧૦-૧૫% વધુ",
+                  "૧૫% કરતા વધુ",
+                  "વાટાઘાટો કરીને ઓછો કર્યો"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત એમએમએફ ક્લસ્ટર ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "તમારા અનુભવ મુજબ શું પ્રિન્ટિંગ દર ૧૫% વધારા અને ૪૫-દિવસની ચુકવણીની શરતનો અહેવાલ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "દીવાળી પછી પ્રોસેસિંગ યુનિટના ધિરાણકર્તાઓ તેમની વર્કિંગ કેપિટલ લિમિટનો ઉપયોગ કેવી રીતે કરી રહ્યા છે?",
+                "options": [
+                  "વધુ સારી રોકડ પ્રવાહને કારણે ઉપયોગ ઘટ્યો",
+                  "ઉપયોગ સ્થિર છે",
+                  "વેપારીઓની વિલંબિત ચુકવણીને કારણે ઉપયોગ વધ્યો"
                 ]
               }
             }
