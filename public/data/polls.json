@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T13:12:54.382Z",
+  "generated_at": "2026-11-13T21:27:44.366Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -13,9 +13,9 @@
   },
   "coverage": {
     "cards": 104,
-    "with_poll": 96,
+    "with_poll": 97,
     "no_poll": 7,
-    "pending": 1
+    "pending": 0
   },
   "polls": {
     "297b184838d2": {
@@ -5882,6 +5882,334 @@
                   "સામાન્ય મોસમી સ્તર",
                   "સામાન્ય કરતાં ઓછું",
                   "એડ-હોક લિમિટની વધુ માંગ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "feab7191db1d": {
+      "no_poll": false,
+      "hypothesis": "Surat weaving units are reducing operating shifts or shutting down early due to unviable yarn prices compressing margins.",
+      "event_phrase": "surge in yarn prices and early weaving plant shutdowns",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Weaving unit operator (Water-jet / Powerloom)",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices and early weaving plant shutdowns accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What is the current operational status of looms in your unit compared to last month?",
+              "options": [
+                "Normal 24/7 shifts",
+                "Reduced to single shift",
+                "Partial shutdown / early Diwali break",
+                "Complete shutdown"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Reduced to single shift",
+                "Partial shutdown / early Diwali break",
+                "Complete shutdown"
+              ],
+              "contradicts": [
+                "Normal 24/7 shifts"
+              ],
+              "supports_if": "Looms are running at reduced shifts or facing early Diwali shutdowns.",
+              "contradicts_if": "Units are operating at normal 24/7 capacity."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How effectively are you able to pass on the yarn cost increase to grey fabric prices?",
+              "options": [
+                "Cannot pass on",
+                "Slight pass-through",
+                "Partial pass-through",
+                "Substantial pass-through",
+                "Full pass-through"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Cannot pass on",
+                "Slight pass-through"
+              ],
+              "contradicts": [
+                "Substantial pass-through",
+                "Full pass-through"
+              ],
+              "supports_if": "Weavers are unable to pass on raw material cost increases, compressing margins.",
+              "contradicts_if": "Weavers are successfully passing on the cost increase to buyers."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn supplier / Texturiser (POY/FDY seller)",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices and early weaving plant shutdowns accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has yarn offtake from weaving units changed over the past 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Yarn purchase volumes by weaving units have dropped significantly.",
+              "contradicts_if": "Yarn purchase volumes remain steady or are growing."
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What payment terms are weaving units currently requesting for fresh yarn orders?",
+              "options": [
+                "Strict cash/advance only",
+                "Normal credit terms (15-30 days)",
+                "Demanding extended credit (>45 days)",
+                "Frequent credit default / check bounces"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Demanding extended credit (>45 days)",
+                "Frequent credit default / check bounces"
+              ],
+              "contradicts": [
+                "Normal credit terms (15-30 days)"
+              ],
+              "supports_if": "Weavers are stretching credit terms or defaulting on payments.",
+              "contradicts_if": "Credit terms are normal and payments are timely."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Commercial MSME Credit Officer (Surat)",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported surge in yarn prices and early weaving plant shutdowns accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you seen an increase in ad-hoc limit or working capital enhancement requests from local weavers recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Bankers report an increase in working capital pressure and limit requests.",
+              "contradicts_if": "No additional liquidity requests are observed."
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "What trend are you observing in CC/OD account utilisation levels for textile weaving accounts?",
+              "options": [
+                "Near 100% capacity",
+                "Slightly elevated",
+                "Normal/Moderate",
+                "Lower than average"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Near 100% capacity",
+                "Slightly elevated"
+              ],
+              "contradicts": [
+                "Normal/Moderate",
+                "Lower than average"
+              ],
+              "supports_if": "Working capital limits are near maxed out, showing cash-flow stress.",
+              "contradicts_if": "CC/OD utilisation is at normal or healthy levels."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વીવિંગ યુનિટ ઓપરેટર (વોટર-જેટ / પાવરલૂમ)",
+            "questions": {
+              "operator.q1": {
+                "text": "શું યાર્નના ભાવમાં વધારો અને વીવિંગ પ્લાન્ટ વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારા યુનિટમાં લૂમ્સની હાલની કાર્યકારી સ્થિતિ શું છે?",
+                "options": [
+                  "સામાન્ય 24/7 શિફ્ટ",
+                  "ઘટાડીને સિંગલ શિફ્ટ કરી",
+                  "અંશતઃ બંધ / વહેલી દિવાળી રજા",
+                  "સંપૂર્ણ બંધ"
+                ]
+              },
+              "operator.q3": {
+                "text": "યાર્નના ભાવવધારાનો બોજ તમે ગ્રે કાપડની કિંમતો પર કેટલી અસરકારક રીતે ટ્રાન્સફર કરી શકો છો?",
+                "options": [
+                  "બિલકુલ ટ્રાન્સફર કરી શકતા નથી",
+                  "થોડો જ ટ્રાન્સફર થાય છે",
+                  "અંશતઃ ટ્રાન્સફર થાય છે",
+                  "મોટા પ્રમાણમાં ટ્રાન્સફર થાય છે",
+                  "સંપૂર્ણ ટ્રાન્સફર થાય છે"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સપ્લાયર / ટેક્સચરાઇઝર (POY/FDY વિક્રેતા)",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું યાર્નના ભાવમાં વધારો અને વીવિંગ પ્લાન્ટ વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં વીવિંગ યુનિટ્સ દ્વારા યાર્નની ખરીદીમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "કોઈ ફેરફાર નથી",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              },
+              "supplier.q3": {
+                "text": "યાર્નના નવા ઓર્ડર માટે વીવિંગ યુનિટ્સ હાલમાં કઈ ચૂકવણીની શરતોની માંગ કરી રહ્યા છે?",
+                "options": [
+                  "માત્ર એડવાન્સ/રોકડ",
+                  "સામાન્ય ક્રેડિટ શરતો (15-30 દિવસ)",
+                  "વધુ સમયની ક્રેડિટની માંગ (>45 દિવસ)",
+                  "ચૂકવણીમાં વિલંબ / ચેક બાઉન્સ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "કોમર્શિયલ MSME ક્રેડિટ ઓફિસર (સુરત)",
+            "questions": {
+              "banker.q1": {
+                "text": "શું યાર્નના ભાવમાં વધારો અને વીવિંગ પ્લાન્ટ વહેલા બંધ થવાના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે તાજેતરમાં સ્થાનિક વણકરો પાસેથી એડ-હોક લિમિટ અથવા વર્કિંગ કેપિટલ વધારાની માંગમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોવા મળ્યું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "ટેક્સટાઇલ વીવિંગ એકાઉન્ટ્સ માટે CC/OD એકાઉન્ટ વપરાશના સ્તરમાં તમે શું વલણ જોઈ રહ્યા છો?",
+                "options": [
+                  "લગભગ 100% ક્ષમતા",
+                  "થોડું વધારે",
+                  "સામાન્ય / મધ્યમ",
+                  "સરેરાશ કરતાં ઓછું"
                 ]
               }
             }
