@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T19:08:41.261Z",
+  "generated_at": "2026-11-20T01:54:11.563Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,8 +12,8 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 89,
-    "with_poll": 84,
+    "cards": 86,
+    "with_poll": 81,
     "no_poll": 5,
     "pending": 0
   },
@@ -885,298 +885,6 @@
                   "સમાન",
                   "વધુ",
                   "ઘણી વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "c1d55ee892d4": {
-      "no_poll": false,
-      "hypothesis": "Low occupancy and sluggish activity at the Surat Diamond Bourse are creating severe liquidity and real estate debt servicing stress for diamond units that invested heavily in SDB offices.",
-      "event_phrase": "sluggish occupancy and low operational activity at the Surat Diamond Bourse",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Diamond cluster credit manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you observed an increase in restructuring requests or loan defaults on SDB office premises?",
-              "options": [
-                "Yes, significant rise",
-                "Slight increase",
-                "No change"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes, significant rise",
-                "Slight increase"
-              ],
-              "contradicts": [
-                "No change"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "scale5",
-              "text": "How has CC/OD utilisation changed for diamond traders who purchased offices in SDB compared to last quarter?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Natural diamond cutting & polishing unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Are you or your peers actively operating from your SDB offices or still functioning from Mahidharpura/Varachha?",
-              "options": [
-                "Fully shifted to SDB",
-                "Operating from both locations",
-                "Not using SDB office at all"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Not using SDB office at all"
-              ],
-              "contradicts": [
-                "Fully shifted to SDB"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How do your current real estate debt servicing obligations compare to your operational cash flows?",
-              "options": [
-                "Very comfortable",
-                "Manageable",
-                "Neutral",
-                "Stretched",
-                "Severe stress"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Stretched",
-                "Severe stress"
-              ],
-              "contradicts": [
-                "Very comfortable",
-                "Manageable"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Diamond broker / rough trader",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "choice",
-              "text": "Where do the majority of high-value diamond spot trades currently take place in Surat?",
-              "options": [
-                "Mainly at SDB",
-                "Traditional markets & private offices",
-                "Mainly in Mumbai (BKC)"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Traditional markets & private offices",
-                "Mainly in Mumbai (BKC)"
-              ],
-              "contradicts": [
-                "Mainly at SDB"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે SDB ઓફિસ લોન પર પુનઃરચના (restructuring) ની અરજીઓ કે ડિફોલ્ટમાં વધારો જોયો છે?",
-                "options": [
-                  "હા, મોટો વધારો",
-                  "સામાન્ય વધારો",
-                  "કોઈ ફેરફાર નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "ગયા ક્વાર્ટરની સરખામણીમાં SDB માં ઓફિસ ખરીદનાર ડાયમંડ વેપારીઓ માટે CC/OD નો ઉપયોગ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "નેચરલ ડાયમંડ કટીંગ અને પોલિશિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "શું તમે અથવા તમારા સાથીદારો SDB ઓફિસમાંથી કામ કરો છો કે હજુ મહિધરપુરા/વરાછાથી?",
-                "options": [
-                  "સંપૂર્ણપણે SDB માં સ્થળાંતર",
-                  "બંને જગ્યાએથી કામ",
-                  "SDB ઓફિસનો બિલકુલ ઉપયોગ નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "તમારી ઓપરેટિંગ કમાણી સામે રિયલ એસ્ટેટ દેવું ચૂકવવાનું ભારણ કેવું છે?",
-                "options": [
-                  "ખૂબ જ આરામદાયક",
-                  "સંચાલન યોગ્ય",
-                  "તટસ્થ",
-                  "તણાવપૂર્ણ",
-                  "ગંભીર મુશ્કેલી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ડાયમંડ બ્રોકર / રફ વેપારી",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "હાલમાં સુરતમાં મોટાભાગના હીરાના સ્પૉટ વેપાર ક્યાં થાય છે?",
-                "options": [
-                  "મુખ્યત્વે SDB માં",
-                  "પરંપરાગત બજારો અને ખાનગી ઓરિજિન",
-                  "મુખ્યત્વે મુંબઈ (BKC) માં"
                 ]
               }
             }
@@ -4401,27 +4109,27 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "8f729a2b282e": {
+    "3d642383c7eb": {
       "no_poll": false,
-      "hypothesis": "Surat diamond unit default before Diwali is causing severe payment chain disruption and worker livelihood crisis",
-      "event_phrase": "Surat diamond unit default before Diwali",
+      "hypothesis": "Demand shift to LGD is causing lower realisations and extended inventory holding for natural diamond cutters and traders in Surat.",
+      "event_phrase": "impact of lab-grown diamonds on natural diamond prices and resale value",
       "roles": [
         {
           "role": "operator",
-          "label": "Natural diamond polishing unit owner",
+          "label": "Natural diamond cutting unit / exporter",
           "proximity": 3,
           "questions": [
             {
               "id": "operator.q1",
               "type": "accuracy",
-              "text": "Is the reported Surat diamond unit default before Diwali accurate in your experience?",
+              "text": "Is the reported impact of lab-grown diamonds on natural diamond prices and resale value accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
                 "Understated",
                 "Not seeing it"
               ],
-              "mechanism": "receivables",
+              "mechanism": "realisation",
               "supports": [
                 "Accurate",
                 "Understated"
@@ -4435,27 +4143,8 @@
             },
             {
               "id": "operator.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you experienced increased payment delays or defaults from your diamond buyers in the last 2-4 weeks?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
               "type": "scale5",
-              "text": "How has the availability of skilled diamond polishers/workers changed near Diwali?",
+              "text": "How have your finished polished natural diamond realisations per carat moved over the last 4 weeks?",
               "options": [
                 "Much lower",
                 "Lower",
@@ -4463,36 +4152,127 @@
                 "Higher",
                 "Much higher"
               ],
-              "mechanism": "wc_utilisation",
+              "mechanism": "realisation",
               "supports": [
-                "Lower",
-                "Much lower"
+                "Much lower",
+                "Lower"
               ],
               "contradicts": [
+                "Same",
                 "Higher",
                 "Much higher"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Realisations are dropping under pressure from LGD competition.",
+              "contradicts_if": "Realisations for natural diamonds remain stable or firm."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has your average inventory holding period for rough and polished natural diamonds changed recently?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Polished inventory is piling up due to weak off-take.",
+              "contradicts_if": "Inventory turnover remains quick or normal."
             }
           ]
         },
         {
-          "role": "supplier",
-          "label": "Rough diamond broker / supplier",
+          "role": "banker",
+          "label": "Surat diamond branch credit officer",
           "proximity": 3,
           "questions": [
             {
-              "id": "supplier.q1",
+              "id": "banker.q1",
               "type": "accuracy",
-              "text": "Is the reported Surat diamond unit default before Diwali accurate in your experience?",
+              "text": "Is the reported impact of lab-grown diamonds on natural diamond prices and resale value accurate in your experience?",
               "options": [
                 "Accurate",
                 "Overstated",
                 "Understated",
                 "Not seeing it"
               ],
-              "mechanism": "receivables",
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have natural diamond processing borrowers requested ad-hoc limit enhancements or stock-holding extensions in the past month?",
+              "options": [
+                "Widespread requests",
+                "Few isolated cases",
+                "No requests seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Widespread requests"
+              ],
+              "contradicts": [
+                "No requests seen"
+              ],
+              "supports_if": "Working capital is stressed due to inventory valuation haircuts and slow sales.",
+              "contradicts_if": "Borrowers are managing within sanctioned limits without liquidity stress."
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you observing reductions in drawing power against natural diamond stock-statements due to lower market valuations?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "Bank margins are being eroded by falling collateral valuation.",
+              "contradicts_if": "Stock valuations and drawing power remain unadjusted and stable."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Lab-grown diamond grower / LGD trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported impact of lab-grown diamonds on natural diamond prices and resale value accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
               "supports": [
                 "Accurate",
                 "Understated"
@@ -4507,73 +4287,25 @@
             {
               "id": "supplier.q2",
               "type": "scale5",
-              "text": "How have credit days demanded by diamond polishing units changed in the last 2-4 weeks?",
+              "text": "How has your LGD order volume from domestic retail and export buyers changed compared to last month?",
               "options": [
-                "Much shorter",
-                "Shorter",
+                "Much lower",
+                "Lower",
                 "Same",
-                "Longer",
-                "Much longer"
+                "Higher",
+                "Much higher"
               ],
-              "mechanism": "creditors",
+              "mechanism": "volume",
               "supports": [
-                "Longer",
-                "Much longer"
+                "Higher",
+                "Much higher"
               ],
               "contradicts": [
-                "Shorter",
-                "Much shorter"
+                "Much lower",
+                "Lower"
               ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Diamond cluster branch manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported Surat diamond unit default before Diwali accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you observed any cheque or ECS returns in diamond borrower accounts recently?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
+              "supports_if": "Substitution toward LGD is accelerating in the market.",
+              "contradicts_if": "LGD demand growth is flat or declining."
             }
           ]
         }
@@ -4582,10 +4314,10 @@
         "lang": "gu",
         "roles": {
           "operator": {
-            "label": "કુદરતી હીરા પોલિશિંગ યુનિટના માલિક",
+            "label": "કુદરતી હીરા કટિંગ યુનિટ / નિકાસકાર",
             "questions": {
               "operator.q1": {
-                "text": "શું દિવાળી પહેલા સુરતના હીરા એકમની ડિફaultની અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "text": "શું કુદરતી હીરાની કિંમતો અને રીસેલ મૂલ્ય પર લેબ-ગ્રોન હીરાની અસરોના અહેવાલ આપના અનુભવ મુજબ સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -4594,54 +4326,32 @@
                 ]
               },
               "operator.q2": {
-                "text": "શું તમે છેલ્લા ૨-૪ અઠવાડિયામાં તમારા હીરા ખરીદદારો પાસેથી ચુકવણીમાં વધુ વિલંબ કે ડિફault અનુભવ્યા છે?",
+                "text": "છેલ્લા ૪ અઠવાડિયામાં તમારા તૈયાર પોલીશ્ડ કુદરતી હીરાની કેરેટ દીઠ આવકમાં કેવો બદલાવ આવ્યો છે?",
                 "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણો વધારે"
                 ]
               },
               "operator.q3": {
-                "text": "દિવાળી નજીક કુશળ હીરા પાલીશ કરનારા કામદારોની ઉપલબ્ધતા કેવી રહી છે?",
+                "text": "હાલમાં તમારા કાચા અને પોલીશ્ડ કુદરતી હીરાના સ્ટોક રાખવાના સમયગાળામાં કેવો ફેરફાર થયો છે?",
                 "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "રફ હીરાના દલાલ / સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું દિવાળી પહેલા સુરતના હીરા એકમની ડિફaultની અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં હીરા પોલિશિંગ યુનિટ્સ દ્વારા ક્રેડિટના દિવસોની માંગણી કેવી રહી છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સરખા",
-                  "વધુ",
-                  "ઘણા વધુ"
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણો વધારે"
                 ]
               }
             }
           },
           "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ મેનેજર",
+            "label": "સુરત ડાયમંડ બ્રાન્ચ ક્રેડિટ ઓફિસર",
             "questions": {
               "banker.q1": {
-                "text": "શું દિવાળી પહેલા સુરતના હીરા એકમની ડિફaultની અહેવાલ તમારા અનુભવમાં સાચો છે?",
+                "text": "શું કુદરતી હીરાની કિંમતો અને રીસેલ મૂલ્ય પર લેબ-ગ્રોન હીરાની અસરોના અહેવાલ આપના અનુભવ મુજબ સચોટ છે?",
                 "options": [
                   "સાચું છે",
                   "વધારે પડતું કહ્યું છે",
@@ -4650,7 +4360,15 @@
                 ]
               },
               "banker.q2": {
-                "text": "શું તાજેતરમાં હીરા ધિરાણ ખાતાઓમાં ચેક કે ECS રિટર્ન જોવા મળ્યા છે?",
+                "text": "શું કુદરતી હીરા પ્રોસેસિંગ કરતા ઉધારકર્તાઓએ ગયા મહિને એડ-હોક લિમિટ વધારવા અથવા સ્ટોક રાખવાની મુદત વધારવા વિનંતી કરી છે?",
+                "options": [
+                  "વ્યાપક વિનંતીઓ",
+                  "કેસ નહિવત છે",
+                  "કોઈ વિનંતીઓ જોવા મળી નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું ઓછી બજાર કિંમતને કારણે કુદરતી હીરાના સ્ટોક સ્ટેટમેન્ટ સામે ડ્રોઇંગ પાવરમાં ઘટાડો જોવા મળી રહ્યો છે?",
                 "options": [
                   "હા",
                   "ના",
@@ -4658,10 +4376,34 @@
                 ]
               }
             }
+          },
+          "supplier": {
+            "label": "લેબ-ગ્રોન ડાયમંડ ગ્રોઅર / LGD વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું કુદરતી હીરાની કિંમતો અને રીસેલ મૂલ્ય પર લેબ-ગ્રોન હીરાની અસરોના અહેવાલ આપના અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં સ્થાનિક રિટેલ અને નિકાસ ગ્રાહકો તરફથી તમારા LGD ઓર્ડરના વોલ્યુમમાં કેવો બદલાવ આવ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
           }
         }
       },
-      "model": "gemini:gemini-3.5-flash-lite",
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "e3a72bc7c6f3": {
@@ -6450,6 +6192,269 @@
                   "સરખું",
                   "વધારે",
                   "ઘણું વધારે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "a31fabfc72dc": {
+      "no_poll": false,
+      "hypothesis": "Apollo Pipes' ₹1,000 crore ceramics target is translating into increased OEM/contract manufacturing inquiries and orders for Morbi-based ceramic and sanitaryware units.",
+      "event_phrase": "Apollo Pipes' aggressive expansion into ceramics sourcing",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Morbi tile & sanitaryware OEM manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported Apollo Pipes' aggressive expansion into ceramics sourcing accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "How have OEM/contract manufacturing inquiries from major brand buyers changed over the past 2-4 weeks?",
+              "options": [
+                "Decreased significantly",
+                "No change",
+                "Increased moderately",
+                "Increased significantly"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Increased moderately",
+                "Increased significantly"
+              ],
+              "contradicts": [
+                "Decreased significantly",
+                "No change"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How are corporate OEM buyers negotiating credit period demands for new sourcing contracts?",
+              "options": [
+                "Much tighter",
+                "Slightly tighter",
+                "Same as usual",
+                "Slightly longer",
+                "Much longer"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Same as usual",
+                "Slightly longer"
+              ],
+              "contradicts": [
+                "Much tighter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi cluster MSME credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported Apollo Pipes' aggressive expansion into ceramics sourcing accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have OEM-focused ceramic borrowers requested limit enhancements or ad-hoc limits for new corporate supply orders recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Ceramic & sanitaryware distributor / OEM sourcing agent",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported Apollo Pipes' aggressive expansion into ceramics sourcing accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "choice",
+              "text": "What mode of expansion are new corporate entrants using to source ceramics from Morbi?",
+              "options": [
+                "Contract manufacturing / OEM tie-ups",
+                "Direct brand acquisition",
+                "Setting up own plant",
+                "No active movement seen"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Contract manufacturing / OEM tie-ups"
+              ],
+              "contradicts": [
+                "Setting up own plant",
+                "No active movement seen"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "મોરબી ટાઇલ્સ અને સેનિટરીવેર OEM ઉત્પાદક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું એપોલો પાઈપ્સનું સીરામિક્સ સોર્સિંગમાં આક્રમક વિસ્તરણ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 2-4 સપ્તાહમાં અગ્રણી બ્રાન્ડ ખરીદદારો તરફથી OEM/કોન્ટ્રાક્ટ ઉત્પાદનની પૂછપરછમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "પાછલા મહિના કરતાં ઓછું",
+                  "સરખું જ",
+                  "થોડું વધારે",
+                  "ઘણું વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "નવા સોર્સિંગ કોન્ટ્રાક્ટ માટે કોર્પોરેટ OEM ખરીદદારો ક્રેડિટ મુદતની માંગ કેવી રીતે કરી રહ્યા છે?",
+                "options": [
+                  "ઘણી કડક (ઓછા દિવસો)",
+                  "થોડી કડક",
+                  "સામાન્ય મુજબ",
+                  "થોડી વધુ મુદત",
+                  "ઘણી વધુ મુદત"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી ક્લસ્ટર MSME ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું એપોલો પાઈપ્સનું સીરામિક્સ સોર્સિંગમાં આક્રમક વિસ્તરણ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું OEM-કેન્દ્રિત સીરામિક બોરોઅર્સે નવા કોર્પોરેટ ઓર્ડર માટે લિમિટ વધારવા અથવા એડ-હોક લિમિટ માટે અરજી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "સીરામિક અને સેનિટરીવેર ડિસ્ટ્રીબ્યુટર / OEM સોર્સિંગ એજન્ટ",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું એપોલો પાઈપ્સનું સીરામિક્સ સોર્સિંગમાં આક્રમક વિસ્તરણ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "નવા કોર્પોરેટ ખેલાડીઓ મોરબીથી સીરામિક્સ ખરીદવા માટે કયો માર્ગ અપનાવી રહ્યા છે?",
+                "options": [
+                  "કોન્ટ્રાક્ટ મેન્યુફેક્ચરિંગ / OEM ટાઈ-અપ",
+                  "સીધું બ્રાન્ડ એક્વિઝિશન",
+                  "પોતાનો નવો પ્લાન્ટ સ્થાપવો",
+                  "કોઈ સક્રિય હલચલ નથી"
                 ]
               }
             }
@@ -10529,405 +10534,6 @@
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
-    "fac1d6818887": {
-      "no_poll": false,
-      "hypothesis": "Rising propane prices for kiln operators are compressing tile margins and increasing working capital pressures.",
-      "event_phrase": "rise in propane prices",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Propane-fired tile kiln operator",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in propane prices accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your operating margins changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "margins are compressed by higher fuel costs",
-              "contradicts_if": "margins expanded due to price pass-through"
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How easy has it been to pass fuel cost hikes to your buyers?",
-              "options": [
-                "Very difficult",
-                "Difficult",
-                "Neutral",
-                "Easy",
-                "Very easy"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Very difficult",
-                "Difficult"
-              ],
-              "contradicts": [
-                "Easy",
-                "Very easy"
-              ],
-              "supports_if": "unable to pass on price increases",
-              "contradicts_if": "successfully passing on price hikes"
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Morbi industrial branch banker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in propane prices accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have ceramic tile borrowers requested ad-hoc working capital enhancements?",
-              "options": [
-                "Yes, multiple requests",
-                "Few requests",
-                "None"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes, multiple requests"
-              ],
-              "contradicts": [
-                "None"
-              ],
-              "supports_if": "liquidity pressure leads to credit demand",
-              "contradicts_if": "no liquidity stress observed"
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "Have you noticed any CC/OD limit overutilization among propane users?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "cash cushion is depleted",
-              "contradicts_if": "cash cushion remains adequate"
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Propane / fuel supplier",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in propane prices accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How has propane offtake by tile units changed compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "high prices reduce fuel consumption",
-              "contradicts_if": "consumption remains robust"
-            },
-            {
-              "id": "supplier.q3",
-              "type": "choice",
-              "text": "Are tile manufacturing clients asking for extended credit days?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "creditors",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "buyers face cash flow tightness",
-              "contradicts_if": "buyers pay on time"
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Tile dealer / exporter",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported rise in propane prices accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "scale5",
-              "text": "How have tile purchase prices from manufacturers moved recently?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "realisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "manufacturers are attempting price pass-through",
-              "contradicts_if": "prices are stable or falling"
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "પ્રોપેન-સંચાલિત ટાઇલ્સ ભઠ્ઠી ઓપરેટર",
-            "questions": {
-              "operator.q1": {
-                "text": "તમારા અનુભવ મુજબ પ્રોપેન કિંમતોમાં વધારાનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા ઓપરેટિંગ માર્જિનમાં કેવી ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "બળતણ ખર્ચના વધારાને ખરીદદારો પર નાખવું કેટલું સરળ રહ્યું છે?",
-                "options": [
-                  "ખૂબ મુશ્કેલ",
-                  "મુશ્કેલ",
-                  "તટસ્થ",
-                  "સરળ",
-                  "ખૂબ સરળ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "મોરબી ઔદ્યોગિક શાખા બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "તમારા અનુભવ મુજબ પ્રોપેન કિંમતોમાં વધારાનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું સિરામિક ટાઇલ્સ ધિરાણકર્તાઓએ વર્કિંગ કેપિટલ વધારવા માટે અરજી કરી છે?",
-                "options": [
-                  "હા, અનેક અરજીઓ",
-                  "ઓછી અરજીઓ",
-                  "એક પણ નહીં"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે પ્રોપેન વપરાશકર્તાઓમાં સીસી/ઓડી મર્યાદાનો વધુ ઉપયોગ નોંધ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોવા મળ્યું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "પ્રોપેન / ઇંધણ સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "તમારા અનુભવ મુજબ પ્રોપેન કિંમતોમાં વધારાનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગયા મહિનાની સરખામણીમાં ટાઇલ્સ યુનિટ્સ દ્વારા પ્રોપેનનો ઉપાડ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "supplier.q3": {
-                "text": "શું ટાઇલ્સ ઉત્પાદક ગ્રાહકો લાંબા સમય સુધી ક્રેડિટ દિવસોની માંગણી કરી રહ્યા છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોવા મળ્યું નથી"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ટાઇલ્સ ડીલર / નિકાસકાર",
-            "questions": {
-              "buyer.q1": {
-                "text": "તમારા અનુભવ મુજબ પ્રોપેન કિંમતોમાં વધારાનો અહેવાલ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "તાજેતરમાં ઉત્પાદકો પાસેથી ટાઇલ્સની ખરીદી કિંમતો કેવી રહી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણી વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "9a8429b49c99": {
       "no_poll": false,
       "hypothesis": "Payment delays and disputes from textile traders/buyers are causing increased receivable stress and trade credit friction for Surat weaving units.",
@@ -13237,302 +12843,6 @@
         }
       },
       "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "d0ba898cf4a8": {
-      "no_poll": false,
-      "hypothesis": "Surat Diamond Bourse adoption delays are depressing local trading liquidity, office asset values, and borrower cash flows.",
-      "event_phrase": "struggles and low adoption at the Surat Diamond Bourse",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Diamond trader / office owner in Bourse",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported struggle and low adoption at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How do your daily trading volumes inside the Bourse compare to last year?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How are your average buyer payment realization days compared to normal?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Longer",
-                "Much longer"
-              ],
-              "contradicts": [
-                "Shorter",
-                "Much shorter"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Diamond cluster branch manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported struggle and low adoption at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you seen requests for working capital limit enhancements due to slow trading liquidity?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you observed any early-stage (SMA-0 or SMA-1) slippages in diamond loan accounts?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Natural & LGD diamond cutter / processor",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported struggle and low adoption at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How is your rough stone offtake / cutting capacity utilisation compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "ડાયમંડ વેપારી / બોર્સમાં ઓફિસ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં મંદી અને ઓછી સ્વીકૃતિનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "બોર્સની અંદર તમારું દૈનિક વેચાણ વોલ્યુમ ગયા વર્ષ કરતા કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "તમારા ગ્રાહકો પાસેથી નાણાં વસૂલાતના દિવસો સામાન્ય કરતા કેવા છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "સરખા",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં મંદી અને ઓછી સ્વીકૃતિનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે લિક્વિડિટીની સમસ્યાને કારણે વર્કિંગ કેપિટલ લિમિટ વધારવાની અરજીઓ જોઈ છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું ડાયમંડ લોન ખાતાઓમાં પ્રારંભિક (SMA-0 અથવા SMA-1) ચૂકવણીમાં વિલંબ જોવા મળ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "નેચરલ અને એલજીડી ડાયમંડ કટર / પ્રોસેસર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં મંદી અને ઓછી સ્વીકૃતિનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારી કટિંગ ક્ષમતાનો ઉપયોગ (કેપેસિટી યુટિલાઇઝેશન) કેવો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સરખો",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "96be1ca373f8": {
@@ -24252,302 +23562,6 @@
         }
       },
       "model": "gemini:gemini-3.8-flash",
-      "prompt_version": "poll-v1"
-    },
-    "3ede25f378d4": {
-      "no_poll": false,
-      "hypothesis": "Varmora's reported recovery is translating into higher order books and improved working capital collections for Morbi ceramic tile manufacturers and suppliers.",
-      "event_phrase": "recovery in ceramic tile demand",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Ceramic Tile Manufacturer",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported recovery in ceramic tile demand accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your order book changed compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How are your finished goods inventory levels compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "inventory",
-              "supports": [
-                "Lower",
-                "Much lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Cluster Branch Manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported recovery in ceramic tile demand accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have CC/OD limit utilizations decreased for tile manufacturing accounts this month?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you observed any new SMA-1 or SMA-2 slippages in this segment?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "No"
-              ],
-              "contradicts": [
-                "Yes"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Tile Dealer / Distributor",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported recovery in ceramic tile demand accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "scale5",
-              "text": "How is your retail offtake for ceramic tiles compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "સિરેમિક ટાઇલ્સ ઉત્પાદક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સિરેમિક ટાઇલ્સની માંગમાં સુધારાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારી ઓર્ડર બુકમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "ગત મહિનાની સરખામણીમાં તૈયાર مال (ઇન્વેન્ટરી) નું સ્તર કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "ક્લસ્ટર બ્રાન્ચ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સિરેમિક ટાઇલ્સની માંગમાં સુધારાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું આ મહિને ટાઇલ્સ ઉત્પાદકોના CC/OD લિમિટનો ઉપયોગ ઘટ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું આ સેગમેન્ટમાં SMA-1 અથવા SMA-2 ના કોઈ નવા કેસો જોવા મળ્યા છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ટાઇલ ડિસ્ટ્રિબ્યુટર / ડીલર",
-            "questions": {
-              "buyer.q1": {
-                "text": "શું સિરેમિક ટાઇલ્સની માંગમાં સુધારાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં સિરેમિક ટાઇલ્સનું તમારું વેચાણ કેવું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     }
   }
