@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T10:03:32.780Z",
+  "generated_at": "2026-11-24T20:47:10.890Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,12 +12,282 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 88,
-    "with_poll": 80,
-    "no_poll": 8,
+    "cards": 91,
+    "with_poll": 82,
+    "no_poll": 9,
     "pending": 0
   },
   "polls": {
+    "a7d86eb38db4": {
+      "no_poll": false,
+      "hypothesis": "Propane price hikes by IOCL are squeezing operating margins of Morbi ceramic units, leading to demand cutbacks for fuel and increased working capital limit reliance.",
+      "event_phrase": "propane price hike and IOCL boycott by Morbi units",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Propane-fired tile manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported propane price hike and IOCL boycott by Morbi units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your kiln operating fuel costs per square meter changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "Fuel cost per square meter has increased.",
+              "contradicts_if": "Fuel cost per square meter has decreased."
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "What action are you taking regarding propane supply from IOCL?",
+              "options": [
+                "Boycotting / Switching to PNG",
+                "Negotiating prices",
+                "Continuing purchases unchanged",
+                "Reducing kiln operations"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Boycotting / Switching to PNG",
+                "Reducing kiln operations"
+              ],
+              "contradicts": [
+                "Continuing purchases unchanged"
+              ],
+              "supports_if": "Units are active in boycotting or shutting kilns due to fuel costs.",
+              "contradicts_if": "Purchases continue unchanged despite the reported boycott."
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Fuel / propane distributor",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported propane price hike and IOCL boycott by Morbi units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How has propane order volume from Morbi ceramic units changed over the past 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Propane volume demand from ceramic units dropped.",
+              "contradicts_if": "Propane volume demand from ceramic units increased."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi branch credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported propane price hike and IOCL boycott by Morbi units accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have propane-dependent tile manufacturers requested ad-hoc CC limit enhancements recently?",
+              "options": [
+                "Significant increase in requests",
+                "Moderate increase",
+                "No change",
+                "Decrease in requests"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase in requests",
+                "Moderate increase"
+              ],
+              "contradicts": [
+                "No change",
+                "Decrease in requests"
+              ],
+              "supports_if": "Units are experiencing working capital strain necessitating ad-hoc credit.",
+              "contradicts_if": "No additional credit demand observed."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "પ્રોપેન-આધારિત ટાઇલ્સ ઉત્પાદક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું મોરબીના એકમો દ્વારા પ્રોપેનના ભાવવધારો અને IOCL ના બહિષ્કારનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં ચોરસ મીટર દીઠ તમારા ભઠ્ઠીના બળતણનો ખર્ચ કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "IOCL માંથી પ્રોપેન પુરવઠા અંગે તમે શું પગલાં લઈ રહ્યા છો?",
+                "options": [
+                  "બહિષ્કાર / PNG પર શિફ્ટ",
+                  "ભાવ અંગે વાટાઘાટો",
+                  "ફેરફાર વગર ખરીદી ચાલુ",
+                  "ભઠ્ઠી કામગીરી ઘટાડવી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "બળતણ / પ્રોપેન ડિસ્ટ્રિબ્યુટર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું મોરબીના એકમો દ્વારા પ્રોપેનના ભાવવધારો અને IOCL ના બહિષ્કારનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં મોરબી ટાઇલ્સ એકમો તરફથી પ્રોપેન ઓર્ડરનું પ્રમાણ કેવું રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી શાખા ક્રેડિટ અધિકારી",
+            "questions": {
+              "banker.q1": {
+                "text": "શું મોરબીના એકમો દ્વારા પ્રોપેનના ભાવવધારો અને IOCL ના બહિષ્કારનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું પ્રોપેન પર નિર્ભર ટાઇલ્સ ઉત્પાદકોએ તાજેતરમાં એડ-હોક CC લિમિટ વધારાની વિનંતી કરી છે?",
+                "options": [
+                  "વિનંતીઓમાં નોંધપાત્ર વધારો",
+                  "મધ્યમ વધારો",
+                  "કોઈ ફેરફાર નથી",
+                  "વિનંતીઓમાં ઘટાડો"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
     "c3927b4b71cd": {
       "no_poll": false,
       "hypothesis": "Payment defaults and overdue trade receivables are surging across Surat textile markets, leading to credit tightening by suppliers and stretched working capital.",
@@ -6996,6 +7266,12 @@
     "10bb525ec49c": {
       "no_poll": true,
       "reason": "The news is about a documentary highlighting a general trend in Nepal without specific timelines, policies, or sudden trade disruptions, making it too vague to observe immediate short-term ground credit or order book effects in Morbi over t",
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "317f5c9fd10d": {
+      "no_poll": true,
+      "reason": "The news describes an isolated local fire incident at a single textile waste godown with unknown ownership and no systemic impact on the wider Surat MMF textile value chain or overall credit indicators.",
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
@@ -14986,6 +15262,257 @@
         }
       },
       "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "c91e754338dd": {
+      "no_poll": false,
+      "hypothesis": "Morbi tile manufacturers are successfully implementing price hikes and seeing strong domestic demand while keeping gas input costs manageable.",
+      "event_phrase": "outperformance and price hikes in the tile sector",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Morbi tile manufacturer",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported outperformance and price hikes in the tile sector accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "How have your realization prices per square foot moved over the past 4 weeks?",
+              "options": [
+                "Increased",
+                "Unchanged",
+                "Decreased / Discounted"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Increased"
+              ],
+              "contradicts": [
+                "Decreased / Discounted"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "How is your domestic order book volume compared to last month?",
+              "options": [
+                "Higher",
+                "Same",
+                "Lower"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher"
+              ],
+              "contradicts": [
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Tile dealer / distributor",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported outperformance and price hikes in the tile sector accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "yes_no_notseen",
+              "text": "Have Morbi tile manufacturers successfully passed on price hikes to your orders this month?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Morbi credit officer / manager",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported outperformance and price hikes in the tile sector accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "How has cash credit (CC/OD) utilization among tile manufacturing units changed recently?",
+              "options": [
+                "Decreased",
+                "Unchanged",
+                "Near 100% limit"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Decreased"
+              ],
+              "contradicts": [
+                "Near 100% limit"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "મોરબી ટાઇલ્સ ઉત્પાદક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું તમારા અનુભવ મુજબ ટાઇલ ક્ષેત્રે ભાવવધારો અને સારો દેખાવ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 4 અઠવાડિયામાં ચોરસ ફૂટ દીઠ તમારી વેચાણ કિંમત કેવી રહી છે?",
+                "options": [
+                  "વધી છે",
+                  "યથાવત",
+                  "ઘટી છે / ડિસ્કાઉન્ટ આપ્યું છે"
+                ]
+              },
+              "operator.q3": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારા સ્થાનિક ઓર્ડર બુકનું વોલ્યુમ કેવું છે?",
+                "options": [
+                  "વધારે",
+                  "સરખું",
+                  "ઓછું"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "ટાઇલ ડીલર / ડિસ્ટ્રિબ્યુટર",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું તમારા અનુભવ મુજબ ટાઇલ ક્ષેત્રે ભાવવધારો અને સારો દેખાવ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "શું મોરબીના ટાઇલ ઉત્પાદકોએ આ મહિને તમારા ઓર્ડર પર ભાવવધારો સફળતાપૂર્વક લાગુ કર્યો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "મોરબી ક્રેડિટ ઓફિસર / મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું તમારા અનુભવ મુજબ ટાઇલ ક્ષેત્રે ભાવવધારો અને સારો દેખાવ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "ટાઇલ ઉત્પાદન એકમોમાં કેશ ક્રેડિટ (CC/OD) નો વપરાશ તાજેતરમાં કેવો રહ્યો છે?",
+                "options": [
+                  "ઘટ્યો છે",
+                  "યથાવત",
+                  "100% મર્યાદાની નજીક"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "9ea5f88a4a7a": {
