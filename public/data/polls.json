@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T22:11:14.375Z",
+  "generated_at": "2026-11-24T10:03:32.780Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,12 +12,617 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 89,
-    "with_poll": 81,
+    "cards": 88,
+    "with_poll": 80,
     "no_poll": 8,
     "pending": 0
   },
   "polls": {
+    "c3927b4b71cd": {
+      "no_poll": false,
+      "hypothesis": "Payment defaults and overdue trade receivables are surging across Surat textile markets, leading to credit tightening by suppliers and stretched working capital.",
+      "event_phrase": "rise in textile payment defaults and financial fraud",
+      "roles": [
+        {
+          "role": "supplier",
+          "label": "Grey fabric supplier / Trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in textile payment defaults and financial fraud accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have overdue payment days from Ring Road traders changed in the last 2-4 weeks?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Unchanged",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Much shorter",
+                "Shorter"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What credit terms are you currently offering to downstream buyers?",
+              "options": [
+                "Strictly advance / cash",
+                "Reduced credit days",
+                "Standard credit terms",
+                "Extended credit terms"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Strictly advance / cash",
+                "Reduced credit days"
+              ],
+              "contradicts": [
+                "Extended credit terms"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat textile credit manager",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in textile payment defaults and financial fraud accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How have cheque or NACH bounce instances for textile traders changed in the past month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "What is the trend in ad-hoc cash credit limit requests from textile borrowers?",
+              "options": [
+                "Significant increase",
+                "Moderate increase",
+                "No change",
+                "Decrease"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase",
+                "Moderate increase"
+              ],
+              "contradicts": [
+                "Decrease"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Process house / Job-worker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported rise in textile payment defaults and financial fraud accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have job-work processing volume orders from traders changed in the past 4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "supplier": {
+            "label": "ગ્રે કાપડ સપ્લાયર / વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું કાપડ પેમેન્ટમાં ડિફોલ્ટ અને નાણાકીય છેતરપિંડીમાં થયેલા વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં રિંગ રોડના વેપારીઓ પાસેથી બાકી નીકળતા પેમેન્ટના દિવસોમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ટૂંકા",
+                  "ટૂંકા",
+                  "યથાવત",
+                  "લાંબા",
+                  "ઘણા લાંબા"
+                ]
+              },
+              "supplier.q3": {
+                "text": "તમે હાલમાં ખરીદદારોને કઈ ક્રેડિટ શરતો આપી રહ્યા છો?",
+                "options": [
+                  "સખત એડવાન્સ / રોકડ",
+                  "ઘટાડેલા ક્રેડિટ દિવસો",
+                  "સામાન્ય ક્રેડિટ શરતો",
+                  "વધારેલા ક્રેડિટ દિવસો"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ટેક્સટાઇલ ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું કાપડ પેમેન્ટમાં ડિફોલ્ટ અને નાણાકીય છેતરપિંડીમાં થયેલા વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "છેલ્લા મહિનામાં કાપડ વેપારીઓના ચેક અથવા NACH બાઉન્સના કિસ્સામાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "યથાવત",
+                  "વધારે",
+                  "ઘણા વધારે"
+                ]
+              },
+              "banker.q3": {
+                "text": "ટેક્સટાઇલ ઉધારલેનારાઓ તરફથી એડ-હોક કેશ ક્રેડિટ લિમિટની વિનંતીઓમાં શું વલણ છે?",
+                "options": [
+                  "મોટો વધારો",
+                  "મધ્યમ વધારો",
+                  "કોઈ ફેરફાર નહીં",
+                  "ઘટાડો"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "પ્રોસેસ હાઉસ / જોબ-વર્કર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું કાપડ પેમેન્ટમાં ડિફોલ્ટ અને નાણાકીય છેતરપિંડીમાં થયેલા વધારાનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા 4 અઠવાડિયામાં વેપારીઓ તરફથી પ્રોસેસિંગ જોબ-વર્ક ઓર્ડરના વોલ્યુમમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "યથાવત",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "9cbc45a9c3f9": {
+      "no_poll": false,
+      "hypothesis": "Surat LGD polishers are experiencing higher rough diamond input costs from China, leading to margin pressure and increased short-term working capital demand.",
+      "event_phrase": "10% price increase in Chinese lab-grown rough diamonds",
+      "roles": [
+        {
+          "role": "supplier",
+          "label": "LGD rough diamond importer / trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported 10% price increase in Chinese lab-grown rough diamonds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How have landed offer prices for Chinese LGD rough changed in the past 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "choice",
+              "text": "What is the primary terms change demanded by Chinese rough suppliers recently?",
+              "options": [
+                "Shorter credit / upfront payment",
+                "Unchanged credit terms",
+                "Extended credit days",
+                "Not applicable"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Shorter credit / upfront payment"
+              ],
+              "contradicts": [
+                "Extended credit days"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "LGD polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported 10% price increase in Chinese lab-grown rough diamonds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How effectively are you able to pass on the higher rough costs to polished diamond buyers?",
+              "options": [
+                "Cannot pass on",
+                "Partial pass-through",
+                "Full pass-through",
+                "Margin improved",
+                "Not applicable"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Cannot pass on",
+                "Partial pass-through"
+              ],
+              "contradicts": [
+                "Full pass-through",
+                "Margin improved"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has factory capacity utilization changed in the last 2-4 weeks?",
+              "options": [
+                "Substantially lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Substantially higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Substantially lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Substantially higher"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Diamond cluster credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported 10% price increase in Chinese lab-grown rough diamonds accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "Have LGD polishing borrowers requested ad-hoc limits or CC line enhancements recently?",
+              "options": [
+                "Significant increase",
+                "Moderate increase",
+                "No change",
+                "Decrease",
+                "Not applicable"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase",
+                "Moderate increase"
+              ],
+              "contradicts": [
+                "Decrease"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "supplier": {
+            "label": "LGD કાચા હીરા આયાતકાર / વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું ચીની લેબ-ગ્રોન કાચા હીરાના ભાવમાં 10% નો વધારો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં ચીની LGD કાચા હીરાના લેન્ડેડ ઓફર ભાવમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "યથાવત",
+                  "વધુ",
+                  "ઘણા વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "તાજેતરમાં ચીની કાચા હીરાના સપ્લાયર્સ દ્વારા મુખ્ય શરતોમાં શું ફેરફાર મંગાયો છે?",
+                "options": [
+                  "ટૂંકી ક્રેડિટ / એડવાન્સ ચુકવણી",
+                  "અપરિવર્તિત ક્રેડિટ શરતો",
+                  "વધુ ક્રેડિટ દિવસો",
+                  "લાગુ પડતું નથી"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "LGD પોલિશિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું ચીની લેબ-ગ્રોન કાચા હીરાના ભાવમાં 10% નો વધારો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "તમે તૈયાર હીરાના ખરીદદારો પર કાચા હીરાની ઉંચી પડતર કેટલી સફળતાપૂર્વક પાસ કરી શકો છો?",
+                "options": [
+                  "પાસ કરી શકતા નથી",
+                  "આંશિક પાસ-થ્રુ",
+                  "સંપૂર્ણ પાસ-થ્રુ",
+                  "માર્જિન સુધારાયું",
+                  "લાગુ પડતું નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા 2-4 અઠવાડિયામાં ફેક્ટરી ક્ષમતાના ઉપયોગમાં શું ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "યથાવત",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું ચીની લેબ-ગ્રોન કાચા હીરાના ભાવમાં 10% નો વધારો તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું LGD પોલિશિંગ ધરાવતા ગ્રાહકોએ તાજેતરમાં એડ-હોક લિમિટ અથવા CC લાઇન વધારાની માંગ કરી છે?",
+                "options": [
+                  "મોટો વધારો",
+                  "મધ્યમ વધારો",
+                  "કોઈ ફેરફાર નથી",
+                  "ઘટાડો",
+                  "લાગુ પડતું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
     "e8488d4182be": {
       "no_poll": false,
       "hypothesis": "Broker defaults and trust breaches in the Katargam-Mota Varachha diamond trade are causing sudden liquidity tightness and tighter credit terms among diamond traders and lenders.",
@@ -1175,298 +1780,6 @@
                   "સમાન",
                   "વધુ",
                   "ઘણી વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "c1d55ee892d4": {
-      "no_poll": false,
-      "hypothesis": "Low occupancy and sluggish activity at the Surat Diamond Bourse are creating severe liquidity and real estate debt servicing stress for diamond units that invested heavily in SDB offices.",
-      "event_phrase": "sluggish occupancy and low operational activity at the Surat Diamond Bourse",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Diamond cluster credit manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you observed an increase in restructuring requests or loan defaults on SDB office premises?",
-              "options": [
-                "Yes, significant rise",
-                "Slight increase",
-                "No change"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes, significant rise",
-                "Slight increase"
-              ],
-              "contradicts": [
-                "No change"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "scale5",
-              "text": "How has CC/OD utilisation changed for diamond traders who purchased offices in SDB compared to last quarter?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Natural diamond cutting & polishing unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Are you or your peers actively operating from your SDB offices or still functioning from Mahidharpura/Varachha?",
-              "options": [
-                "Fully shifted to SDB",
-                "Operating from both locations",
-                "Not using SDB office at all"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Not using SDB office at all"
-              ],
-              "contradicts": [
-                "Fully shifted to SDB"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How do your current real estate debt servicing obligations compare to your operational cash flows?",
-              "options": [
-                "Very comfortable",
-                "Manageable",
-                "Neutral",
-                "Stretched",
-                "Severe stress"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Stretched",
-                "Severe stress"
-              ],
-              "contradicts": [
-                "Very comfortable",
-                "Manageable"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Diamond broker / rough trader",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "choice",
-              "text": "Where do the majority of high-value diamond spot trades currently take place in Surat?",
-              "options": [
-                "Mainly at SDB",
-                "Traditional markets & private offices",
-                "Mainly in Mumbai (BKC)"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Traditional markets & private offices",
-                "Mainly in Mumbai (BKC)"
-              ],
-              "contradicts": [
-                "Mainly at SDB"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે SDB ઓફિસ લોન પર પુનઃરચના (restructuring) ની અરજીઓ કે ડિફોલ્ટમાં વધારો જોયો છે?",
-                "options": [
-                  "હા, મોટો વધારો",
-                  "સામાન્ય વધારો",
-                  "કોઈ ફેરફાર નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "ગયા ક્વાર્ટરની સરખામણીમાં SDB માં ઓફિસ ખરીદનાર ડાયમંડ વેપારીઓ માટે CC/OD નો ઉપયોગ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "નેચરલ ડાયમંડ કટીંગ અને પોલિશિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "શું તમે અથવા તમારા સાથીદારો SDB ઓફિસમાંથી કામ કરો છો કે હજુ મહિધરપુરા/વરાછાથી?",
-                "options": [
-                  "સંપૂર્ણપણે SDB માં સ્થળાંતર",
-                  "બંને જગ્યાએથી કામ",
-                  "SDB ઓફિસનો બિલકુલ ઉપયોગ નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "તમારી ઓપરેટિંગ કમાણી સામે રિયલ એસ્ટેટ દેવું ચૂકવવાનું ભારણ કેવું છે?",
-                "options": [
-                  "ખૂબ જ આરામદાયક",
-                  "સંચાલન યોગ્ય",
-                  "તટસ્થ",
-                  "તણાવપૂર્ણ",
-                  "ગંભીર મુશ્કેલી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ડાયમંડ બ્રોકર / રફ વેપારી",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "હાલમાં સુરતમાં મોટાભાગના હીરાના સ્પૉટ વેપાર ક્યાં થાય છે?",
-                "options": [
-                  "મુખ્યત્વે SDB માં",
-                  "પરંપરાગત બજારો અને ખાનગી ઓરિજિન",
-                  "મુખ્યત્વે મુંબઈ (BKC) માં"
                 ]
               }
             }
@@ -3785,269 +4098,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "25d6a0f6dbec": {
-      "no_poll": false,
-      "hypothesis": "Surat textile mill owners facing broker-mediated delivery fraud are experiencing tighter credit terms and stricter verification before releasing goods.",
-      "event_phrase": "broker-mediated delivery fraud and payment defaults in Surat mills",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Textile processing mill owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported broker-mediated delivery fraud accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "Accurate",
-              "contradicts_if": "Not seeing it"
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "How have your credit or advance payment terms for broker-routed orders changed recently?",
-              "options": [
-                "Much stricter advance terms",
-                "Slightly tighter terms",
-                "No change",
-                "More relaxed terms"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Much stricter advance terms",
-                "Slightly tighter terms"
-              ],
-              "contradicts": [
-                "More relaxed terms"
-              ],
-              "supports_if": "Stricter terms indicate heightened caution due to fraud risk.",
-              "contradicts_if": "More relaxed terms contradict fraud tightening."
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How has the frequency of payment delays from unverified third-party buyers been over the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "Higher delays align with fraud and liquidity stress.",
-              "contradicts_if": "Lower delays contradict the negative stress signal."
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Grey fabric / yarn supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported broker-mediated delivery fraud accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "creditors",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "Accurate",
-              "contradicts_if": "Not seeing it"
-            },
-            {
-              "id": "supplier.q2",
-              "type": "choice",
-              "text": "Have you reduced unsecured credit lines to processing mills due to market fraud concerns?",
-              "options": [
-                "Yes, significantly reduced",
-                "Slightly reduced",
-                "No change",
-                "Increased credit lines"
-              ],
-              "mechanism": "creditors",
-              "supports": [
-                "Yes, significantly reduced",
-                "Slightly reduced"
-              ],
-              "contradicts": [
-                "Increased credit lines"
-              ],
-              "supports_if": "Reduced credit lines reflect spillover caution.",
-              "contradicts_if": "Increased credit lines contradict market stress."
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Working Capital Banker",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported broker-mediated delivery fraud accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "Accurate",
-              "contradicts_if": "Not seeing it"
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have you observed delayed stock statements or rising CC/OD utilisation among textile processing clients?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "Yes indicates liquidity stress from blocked receivables.",
-              "contradicts_if": "No contradicts expected working capital strain."
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "ટેક્સટાઇલ્સ પ્રોસેસિંગ મિલ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું તમારા અનુભવમાં અહેવાલ મુજબ બ્રોકર દ્વારા કરાયેલ ડિલિવરી ફ્રોડ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "તાજેતરમાં બ્રોકર મારફતના ઓર્ડર માટે તમારી ક્રેડિટ અથવા અગાઉની ચુકવણીની શરતોમાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણી કડક આગોતરી શરતો",
-                  "થોડી કડક શરતો",
-                  "કોઈ ફેરફાર નહીં",
-                  "વધુ હળવી શરતો"
-                ]
-              },
-              "operator.q3": {
-                "text": "છેલ્લા ૨-૪ અઠવાડિયામાં અજાણ્યા થર્ડ-પાર્ટી ખરીદદારો તરફથી પેમેન્ટમાં વિલંબનું પ્રમાણ કેવું રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ગ્રે ફેબ્રિક / યાર્ન સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું તમારા અનુભવમાં અહેવાલ મુજબ બ્રોકર દ્વારા કરાયેલ ડિલિવરી ફ્રોડ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "શું બજારમાં ફ્રોડની ચિંતાને કારણે તમે પ્રોસેસિંગ મિલ્સને અસુરક્ષિત ક્રેડિટ લાઇન ઘટાડી છે?",
-                "options": [
-                  "હા, નોંધપાત્ર ઘટાડો કર્યો છે",
-                  "થોડો ઘટાડો કર્યો છે",
-                  "કોઈ ફેરફાર નહીં",
-                  "ક્રેડિટ લાઇન વધારી છે"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "વર્કિંગ કેપિટલ બેન્કર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું તમારા અનુભવમાં અહેવાલ મુજબ બ્રોકર દ્વારા કરાયેલ ડિલિવરી ફ્રોડ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે ટેક્સટાઇલ પ્રોસેસિંગ ગ્રાહકોમાં મોડા સ્ટોક સ્ટેટમેન્ટ્સ અથવા સીસી/ઓડી યુટિલાઇઝેશન વધતું જોયું છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "c4aec41167e8": {
       "no_poll": false,
       "hypothesis": "Weaving and embroidery units in Surat are pausing imported machinery purchases and delaying expansion-related term loan drawdowns pending duty exemption extension clarity.",
@@ -4311,6 +4361,12 @@
           }
         }
       },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "26a187e230cf": {
+      "no_poll": true,
+      "reason": "The event is an early-stage academic/R&D research partnership (MANTRA and IPR) with no commercial deployment, pilot details, capital expenditure, or immediate ground-level operational changes visible to cluster businesses over a 2-4 week ho",
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
@@ -6940,12 +6996,6 @@
     "10bb525ec49c": {
       "no_poll": true,
       "reason": "The news is about a documentary highlighting a general trend in Nepal without specific timelines, policies, or sudden trade disruptions, making it too vague to observe immediate short-term ground credit or order book effects in Morbi over t",
-      "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "317f5c9fd10d": {
-      "no_poll": true,
-      "reason": "The news describes an isolated local fire incident at a single textile waste godown with unknown ownership and no systemic impact on the wider Surat MMF textile value chain or overall credit indicators.",
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
@@ -10749,245 +10799,6 @@
                   "સ્થિર",
                   "વધુ",
                   "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "d624cd3e7257": {
-      "no_poll": false,
-      "hypothesis": "Surat Diamond Bourse vacancy remains persistently high, causing debt servicing stress on commercial real estate loans while traditional hubs like Mahidharpura and Varachha retain trade liquidity.",
-      "event_phrase": "Surat Diamond Bourse remaining 90 percent empty",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Diamond Loan Officer, Surat",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported 90 percent vacancy at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have restructuring or default requests for SDB commercial office loans trended in the last 4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "No change",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Diamond Office Broker / Leasing Agent",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported 90 percent vacancy at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How has office leasing inquiry volume at SDB compared to traditional hubs like Mahidharpura over the last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Natural & LGD Diamond Exporter",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported 90 percent vacancy at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Where is the majority of your daily trading and office operations currently centered?",
-              "options": [
-                "Surat Diamond Bourse (SDB)",
-                "Mahidharpura / Varachha",
-                "Mumbai (BKC)",
-                "Other / Mixed"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Mahidharpura / Varachha",
-                "Mumbai (BKC)"
-              ],
-              "contradicts": [
-                "Surat Diamond Bourse (SDB)"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ડાયમંડ લોન ઓફિસર, સુરત",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ૯૦ ટકા ખાલી જગ્યા હોવાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "છેલ્લા ૪ અઠવાડિયામાં એસડીબી કોમર્શિયલ ઓફિસ લોન માટે રિસ્ટ્રક્ચરિંગ અથવા ડિફોલ્ટની વિનંતીઓ કેવી રહી છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "કોઈ ફેરફાર નહીં",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ડાયમંડ ઓફિસ બ્રોકર / લીઝિંગ એજન્ટ",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ૯૦ ટકા ખાલી જગ્યા હોવાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "મહીધરપુરા જેવા પારંપરિક કેન્દ્રોની સરખામણીમાં છેલ્લા મહિનામાં એસડીબી ખાતે ઓફિસ ભાડે લેવાની પૂછપરછનું પ્રમાણ કેવું રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "નેચરલ અને એલજીડી ડાયમંડ એક્સપોર્ટર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ૯૦ ટકા ખાલી જગ્યા હોવાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "હાલમાં તમારો મોટાભાગનો દૈનિક વ્યાપાર અને ઓફિસનું કામ ક્યાં કેન્દ્રિત છે?",
-                "options": [
-                  "સુરત ડાયમંડ બોર્સ (SDB)",
-                  "મહીધરપુરા / વરાછા",
-                  "મુંબઈ (BKC)",
-                  "અન્ય / મિશ્રિત"
                 ]
               }
             }
