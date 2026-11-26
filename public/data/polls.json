@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T20:02:23.812Z",
+  "generated_at": "2026-11-26T02:59:35.033Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -13,8 +13,8 @@
   },
   "coverage": {
     "cards": 91,
-    "with_poll": 84,
-    "no_poll": 7,
+    "with_poll": 83,
+    "no_poll": 8,
     "pending": 0
   },
   "polls": {
@@ -1482,311 +1482,6 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
-    "3e9a328d09ad": {
-      "no_poll": false,
-      "hypothesis": "Demand slowdown in the Bhavnagar diamond sector is causing liquidity strain and delayed receivables for cutting and polishing units.",
-      "event_phrase": "slowdown in the diamond industry",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Diamond cutting & polishing unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported slowdown in the diamond industry accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How is your order book compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How many days are buyers currently taking to clear payments?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Same",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Longer",
-                "Much longer"
-              ],
-              "contradicts": [
-                "Shorter",
-                "Much shorter"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "Bank credit officer (Surat/Bhavnagar)",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported slowdown in the diamond industry accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How are CC/OD limit utilizations trending for diamond units?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "choice",
-              "text": "Have you seen an increase in ad-hoc limit or restructuring requests?",
-              "options": [
-                "Yes, significant rise",
-                "Some increase",
-                "No change",
-                "Decreased"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes, significant rise",
-                "Some increase"
-              ],
-              "contradicts": [
-                "Decreased"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Rough diamond trader / supplier",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported slowdown in the diamond industry accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How is the offtake of rough diamonds compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "હીરા કટિંગ અને પોલીશિંગ યુનિટના સંચાલક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું હીરા ઉદ્યોગમાં મંદીના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં તમારી ઓર્ડર બુક કેવી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "એ જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "ખરીદદારો નાણાં ચૂકવવામાં હાલ કેટલા દિવસ લઈ રહ્યા છે?",
-                "options": [
-                  "ઘણા ઓછા",
-                  "ઓછા",
-                  "એ જ",
-                  "વધુ",
-                  "ઘણા વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "બેંક ક્રેડિટ ઓફિસર (સુરત/ભાવનગર)",
-            "questions": {
-              "banker.q1": {
-                "text": "શું હીરા ઉદ્યોગમાં મંદીના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "હીરાના એકમો માટે CC/OD લિમિટનો ઉપયોગ કેવો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "એ જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે લિમિટ વધારવા અથવા રિસ્ટ્રક્ચરિંગની અરજીઓમાં વધારો જોયો છે?",
-                "options": [
-                  "હા, નોંધપાત્ર વધારો",
-                  "થોડો વધારો",
-                  "કોઈ ફેરફાર નહીં",
-                  "ઘટાડો થયો છે"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "કાચા હીરા (રફ ડાયમંડ) ના વેપારી",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું હીરા ઉદ્યોગમાં મંદીના અહેવાલો તમારા અનુભવ મુજબ સાચા છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગત મહિનાની સરખામણીમાં રફ હીરાની માંગ (ઓફટેક) કેવી છે?",
-                "options": [
-                  "ઘણી ઓછી",
-                  "ઓછી",
-                  "એ જ",
-                  "વધુ",
-                  "ખૂબ વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
     "297b184838d2": {
       "no_poll": false,
       "hypothesis": "Sayan weaving units are initiating collective operational shutdowns, causing a sharp decline in yarn demand and bank working capital utilisation.",
@@ -2355,298 +2050,6 @@
                   "સમાન",
                   "વધુ",
                   "ઘણી વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "c1d55ee892d4": {
-      "no_poll": false,
-      "hypothesis": "Low occupancy and sluggish activity at the Surat Diamond Bourse are creating severe liquidity and real estate debt servicing stress for diamond units that invested heavily in SDB offices.",
-      "event_phrase": "sluggish occupancy and low operational activity at the Surat Diamond Bourse",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Diamond cluster credit manager",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "choice",
-              "text": "Have you observed an increase in restructuring requests or loan defaults on SDB office premises?",
-              "options": [
-                "Yes, significant rise",
-                "Slight increase",
-                "No change"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes, significant rise",
-                "Slight increase"
-              ],
-              "contradicts": [
-                "No change"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "scale5",
-              "text": "How has CC/OD utilisation changed for diamond traders who purchased offices in SDB compared to last quarter?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Natural diamond cutting & polishing unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Are you or your peers actively operating from your SDB offices or still functioning from Mahidharpura/Varachha?",
-              "options": [
-                "Fully shifted to SDB",
-                "Operating from both locations",
-                "Not using SDB office at all"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Not using SDB office at all"
-              ],
-              "contradicts": [
-                "Fully shifted to SDB"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "scale5",
-              "text": "How do your current real estate debt servicing obligations compare to your operational cash flows?",
-              "options": [
-                "Very comfortable",
-                "Manageable",
-                "Neutral",
-                "Stretched",
-                "Severe stress"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Stretched",
-                "Severe stress"
-              ],
-              "contradicts": [
-                "Very comfortable",
-                "Manageable"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Diamond broker / rough trader",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "choice",
-              "text": "Where do the majority of high-value diamond spot trades currently take place in Surat?",
-              "options": [
-                "Mainly at SDB",
-                "Traditional markets & private offices",
-                "Mainly in Mumbai (BKC)"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Traditional markets & private offices",
-                "Mainly in Mumbai (BKC)"
-              ],
-              "contradicts": [
-                "Mainly at SDB"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું તમે SDB ઓફિસ લોન પર પુનઃરચના (restructuring) ની અરજીઓ કે ડિફોલ્ટમાં વધારો જોયો છે?",
-                "options": [
-                  "હા, મોટો વધારો",
-                  "સામાન્ય વધારો",
-                  "કોઈ ફેરફાર નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "ગયા ક્વાર્ટરની સરખામણીમાં SDB માં ઓફિસ ખરીદનાર ડાયમંડ વેપારીઓ માટે CC/OD નો ઉપયોગ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "નેચરલ ડાયમંડ કટીંગ અને પોલિશિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "શું તમે અથવા તમારા સાથીદારો SDB ઓફિસમાંથી કામ કરો છો કે હજુ મહિધરપુરા/વરાછાથી?",
-                "options": [
-                  "સંપૂર્ણપણે SDB માં સ્થળાંતર",
-                  "બંને જગ્યાએથી કામ",
-                  "SDB ઓફિસનો બિલકુલ ઉપયોગ નથી"
-                ]
-              },
-              "operator.q3": {
-                "text": "તમારી ઓપરેટિંગ કમાણી સામે રિયલ એસ્ટેટ દેવું ચૂકવવાનું ભારણ કેવું છે?",
-                "options": [
-                  "ખૂબ જ આરામદાયક",
-                  "સંચાલન યોગ્ય",
-                  "તટસ્થ",
-                  "તણાવપૂર્ણ",
-                  "ગંભીર મુશ્કેલી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ડાયમંડ બ્રોકર / રફ વેપારી",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "હાલમાં સુરતમાં મોટાભાગના હીરાના સ્પૉટ વેપાર ક્યાં થાય છે?",
-                "options": [
-                  "મુખ્યત્વે SDB માં",
-                  "પરંપરાગત બજારો અને ખાનગી ઓરિજિન",
-                  "મુખ્યત્વે મુંબઈ (BKC) માં"
                 ]
               }
             }
@@ -4565,6 +3968,271 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "750daf4642ee": {
+      "no_poll": false,
+      "hypothesis": "Surat textile traders and exporters are seeing initial trade inquiries or payment/credit terms being negotiated for Afghanistan exports post-expo.",
+      "event_phrase": "interest in textile export trade to Afghanistan",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Textile market trader / Exporter",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported interest in textile export trade to Afghanistan accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "What payment terms are overseas buyers/agents offering for prospective Afghanistan export inquiries?",
+              "options": [
+                "Advance payment / Confirmed LC",
+                "Open credit (30-60 days)",
+                "Consignment basis",
+                "No concrete inquiries yet"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Advance payment / Confirmed LC"
+              ],
+              "contradicts": [
+                "No concrete inquiries yet"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How have export inquiry volumes for non-traditional markets changed in the last 2-4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat SME Credit Officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported interest in textile export trade to Afghanistan accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have textile clients requested export LCs or trade finance facilities for new export destinations recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "Saree & dress-material wholesaler",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported interest in textile export trade to Afghanistan accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "How are wholesale order bookings for export-oriented fabric ranges performing compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Much lower",
+                "Lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "ટેક્ષટાઇલ માર્કેટ વેપારી / નિકાસકાર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું અફઘાનિસ્તાન માટે ટેક્સટાઇલ નિકાસ વેપારમાં રસ હોવાનો અહેવાલ તમારા અનુભવમાં સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "અફઘાનિસ્તાન નિકાસની પૂછપરછ માટે વિદેશી ખરીદદારો/એજન્ટો કઈ ચૂકવણીની શરતો ઓફર કરી રહ્યા છે?",
+                "options": [
+                  "એડવાન્સ પેમેન્ટ / કન્ફર્મ્ડ LC",
+                  "ઓપન ક્રેડિટ (30-60 દિવસ)",
+                  "કન્સાઇનમેન્ટ ધોરણે",
+                  "હજુ સુધી કોઈ ચોક્કસ પૂછપરછ નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા 2-4 સપ્તાહમાં બિન-પરંપરાગત બજારો માટે નિકાસ પૂછપરછના પ્રમાણમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત SME ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું અફઘાનિસ્તાન માટે ટેક્સટાઇલ નિકાસ વેપારમાં રસ હોવાનો અહેવાલ તમારા અનુભવમાં સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું ટેક્સટાઇલ ગ્રાહકોએ તાજેતરમાં નવા નિકાસ ગંતવ્યો માટે નિકાસ LC અથવા ટ્રેડ ફાઇનાન્સ સુવિધાઓની માંગણી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "સાડી અને ડ્રેસ-મટીરીયલ હોલસેલર",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું અફઘાનિસ્તાન માટે ટેક્સટાઇલ નિકાસ વેપારમાં રસ હોવાનો અહેવાલ તમારા અનુભવમાં સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં નિકાસલક્ષી ફેબ્રિક રેન્જ માટે હોલસેલ ઓર્ડર બુકિંગ કેવું રહી રહ્યું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સમાન",
+                  "વધારે",
+                  "ઘણું વધારે"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
     "d1aa2135da18": {
       "no_poll": false,
       "hypothesis": "Surat natural diamond units are not yet experiencing any immediate diversion of domestic rough diamond supply or order cancellation to Madhya Pradesh.",
@@ -4827,6 +4495,278 @@
                   "થોડા ગ્રાહકોએ",
                   "કોઈ ગ્રાહકે નહીં",
                   "લાગુ પડતું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "fb5033cdb446": {
+      "no_poll": false,
+      "hypothesis": "Large-scale capacity additions in Surat's LGD sector are putting downward pressure on polished carats' realisations while driving up rough LGD seed/reactor demand.",
+      "event_phrase": "tripling of LGD production capacity",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "LGD grower / polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported tripling of LGD production capacity accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your per-carat polished LGD price realisations moved over the last 4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Prices are declining due to local capacity expansion and supply influx.",
+              "contradicts_if": "Prices are firming up despite reported capacity expansions."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has finished polished LGD inventory built up at your unit over the last month?",
+              "options": [
+                "Substantially lower",
+                "Lower",
+                "Normal",
+                "Higher",
+                "Substantially higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Higher",
+                "Substantially higher"
+              ],
+              "contradicts": [
+                "Substantially lower",
+                "Lower"
+              ],
+              "supports_if": "Supply expansion is outpacing immediate buyer absorption.",
+              "contradicts_if": "Inventory is depleting quickly due to strong off-take."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat diamond branch credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported tripling of LGD production capacity accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "What trend in working capital enhancement requests have you seen from small LGD units recently?",
+              "options": [
+                "Significant increase",
+                "Moderate increase",
+                "No change",
+                "Decrease"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase",
+                "Moderate increase"
+              ],
+              "contradicts": [
+                "Decrease"
+              ],
+              "supports_if": "Smaller units require working capital support due to margin squeezes or inventory holding.",
+              "contradicts_if": "Units are reducing debt demand or operating comfortably within cash flows."
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "LGD trader / exporter",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported tripling of LGD production capacity accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "What payment credit period are LGD growers extending to buyers compared to last month?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Unchanged",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Much shorter",
+                "Shorter"
+              ],
+              "supports_if": "Growers are offering longer credit terms to push increased supply into the market.",
+              "contradicts_if": "Credit terms are tightening due to robust demand."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "LGD ગ્રોઅર / પોલિશિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું LGD ઉત્પાદન ક્ષમતામાં ત્રણ ગણો વધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૪ અઠવાડિયામાં તમારા કેરેટ દીઠ પોલિશ્ડ LGD ના ભાવમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "અપરિવર્તિત",
+                  "વધારે",
+                  "ઘણા વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા એક મહિનામાં તમારા યુનિટમાં તૈયાર પોલિશ્ડ LGD નો સ્ટોક (ઇન્વેન્ટરી) કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સામાન્ય",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ડાયમંડ બ્રાન્ચ ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું LGD ઉત્પાદન ક્ષમતામાં ત્રણ ગણો વધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "હાલમાં નાના LGD યુનિટ્સ તરફથી વર્કિંગ કેપિટલ વધારવાની માંગણીઓમાં કેવો ટ્રેન્ડ જોવા મળ્યો છે?",
+                "options": [
+                  "મોટો વધારો",
+                  "મધ્યમ વધારો",
+                  "કોઈ ફેરફાર નહીં",
+                  "ઘટાડો"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "LGD વેપારી / નિકાસકાર",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું LGD ઉત્પાદન ક્ષમતામાં ત્રણ ગણો વધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "ગયેલા મહિનાની સરખામણીએ LGD ગ્રોઅર્સ ખરીદદારોને કેટલી ક્રેડિટ મુદત (ચુકવણીનો સમય) આપી રહ્યા છે?",
+                "options": [
+                  "ઘણી ટૂંકી",
+                  "ટૂંકી",
+                  "અપરિવર્તિત",
+                  "લાંબી",
+                  "ઘણી લાંબી"
                 ]
               }
             }
@@ -7728,6 +7668,12 @@
     "10bb525ec49c": {
       "no_poll": true,
       "reason": "The news is about a documentary highlighting a general trend in Nepal without specific timelines, policies, or sudden trade disruptions, making it too vague to observe immediate short-term ground credit or order book effects in Morbi over t",
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "317f5c9fd10d": {
+      "no_poll": true,
+      "reason": "The news describes an isolated local fire incident at a single textile waste godown with unknown ownership and no systemic impact on the wider Surat MMF textile value chain or overall credit indicators.",
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
@@ -11531,245 +11477,6 @@
                   "સ્થિર",
                   "વધુ",
                   "ઘણું વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "d624cd3e7257": {
-      "no_poll": false,
-      "hypothesis": "Surat Diamond Bourse vacancy remains persistently high, causing debt servicing stress on commercial real estate loans while traditional hubs like Mahidharpura and Varachha retain trade liquidity.",
-      "event_phrase": "Surat Diamond Bourse remaining 90 percent empty",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Diamond Loan Officer, Surat",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported 90 percent vacancy at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have restructuring or default requests for SDB commercial office loans trended in the last 4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "No change",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Diamond Office Broker / Leasing Agent",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported 90 percent vacancy at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How has office leasing inquiry volume at SDB compared to traditional hubs like Mahidharpura over the last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Natural & LGD Diamond Exporter",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported 90 percent vacancy at Surat Diamond Bourse accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "choice",
-              "text": "Where is the majority of your daily trading and office operations currently centered?",
-              "options": [
-                "Surat Diamond Bourse (SDB)",
-                "Mahidharpura / Varachha",
-                "Mumbai (BKC)",
-                "Other / Mixed"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Mahidharpura / Varachha",
-                "Mumbai (BKC)"
-              ],
-              "contradicts": [
-                "Surat Diamond Bourse (SDB)"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ડાયમંડ લોન ઓફિસર, સુરત",
-            "questions": {
-              "banker.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ૯૦ ટકા ખાલી જગ્યા હોવાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "છેલ્લા ૪ અઠવાડિયામાં એસડીબી કોમર્શિયલ ઓફિસ લોન માટે રિસ્ટ્રક્ચરિંગ અથવા ડિફોલ્ટની વિનંતીઓ કેવી રહી છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "કોઈ ફેરફાર નહીં",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ડાયમંડ ઓફિસ બ્રોકર / લીઝિંગ એજન્ટ",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ૯૦ ટકા ખાલી જગ્યા હોવાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "મહીધરપુરા જેવા પારંપરિક કેન્દ્રોની સરખામણીમાં છેલ્લા મહિનામાં એસડીબી ખાતે ઓફિસ ભાડે લેવાની પૂછપરછનું પ્રમાણ કેવું રહ્યું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "નેચરલ અને એલજીડી ડાયમંડ એક્સપોર્ટર",
-            "questions": {
-              "operator.q1": {
-                "text": "શું સુરત ડાયમંડ બોર્સમાં ૯૦ ટકા ખાલી જગ્યા હોવાનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "હાલમાં તમારો મોટાભાગનો દૈનિક વ્યાપાર અને ઓફિસનું કામ ક્યાં કેન્દ્રિત છે?",
-                "options": [
-                  "સુરત ડાયમંડ બોર્સ (SDB)",
-                  "મહીધરપુરા / વરાછા",
-                  "મુંબઈ (BKC)",
-                  "અન્ય / મિશ્રિત"
                 ]
               }
             }
@@ -15950,6 +15657,308 @@
                   "સમાન",
                   "વધુ",
                   "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
+    "ee10e4ca8235": {
+      "no_poll": false,
+      "hypothesis": "Surat textile units and traders are experiencing a 15-20% surge in order volumes and improved cash flows for the marriage season.",
+      "event_phrase": "15-20% surge in marriage season demand for Surat textiles",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Processing & Dyeing House Owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported 15-20% demand surge for the marriage season accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How do your current grey fabric processing volumes compare to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How are your average realization prices for finished fabrics moving?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Ring Road Textile Market Trader",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported 15-20% demand surge for the marriage season accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How is the wholesale offtake of sarees and dress materials compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat MSME Branch Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported 15-20% demand surge for the marriage season accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "scale5",
+              "text": "How is the CC/OD limit utilisation moving for your textile accounts?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Are you observing lower customer cheque returns or faster realization of trade bills?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "પ્રોસેસિંગ અને ડાઇંગ હાઉસ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું લગ્નની સિઝન માટે જણાવેલ ૧૫-૨૦% માંગનો વધારો તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં તમારું ગ્રે ફેબ્રિક પ્રોસેસિંગનું પ્રમાણ કેવું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "તમારા તૈયાર કાપડના સરેરાશ વેચાણ ભાવમાં શું ફેરફાર છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "સરખા",
+                  "વધુ",
+                  "ઘણા વધુ"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "રિંગ રોડ ટેક્સટાઈલ માર્કેટ ટ્રેડર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું લગ્નની સિઝન માટે જણાવેલ ૧૫-૨૦% માંગનો વધારો તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં સાડીઓ અને ડ્રેસ મટીરિયલનું જથ્થાબંધ વેચાણ કેવું છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત એમએસએમઈ બ્રાન્ચ બેન્કર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું લગ્નની સિઝન માટે જણાવેલ ૧૫-૨૦% માંગનો વધારો તમારા અનુભવમાં સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "તમારા ટેક્સટાઈલ ખાતાઓમાં સીસી/ઓડી લિમિટનો ઉપયોગ કેવો થઈ રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સરખો",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું ગ્રાહકોના ચેક રિટર્ન ઓછા થયા છે કે બિલની ચુકવણી ઝડપથી મળી રહી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
                 ]
               }
             }
@@ -23896,308 +23905,6 @@
                   "ઘણો ઘટી ગયો છે",
                   "સ્થિર છે",
                   "વધ્યો છે"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "a523a4bf860d": {
-      "no_poll": false,
-      "hypothesis": "Recovery of stuck mercantile payments has improved liquidity and reduced receivables pressure for Ring Road textile traders in Surat.",
-      "event_phrase": "recovery of stuck payments by textile traders",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Ring Road branch MSME banker",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported recovery of stuck payments by textile traders accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How have CC/OD limit utilizations changed for your textile trader accounts in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "lower utilization shows freed-up cash",
-              "contradicts_if": "higher utilization shows continuing liquidity stress"
-            },
-            {
-              "id": "banker.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you observed any reduction in cheque returns or SMA slippages among your Ring Road trading borrowers?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "repayment",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "fewer defaults confirm liquidity easing",
-              "contradicts_if": "persistent defaults contradict recovery impact"
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Grey-fabric trader / supplier",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported recovery of stuck payments by textile traders accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How have realization periods for credit sales to Ring Road buyers changed in the last 2-4 weeks?",
-              "options": [
-                "Much shorter",
-                "Shorter",
-                "Unchanged",
-                "Longer",
-                "Much longer"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Much shorter",
-                "Shorter"
-              ],
-              "contradicts": [
-                "Longer",
-                "Much longer"
-              ],
-              "supports_if": "shorter realization indicates faster cash cycles",
-              "contradicts_if": "longer realization contradicts cash flow improvement"
-            },
-            {
-              "id": "supplier.q3",
-              "type": "scale5",
-              "text": "How has fresh order booking from Ring Road market traders changed compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Stable",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "higher bookings show deployment of recovered liquidity",
-              "contradicts_if": "lower bookings show funds being diverted away from business"
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Ring Road textile market trader",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported recovery of stuck payments by textile traders accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "receivables",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your working capital liquidity felt in your daily operations over the last 2-4 weeks?",
-              "options": [
-                "Much tighter",
-                "Tighter",
-                "Stable",
-                "Easier",
-                "Much easier"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Easier",
-                "Much easier"
-              ],
-              "contradicts": [
-                "Tighter",
-                "Much tighter"
-              ],
-              "supports_if": "easier liquidity reflects successful payment recoveries",
-              "contradicts_if": "tighter liquidity contradicts reported recoveries"
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "રિંગ રોડ શાખા એમએસએમઈ બેંકર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું કાપડ વેપારીઓ દ્વારા અટવાયેલા નાણાંની વસૂલાતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા કાપડ વેપારી ગ્રાહકો માટે સીસી/ઓડી મર્યાદાનો ઉપયોગ કેવો રહ્યો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "banker.q3": {
-                "text": "શું તમે તમારા રિંગ રોડના વેપારી ઉધાર લેનારાઓમાં ચેક પરત ફરવામાં કે એસએમએ ફાચર ઘટવામાં કોઈ ઘટાડો નોંધ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "ગ્રે-ફેબ્રિક વેપારી / સપ્લાયર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું કાપડ વેપારીઓ દ્વારા અટવાયેલા નાણાંની વસૂલાતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં રિંગ રોડના ખરીદદારોને ક્રેડિટ વેચાણ માટેના વસૂલાત સમયગાળામાં શું ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ટૂંકો",
-                  "ટૂંકો",
-                  "અપરિવર્તિત",
-                  "લાંબો",
-                  "ઘણો લાંબો"
-                ]
-              },
-              "supplier.q3": {
-                "text": "ગયા મહિનાની સરખામણીમાં રિંગ રોડ માર્કેટના વેપારીઓ તરફથી નવા ઓર્ડર બુકિંગમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સ્થિર",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "રિંગ રોડ કાપડ બજારના વેપારી",
-            "questions": {
-              "operator.q1": {
-                "text": "શું કાપડ વેપારીઓ દ્વારા અટવાયેલા નાણાંની વસૂલાતનો અહેવાલ તમારા અનુભવમાં સાચો છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં તમારા દૈનિક વ્યવસાયમાં વર્કિંગ કેપિટલ લિક્વિડિટી કેવી રહી છે?",
-                "options": [
-                  "ઘણી સજ્જડ",
-                  "સજ્જડ",
-                  "સ્થિર",
-                  "સરળ",
-                  "ઘણી સરળ"
                 ]
               }
             }
