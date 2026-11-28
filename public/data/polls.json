@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T07:57:34.621Z",
+  "generated_at": "2026-11-28T18:23:48.261Z",
   "prompt_version": "poll-v1",
   "roles": {
     "banker": "Banker / lender (bank, NBFC, co-op)",
@@ -12,9 +12,9 @@
     "other": "Other"
   },
   "coverage": {
-    "cards": 83,
-    "with_poll": 78,
-    "no_poll": 5,
+    "cards": 86,
+    "with_poll": 80,
+    "no_poll": 6,
     "pending": 0
   },
   "polls": {
@@ -2061,6 +2061,298 @@
       "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
+    "c1d55ee892d4": {
+      "no_poll": false,
+      "hypothesis": "Low occupancy and sluggish activity at the Surat Diamond Bourse are creating severe liquidity and real estate debt servicing stress for diamond units that invested heavily in SDB offices.",
+      "event_phrase": "sluggish occupancy and low operational activity at the Surat Diamond Bourse",
+      "roles": [
+        {
+          "role": "banker",
+          "label": "Diamond cluster credit manager",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you observed an increase in restructuring requests or loan defaults on SDB office premises?",
+              "options": [
+                "Yes, significant rise",
+                "Slight increase",
+                "No change"
+              ],
+              "mechanism": "repayment",
+              "supports": [
+                "Yes, significant rise",
+                "Slight increase"
+              ],
+              "contradicts": [
+                "No change"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "scale5",
+              "text": "How has CC/OD utilisation changed for diamond traders who purchased offices in SDB compared to last quarter?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Stable",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "operator",
+          "label": "Natural diamond cutting & polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "choice",
+              "text": "Are you or your peers actively operating from your SDB offices or still functioning from Mahidharpura/Varachha?",
+              "options": [
+                "Fully shifted to SDB",
+                "Operating from both locations",
+                "Not using SDB office at all"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Not using SDB office at all"
+              ],
+              "contradicts": [
+                "Fully shifted to SDB"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How do your current real estate debt servicing obligations compare to your operational cash flows?",
+              "options": [
+                "Very comfortable",
+                "Manageable",
+                "Neutral",
+                "Stretched",
+                "Severe stress"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Stretched",
+                "Severe stress"
+              ],
+              "contradicts": [
+                "Very comfortable",
+                "Manageable"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Diamond broker / rough trader",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported sluggish occupancy and low operational activity at the Surat Diamond Bourse accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "choice",
+              "text": "Where do the majority of high-value diamond spot trades currently take place in Surat?",
+              "options": [
+                "Mainly at SDB",
+                "Traditional markets & private offices",
+                "Mainly in Mumbai (BKC)"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Traditional markets & private offices",
+                "Mainly in Mumbai (BKC)"
+              ],
+              "contradicts": [
+                "Mainly at SDB"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "banker": {
+            "label": "ડાયમંડ ક્લસ્ટર ક્રેડિટ મેનેજર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે SDB ઓફિસ લોન પર પુનઃરચના (restructuring) ની અરજીઓ કે ડિફોલ્ટમાં વધારો જોયો છે?",
+                "options": [
+                  "હા, મોટો વધારો",
+                  "સામાન્ય વધારો",
+                  "કોઈ ફેરફાર નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "ગયા ક્વાર્ટરની સરખામણીમાં SDB માં ઓફિસ ખરીદનાર ડાયમંડ વેપારીઓ માટે CC/OD નો ઉપયોગ કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સ્થિર",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              }
+            }
+          },
+          "operator": {
+            "label": "નેચરલ ડાયમંડ કટીંગ અને પોલિશિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "શું તમે અથવા તમારા સાથીદારો SDB ઓફિસમાંથી કામ કરો છો કે હજુ મહિધરપુરા/વરાછાથી?",
+                "options": [
+                  "સંપૂર્ણપણે SDB માં સ્થળાંતર",
+                  "બંને જગ્યાએથી કામ",
+                  "SDB ઓફિસનો બિલકુલ ઉપયોગ નથી"
+                ]
+              },
+              "operator.q3": {
+                "text": "તમારી ઓપરેટિંગ કમાણી સામે રિયલ એસ્ટેટ દેવું ચૂકવવાનું ભારણ કેવું છે?",
+                "options": [
+                  "ખૂબ જ આરામદાયક",
+                  "સંચાલન યોગ્ય",
+                  "તટસ્થ",
+                  "તણાવપૂર્ણ",
+                  "ગંભીર મુશ્કેલી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "ડાયમંડ બ્રોકર / રફ વેપારી",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું સુરત ડાયમંડ બોર્સમાં ઓછી ઓક્યુપન્સી અને મંદ કામકાજનો અહેવાલ તમારા અનુભવ મુજબ સાચો છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "હાલમાં સુરતમાં મોટાભાગના હીરાના સ્પૉટ વેપાર ક્યાં થાય છે?",
+                "options": [
+                  "મુખ્યત્વે SDB માં",
+                  "પરંપરાગત બજારો અને ખાનગી ઓરિજિન",
+                  "મુખ્યત્વે મુંબઈ (BKC) માં"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "1bcd949a2599": {
       "no_poll": false,
       "hypothesis": "Severe demand shock in the Surat diamond industry is leading to widespread unit shutdowns, worker layoffs, and elevated credit stress.",
@@ -3383,6 +3675,323 @@
         }
       },
       "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "76aade86670b": {
+      "no_poll": false,
+      "hypothesis": "Surat weavers are witnessing regulatory changes or discussions regarding yarn oversight transfer between ministries affecting raw material availability.",
+      "event_phrase": "yarn oversight transfer from Chemical to Textile Ministry",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "Water-jet/air-jet weaver",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported yarn oversight transfer from Chemical to Textile Ministry accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your yarn procurement costs moved in the last 2 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "yes_no_notseen",
+              "text": "Have yarn suppliers changed credit terms due to ministry policy discussions?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "creditors",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "Yarn spinner / texturiser",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported yarn oversight transfer from Chemical to Textile Ministry accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How is your POY/FDY yarn offtake volume compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you received any new compliance guidelines regarding yarn distribution recently?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "input_cost",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat commercial banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported yarn oversight transfer from Chemical to Textile Ministry accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "yes_no_notseen",
+              "text": "Have weaving units requested working capital limit enhancements due to raw material changes?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "yes_no_notseen",
+              "text": "Have you observed any delays in stock-statement submissions from weaving clients?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "વોટર-જેટ/એર-જેટ વીવર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું કેમિકલમાંથી ટેક્સટાઇલ મંત્રાલયમાં યાર્ન દેખરેખના હસ્તાંતરણના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૨ અઠવાડિયામાં તમારા યાર્ન ખરીદીના ખર્ચમાં કેવી હિલચાલ થઈ છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું યાર્ન સપ્લાયર્સે નીતિગત ચર્ચાઓને કારણે ક્રેડિટની શરતો બદલી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "યાર્ન સ્પિનર / ટેક્સ્યુરાઇઝર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું કેમિકલમાંથી ટેક્સટાઇલ મંત્રાલયમાં યાર્ન દેખરેખના હસ્તાંતરણના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગત મહિનાની સરખામણીમાં તમારો POY/FDY યાર્નનો ઉપાડ કેટલો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સમાન",
+                  "વધુ",
+                  "ઘણો વધુ"
+                ]
+              },
+              "supplier.q3": {
+                "text": "શું તમને તાજેતરમાં યાર્ન વિતરણ અંગે કોઈ નવી પાલન માર્ગદર્શિકા મળી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરતના કોમર્શિયલ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું કેમિકલમાંથી ટેક્સટાઇલ મંત્રાલયમાં યાર્ન દેખરેખના હસ્તાંતરણના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું કાચા માલમાં ફેરફારને કારણે વીવિંગ યુનિટ્સે વર્કિંગ કેપિટલ મર્યાદા વધારવાની માંગણી કરી છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "શું તમે વીવિંગ ગ્રાહકો તરફથી સ્ટોક-સ્ટેટમેન્ટ સબમિટ કરવામાં કોઈ વિલંબ જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોયું નથી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
       "prompt_version": "poll-v1"
     },
     "6396a32f35e0": {
@@ -4736,6 +5345,278 @@
         }
       },
       "model": "gemini:gemini-3.8-flash",
+      "prompt_version": "poll-v1"
+    },
+    "fb5033cdb446": {
+      "no_poll": false,
+      "hypothesis": "Large-scale capacity additions in Surat's LGD sector are putting downward pressure on polished carats' realisations while driving up rough LGD seed/reactor demand.",
+      "event_phrase": "tripling of LGD production capacity",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "LGD grower / polishing unit owner",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported tripling of LGD production capacity accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How have your per-carat polished LGD price realisations moved over the last 4 weeks?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Unchanged",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "realisation",
+              "supports": [
+                "Much lower",
+                "Lower"
+              ],
+              "contradicts": [
+                "Higher",
+                "Much higher"
+              ],
+              "supports_if": "Prices are declining due to local capacity expansion and supply influx.",
+              "contradicts_if": "Prices are firming up despite reported capacity expansions."
+            },
+            {
+              "id": "operator.q3",
+              "type": "scale5",
+              "text": "How has finished polished LGD inventory built up at your unit over the last month?",
+              "options": [
+                "Substantially lower",
+                "Lower",
+                "Normal",
+                "Higher",
+                "Substantially higher"
+              ],
+              "mechanism": "inventory",
+              "supports": [
+                "Higher",
+                "Substantially higher"
+              ],
+              "contradicts": [
+                "Substantially lower",
+                "Lower"
+              ],
+              "supports_if": "Supply expansion is outpacing immediate buyer absorption.",
+              "contradicts_if": "Inventory is depleting quickly due to strong off-take."
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Surat diamond branch credit officer",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported tripling of LGD production capacity accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "What trend in working capital enhancement requests have you seen from small LGD units recently?",
+              "options": [
+                "Significant increase",
+                "Moderate increase",
+                "No change",
+                "Decrease"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Significant increase",
+                "Moderate increase"
+              ],
+              "contradicts": [
+                "Decrease"
+              ],
+              "supports_if": "Smaller units require working capital support due to margin squeezes or inventory holding.",
+              "contradicts_if": "Units are reducing debt demand or operating comfortably within cash flows."
+            }
+          ]
+        },
+        {
+          "role": "buyer",
+          "label": "LGD trader / exporter",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "buyer.q1",
+              "type": "accuracy",
+              "text": "Is the reported tripling of LGD production capacity accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "buyer.q2",
+              "type": "scale5",
+              "text": "What payment credit period are LGD growers extending to buyers compared to last month?",
+              "options": [
+                "Much shorter",
+                "Shorter",
+                "Unchanged",
+                "Longer",
+                "Much longer"
+              ],
+              "mechanism": "receivables",
+              "supports": [
+                "Longer",
+                "Much longer"
+              ],
+              "contradicts": [
+                "Much shorter",
+                "Shorter"
+              ],
+              "supports_if": "Growers are offering longer credit terms to push increased supply into the market.",
+              "contradicts_if": "Credit terms are tightening due to robust demand."
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "LGD ગ્રોઅર / પોલિશિંગ યુનિટ માલિક",
+            "questions": {
+              "operator.q1": {
+                "text": "શું LGD ઉત્પાદન ક્ષમતામાં ત્રણ ગણો વધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા ૪ અઠવાડિયામાં તમારા કેરેટ દીઠ પોલિશ્ડ LGD ના ભાવમાં કેવો ફેરફાર થયો છે?",
+                "options": [
+                  "ઘણા ઓછા",
+                  "ઓછા",
+                  "અપરિવર્તિત",
+                  "વધારે",
+                  "ઘણા વધારે"
+                ]
+              },
+              "operator.q3": {
+                "text": "છેલ્લા એક મહિનામાં તમારા યુનિટમાં તૈયાર પોલિશ્ડ LGD નો સ્ટોક (ઇન્વેન્ટરી) કેવો રહ્યો છે?",
+                "options": [
+                  "ઘણો ઓછો",
+                  "ઓછો",
+                  "સામાન્ય",
+                  "વધારે",
+                  "ઘણો વધારે"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "સુરત ડાયમંડ બ્રાન્ચ ક્રેડિટ ઓફિસર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું LGD ઉત્પાદન ક્ષમતામાં ત્રણ ગણો વધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "હાલમાં નાના LGD યુનિટ્સ તરફથી વર્કિંગ કેપિટલ વધારવાની માંગણીઓમાં કેવો ટ્રેન્ડ જોવા મળ્યો છે?",
+                "options": [
+                  "મોટો વધારો",
+                  "મધ્યમ વધારો",
+                  "કોઈ ફેરફાર નહીં",
+                  "ઘટાડો"
+                ]
+              }
+            }
+          },
+          "buyer": {
+            "label": "LGD વેપારી / નિકાસકાર",
+            "questions": {
+              "buyer.q1": {
+                "text": "શું LGD ઉત્પાદન ક્ષમતામાં ત્રણ ગણો વધારો થવાનો અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "buyer.q2": {
+                "text": "ગયેલા મહિનાની સરખામણીએ LGD ગ્રોઅર્સ ખરીદદારોને કેટલી ક્રેડિટ મુદત (ચુકવણીનો સમય) આપી રહ્યા છે?",
+                "options": [
+                  "ઘણી ટૂંકી",
+                  "ટૂંકી",
+                  "અપરિવર્તિત",
+                  "લાંબી",
+                  "ઘણી લાંબી"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
     "c4aec41167e8": {
@@ -7624,6 +8505,12 @@
           }
         }
       },
+      "model": "gemini:gemini-3.5-flash",
+      "prompt_version": "poll-v1"
+    },
+    "317f5c9fd10d": {
+      "no_poll": true,
+      "reason": "The news describes an isolated local fire incident at a single textile waste godown with unknown ownership and no systemic impact on the wider Surat MMF textile value chain or overall credit indicators.",
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
@@ -11113,6 +12000,296 @@
       "model": "gemini:gemini-3.5-flash",
       "prompt_version": "poll-v1"
     },
+    "87540c9be67a": {
+      "no_poll": false,
+      "hypothesis": "The launch of global LGD certification improves technical expertise and operational yields in Surat's lab-grown diamond units.",
+      "event_phrase": "launch of LGD global certification",
+      "roles": [
+        {
+          "role": "operator",
+          "label": "LGD Unit Owner / Polisher",
+          "proximity": 3,
+          "questions": [
+            {
+              "id": "operator.q1",
+              "type": "accuracy",
+              "text": "Is the reported launch of LGD global certification accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q2",
+              "type": "scale5",
+              "text": "How has the technical quality or yield of your LGD cutting changed in the last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "margin",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "operator.q3",
+              "type": "choice",
+              "text": "Are you enrolling technical staff for specialized LGD training courses?",
+              "options": [
+                "Yes, actively",
+                "Considering it",
+                "No"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Yes, actively"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "banker",
+          "label": "Diamond Cluster Branch Banker",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "banker.q1",
+              "type": "accuracy",
+              "text": "Is the reported launch of LGD global certification accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q2",
+              "type": "choice",
+              "text": "Have you seen an increase in credit enhancement or machinery loan requests for LGD tech upgrades?",
+              "options": [
+                "Yes",
+                "No",
+                "Not seen"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Yes"
+              ],
+              "contradicts": [
+                "No"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "banker.q3",
+              "type": "choice",
+              "text": "How is the CC/OD limit utilization trend among LGD borrowers this month?",
+              "options": [
+                "Increasing",
+                "Stable",
+                "Decreasing"
+              ],
+              "mechanism": "wc_utilisation",
+              "supports": [
+                "Increasing"
+              ],
+              "contradicts": [
+                "Decreasing"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        },
+        {
+          "role": "supplier",
+          "label": "LGD Machinery / Consumables Supplier",
+          "proximity": 2,
+          "questions": [
+            {
+              "id": "supplier.q1",
+              "type": "accuracy",
+              "text": "Is the reported launch of LGD global certification accurate in your experience?",
+              "options": [
+                "Accurate",
+                "Overstated",
+                "Understated",
+                "Not seeing it"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Accurate",
+                "Understated"
+              ],
+              "contradicts": [
+                "Overstated",
+                "Not seeing it"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            },
+            {
+              "id": "supplier.q2",
+              "type": "scale5",
+              "text": "How are orders for advanced LGD processing tools compared to last month?",
+              "options": [
+                "Much lower",
+                "Lower",
+                "Same",
+                "Higher",
+                "Much higher"
+              ],
+              "mechanism": "volume",
+              "supports": [
+                "Higher",
+                "Much higher"
+              ],
+              "contradicts": [
+                "Lower",
+                "Much lower"
+              ],
+              "supports_if": "",
+              "contradicts_if": ""
+            }
+          ]
+        }
+      ],
+      "translation": {
+        "lang": "gu",
+        "roles": {
+          "operator": {
+            "label": "એલજીડી યુનિટ માલિક / પૉલિશર",
+            "questions": {
+              "operator.q1": {
+                "text": "શું એલજીડી ગ્લોબલ સર્ટિફિકેશનના લોન્ચિંગના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "operator.q2": {
+                "text": "છેલ્લા મહિનામાં તમારા એલજીડી કટિંગની ટેકનિકલ ગુણવત્તા અથવા યીલ્ડ કેવી રહી છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              },
+              "operator.q3": {
+                "text": "શું તમે ટેકનિકલ સ્ટાફને વિશેષ એલજીડી તાલીમ અભ્યાસક્રમો માટે મોકલી રહ્યા છો?",
+                "options": [
+                  "હા, સક્રિયપણે",
+                  "વિચારણા હેઠળ",
+                  "ના"
+                ]
+              }
+            }
+          },
+          "banker": {
+            "label": "ડાયમંડ ક્લસ્ટર બ્રાન્ચ બેંકર",
+            "questions": {
+              "banker.q1": {
+                "text": "શું એલજીડી ગ્લોબલ સર્ટિફિકેશનના લોન્ચિંગના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "banker.q2": {
+                "text": "શું તમે એલજીડી ટેક અપગ્રેડ માટે ક્રેડિટ અથવા મશીનરી લોનની માંગણીઓમાં વધારો જોયો છે?",
+                "options": [
+                  "હા",
+                  "ના",
+                  "જોવા મળ્યું નથી"
+                ]
+              },
+              "banker.q3": {
+                "text": "આ મહિને એલજીડી ગ્રાહકોમાં CC/OD લિમિટનો ઉપયોગ કેવો છે?",
+                "options": [
+                  "વધી રહ્યો છે",
+                  "સ્થિર",
+                  "ઘટી રહ્યો છે"
+                ]
+              }
+            }
+          },
+          "supplier": {
+            "label": "એલજીડી મશીનરી / કન્ઝ્યુમેબલ્સ સપ્લાયર",
+            "questions": {
+              "supplier.q1": {
+                "text": "શું એલજીડી ગ્લોબલ સર્ટિફિકેશનના લોન્ચિંગના અહેવાલો તમારા અનુભવમાં સાચા છે?",
+                "options": [
+                  "સાચું છે",
+                  "વધારે પડતું કહ્યું છે",
+                  "ઓછું આંક્યું છે",
+                  "મને દેખાતું નથી"
+                ]
+              },
+              "supplier.q2": {
+                "text": "ગયા મહિનાની સરખામણીમાં અદ્યતન એલજીડી પ્રોસેસિંગ સાધનોના ઓર્ડર કેવા છે?",
+                "options": [
+                  "ઘણું ઓછું",
+                  "ઓછું",
+                  "સરખું",
+                  "વધુ",
+                  "ઘણું વધુ"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "model": "gemini:gemini-3.5-flash-lite",
+      "prompt_version": "poll-v1"
+    },
     "f699b1f05b5e": {
       "no_poll": false,
       "hypothesis": "Outstation payment defaults in Surat textile trade are triggering stricter credit terms and credit-checking among local merchants.",
@@ -13905,574 +15082,6 @@
                   "સમાન",
                   "વધુ",
                   "મહત્તમ લિમિટ નજીક"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash",
-      "prompt_version": "poll-v1"
-    },
-    "da1ef316cd6d": {
-      "no_poll": false,
-      "hypothesis": "MANTRA's waste-to-construction material conversion is reducing waste disposal overheads for processing houses.",
-      "event_phrase": "MANTRA converting textile hotfix waste into construction material",
-      "roles": [
-        {
-          "role": "operator",
-          "label": "Textile processing house owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported MANTRA converting textile hotfix waste into construction material accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "margin",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How have your hotfix waste disposal costs changed over the last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "input_cost",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "yes_no_notseen",
-              "text": "Have you sold or handed over hotfix waste for construction material conversion recently?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "supplier",
-          "label": "Waste scrap collector / handler",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "supplier.q1",
-              "type": "accuracy",
-              "text": "Is the reported MANTRA converting textile hotfix waste into construction material accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "supplier.q2",
-              "type": "scale5",
-              "text": "How is the collection volume of hotfix waste from processing units compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Lower",
-                "Much lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "banker",
-          "label": "MSME branch manager (Textile hub)",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported MANTRA converting textile hotfix waste into construction material accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "scale5",
-              "text": "How are working capital limit utilisations for processing units with waste scrap linkages?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Much lower",
-                "Lower"
-              ],
-              "contradicts": [
-                "Higher",
-                "Much higher"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "operator": {
-            "label": "ટેક્સટાઇલ પ્રોસેસિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું MANTRA દ્વારા ટેક્સટાઇલ હોટફિક્સ વેસ્ટમાંથી બાંધકામ સામગ્રી બનાવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા મહિનામાં તમારા હોટફિક્સ વેસ્ટના નિકાલના ખર્ચમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              },
-              "operator.q3": {
-                "text": "શું તમે તાજેતરમાં બાંધકામ સામગ્રીના રૂપાંતરણ માટે હોટફિક્સ વેસ્ટ વેચ્યો કે આપ્યો છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              }
-            }
-          },
-          "supplier": {
-            "label": "વેસ્ટ સ્ક્રેપ કલેક્ટર / હેન્ડલર",
-            "questions": {
-              "supplier.q1": {
-                "text": "શું MANTRA દ્વારા ટેક્સટાઇલ હોટફિક્સ વેસ્ટમાંથી બાંધકામ સામગ્રી બનાવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "supplier.q2": {
-                "text": "ગયા મહિનાની સરખામણીમાં પ્રોસેસિંગ યુનિટ્સમાંથી હોટફિક્સ વેસ્ટનું કલેક્શન કેટલું છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણું વધુ"
-                ]
-              }
-            }
-          },
-          "banker": {
-            "label": "એમએસએમઈ બ્રાન્ચ મેનેજર (ટેક્સટાઇલ હબ)",
-            "questions": {
-              "banker.q1": {
-                "text": "શું MANTRA દ્વારા ટેક્સટાઇલ હોટફિક્સ વેસ્ટમાંથી બાંધકામ સામગ્રી બનાવવાની વાત તમારા અનુભવમાં સાચી છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "વેસ્ટ સ્ક્રેપ સાથે સંકળાયેલા પ્રોસેસિંગ યુનિટ્સની વર્કિંગ કેપિટલ લિમિટનો ઉપયોગ કેવો છે?",
-                "options": [
-                  "ઘણો ઓછો",
-                  "ઓછો",
-                  "સમાન",
-                  "વધુ",
-                  "ઘણો વધુ"
-                ]
-              }
-            }
-          }
-        }
-      },
-      "model": "gemini:gemini-3.5-flash-lite",
-      "prompt_version": "poll-v1"
-    },
-    "4a8371f615d7": {
-      "no_poll": false,
-      "hypothesis": "Global order shifts to India are driving higher export inquiry and production drawdowns for Surat's compliant MMF and weaving units.",
-      "event_phrase": "shift of Rs 2,360 crore global apparel orders to India",
-      "roles": [
-        {
-          "role": "banker",
-          "label": "Textile credit manager",
-          "proximity": 2,
-          "questions": [
-            {
-              "id": "banker.q1",
-              "type": "accuracy",
-              "text": "Is the reported shift of Rs 2,360 crore global apparel orders to India accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q2",
-              "type": "yes_no_notseen",
-              "text": "Have export-oriented weaving or processing units requested higher LC limits or Packing Credit in the last 4 weeks?",
-              "options": [
-                "Yes",
-                "No",
-                "Not seen"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Yes"
-              ],
-              "contradicts": [
-                "No"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "banker.q3",
-              "type": "scale5",
-              "text": "How have ad-hoc working capital enhancement requests from compliant textile units changed compared to last month?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "wc_utilisation",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "operator",
-          "label": "Air-jet / water-jet weaving unit owner",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "operator.q1",
-              "type": "accuracy",
-              "text": "Is the reported shift of Rs 2,360 crore global apparel orders to India accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q2",
-              "type": "scale5",
-              "text": "How has your export-grade fabric order book changed over the last 30 days?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "operator.q3",
-              "type": "choice",
-              "text": "What is the current shift in your capacity utilisation levels for high-spec grey fabric?",
-              "options": [
-                "Decreased",
-                "Unchanged",
-                "Increased by 10-20%",
-                "Running at full capacity"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Increased by 10-20%",
-                "Running at full capacity"
-              ],
-              "contradicts": [
-                "Decreased"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        },
-        {
-          "role": "buyer",
-          "label": "Garment exporter / fabric merchant",
-          "proximity": 3,
-          "questions": [
-            {
-              "id": "buyer.q1",
-              "type": "accuracy",
-              "text": "Is the reported shift of Rs 2,360 crore global apparel orders to India accurate in your experience?",
-              "options": [
-                "Accurate",
-                "Overstated",
-                "Understated",
-                "Not seeing it"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Accurate",
-                "Understated"
-              ],
-              "contradicts": [
-                "Overstated",
-                "Not seeing it"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            },
-            {
-              "id": "buyer.q2",
-              "type": "scale5",
-              "text": "How has fabric sourcing inquiry from international brand suppliers changed in the last 2-4 weeks?",
-              "options": [
-                "Much lower",
-                "Lower",
-                "Same",
-                "Higher",
-                "Much higher"
-              ],
-              "mechanism": "volume",
-              "supports": [
-                "Higher",
-                "Much higher"
-              ],
-              "contradicts": [
-                "Much lower",
-                "Lower"
-              ],
-              "supports_if": "",
-              "contradicts_if": ""
-            }
-          ]
-        }
-      ],
-      "translation": {
-        "lang": "gu",
-        "roles": {
-          "banker": {
-            "label": "ટેક્ષટાઇલ ક્રેડિટ મેનેજર",
-            "questions": {
-              "banker.q1": {
-                "text": "શું ભારતમાં રૂ. 2,360 કરોડના વૈશ્વિક ગાર્મેન્ટ ઓર્ડર શિફ્ટ થવાના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "banker.q2": {
-                "text": "શું નિકાસ-લક્ષી વીવિંગ અથવા પ્રોસેસિંગ યુનિટ્સે છેલ્લા 4 અઠવાડિયામાં ઉચ્ચ એલસી મર્યાદા અથવા પેકિંગ ક્રેડિટની માંગ કરી છે?",
-                "options": [
-                  "હા",
-                  "ના",
-                  "જોયું નથી"
-                ]
-              },
-              "banker.q3": {
-                "text": "ગતાં મહિનાની સરખામણીમાં ટેક્ષટાઇલ યુનિટ્સ તરફથી એડ-હોક વર્કિંગ કેપિટલ વધારાની વિનંતીઓમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધારે",
-                  "ઘણું વધારે"
-                ]
-              }
-            }
-          },
-          "operator": {
-            "label": "એર-જેટ / વોટર-જેટ વીવિંગ યુનિટ માલિક",
-            "questions": {
-              "operator.q1": {
-                "text": "શું ભારતમાં રૂ. 2,360 કરોડના વૈશ્વિક ગાર્મેન્ટ ઓર્ડર શિફ્ટ થવાના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "operator.q2": {
-                "text": "છેલ્લા 30 દિવસમાં તમારા નિકાસ-ગ્રેડ કાપડના ઓર્ડર બુકમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધારે",
-                  "ઘણું વધારે"
-                ]
-              },
-              "operator.q3": {
-                "text": "હાઇ-સ્પેક ગ્રે કાપડ માટે તમારા ઉત્પાદન ક્ષમતા વપરાશમાં હાલમાં શો ફેરફાર છે?",
-                "options": [
-                  "ઘટાડો થયો",
-                  "અપરિવર્તિત",
-                  "10-20% વધ્યો",
-                  "પૂર્ણ ક્ષમતા પર ચાલુ"
-                ]
-              }
-            }
-          },
-          "buyer": {
-            "label": "ગાર્મેન્ટ એક્સપોર્ટર / ફ્રેબિક મરચન્ટ",
-            "questions": {
-              "buyer.q1": {
-                "text": "શું ભારતમાં રૂ. 2,360 કરોડના વૈશ્વિક ગાર્મેન્ટ ઓર્ડર શિફ્ટ થવાના અહેવાલ તમારા અનુભવ મુજબ સચોટ છે?",
-                "options": [
-                  "સાચું છે",
-                  "વધારે પડતું કહ્યું છે",
-                  "ઓછું આંક્યું છે",
-                  "મને દેખાતું નથી"
-                ]
-              },
-              "buyer.q2": {
-                "text": "છેલ્લા 2-4 અઠવાડિયામાં આંતરરાષ્ટ્રીય બ્રાન્ડ સપ્લાયર્સ તરફથી કાપડ સોસિંગની પૂછપરછમાં કેવો ફેરફાર થયો છે?",
-                "options": [
-                  "ઘણું ઓછું",
-                  "ઓછું",
-                  "સરખું",
-                  "વધારે",
-                  "ઘણું વધારે"
                 ]
               }
             }
